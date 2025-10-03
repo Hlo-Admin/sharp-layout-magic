@@ -13,14 +13,16 @@ const Steps = () => {
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-text-heading mb-8">
+        <h1 className="inline-block bg-white border border-gray-300 rounded-3xl px-8 py-4 text-2xl font-bold text-black uppercase tracking-wide shadow-sm mb-10">
           STEPS TO ESTABLISH A MAINLAND COMPANY IN UAE
-        </h2>
-        
+        </h1>
+
         <ol className="space-y-4">
           {steps.map((step, index) => (
             <li key={index} className="flex gap-4 text-text-body">
-              <span className="font-semibold text-primary min-w-[24px]">{index + 1}.</span>
+              <span className="font-semibold text-primary min-w-[24px]">
+                {index + 1}.
+              </span>
               <span className="leading-relaxed">{step}</span>
             </li>
           ))}
