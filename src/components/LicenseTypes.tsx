@@ -1,42 +1,43 @@
-import { ShoppingBag, Briefcase, Factory } from "lucide-react";
-
 const LicenseTypes = () => {
   const licenses = [
     {
-      icon: ShoppingBag,
+      icon: "/license-icon-1.png",
       title: "Commercial License",
-      description: "To trade a full-scope business",
-      color: "bg-orange-500",
+      description: "To trade and general business",
     },
     {
-      icon: Briefcase,
+      icon: "/license-icon-2.png",
       title: "Professional License",
       description: "To service providers, professionals & consultants.",
-      color: "bg-blue-500",
     },
     {
-      icon: Factory,
-      title: "Industrial License",
-      description: "To be used by manufacturing or industry-based businesses",
-      color: "bg-orange-500",
+      icon: "/license-icon-3.png",
+      title: "Industrial Licence",
+      description: "To be used by manufacturing or industrial based businesses",
     },
   ];
-
   return (
-    <section className="py-16 bg-background">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-text-heading mb-8">
-          MAINLAND COMPANY LICENSE TYPES
+    <section className="py-12 bg-gray-50">
+      <div className="container ml-24 px-4 max-w-2xl">
+        <h2 className="text-2xl font-bold text-gray-900 mb-8">
+          MAINLAND COMPANY LICENSES TYPES
         </h2>
-        
-        <div className="grid md:grid-cols-3 gap-6">
+
+        <div className="space-y-6">
           {licenses.map((license, index) => (
-            <div key={index} className="bg-card rounded-lg p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
-              <div className={`w-12 h-12 ${license.color} rounded-lg flex items-center justify-center mb-4`}>
-                <license.icon className="w-6 h-6 text-white" />
+            <div
+              key={index}
+              className="flex items-start gap-4 bg-white rounded-xl p-5 shadow-sm"
+            >
+              <div className="flex-shrink-0">
+                <img src={license.icon} alt="" className="w-16 h-20" />
               </div>
-              <h3 className="font-bold text-text-heading mb-2 text-lg">{license.title}</h3>
-              <p className="text-sm text-text-body">{license.description}</p>
+              <div className="flex-1">
+                <h3 className="font-bold text-gray-900 mb-1 text-base">
+                  {license.title}
+                </h3>
+                <p className="text-sm text-gray-600">{license.description}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -44,5 +45,4 @@ const LicenseTypes = () => {
     </section>
   );
 };
-
 export default LicenseTypes;
