@@ -42,9 +42,9 @@ const Benefits = () => {
   ];
 
   return (
-    <section className="py-12 px-6 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-10">
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-6 max-w-8xl">
+        <h1 className="inline-block bg-white border border-gray-300 rounded-3xl px-8 py-4 text-2xl font-bold text-black uppercase tracking-wide shadow-sm mb-10">
           BENEFITS OF MAINLAND COMPANY FORMATION IN DUBAI
         </h1>
 

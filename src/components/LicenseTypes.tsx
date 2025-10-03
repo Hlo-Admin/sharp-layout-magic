@@ -17,13 +17,13 @@ const LicenseTypes = () => {
     },
   ];
   return (
-    <section className="py-12 bg-gray-50">
-      <div className="container ml-24 px-4 max-w-2xl">
-        <h2 className="text-2xl font-bold text-gray-900 mb-8">
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-6 max-w-8xl">
+        <h1 className="inline-block bg-white border border-gray-300 rounded-3xl px-8 py-4 text-2xl font-bold text-black uppercase tracking-wide shadow-sm mb-8">
           MAINLAND COMPANY LICENSES TYPES
-        </h2>
+        </h1>
 
-        <div className="space-y-6">
+        <div className="w-1/3 space-y-6">
           {licenses.map((license, index) => (
             <div
               key={index}

@@ -28,9 +28,9 @@ const WhatIsMainland = () => {
           {/* Main Content - Left Side */}
           <div className="lg:col-span-2">
             <div className="mb-8">
-              <h2 className="inline-block bg-white border border-gray-300 rounded-3xl px-8 py-4 text-3xl font-bold text-black uppercase tracking-wide shadow-sm">
+              <h1 className="inline-block bg-white border border-gray-300 rounded-3xl px-8 py-4 text-2xl font-bold text-black uppercase tracking-wide shadow-sm">
                 WHAT IS MAINLAND COMPANY?
-              </h2>
+              </h1>
             </div>
 
             <div className="space-y-6 text-gray-700 leading-relaxed text-base">
