@@ -24,7 +24,7 @@ const Footer = () => (
               <img
                 src="/footer-logo.png"
                 alt="Go Kite Pro"
-                className="w-[48px] h-[48px]"
+                className="w-[36px] h-[48px]"
               />
               <div>
                 <div className="text-lg font-extrabold tracking-wide leading-tight">
