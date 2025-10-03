@@ -7,7 +7,7 @@ export default function CostSection() {
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
               Costs of Mainland Company Formation in the UAE
             </h2>
 

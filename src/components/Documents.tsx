@@ -19,8 +19,8 @@ const Documents = () => {
         <ul className="space-y-3">
           {documents.map((document, index) => (
             <li key={index} className="flex gap-3 text-text-body items-start">
-              <span className="text-primary mt-1">•</span>
-              <span className="leading-relaxed">{document}</span>
+              <span className="text-black mt-1">•</span>
+              <span className="leading-relaxed text-black">{document}</span>
             </li>
           ))}
         </ul>

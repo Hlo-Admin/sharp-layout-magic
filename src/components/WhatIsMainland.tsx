@@ -79,7 +79,7 @@ const WhatIsMainland = () => {
                         {type.description}
                       </p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-gray-400 ml-4 flex-shrink-0 group-hover:text-gray-600 group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-5 h-5 text-black ml-4 flex-shrink-0 group-hover:text-gray-600 group-hover:translate-x-1 transition-all" />
                   </div>
                 </div>
               ))}

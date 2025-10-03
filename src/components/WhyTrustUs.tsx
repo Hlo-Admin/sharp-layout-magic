@@ -17,8 +17,8 @@ const WhyTrustUs = () => {
         <ul className="space-y-4">
           {reasons.map((reason, index) => (
             <li key={index} className="flex gap-3 text-text-body items-start">
-              <span className="text-primary font-bold mt-1">•</span>
-              <span className="leading-relaxed">{reason}</span>
+              <span className="text-black font-bold mt-1">•</span>
+              <span className="leading-relaxed text-black">{reason}</span>
             </li>
           ))}
         </ul>
