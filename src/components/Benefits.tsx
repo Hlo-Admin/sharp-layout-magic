@@ -1,78 +1,77 @@
-import { Shield, Ban, FileText, Globe2, Scale, Building2, Zap, Users } from "lucide-react";
+import React from "react";
 
 const Benefits = () => {
   const benefits = [
     {
-      icon: Shield,
       title: "UAE Market Access",
-      description: "Be able to operate within the UAE without any restrictions.",
+      description:
+        "Be able to operate within the UAE without any restrictions.",
     },
     {
-      icon: Ban,
       title: "No Trading Restrictions",
-      description: "Do business with the government and the private customers in the UAE.",
+      description:
+        "Do business with the government and the private customers in the UAE.",
     },
     {
-      icon: FileText,
-      title: "Office Setup Flexibility",
-      description: "Select between flex offices in various emirates.",
+      title: "Several Office Locations",
+      description: "Select between flexible offices in various emirates.",
     },
     {
-      icon: Globe2,
       title: "Unlimited Visa Quota",
-      description: "Mainland companies are allowed to apply for an unlimited amount of visa.",
+      description:
+        "Mainland companies are allowed to apply to an unlimited amount of employee visas (depending on office space).",
     },
     {
-      icon: Scale,
-      title: "100% Foreign Ownership",
-      description: "Ownership is allowed depending on office and operations.",
-    },
-    {
-      icon: Building2,
       title: "Freedom of Trade",
-      description: "The right to trade locally and internationally.",
+      description: "the right to trade locally and internationally.",
     },
     {
-      icon: Zap,
       title: "Flexible Business",
-      description: "Carry out commercial or commercial or professional or industrial operations.",
+      description:
+        "Carry on a broad variety of commercial, professional or industrial operations.",
     },
     {
-      icon: Users,
       title: "Eligibility to Government Contracts",
-      description: "Get involved in profitable government tenders and contracts.",
+      description:
+        "Get involved in profitable government tenders and contracts.",
+    },
+    {
+      title: "Repatriation of Profits",
+      description: "Capital and profits may be fully repatriated.",
     },
   ];
 
   return (
-    <section className="py-16 bg-section-alt">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-text-heading mb-4">
+    <section className="py-12 px-6 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-3xl font-bold text-gray-900 mb-10">
           BENEFITS OF MAINLAND COMPANY FORMATION IN DUBAI
-        </h2>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="bg-card rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <benefit.icon className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-semibold text-text-heading mb-2">{benefit.title}</h3>
-              <p className="text-sm text-text-body leading-relaxed">{benefit.description}</p>
-            </div>
-          ))}
-        </div>
+        </h1>
 
-        {/* Additional Benefits */}
-        <div className="mt-8 space-y-2 text-text-body">
-          <p className="flex items-start gap-2">
-            <span className="text-primary mt-1">•</span>
-            <span>Negotiation of Profits: Capital and profits may be fully repatriated.</span>
-          </p>
-          <p className="flex items-start gap-2">
-            <span className="text-primary mt-1">•</span>
-            <span>Eligibility to Government Contracts: Get involved in profitable government tenders and contracts.</span>
-          </p>
+        <div className="flex gap-12 items-start">
+          {/* Left side - Benefits list */}
+          <div className="flex-1 space-y-4">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-2 h-2 rounded-full bg-gray-400 mt-2"></div>
+                <div>
+                  <span className="font-semibold text-gray-900">
+                    {benefit.title}
+                  </span>
+                  <span className="text-gray-700">: {benefit.description}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Right side - Image */}
+          <div className="flex-shrink-0 w-96 bg-gray-100 rounded-2xl p-6">
+            <img
+              src="/Benefits.png"
+              alt="Benefits of Mainland Company Formation"
+              className="w-full h-auto"
+            />
+          </div>
         </div>
       </div>
     </section>
