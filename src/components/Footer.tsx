@@ -14,8 +14,8 @@ const services = [
 const social = ["Instagram", "X", "Threads", "Facebook", "Snapchat"];
 
 const Footer = () => (
-  <footer className="bg-black text-white rounded-tl-[2rem] rounded-tr-[2rem] pt-10 pb-8 relative px-6">
-    <div className="container mx-auto px-2">
+  <footer className="bg-black text-white rounded-tl-[2rem] rounded-tr-[2rem] pt-10 pb-8 relative mx-4 mt-8 px-4 py-4">
+    <div className="container mx-auto px-6">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-0 border-b border-white/10">
         {/* Company Info */}
         <div className="px-5 py-2 border-r border-white/15 min-h-[195px] flex flex-col justify-between">
@@ -47,11 +47,11 @@ const Footer = () => (
             </a>
             <a
               href="mailto:info@gokitepro.com"
-              className="block text-[13px] mb-1"
+              className="block text-[13px] mb-1 underline underline-offset-2"
             >
-              [info@gokitepro.com](mailto:info@gokitepro.com)
+              info@gokitepro.com
             </a>
-            <p className="text-[12px] opacity-60 mt-4 leading-snug">
+            <p className="text-[12px] font-bold mt-4  text-white leading-snug">
               Office #1801, The Prism Tower – Al Mustaqbal St – Business Bay –
               Dubai
             </p>
@@ -101,7 +101,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="pt-7 text-center text-xs opacity-60 tracking-wide">
-        <p>Copyright 2023. All rights reserved by Go Kite Pro.</p>
+        <p>Copyright 2025. All rights reserved by Go Kite Pro.</p>
       </div>
     </div>
     {/* Top border curve overlays */}
