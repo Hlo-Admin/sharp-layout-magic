@@ -53,9 +53,9 @@ const Benefits = () => {
           <div className="flex-1 space-y-4">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-2 h-2 rounded-full bg-gray-400 mt-2"></div>
+                <div className="flex-shrink-0 w-2 h-2 rounded-full bg-black mt-2"></div>
                 <div>
-                  <span className="font-semibold text-gray-900">
+                  <span className="font-semibold text-black">
                     {benefit.title}
                   </span>
                   <span className="text-gray-700">: {benefit.description}</span>

@@ -14,7 +14,8 @@ const services = [
 const social = ["Instagram", "X", "Threads", "Facebook", "Snapchat"];
 
 const Footer = () => (
-  <footer className="bg-black text-white rounded-tl-[2rem] rounded-tr-[2rem] pt-10 pb-8 relative mx-4 mt-8 px-4 py-4">
+ <section className="bg-[#e1eff2]">
+   <footer className="bg-black text-white rounded-tl-[2rem] rounded-tr-[2rem] pt-10 pb-8 relative mx-4  px-4 py-4">
     <div className="container mx-auto px-6">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-0 border-b border-white/10">
         {/* Company Info */}
@@ -108,6 +109,7 @@ const Footer = () => (
     <div className="absolute left-0 top-0 w-16 h-16 bg-black rounded-tl-[2rem]" />
     <div className="absolute right-0 top-0 w-16 h-16 bg-black rounded-tr-[2rem]" />
   </footer>
+ </section>
 );
 
 export default Footer;

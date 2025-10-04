@@ -26,10 +26,10 @@ const faqs = [
 ];
 
 const FAQ = () => (
-  <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#eaf6fb] via-[#f5fafd] to-[#eaf6fb] py-10 px-2">
+  <section className="min-h-screen flex items-center justify-center bg-[#e1eff2] py-10 px-2">
     <div className="w-full max-w-2xl bg-white rounded-[36px] shadow-xl p-8 flex flex-col items-center">
-      <div className="w-16 h-16 flex items-center justify-center rounded-full bg-[#f2f6fa] mb-4">
-        <span className="text-4xl font-semibold text-gray-500">?</span>
+      <div className="w-16 h-16 flex items-center border-[#edf2f7] justify-center rounded-full bg-[#ffffff] mb-4">
+        <span className="text-4xl font-semibold text-black">?</span>
       </div>
       <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 text-center">
         Frequently Asked Questions
@@ -43,7 +43,7 @@ const FAQ = () => (
             <AccordionItem
               key={idx}
               value={`item-${idx}`}
-              className="bg-[#f7f8fa] border border-[#edf2f7] rounded-xl px-6"
+              className="bg-[#ffffff] border border-[#edf2f7] rounded-xl px-6"
             >
               <AccordionTrigger className="text-left font-semibold text-gray-900 hover:no-underline focus:outline-none">
                 {faq.question}
@@ -60,7 +60,7 @@ const FAQ = () => (
         size="lg"
         className="bg-black text-white rounded-full px-7 py-4 text-base font-semibold flex items-center gap-2 shadow hover:bg-gray-800 transition"
       >
-        <MessageCircle className="w-5 h-5" />
+        {/* <MessageCircle className="w-5 h-5" /> */}
         Contact Us now ~ it's free
       </Button>
     </div>

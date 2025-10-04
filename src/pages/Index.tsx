@@ -18,6 +18,7 @@ const Index = () => {
       <WhatIsMainland />
       <Benefits />
       <LicenseTypes />
+      <hr />
       <CostSection />
       <Steps />
       <Documents />
