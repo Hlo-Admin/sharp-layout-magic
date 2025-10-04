@@ -35,16 +35,28 @@ const Hero = () => {
 
         {/* Center navbar links */}
         <div className="hidden md:flex gap-7 items-center pt-1">
-          <a href="#business-setup" className="text-base font-medium text-white hover:text-white/80 transition">
+          <a
+            href="#business-setup"
+            className="text-base font-medium text-white hover:text-white/80 transition"
+          >
             Business Setup
           </a>
-          <a href="#services" className="text-base font-medium text-white hover:text-white/80 transition">
+          <a
+            href="#services"
+            className="text-base font-medium text-white hover:text-white/80 transition"
+          >
             Our Services
           </a>
-          <a href="#about" className="text-base font-medium text-white hover:text-white/80 transition">
+          <a
+            href="#about"
+            className="text-base font-medium text-white hover:text-white/80 transition"
+          >
             About Us
           </a>
-          <a href="#contact" className="text-base font-medium text-white hover:text-white/80 transition">
+          <a
+            href="#contact"
+            className="text-base font-medium text-white hover:text-white/80 transition"
+          >
             Contact Us
           </a>
         </div>
@@ -63,37 +75,81 @@ const Hero = () => {
             <Globe className="w-4 h-4" />
             ENG
           </button>
+          {/* Hamburger Icon always at end, visible on all screen sizes */}
+          <button className="ml-4 px-2 py-1 rounded hover:bg-white/20 flex items-center justify-center">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <rect y="6" width="28" height="2.5" rx="1.25" fill="#fff" />
+              <rect y="13" width="28" height="2.5" rx="1.25" fill="#fff" />
+              <rect y="20" width="28" height="2.5" rx="1.25" fill="#fff" />
+            </svg>
+          </button>
         </div>
-        {/* Hamburger Icon always at end, matching design */}
-        <button className="ml-4 px-2 py-1 rounded hover:bg-white/20 flex items-center justify-center md:hidden">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <rect y="6" width="28" height="2.5" rx="1.25" fill="#fff" />
-            <rect y="13" width="28" height="2.5" rx="1.25" fill="#fff" />
-            <rect y="20" width="28" height="2.5" rx="1.25" fill="#fff" />
-          </svg>
-        </button>
       </nav>
 
-      {/* Right-side floating icons bar */}
-      <div className="absolute right-6 top-[120px] flex flex-col gap-4 z-30">
-        {/* Phone */}
-        <a href="tel:123456789" className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-lg hover:scale-105 transition">
-          <img src="/phone.png" alt="Phone" className="w-7 h-7" />
-        </a>
-        {/* WhatsApp */}
-        <a href="https://wa.me/123456789" target="_blank" rel="noopener" className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-lg hover:scale-105 transition">
-          <img src="/whatsapp.png" alt="WhatsApp" className="w-7 h-7" />
-        </a>
-        {/* Message */}
-        <a href="#contact" className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-lg hover:scale-105 transition">
-          <img src="/message.png" alt="Message" className="w-7 h-7" />
-        </a>
+      {/* Right-side icon bar with individual containers */}
+      <div
+        className="absolute z-30 right-0 top-[120px] flex flex-col items-end gap-4"
+        style={{ height: "fit-content" }}
+      >
+        {/* Phone Icon */}
+        <div
+          className="bg-white/95 shadow-xl rounded-l-2xl px-2 py-2"
+          style={{
+            borderTopLeftRadius: 16,
+            borderBottomLeftRadius: 16,
+          }}
+        >
+          <a
+            href="tel:123456789"
+            className="flex items-center justify-center w-10 h-10 "
+          >
+            <img src="/phone.png" alt="Phone" className="w-10 h-10" />
+          </a>
+        </div>
+
+        {/* WhatsApp Icon */}
+        <div
+          className="bg-white/95 shadow-xl rounded-l-2xl px-2 py-2"
+          style={{
+            borderTopLeftRadius: 16,
+            borderBottomLeftRadius: 16,
+          }}
+        >
+          <a
+            href="https://wa.me/123456789"
+            target="_blank"
+            rel="noopener"
+            className="flex items-center justify-center w-10 h-10"
+          >
+            <img src="/whatsapp.png" alt="WhatsApp" className="w-10 h-10" />
+          </a>
+        </div>
+
+        {/* Message Icon */}
+        <div
+          className="bg-white/95 shadow-xl rounded-l-2xl px-2 py-2"
+          style={{
+            borderTopLeftRadius: 16,
+            borderBottomLeftRadius: 16,
+          }}
+        >
+          <a
+            href="#contact"
+            className="flex items-center justify-center w-10 h-10"
+          >
+            <img src="/message.png" alt="Message" className="w-10 h-10" />
+          </a>
+        </div>
       </div>
 
       {/* Hero Content center left */}
       <div className="absolute z-10 top-[110px] left-8 max-w-2xl flex flex-col items-start">
         <p className="text-white text-[16px] font-semibold mb-2 flex gap-2 items-center">
-          Home <span className="opacity-60 text-white text-[14px]"> &gt; Mainland Business Setup</span>
+          Home{" "}
+          <span className="opacity-60 text-white text-[14px]">
+            {" "}
+            &gt; Mainland Business Setup
+          </span>
         </p>
         <h1 className="text-white text-4xl md:text-5xl font-bold mb-2 drop-shadow">
           Mainland Business Setup
