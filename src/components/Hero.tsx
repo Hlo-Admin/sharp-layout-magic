@@ -1,6 +1,7 @@
 import heroPattern from "@/assets/banner-bg.jpg";
 import { Button } from "@/components/ui/button";
 import { Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -17,7 +18,7 @@ const Hero = () => {
       {/* Navbar bar over image */}
       <nav className="absolute top-6 left-5 right-5 bg-[#487b99] flex items-center justify-between h-[64px] px-7 rounded-lg shadow-xl z-20">
         {/* Left Logo */}
-        <div className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img
             src="/footer-logo.png"
             alt="Go Kite Pro"
@@ -31,16 +32,22 @@ const Hero = () => {
               BUSINESS & BEYOND
             </div>
           </div>
-        </div>
+        </Link>
 
         {/* Center navbar links */}
         <div className="hidden md:flex gap-7 items-center pt-1">
-          <a
-            href="#business-setup"
+          <Link
+            to="/"
             className="text-base font-medium text-white hover:text-white/80 transition"
           >
-            Business Setup
-          </a>
+            Mainland Setup
+          </Link>
+          <Link
+            to="/free-zone"
+            className="text-base font-medium text-white hover:text-white/80 transition"
+          >
+            Free Zone Setup
+          </Link>
           <a
             href="#services"
             className="text-base font-medium text-white hover:text-white/80 transition"
