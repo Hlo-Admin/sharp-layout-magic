@@ -10,7 +10,7 @@ const Documents = () => {
   ];
 
   return (
-    <section className="py-16 bg-section-alt bg-[#e1eff2]">
+    <section className="py-16 bg-section-alt bg-[#dfedf2]">
       <div className="container mx-auto px-4">
         <h1 className="inline-block bg-white border border-gray-300 rounded-3xl px-8 py-4 text-2xl font-bold text-black uppercase tracking-wide shadow-sm mb-10">
           DOCUMENTS REQUIRED FOR MAINLAND COMPANY FORMATION

@@ -55,17 +55,17 @@ const Benefits = () => {
               <div key={index} className="flex items-start gap-3">
                 <div className="flex-shrink-0 w-2 h-2 rounded-full bg-black mt-2"></div>
                 <div>
-                  <span className="font-semibold text-black">
+                  <span className="text-black">
                     {benefit.title}
                   </span>
-                  <span className="text-gray-700">: {benefit.description}</span>
+                  <span className="text-black">: {benefit.description}</span>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Right side - Image */}
-          <div className="flex-shrink-0 w-96 bg-gray-100 rounded-2xl p-6">
+          <div className="flex-shrink-0 w-[450px] bg-gray-100 rounded-2xl p-6">
             <img
               src="/Benefits.png"
               alt="Benefits of Mainland Company Formation"

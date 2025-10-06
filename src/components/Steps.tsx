@@ -11,7 +11,7 @@ const Steps = () => {
   ];
 
   return (
-    <section className="py-16 bg-background bg-[#e1eff2]">
+    <section className="py-16 bg-[#dfedf2]">
       <div className="container mx-auto px-4">
         <h1 className="inline-block bg-white border border-gray-300 rounded-3xl px-8 py-4 text-2xl font-bold text-black uppercase tracking-wide shadow-sm mb-10">
           STEPS TO ESTABLISH A MAINLAND COMPANY IN UAE
