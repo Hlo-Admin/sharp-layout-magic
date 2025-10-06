@@ -4,9 +4,9 @@ export default function CostSection() {
   return (
     <section className="bg-white py-16 px-4 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[3fr_2fr] gap-8 items-center">
+        <div className="grid lg:grid-cols-[3fr_2fr] gap-2 items-center">
           {/* Left Content */}
-          <div className="flex flex-col justify-center h-full lg:pr-8">
+          <div className="flex flex-col justify-center h-full lg:pr-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
               Costs of Mainland Company Formation in the UAE
             </h2>
@@ -28,7 +28,7 @@ export default function CostSection() {
 
           {/* Right Image */}
           <div className="flex lg:justify-end justify-center mt-10 lg:mt-0">
-            <div className="rounded-2xl overflow-hidden shadow-xl w-72 h-72 md:w-80 md:h-80 bg-gray-100 flex items-center justify-center">
+            <div className="rounded-2xl overflow-hidden shadow-xl w-80 h-80 md:w-96 md:h-96 bg-gray-100 flex items-center justify-center">
               <img
                 src="/Cost.png"
                 alt="Business consultant in meeting"
