@@ -8,7 +8,7 @@ import Steps from "@/components/Steps";
 import Documents from "@/components/Documents";
 import WhyTrustUs from "@/components/WhyTrustUs";
 import FAQ from "@/components/FAQ";
-import Footer from "@/components/Footer";
+import Footer from "@/common/Footer";
 
 const Index = () => {
   return (
