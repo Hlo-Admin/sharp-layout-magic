@@ -2,32 +2,32 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import FloatingSocialIcons from "@/components/landing/FloatingSocialIcons";
 
-const HeroSection = () => {
-  // Social icons data
-  const socialIcons = [
-    {
-      icon: "/phone.png",
-      href: "#contact",
-      alt: "Live Chat",
-    },
-    {
-      icon: "/whatsapp.png",
-      href: "https://wa.me/971503578847",
-      alt: "WhatsApp",
-      target: "_blank",
-      rel: "noopener noreferrer",
-    },
-    {
-      icon: "/message.png",
-      href: "mailto:info@gokitepro.com",
-      alt: "Email",
-    },
-  ];
+interface HeroSectionProps {
+  data: {
+    title: string;
+    description: string;
+    buttonText: string;
+    image: string;
+    socialIcons: Array<{
+      icon: string;
+      href: string;
+      alt: string;
+      target?: string;
+      rel?: string;
+    }>;
+    trustIndicator: {
+      clients: string;
+      rating: number;
+      ratingText: string;
+    };
+  };
+}
 
+const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
   return (
     <section className="relative bg-white overflow-hidden">
       {/* Floating Social Icons */}
-      <FloatingSocialIcons icons={socialIcons} />
+      <FloatingSocialIcons icons={data.socialIcons} />
 
       {/* Main Hero Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-32 pb-24 sm:pb-32 lg:pb-20">
@@ -35,16 +35,13 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-6 lg:space-y-8">
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-black leading-tight uppercase">
-              HIGH QUALITY LEGAL CONSULTANCY IN DUBAI
+              {data.title}
             </h1>
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-              Take the stress out of legal filings. Trust Go Kite Business Setup
-              Services to handle your case registration in Dubai Courts
-              professionally and efficiently. Contact us today for a
-              consultation or to begin your case filing.
+              {data.description}
             </p>
             <Button className="bg-black text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2 text-sm sm:text-base">
-              <span>Let's simplify your Legal</span>
+              <span>{data.buttonText}</span>
               <span>→</span>
             </Button>
           </div>
@@ -55,7 +52,7 @@ const HeroSection = () => {
             <div className="relative z-10 flex justify-center">
               <div className="w-64 h-[350px] sm:w-80 sm:h-[450px] lg:h-[500px] flex items-center justify-center">
                 <img
-                  src="/legal/justice.png"
+                  src={data.image}
                   alt="Lady Justice Statue"
                   className="w-full h-full object-contain"
                 />
@@ -87,13 +84,13 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="text-orange-500 font-semibold text-xs sm:text-sm">
-            1,2k+ clients
+            {data.trustIndicator.clients}
           </div>
         </div>
 
         {/* Star Rating */}
         <div className="flex items-center space-x-1 mb-1 sm:mb-2">
-          {[...Array(5)].map((_, i) => (
+          {[...Array(data.trustIndicator.rating)].map((_, i) => (
             <span key={i} className="text-orange-500 text-xs sm:text-sm">
               ★
             </span>
@@ -101,7 +98,7 @@ const HeroSection = () => {
         </div>
 
         <p className="text-[10px] sm:text-xs text-gray-600">
-          Trusted & give us 4.9 rating star!
+          {data.trustIndicator.ratingText}
         </p>
       </div>
     </section>

@@ -1,12 +1,23 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 
-const TrademarkBanner = () => {
+interface TrademarkBannerProps {
+  data: {
+    backgroundImage: string;
+    icon: string;
+    title: string;
+    description: string;
+    buttonText: string;
+    buttonColor: string;
+  };
+}
+
+const TrademarkBanner: React.FC<TrademarkBannerProps> = ({ data }) => {
   return (
     <section className="relative w-full min-h-[200px] sm:min-h-[220px] flex items-center justify-center py-6 sm:py-10 lg:py-16 px-3 sm:px-6 lg:ml-16 lg:px-10 mb-8 sm:mb-12">
       {/* Background */}
       <img
-        src="/legal/trade-banner.jpg"
+        src={data.backgroundImage}
         alt="Background"
         className="absolute inset-0 w-full h-full object-cover rounded-lg sm:rounded-xl -z-2"
         style={{ minHeight: 200 }}
@@ -20,8 +31,8 @@ const TrademarkBanner = () => {
             <span className="text-4xl sm:text-5xl font-bold text-black">
               {" "}
               <img
-                src="/legal/c.png"
-                alt="Complaint Filing"
+                src={data.icon}
+                alt="Icon"
                 className="w-6 h-6 sm:w-8 sm:h-8"
               />
             </span>
@@ -34,15 +45,16 @@ const TrademarkBanner = () => {
         {/* Right: Info Card */}
         <div className="bg-[#ffffff] rounded-lg shadow-xl px-4 sm:px-6 lg:px-8 py-5 sm:py-7 lg:py-9 max-w-4xl w-full z-10">
           <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-black mb-2 sm:mb-3">
-            Trademark Registration
+            {data.title}
           </h2>
           <div className="h-0.5 w-12 sm:w-16 bg-[#00C5C5] rounded-full mb-3 sm:mb-4 lg:mb-5" />
           <p className="text-gray-700 text-sm sm:text-base lg:text-lg mb-4 sm:mb-5 lg:mb-6 leading-relaxed">
-            Our team ensures quick and accurate trademark registration so your
-            brand identity is protected from unauthorized use.
+            {data.description}
           </p>
-          <Button className="bg-yellow-400 text-white hover:bg-yellow-500 font-semibold px-5 sm:px-6 lg:px-7 py-2.5 sm:py-3 rounded-lg shadow transition-all text-sm sm:text-base">
-            Apply Now &rarr;
+          <Button
+            className={`${data.buttonColor} text-white hover:bg-yellow-500 font-semibold px-5 sm:px-6 lg:px-7 py-2.5 sm:py-3 rounded-lg shadow transition-all text-sm sm:text-base`}
+          >
+            {data.buttonText}
           </Button>
         </div>
       </div>

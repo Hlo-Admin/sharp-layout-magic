@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const TestimonialSection = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
+interface TestimonialSectionProps {
+  data: {
+    image: string;
+    logo: string;
+    companyName: string;
+    companyTagline: string;
+    testimonials: Array<{
+      quote: string;
+      name: string;
+      title: string;
+    }>;
+  };
+}
 
-  const testimonials = [
-    {
-      quote:
-        "We have been operating for over an providing top-notch services to our clients and build strong track record in the industry. We have been operating for over a decade providing top-notch We have been operating",
-      name: "Albert Flores",
-      title: "CEO",
-    },
-  ];
+const TestimonialSection: React.FC<TestimonialSectionProps> = ({ data }) => {
+  const [activeSlide, setActiveSlide] = useState(0);
 
   return (
     <section className="bg-white min-h-[600px] sm:min-h-[700px] lg:min-h-screen flex items-center py-10 sm:py-16 lg:py-20 px-3 sm:px-4 lg:px-6">
@@ -25,7 +30,7 @@ const TestimonialSection = () => {
 
               {/* Professional testimonials image */}
               <img
-                src="/legal/testimonials.jpg"
+                src={data.image}
                 alt="Professional Portrait"
                 className="absolute inset-0 w-full h-full object-cover rounded-2xl sm:rounded-3xl"
               />
@@ -33,16 +38,16 @@ const TestimonialSection = () => {
               {/* Logo Badge */}
               <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-3 z-10">
                 <img
-                  src="/footer-logo.png"
-                  alt="Go Kite Pro"
+                  src={data.logo}
+                  alt={data.companyName}
                   className="w-[26px] h-[33px] sm:w-[30px] sm:h-[38px] md:w-[38px] md:h-[48px]"
                 />
                 <div>
                   <div className="text-xs sm:text-sm md:text-base lg:text-lg font-extrabold tracking-wide leading-tight text-white">
-                    GO KITE PRO
+                    {data.companyName}
                   </div>
                   <div className="text-[0.6rem] sm:text-[0.65rem] md:text-xs font-semibold text-white/[0.7]">
-                    BUSINESS & BEYOND
+                    {data.companyTagline}
                   </div>
                 </div>
               </div>
@@ -59,7 +64,7 @@ const TestimonialSection = () => {
 
               {/* Testimonial Text */}
               <blockquote className="text-white text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8 lg:mb-10 font-light">
-                {testimonials[activeSlide].quote}
+                {data.testimonials[activeSlide].quote}
               </blockquote>
 
               {/* Divider Line */}
@@ -68,10 +73,10 @@ const TestimonialSection = () => {
               {/* Author Info */}
               <div className="mb-6 sm:mb-8">
                 <p className="text-white font-semibold text-lg sm:text-xl mb-1">
-                  {testimonials[activeSlide].name}
+                  {data.testimonials[activeSlide].name}
                 </p>
                 <p className="text-gray-400 text-xs sm:text-sm">
-                  {testimonials[activeSlide].title}
+                  {data.testimonials[activeSlide].title}
                 </p>
               </div>
 

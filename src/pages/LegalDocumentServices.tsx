@@ -10,55 +10,34 @@ import {
   TrademarkBanner,
   TestimonialSection,
 } from "@/components/LegalDocService";
+import legalDocumentData from "@/data/legaldocument";
 
 const LegalDocumentServices = () => {
-  const faqData = {
-    title: "Frequently Asked Questions",
-    subtitle: "Know about your query and popularly asked questions",
-    faqs: [
-      {
-        question: "How long does it take for a Legal Case?",
-        answer:
-          "The duration depends on the complexity of your case and the court's schedule. Simple cases may take 2-4 weeks, while complex matters could take several months. We provide regular updates throughout the process.",
-      },
-      {
-        question: "How can I get a personal Lawyer?",
-        answer:
-          "Our team of experienced lawyers is available for personal consultation and representation. Contact us to schedule a meeting with one of our qualified legal professionals who will assess your case and provide personalized guidance.",
-      },
-      {
-        question: "Where can I check my case Progress?",
-        answer:
-          "You can track your case progress through our online portal, receive regular email updates, or contact our support team directly. We ensure complete transparency throughout the legal process.",
-      },
-    ],
-  };
-
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <Navigation />
 
       {/* Hero Section */}
-      <HeroSection />
+      <HeroSection data={legalDocumentData.heroData} />
 
       {/* Three Service Cards Section */}
-      <ServiceCards />
+      <ServiceCards data={legalDocumentData.serviceCardsData} />
 
       {/* Legal Complaint Services Section */}
-      <LegalComplaintService />
+      <LegalComplaintService data={legalDocumentData.legalServicesData} />
 
       {/* Why Choose Us Section */}
-      <WhyChooseUs />
+      <WhyChooseUs data={legalDocumentData.whyChooseUsData} />
 
       {/* Trademark Registration Banner */}
-      <TrademarkBanner />
+      <TrademarkBanner data={legalDocumentData.trademarkBannerData} />
 
       {/* Testimonial Section */}
-      <TestimonialSection />
+      <TestimonialSection data={legalDocumentData.testimonialData} />
 
       {/* FAQ Section */}
-      <FAQ data={faqData} />
+      <FAQ data={legalDocumentData.faqData} />
 
       {/* Footer */}
       <Footer />
