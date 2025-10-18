@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Aboutus from "./pages/Aboutus";
 import Mainland from "./pages/Mainland";
-import Freezone from "./pages/Freezone";
+import Freezone from "./pages/FreeZone";
 import Offshore from "./pages/Offshore";
 import Smecompany from "./pages/SmeCompany";
 import Tarakhees from "./pages/Tarakhees";
