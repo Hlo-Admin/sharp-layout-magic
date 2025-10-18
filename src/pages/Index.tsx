@@ -1,29 +1,65 @@
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import WhatIsMainland from "@/components/WhatIsMainland";
-import Benefits from "@/components/Benefits";
-import LicenseTypes from "@/components/LicenseTypes";
-import CostSection from "@/components/CostSection";
-import Steps from "@/components/Steps";
-import Documents from "@/components/Documents";
-import WhyTrustUs from "@/components/WhyTrustUs";
-import FAQ from "@/components/FAQ";
-import Footer from "@/components/Footer";
+import LandingHero from "@/components/landing/LandingHero";
+import LandingInfoSection from "@/components/landing/LandingInfoSection";
+import ServicesSection from "@/components/landing/ServicesSection";
+import Services from "@/components/landing/Services";
+import WhyChooseSection from "@/components/landing/WhyChooseSection";
+import LogoMarquee from "@/components/landing/LogoMarquee";
+import QuickGuideSection from "@/components/landing/QuickGuideSection";
+import BusinessGuideSection from "@/components/landing/BusinessGuideSection";
+import ServicesGridSection from "@/components/landing/ServicesGridSection";
+import WorkingProcessSection from "@/components/landing/WorkingProcessSection";
+import ClientTestimonials from "@/components/landing/Testimonials";
+import BlogSection from "@/components/landing/BlogSection";
+import FAQ from "@/components/services/FAQ";
+import Footer from "@/components/common/Footer";
+import landingPageData from "../data/landingPage";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Navigation />
-      <Hero />
-      <WhatIsMainland />
-      <Benefits />
-      <LicenseTypes />
-      <hr />
-      <CostSection />
-      <Steps />
-      <Documents />
-      <WhyTrustUs />
-      <FAQ />
+      <LandingHero data={landingPageData} />
+      <LandingInfoSection data={landingPageData.infoSection} />
+      <ServicesSection data={landingPageData.servicesSection} />
+      <Services data={landingPageData.freeZonesData} />
+      <WhyChooseSection data={landingPageData.whyChooseSection} />
+      <LogoMarquee
+        title={landingPageData.logoSection.title}
+        logos={landingPageData.logoSection.logos}
+      />
+      <ServicesGridSection
+        services={landingPageData.servicesGridSection.services}
+        ctaButtons={landingPageData.servicesGridSection.ctaButtons}
+      />
+      <QuickGuideSection
+        title={landingPageData.quickGuideSection.title}
+        subtitle={landingPageData.quickGuideSection.subtitle}
+        description={landingPageData.quickGuideSection.description}
+        cards={landingPageData.quickGuideSection.cards}
+      />
+      <BusinessGuideSection
+        cards={landingPageData.businessGuideSection.cards}
+      />
+      <WorkingProcessSection
+        title={landingPageData.workingProcessSection.title}
+        subtitle={landingPageData.workingProcessSection.subtitle}
+        features={landingPageData.workingProcessSection.features}
+        cards={landingPageData.workingProcessSection.cards}
+        ctaButton={landingPageData.workingProcessSection.ctaButton}
+      />
+
+      <BlogSection
+        title={landingPageData.blogSection.title}
+        subtitle={landingPageData.blogSection.subtitle}
+        description={landingPageData.blogSection.description}
+        blogPosts={landingPageData.blogSection.blogPosts}
+      />
+      <ClientTestimonials
+        title={landingPageData.testimonialsSection.title}
+        featuredClients={landingPageData.testimonialsSection.featuredClients}
+        testimonials={landingPageData.testimonialsSection.testimonials}
+        customerStats={landingPageData.testimonialsSection.customerStats}
+      />
+      <FAQ data={landingPageData.faqSection} />
       <Footer />
     </div>
   );
