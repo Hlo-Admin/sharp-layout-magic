@@ -1,17 +1,18 @@
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const services = [
-  "Court Documents, Contracts and Agreements, Corporate Documents",
-  "Certified Translations",
-  "Legal Accuracy Guarantee",
-  "24hr Turnaround times",
-  "Timely Delivery",
-  "Secure File of Ladin",
-  "Support through till case is count",
-];
+interface LegalTranslationProps {
+  data: {
+    title: string;
+    subtitle: string;
+    buttonText: string;
+    image: string;
+    services: string[];
+  };
+}
 
-const LegalTranslation = () => {
+const LegalTranslation = ({ data }: LegalTranslationProps) => {
+  const { title, subtitle, buttonText, image, services } = data;
   return (
     <section className="py-16 bg-white">
       {/* Card Container with left margin, full width on right */}
@@ -21,7 +22,7 @@ const LegalTranslation = () => {
           <div>
             <div className="rounded-2xl overflow-hidden shadow-2xl h-[500px]">
               <img
-                src="/finance/legal-translation.jpg"
+                src={image}
                 alt="Professional consultation"
                 className="w-full h-full object-cover"
               />
@@ -31,11 +32,9 @@ const LegalTranslation = () => {
           {/* Right - Content */}
           <div className="space-y-6">
             <h2 className="text-2xl md:text-3xl font-bold text-black">
-              Legal Translation & Tax Filing
+              {title}
             </h2>
-            <p className="text-lg text-black font-semibold">
-              Court Documents, Contracts and Agreements, Corporate Documents
-            </p>
+            <p className="text-lg text-black font-semibold">{subtitle}</p>
 
             <ul className="space-y-4">
               {services.map((service, index) => (
@@ -49,7 +48,7 @@ const LegalTranslation = () => {
             </ul>
 
             <Button className="bg-[#487b99] hover:bg-teal-600 text-white font-semibold px-8 py-6 text-lg rounded-lg mt-8">
-              Book my free consultation <ArrowRight className="ml-2" />
+              {buttonText} <ArrowRight className="ml-2" />
             </Button>
           </div>
         </div>

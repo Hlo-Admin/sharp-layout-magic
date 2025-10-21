@@ -1,16 +1,18 @@
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const benefits = [
-  "Flexible accounts and timely filings",
-  "Minimize your tax liabilities",
-  "Understand applicable credits and deductions",
-  "Get help all year long",
-  "Minimize risk of audits",
-  "Protect your personal shareholdings",
-];
+interface BusinessTaxesProps {
+  data: {
+    title: string;
+    description: string;
+    buttonText: string;
+    image: string;
+    benefits: string[];
+  };
+}
 
-const BusinessTaxes = () => {
+const BusinessTaxes = ({ data }: BusinessTaxesProps) => {
+  const { title, description, buttonText, image, benefits } = data;
   return (
     <section className="py-16 bg-white">
       {/* Card Container with left margin, full width on right */}
@@ -20,7 +22,7 @@ const BusinessTaxes = () => {
           <div className="order-2 lg:order-1">
             <div className="rounded-2xl overflow-hidden shadow-2xl h-[500px]">
               <img
-                src="/finance/business-tax.jpg"
+                src={image}
                 alt="Modern building"
                 className="w-full h-full object-cover"
               />
@@ -30,11 +32,9 @@ const BusinessTaxes = () => {
           {/* Right - Content */}
           <div className="order-1 lg:order-2 space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold text-black">
-              Business taxes
+              {title}
             </h2>
-            <p className="text-lg text-black">
-              Let us handle the complex tax filings for your corporation
-            </p>
+            <p className="text-lg text-black">{description}</p>
 
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (
@@ -48,7 +48,7 @@ const BusinessTaxes = () => {
             </ul>
 
             <Button className="bg-[#487b99] hover:bg-teal-600 text-white font-semibold px-8 py-6 text-lg rounded-lg mt-8">
-              Book my free consultation <ArrowRight className="ml-2" />
+              {buttonText} <ArrowRight className="ml-2" />
             </Button>
           </div>
         </div>

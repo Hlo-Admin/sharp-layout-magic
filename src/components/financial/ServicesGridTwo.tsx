@@ -1,49 +1,18 @@
-const services = [
-  {
-    icon: "/finance/icon-1.png",
-    title: "Documentation Support",
-    description:
-      "Complete assistance with all business documentation, including drafting, reviewing, and filing of legal documents. We ensure accuracy and compliance with UAE regulations.",
-    image: "finance/service-1.jpg",
-  },
-  {
-    icon: "/finance/icon-2.png",
-    title: "Trademark/Copyright/Patent Protection",
-    description:
-      "Protect your intellectual property rights with our trademark registration and patent protection services. We safeguard your brand identity and innovations in the UAE market.",
-    image: "finance/service-2.jpg",
-  },
-  {
-    icon: "/finance/icon-3.png",
-    title: "Share Sale / Purchase Agreements",
-    description:
-      "Complete assistance in drafting or reviewing shareholder agreements, share transfer agreements, and ensuring compliance with corporate regulations and legal requirements.",
-    image: "finance/service-3.jpg",
-  },
-  {
-    icon: "/finance/icon-4.png",
-    title: "Startups",
-    description:
-      "Helping you get off fast. Comprehensive startup support including entity formation, licensing, legal documentation, and regulatory compliance to launch your business successfully.",
-    image: "finance/service-4.jpg",
-  },
-  {
-    icon: "/finance/icon-5.png",
-    title: "Government Drafting & Related",
-    description:
-      "Expert assistance with government-related documentation, including proposals, contracts, tender documents, and official correspondence. We ensure compliance with UAE government standards.",
-    image: "finance/service-5.jpg",
-  },
-  {
-    icon: "/finance/icon-6.png",
-    title: "Legal Translation Services",
-    description:
-      "Certified translation services in multiple languages including Arabic, English, Hindi, Urdu, and more. All translations are legally recognized and accepted by UAE authorities.",
-    image: "finance/service-6.jpg",
-  },
-];
+interface Service {
+  icon: string;
+  title: string;
+  description: string;
+  image: string;
+}
 
-const ServicesGridTwo = () => {
+interface ServicesGridTwoProps {
+  data: {
+    services: Service[];
+  };
+}
+
+const ServicesGridTwo = ({ data }: ServicesGridTwoProps) => {
+  const { services } = data;
   return (
     <section className="py-16 px-4 bg-gray-50">
       <div className="container mx-auto">

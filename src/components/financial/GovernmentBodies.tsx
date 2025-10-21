@@ -1,14 +1,18 @@
-const logos = [
-  { name: "Ministry of Interior", image: "/landingpage/logos/logo-1.png" },
-  { name: "Dubai Courts", image: "/landingpage/logos/logo-2.png" },
-  { name: "Abu Dhabi Judicial", image: "/landingpage/logos/logo-3.png" },
-  { name: "Dubai Municipality", image: "/landingpage/logos/logo-4.png" },
-  { name: "Ministry of Justice", image: "/landingpage/logos/logo-5.png" },
-  { name: "Federal Authority", image: "/landingpage/logos/logo-1.png" },
-  { name: "Dubai Economic", image: "/landingpage/logos/logo-2.png" },
-];
+interface Logo {
+  name: string;
+  image: string;
+}
 
-const GovernmentBodies = () => {
+interface GovernmentBodiesProps {
+  data: {
+    title: string;
+    subtitle: string;
+    logos: Logo[];
+  };
+}
+
+const GovernmentBodies = ({ data }: GovernmentBodiesProps) => {
+  const { title, subtitle, logos } = data;
   // Duplicate logos for seamless scrolling
   const duplicatedLogos = [...logos, ...logos];
 
@@ -20,9 +24,9 @@ const GovernmentBodies = () => {
           {/* Title Section - Left Side */}
           <div className="flex-shrink-0 lg:w-1/4">
             <h2 className="text-lg md:text-xl lg:text-2xl text-gray-800 leading-tight">
-              <span className="font-light">UAE Government Bodies</span>
+              <span className="font-light">{title}</span>
               <br />
-              <span className="font-bold">We work with</span>
+              <span className="font-bold">{subtitle}</span>
             </h2>
           </div>
 
