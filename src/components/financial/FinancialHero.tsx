@@ -1,6 +1,4 @@
-import {
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
@@ -50,11 +48,13 @@ const FinancialHero = () => {
           }}
         />
 
-        {/* Gradient Overlay - dark left to light right */}
+        {/* Gradient Overlay - white left (40%) to transparent right (60%) */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-transparent"
           style={{
             height: "calc(100% + 150px)", // Matches background height
+            background:
+              "linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 25%, rgba(255, 255, 255, 0.4) 40%, transparent 60%)",
           }}
         />
 
@@ -63,13 +63,13 @@ const FinancialHero = () => {
           <div className="py-20 min-h-[500px] flex items-center">
             <div className="grid lg:grid-cols-2 gap-8 items-center w-full">
               {/* Left Content */}
-              <div className="text-white space-y-6 max-w-xl">
+              <div className="text-gray-900 space-y-6 max-w-xl">
                 <h1 className="text-5xl md:text-6xl font-bold leading-tight">
                   Finance Innovate,
                   <br />
                   Create, Elevate
                 </h1>
-                <p className="text-xl text-gray-200">
+                <p className="text-xl text-gray-700">
                   Unlocking Possibilities, One Code at a Time
                 </p>
                 <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-6 text-lg rounded-lg flex items-center gap-2 w-fit">

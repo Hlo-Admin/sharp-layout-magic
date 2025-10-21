@@ -116,31 +116,6 @@ export const landingPageData = {
     buttonText: "Get Free Consultation",
     image: "/landingpage/why-choose.png",
   },
-  logoSection: {
-    title: "UAE Government Bodies We work with",
-    logos: [
-      {
-        src: "/landingpage/logos/logo-1.png",
-        alt: "Government Body 1",
-      },
-      {
-        src: "/landingpage/logos/logo-2.png",
-        alt: "Government Body 2",
-      },
-      {
-        src: "/landingpage/logos/logo-3.png",
-        alt: "Government Body 3",
-      },
-      {
-        src: "/landingpage/logos/logo-4.png",
-        alt: "Government Body 4",
-      },
-      {
-        src: "/landingpage/logos/logo-5.png",
-        alt: "Government Body 5",
-      },
-    ],
-  },
   quickGuideSection: {
     title: "Your quick guide to",
     subtitle: "Business Setup in UAE",
