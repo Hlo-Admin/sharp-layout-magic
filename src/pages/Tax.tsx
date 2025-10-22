@@ -1,12 +1,14 @@
 import Navigation from "@/components/common/Navigation";
 import Footer from "@/components/common/Footer";
 import TaxHero from "@/components/tax/TaxHero";
+import IndustriesSection from "@/components/tax/IndustriesSection";
 import BusinessTaxes from "@/components/financial/BusinessTaxes";
 import ProcessSteps from "@/components/financial/ProcessSteps";
 import LegalComplaintService from "@/components/tax/LegalComplaintService";
 import FAQ from "@/components/services/FAQ";
 import {
   heroData,
+  industriesSectionData,
   businessTaxesData,
   processStepsData,
   governmentBodiesData,
@@ -19,6 +21,7 @@ const Tax = () => {
     <div className="min-h-screen">
       <Navigation />
       <TaxHero data={heroData} />
+      <IndustriesSection data={industriesSectionData} />
       <LegalComplaintService data={taxLegalServicesData} />
       <BusinessTaxes data={businessTaxesData} />
       <ProcessSteps data={processStepsData} />

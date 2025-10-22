@@ -226,6 +226,42 @@ export const taxLegalServicesData = {
   },
 };
 
+export const industriesSectionData = {
+  tag: "Industries",
+  title: "Helping All Businesses Thrive No Matter the Size or Industry.",
+  description:
+    "Our goal is to serve everyone who needs help with their financial literacy.",
+  buttonText: "Learn more",
+  introText:
+    "Adviso is here for businesses of all sizes, from individuals to large companies. No matter what industry you're in, we'll help you save money and stay stress-free with expert tax solutions.",
+  statistics: [
+    {
+      value: "500+",
+      label: "Clients served",
+    },
+    {
+      value: "$10M",
+      label: "Saved for our clients",
+    },
+    {
+      value: "15+",
+      label: "Years of experience",
+    },
+    {
+      value: "30",
+      label: "Financial experts",
+    },
+    {
+      value: "98%",
+      label: "Client satisfaction",
+    },
+    {
+      value: "500+",
+      label: "Increased savings",
+    },
+  ],
+};
+
 export const faqData = {
   title: "Frequently Asked Questions",
   subtitle: "Know about your query and inquire related questions",
@@ -254,5 +290,6 @@ export default {
   servicesGridTwoData,
   processStepsData,
   taxLegalServicesData,
+  industriesSectionData,
   faqData,
 };
