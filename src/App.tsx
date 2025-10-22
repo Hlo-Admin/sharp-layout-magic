@@ -16,6 +16,7 @@ import FinancialAdvisory from "./pages/FinancialAdvisory";
 import Tax from "./pages/Tax";
 import BrandRegister from "./pages/BrandRegister";
 import DocumentLegalService from "./pages/DocumentLegalService";
+import VisaImmigration from "./pages/VisaImmigration";
 import NotFound from "./pages/NotFound";
 
 import ZohoPopup from "./components/common/ZohoCrm";
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/tax" element={<Tax />} />
           <Route path="/brand-register" element={<BrandRegister />} />
           <Route path="/document-legal-service" element={<DocumentLegalService />} />
+          <Route path="/visa-immigration" element={<VisaImmigration />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
