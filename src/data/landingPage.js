@@ -1,4 +1,4 @@
-export const landingPageData = {
+const landingPageData = {
   title: "Setup Business in UAE",
   subtitle: "Your Quick Guide To Business Setup",
   backgroundImage: "/landingpage/banner.jpg", // Dubai skyline image
