@@ -116,6 +116,16 @@ const landingPageData = {
     buttonText: "Get Free Consultation",
     image: "/landingpage/why-choose.png",
   },
+  logoSection: {
+    title: "Trusted by Leading Businesses",
+    logos: [
+      "/landingpage/logos/logo-1.png",
+      "/landingpage/logos/logo-2.png",
+      "/landingpage/logos/logo-3.png",
+      "/landingpage/logos/logo-4.png",
+      "/landingpage/logos/logo-5.png",
+    ],
+  },
   quickGuideSection: {
     title: "Your quick guide to",
     subtitle: "Business Setup in UAE",
