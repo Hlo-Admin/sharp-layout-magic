@@ -22,19 +22,22 @@ type Props = {
   data?: FAQData;
 };
 
-const FAQ = ({ data }: Props) => (
-  <section className="flex items-center justify-center bg-[#e1eff2] py-10 px-2">
-    <div className="w-full max-w-5xl bg-white rounded-[40px] shadow-xl p-8 flex flex-col items-center">
-      <div className="w-32 h-16 flex items-center justify-center rounded-full bg-[#ffffff] mb-4 border border-[#edf2f7]">
-        <span className="text-4xl font-semibold text-black">?</span>
-      </div>
-      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 text-center">
-        {data.title}
-      </h2>
-      <p className="text-gray-500 mb-8 text-center">{data.subtitle}</p>
-      <div className="w-4/5 mb-6">
-        <Accordion type="single" collapsible className="space-y-4">
-          {data.faqs.map((faq, idx) => (
+const FAQ = ({ data }: Props) => {
+  if (!data) return null;
+  
+  return (
+    <section className="flex items-center justify-center bg-[#e1eff2] py-10 px-2">
+      <div className="w-full max-w-5xl bg-white rounded-[40px] shadow-xl p-8 flex flex-col items-center">
+        <div className="w-32 h-16 flex items-center justify-center rounded-full bg-[#ffffff] mb-4 border border-[#edf2f7]">
+          <span className="text-4xl font-semibold text-black">?</span>
+        </div>
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 text-center">
+          {data.title}
+        </h2>
+        <p className="text-gray-500 mb-8 text-center">{data.subtitle}</p>
+        <div className="w-4/5 mb-6">
+          <Accordion type="single" collapsible className="space-y-4">
+            {data.faqs.map((faq, idx) => (
             <AccordionItem
               key={idx}
               value={`item-${idx}`}
@@ -59,6 +62,7 @@ const FAQ = ({ data }: Props) => (
       </Button>
     </div>
   </section>
-);
+  );
+};
 
 export default FAQ;
