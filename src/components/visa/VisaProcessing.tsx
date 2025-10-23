@@ -1,74 +1,108 @@
-import { Check } from "lucide-react";
+import React from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 interface VisaProcessingProps {
   data: {
+    sectionIcon: string;
+    sectionLabel: string;
     title: string;
-    subtitle: string;
-    images: string[];
-    features: string[];
-    stats: { label: string; value: string }[];
+    titleLine2: string;
+    categories: Array<{
+      image: string;
+      title: string;
+      overlay: boolean;
+      description?: string;
+      hasButton?: boolean;
+    }>;
   };
 }
 
-const VisaProcessing = ({ data }: VisaProcessingProps) => {
-  const { title, subtitle, images, features, stats } = data;
-
+const VisaProcessing: React.FC<VisaProcessingProps> = ({ data }) => {
   return (
-    <section className="bg-[hsl(216,24%,12%)] py-20 px-4">
-      <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">{title}</h2>
-          <p className="text-white/70 text-lg">{subtitle}</p>
-        </div>
-
-        <div className="grid lg:grid-cols-12 gap-6 items-center">
-          {/* Image Grid */}
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className="aspect-[3/4] rounded-xl overflow-hidden shadow-xl hover:scale-105 transition-transform duration-300"
-              >
-                <img
-                  src={image}
-                  alt={`Visa processing ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
+    <div className="bg-black min-h-screen py-8 sm:py-12 lg:py-16 px-3 sm:px-4 lg:px-8 ml-0 sm:ml-2 lg:ml-4 rounded-lg">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="mb-12">
+          <div className="flex items-center gap-2 text-gray-400 text-sm mb-4">
+            <img src={data.sectionIcon} alt="Golden Visa" className="w-6 h-6" />
+            <span>{data.sectionLabel}</span>
           </div>
-
-          {/* Yellow Feature Card */}
-          <div className="lg:col-span-4 bg-[hsl(var(--golden))] rounded-2xl p-8 shadow-xl">
-            <h3 className="text-2xl font-bold text-[hsl(var(--golden-foreground))] mb-6">
-              Our Services
-            </h3>
-            <ul className="space-y-4 mb-8">
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[hsl(var(--golden-foreground))] flex-shrink-0 mt-0.5" />
-                  <span className="text-[hsl(var(--golden-foreground))] font-medium">{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl font-bold text-[hsl(var(--golden-foreground))]">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-[hsl(var(--golden-foreground))]/80">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
+          <div className="flex items-start justify-between">
+            <h1 className="text-white text-4xl md:text-5xl font-bold leading-tight">
+              {data.title}
+              <br />
+              {data.titleLine2}
+            </h1>
+            <div className="flex gap-3">
+              <button className="w-12 h-12 rounded-full bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center transition-colors">
+                <ArrowLeft className="w-5 h-5 text-white" />
+              </button>
+              <button className="w-12 h-12 rounded-full bg-yellow-400 hover:bg-yellow-500 flex items-center justify-center transition-colors">
+                <ArrowRight className="w-5 h-5 text-black" />
+              </button>
             </div>
           </div>
         </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-4">
+          {data.categories.map((category, index) => (
+            <div
+              key={index}
+              className={`relative h-[400px] rounded-2xl overflow-hidden group cursor-pointer ${
+                index === 1 ? "xl:col-span-2" : ""
+              }`}
+            >
+              {/* Background Image */}
+              <img
+                src={category.image}
+                alt={category.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+              {/* Yellow Overlay Card for Real Estate */}
+              {category.overlay && (
+                <div className="absolute inset-x-4 bottom-4 bg-yellow-400 rounded-xl p-6 z-10">
+                  <h3 className="text-black font-bold text-lg mb-2">
+                    {category.title}
+                  </h3>
+                  <p className="text-black text-sm mb-4">
+                    {category.description}
+                  </p>
+                  <button className="flex items-center gap-2 text-black font-semibold text-sm hover:gap-3 transition-all">
+                    <span>Apply Now</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              )}
+
+              {/* Colored Overlay for specific cards */}
+              {category && !category.overlay && (
+                <div
+                  className={`absolute inset-x-4 bottom-4 rounded-xl p-6 z-10`}
+                >
+                  <h3 className="text-white font-bold text-lg">
+                    {category.title}
+                  </h3>
+                </div>
+              )}
+
+              {/* Default Title Overlay */}
+              {!category.overlay && !category && (
+                <div className="absolute inset-x-4 bottom-4 z-10">
+                  <h3 className="text-white font-bold text-lg">
+                    {category.title}
+                  </h3>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -1,5 +1,20 @@
 import { Button } from "@/components/ui/button";
-import { Plane, Briefcase, GraduationCap, ArrowRight, BadgeCheck } from "lucide-react";
+
+const ArrowRightIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M5 12h14" />
+    <path d="m12 5 7 7-7 7" />
+  </svg>
+);
 
 interface VisaCard {
   icon: string;
@@ -14,64 +29,115 @@ interface VisaHeroProps {
     subtitle: string;
     buttonText: string;
     visaCards: VisaCard[];
+    socialIcons: Array<{
+      icon: string;
+      href: string;
+      alt: string;
+      target?: string;
+      rel?: string;
+    }>;
   };
 }
 
-const iconMap: Record<string, any> = {
-  plane: Plane,
-  briefcase: Briefcase,
-  graduationCap: GraduationCap,
+// Floating Social Icons Component
+const FloatingSocialIcons = ({ icons }: { icons: any[] }) => {
+  return (
+    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
+      {icons.map((icon, index) => (
+        <a
+          key={index}
+          href={icon.href}
+          target={icon.target}
+          rel={icon.rel}
+          className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300"
+        >
+          <img
+            src={icon.icon}
+            alt={icon.alt}
+            className="w-6 h-6 object-contain"
+          />
+        </a>
+      ))}
+    </div>
+  );
 };
 
 const VisaHero = ({ data }: VisaHeroProps) => {
-  const { title, subtitle, buttonText, visaCards } = data;
+  const { title, subtitle, buttonText, visaCards, socialIcons } = data;
 
   return (
-    <section className="relative min-h-[90vh] bg-gradient-to-br from-orange-300 via-orange-200 to-blue-300 overflow-hidden">
-      {/* Decorative Badge */}
-      <div className="absolute top-32 right-20 animate-float">
-        <div className="w-20 h-20 bg-[hsl(var(--golden))] rounded-full flex items-center justify-center shadow-lg">
-          <BadgeCheck className="w-12 h-12 text-white" />
+    <section className="relative overflow-hidden bg-white min-h-screen">
+      {/* Floating Social Icons */}
+      <FloatingSocialIcons icons={socialIcons} />
+
+      {/* Background Banner Container */}
+      <div className="relative">
+        {/* Background with Gradient - Simulating the image */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `linear-gradient(135deg, rgba(251, 146, 60, 0.7) 0%, rgba(251, 191, 36, 0.5) 30%, rgba(96, 165, 250, 0.6) 70%, rgba(147, 197, 253, 0.7) 100%)`,
+            height: "calc(100% + 120px)",
+          }}
+        />
+
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          {/* Hero Content */}
+          <div className="pt-24 pb-32 min-h-[450px] flex items-center">
+            <div className="max-w-2xl">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2 leading-tight">
+                {title}
+              </h1>
+              <p className="text-lg sm:text-xl md:text-2xl text-white mb-8">
+                {subtitle}
+              </p>
+              <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-6 text-base rounded-md shadow-lg hover:shadow-xl transition-all duration-300">
+                {buttonText} <ArrowRightIcon className="ml-2 w-5 h-5 inline" />
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 pt-32 pb-20">
-        {/* Hero Content */}
-        <div className="max-w-2xl mb-16">
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-4">
-            {title}
-          </h1>
-          <p className="text-xl md:text-2xl text-foreground/80 mb-8">
-            {subtitle}
-          </p>
-          <Button
-            size="lg"
-            className="bg-[hsl(var(--golden))] hover:bg-[hsl(var(--golden))]/90 text-[hsl(var(--golden-foreground))] font-semibold px-8 py-6 text-lg rounded-lg shadow-lg"
-          >
-            {buttonText} <ArrowRight className="ml-2" />
-          </Button>
-        </div>
-
-        {/* Visa Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+      {/* Visa Cards Grid */}
+      <div className="container relative mx-auto px-4 sm:px-6 lg:px-8 max-w-8xl -mt-20 pb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {visaCards.map((card, index) => {
-            const Icon = iconMap[card.icon];
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="relative bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group border border-gray-100 min-h-[240px]"
               >
-                <div className="w-12 h-12 bg-[hsl(var(--golden))]/20 rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-[hsl(var(--golden-foreground))]" />
+                {/* Card Content */}
+                <div className="relative z-10 h-full flex flex-col">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 pr-20">
+                    {card.title}
+                  </h3>
+                  <div className="flex items-center mb-4">
+                    <div className="w-2 h-2 bg-[#487b99] rounded-full"></div>
+                    <div className="flex-1 h-0.5 bg-[#487b99]"></div>
+                    <div className="w-2 h-2 bg-[#487b99] rounded-full mr-2"></div>
+                  </div>
+                  <p className="text-gray-600 mb-6 text-base leading-relaxed pr-20 flex-grow">
+                    {card.description}
+                  </p>
+                  <a
+                    href={card.link}
+                    className="inline-flex items-center w-fit text-sm font-semibold text-gray-900 border border-yellow-500 px-3 py-1.5 rounded hover:text-yellow-600 transition-colors duration-300 mt-auto"
+                  >
+                    Get {card.title.split(" ")[0]} Visa
+                    <ArrowRightIcon className="ml-2 w-4 h-4 inline" />
+                  </a>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">{card.title}</h3>
-                <p className="text-muted-foreground mb-4 text-sm">{card.description}</p>
-                <a
-                  href={card.link}
-                  className="text-[hsl(var(--golden-foreground))] font-semibold text-sm hover:underline inline-flex items-center"
-                >
-                  Learn More <ArrowRight className="ml-1 w-4 h-4" />
-                </a>
+
+                {/* Icon in Bottom Right Corner */}
+                <div className="absolute bottom-6 right-6 w-16 h-16 flex items-center justify-center">
+                  <img
+                    src={card.icon}
+                    alt={card.title}
+                    className="w-16 h-16 object-contain"
+                  />
+                </div>
               </div>
             );
           })}

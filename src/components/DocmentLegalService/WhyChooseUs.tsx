@@ -52,9 +52,10 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ data }) => {
                   {item.title}
                 </h3>
                 <div className="flex items-center mb-4">
-                  <div className="w-2 h-2 bg-[#487b99] rounded-full mr-2"></div>
-                  <div className="flex-1 h-0.5 bg-[#487b99]"></div>
-                </div>
+                    <div className="w-2 h-2 bg-[#487b99] rounded-full"></div>
+                    <div className="flex-1 h-0.5 bg-[#487b99]"></div>
+                    <div className="w-2 h-2 bg-[#487b99] rounded-full mr-2"></div>
+                  </div>
                 <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                   {item.description}
                 </p>
