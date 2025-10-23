@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Aboutus from "./pages/Aboutus";
 import Mainland from "./pages/Mainland";
-import Freezone from "./pages/FreeZone";
+import Freezone from "./pages/Freezone";
 import Offshore from "./pages/Offshore";
 import Smecompany from "./pages/SmeCompany";
 import Tarakhees from "./pages/Tarakhees";
@@ -17,6 +17,7 @@ import Tax from "./pages/Tax";
 import BrandRegister from "./pages/BrandRegister";
 import DocumentLegalService from "./pages/DocumentLegalService";
 import VisaImmigration from "./pages/VisaImmigration";
+import Page from "./pages/Page";
 import NotFound from "./pages/NotFound";
 
 import ZohoPopup from "./components/common/ZohoCrm";
@@ -37,12 +38,19 @@ const App = () => (
           <Route path="/offshore" element={<Offshore />} />
           <Route path="/smecompany" element={<Smecompany />} />
           <Route path="/tarakhees" element={<Tarakhees />} />
-          <Route path="/legal-document-services" element={<LegalDocumentServices />} />
+          <Route
+            path="/legal-document-services"
+            element={<LegalDocumentServices />}
+          />
           <Route path="/financial-advisory" element={<FinancialAdvisory />} />
           <Route path="/tax" element={<Tax />} />
           <Route path="/brand-register" element={<BrandRegister />} />
-          <Route path="/document-legal-service" element={<DocumentLegalService />} />
+          <Route
+            path="/document-legal-service"
+            element={<DocumentLegalService />}
+          />
           <Route path="/visa-immigration" element={<VisaImmigration />} />
+          <Route path="/1" element={<Page />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

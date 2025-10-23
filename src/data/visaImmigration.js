@@ -269,7 +269,7 @@ const visaImmigrationData = {
     subtitle: "Uncovering Hidden Gems",
     destinations: [
       {
-        image: "/public/landingpage/blog-1.jpg",
+        image: "/landingpage/blog-1.jpg",
         location: "Dubai",
         price: "$1,299",
         rating: 4.9,
@@ -278,7 +278,7 @@ const visaImmigrationData = {
           "Discover the rich history and cultural landmarks of the UAE while establishing your new home.",
       },
       {
-        image: "/public/landingpage/blog-2.jpg",
+        image: "/landingpage/blog-2.jpg",
         location: "Abu Dhabi",
         price: "$1,499",
         rating: 4.8,
@@ -287,7 +287,7 @@ const visaImmigrationData = {
           "Join the thriving business community in the heart of UAE's financial district.",
       },
       {
-        image: "/public/landingpage/blog-3.jpg",
+        image: "/landingpage/blog-3.jpg",
         location: "Sharjah",
         price: "$999",
         rating: 4.7,
