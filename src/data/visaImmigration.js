@@ -135,7 +135,7 @@ const visaImmigrationData = {
   keyAspects: {
     title: "Key Aspects of Our UAE Golden Visa Services",
     subtitle: "Comprehensive visa solutions tailored to your needs",
-    backgroundImage: "/public/tax/business-tax.jpg",
+    backgroundImage: "/visa/golden-visa.png",
     aspects: [
       "Long-term residency for investors and entrepreneurs",
       "Family sponsorship included",
@@ -153,52 +153,45 @@ const visaImmigrationData = {
   },
 
   applicationProcess: {
-    title: "Golden Visa Application Process in UAE",
-    subtitle: "Simple Steps to Success",
+    title: "Golden Visa Application Process in Dubai",
+    subtitle: "PROCESS OVERVIEW",
     steps: [
       {
-        icon: "clipboardCheck",
+        number: "01",
         title: "Free Consultation & Evaluation",
         description:
-          "Initial assessment of your eligibility and requirements for the golden visa program.",
+          "We assess your eligibility and recommend the appropriate Golden Visa category.",
       },
       {
-        icon: "fileText",
+        number: "02",
         title: "Document Collection & Review",
-        description:
-          "Comprehensive checklist and assistance in gathering all necessary documents.",
+        description: "Our experts gather and verify required documents.",
       },
       {
-        icon: "refreshCw",
+        number: "03",
         title: "Application Processing",
         description:
-          "Submission and tracking of your application through government channels.",
+          "We handle all submissions, coordination, and follow-ups with government authorities.",
       },
       {
-        icon: "activity",
-        title: "Medical & Biometric Processing",
+        number: "04",
+        title: "Medical & Emirates ID Processing",
         description:
-          "Coordination of medical examinations and biometric data collection.",
+          "Assistance with medical tests, biometrics, and ID issuance.",
       },
       {
-        icon: "checkCircle",
+        number: "05",
         title: "Visa Issuance & Stamping",
         description:
-          "Final approval and passport stamping with your new golden visa.",
-      },
-      {
-        icon: "headphones",
-        title: "Post-Visa Services",
-        description:
-          "Ongoing support for visa renewal and family sponsorship needs.",
+          "Receive your long-term Golden Visa and residence stamping.",
       },
     ],
   },
 
   whyChooseUs: {
-    title: "Why Choose Go Kite PRO Business Setup Services?",
+    title: "Why Choose\nGo Kite PRO Business Setup Services?",
     subtitle: "Your Trusted Partner",
-    image: "/public/aboutus/founder.jpg",
+    image: "/visa/why-choose.png",
     benefits: [
       "Over 20 years of experience in UAE immigration services",
       "Team of certified immigration consultants and legal experts",
@@ -248,52 +241,45 @@ const visaImmigrationData = {
   },
 
   servicesOverview: {
-    title: "Why to Use Golden Visa Services in UAE?",
+    title: "Why to Use Golden Visa Services in Dubai?",
     description:
-      "The UAE Golden Visa program offers long-term residency to investors, entrepreneurs, specialized talents, and researchers. Our comprehensive services ensure a smooth application process with expert guidance every step of the way.",
+      "The UAE Golden Visa is a wise step for investors, entrepreneurs, specialized talents, and researchers seeking long-term residency in the UAE. Our comprehensive services ensure a smooth application process with expert guidance every step of the way.",
     features: [
-      "Strategic location connecting East and West",
-      "Tax-free income and capital gains",
-      "World-class infrastructure and facilities",
-      "Diverse multicultural environment",
-      "Access to premium education and healthcare",
-      "Business-friendly regulations",
-      "Safe and secure living environment",
-      "Modern lifestyle with traditional values",
+      "More speed and proper documentation.",
+      "Less risk of rejection of an application.",
+      "Professional advice in altering immigration regulations.",
+      "Complete assistance in evaluation through post-approval processes.",
     ],
-    buttonText: "Contact Us Now",
+    buttonText: "Contact us now for a free consultation",
   },
 
   destinations: {
-    title: "Journeys of Discovery",
-    subtitle: "Uncovering Hidden Gems",
+    title: "Journeys of Discovery Uncovering Hidden",
+    subtitle: "Gems",
     destinations: [
       {
         image: "/landingpage/blog-1.jpg",
-        location: "Dubai",
-        price: "$1,299",
-        rating: 4.9,
-        title: "Cultural & Heritage Experience",
+        date: "October 19, 2022",
+        author: "admin",
+        title: "World of Wander Discovering Diverse Landscapes",
         description:
-          "Discover the rich history and cultural landmarks of the UAE while establishing your new home.",
+          "Lorem Ipsum is simply dummy text the printing and typese Lorem Ipsum",
       },
       {
         image: "/landingpage/blog-2.jpg",
-        location: "Abu Dhabi",
-        price: "$1,499",
-        rating: 4.8,
-        title: "Business & Finance Hub",
+        date: "October 19, 2022",
+        author: "admin",
+        title: "Search of Serenity Tranquil Retreats and Escapes",
         description:
-          "Join the thriving business community in the heart of UAE's financial district.",
+          "Lorem Ipsum is simply dummy text the printing and typese Lorem Ipsum",
       },
       {
         image: "/landingpage/blog-3.jpg",
-        location: "Sharjah",
-        price: "$999",
-        rating: 4.7,
-        title: "Coastal Lifestyle Living",
+        date: "October 19, 2022",
+        author: "admin",
+        title: "Road to Adventure Embarking on New Horizons",
         description:
-          "Experience luxury coastal living with world-class amenities and stunning views.",
+          "Lorem Ipsum is simply dummy text the printing and typese Lorem Ipsum",
       },
     ],
   },

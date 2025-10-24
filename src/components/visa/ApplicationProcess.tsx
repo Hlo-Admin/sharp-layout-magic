@@ -1,7 +1,7 @@
-import { ClipboardCheck, FileText, RefreshCw, Activity, CheckCircle, Headphones } from "lucide-react";
+import { FileText } from "lucide-react";
 
 interface ProcessStep {
-  icon: string;
+  number: string;
   title: string;
   description: string;
 }
@@ -14,42 +14,49 @@ interface ApplicationProcessProps {
   };
 }
 
-const iconMap: Record<string, any> = {
-  clipboardCheck: ClipboardCheck,
-  fileText: FileText,
-  refreshCw: RefreshCw,
-  activity: Activity,
-  checkCircle: CheckCircle,
-  headphones: Headphones,
-};
-
 const ApplicationProcess = ({ data }: ApplicationProcessProps) => {
   const { title, subtitle, steps } = data;
 
   return (
-    <section className="py-20 px-4 bg-white">
-      <div className="container mx-auto">
+    <section className="py-20 px-4 bg-gray-50 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-32 h-32 bg-yellow-200/30 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-40 h-40 bg-yellow-200/30 rounded-full blur-3xl"></div>
+
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
-          <p className="text-[hsl(var(--golden-foreground))] font-semibold mb-2">{subtitle}</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">{title}</h2>
+          <div className="flex items-center justify-center mb-2">
+            <FileText className="w-5 h-5 text-gray-400 mr-2" />
+            <p className="text-gray-600 font-semibold text-sm uppercase tracking-wide">
+              {subtitle}
+            </p>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-black">{title}</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {steps.map((step, index) => {
-            const Icon = iconMap[step.icon];
-            return (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300"
+            >
               <div
-                key={index}
-                className="bg-white border-2 border-border rounded-2xl p-6 hover:border-[hsl(var(--golden))] hover:shadow-lg transition-all duration-300"
+                className="text-6xl font-bold text-transparent bg-clip-text  mb-6"
+                style={{
+                  WebkitTextStroke: "2px #F0D9A6",
+                  WebkitTextFillColor: "transparent",
+                }}
               >
-                <div className="w-14 h-14 bg-[hsl(var(--golden))]/10 rounded-xl flex items-center justify-center mb-4">
-                  <Icon className="w-7 h-7 text-[hsl(var(--golden-foreground))]" />
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{step.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                {step.number}
               </div>
-            );
-          })}
+              <h3 className="text-xl font-bold text-black mb-4">
+                {step.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface ServicesOverviewProps {
   data: {
@@ -15,29 +15,44 @@ const ServicesOverview = ({ data }: ServicesOverviewProps) => {
 
   return (
     <section className="py-20 px-4 bg-white">
-      <div className="container mx-auto max-w-4xl text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-          {title}
-        </h2>
-        <p className="text-muted-foreground text-lg mb-12 leading-relaxed">
-          {description}
-        </p>
+      <div className="container mx-auto max-w-7xl">
+        <div className="max-w-3xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 text-left">
+            {title}
+          </h2>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-12 text-left">
-          {features.map((feature, index) => (
-            <div key={index} className="flex items-start gap-3">
-              <Check className="w-5 h-5 text-[hsl(var(--golden-foreground))] flex-shrink-0 mt-1" />
-              <span className="text-foreground">{feature}</span>
-            </div>
-          ))}
+          <p className="text-gray-700 text-lg mb-8 leading-relaxed text-left">
+            {description}
+          </p>
+
+          <ul className="mb-8 text-left">
+            {features.map((feature, index) => (
+              <li key={index} className="flex items-start gap-3 mb-3">
+                <div className="w-2 h-2 bg-black rounded-full flex-shrink-0 mt-3"></div>
+                <span className="text-gray-700 text-lg leading-relaxed">
+                  {feature}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <p className="text-gray-700 text-lg mb-4 leading-relaxed text-left">
+            Start your Dubai Golden Visa application today with GoKite Business
+            Setup Services.
+          </p>
+
+          <p className="text-gray-700 text-lg mb-8 leading-relaxed text-left">
+            Our expert consultants will guide you through every step, ensuring a
+            quick and hassle-free approval.
+          </p>
+
+          <Button
+            size="lg"
+            className="bg-black hover:bg-black/90 text-white font-normal px-8 py-4 text-lg rounded-lg shadow-lg flex items-center gap-2"
+          >
+            {buttonText} <ArrowRight className="w-4 h-4" />
+          </Button>
         </div>
-
-        <Button
-          size="lg"
-          className="bg-[hsl(216,24%,12%)] hover:bg-[hsl(216,24%,12%)]/90 text-white font-semibold px-8 py-6 text-lg rounded-lg shadow-lg"
-        >
-          {buttonText} <ArrowRight className="ml-2" />
-        </Button>
       </div>
     </section>
   );

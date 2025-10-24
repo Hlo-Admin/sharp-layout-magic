@@ -1,6 +1,5 @@
 import React from "react";
 import { Check } from "lucide-react";
-import visaImmigrationData from "../../data/visaImmigration";
 
 /**
  * Add Tailwind to project. Place the CSS below into your global stylesheet (globals.css).
@@ -10,8 +9,8 @@ import visaImmigrationData from "../../data/visaImmigration";
  * or remote URL if needed.
  */
 
-const GoldenVisaSection = () => {
-  const { journeySteps } = visaImmigrationData;
+const JourneySteps = ({ data }) => {
+  const journeySteps = data;
   return (
     <section className="py-16 px-4 bg-white">
       <div className="container mx-auto max-w-7xl">
@@ -157,4 +156,4 @@ const GoldenVisaSection = () => {
   );
 };
 
-export default GoldenVisaSection;
+export default JourneySteps;

@@ -1,10 +1,15 @@
-import { MapPin, Star } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Calendar,
+  User,
+  ArrowRight,
+} from "lucide-react";
 
-interface Destination {
+interface BlogCard {
   image: string;
-  location: string;
-  price: string;
-  rating: number;
+  date: string;
+  author: string;
   title: string;
   description: string;
 }
@@ -13,7 +18,7 @@ interface DestinationsProps {
   data: {
     title: string;
     subtitle: string;
-    destinations: Destination[];
+    destinations: BlogCard[];
   };
 }
 
@@ -25,49 +30,61 @@ const Destinations = ({ data }: DestinationsProps) => {
       <div className="container mx-auto">
         <div className="flex items-center justify-between mb-12">
           <div>
+            <p className="text-sm font-medium text-[#3B82F6] uppercase tracking-wider mb-2">
+              RECENT BLOGS
+            </p>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground">
               {title}
             </h2>
-            <p className="text-muted-foreground text-lg mt-2">{subtitle}</p>
+            {/* <p className="text-muted-foreground text-lg mt-2">{subtitle}</p> */}
           </div>
-          <div className="w-16 h-16 bg-[hsl(var(--golden))] rounded-full flex items-center justify-center">
-            <MapPin className="w-8 h-8 text-white" />
+          <div className="flex items-center gap-3">
+            <button className="w-12 h-12 bg-[#FEF3C7] rounded-full flex items-center justify-center hover:bg-[#FDE68A] transition-colors">
+              <ChevronLeft className="w-5 h-5 text-black" />
+            </button>
+            <button className="w-12 h-12 bg-[#FCD34D] rounded-full flex items-center justify-center hover:bg-[#F59E0B] transition-colors">
+              <ChevronRight className="w-5 h-5 text-black" />
+            </button>
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {destinations.map((destination, index) => (
+          {destinations.map((blog, index) => (
             <div
               key={index}
               className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="relative h-64">
                 <img
-                  src={destination.image}
-                  alt={destination.title}
-                  className="w-full h-full object-cover"
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-full h-full object-cover rounded-t-2xl"
                 />
-                <div className="absolute top-4 left-4 bg-white px-3 py-1 rounded-full flex items-center gap-1">
-                  <MapPin className="w-4 h-4 text-[hsl(var(--golden-foreground))]" />
-                  <span className="text-sm font-semibold">{destination.location}</span>
-                </div>
               </div>
               <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-2xl font-bold text-[hsl(var(--golden-foreground))]">
-                    {destination.price}
-                  </span>
+                <div className="flex items-center justify-between mb-4 text-sm text-gray-500">
                   <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4 fill-[hsl(var(--golden))] text-[hsl(var(--golden))]" />
-                    <span className="font-semibold">{destination.rating}</span>
+                    <Calendar className="w-4 h-4" />
+                    <span>{blog.date}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <User className="w-4 h-4" />
+                    <span>& By {blog.author}</span>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">
-                  {destination.title}
+                <h3 className="text-xl font-bold text-[#3790ad] mb-3 leading-tight">
+                  {blog.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {destination.description}
+                <p className="text-gray-500 text-sm leading-relaxed mb-4">
+                  {blog.description}
                 </p>
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-2 text-[#3790ad] font-medium hover:text-[#059669] transition-colors"
+                >
+                  Read More
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
             </div>
           ))}

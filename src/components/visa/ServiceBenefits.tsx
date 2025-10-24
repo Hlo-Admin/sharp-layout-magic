@@ -19,7 +19,7 @@ const ServiceBenefits = ({ data }: ServiceBenefitsProps) => {
         <div className="grid md:grid-cols-3 gap-12">
           {benefits.map((benefit, index) => {
             return (
-              <div key={index} className="text-center">
+              <div key={index} className="text-left">
                 <div className="inline-flex items-center justify-center w-24 h-24 bg-[hsl(var(--golden))] rounded-full mb-6 shadow-lg">
                   <img
                     src={benefit.icon}

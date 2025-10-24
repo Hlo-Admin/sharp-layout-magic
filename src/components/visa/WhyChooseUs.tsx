@@ -14,11 +14,13 @@ const WhyChooseUs = ({ data }: WhyChooseUsProps) => {
 
   return (
     <section className="py-20 px-4 bg-[hsl(var(--section-alt))]">
-      <div className="container mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto max-w-7xl">
+        <div className="grid lg:grid-cols-3 gap-60 items-center">
           {/* Content Side */}
-          <div>
-            <p className="text-[hsl(var(--golden-foreground))] font-semibold mb-2">{subtitle}</p>
+          <div className="order-1 lg:col-span-2">
+            {/* <p className="text-[hsl(var(--golden-foreground))] font-semibold mb-2">
+              {subtitle}
+            </p> */}
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
               {title}
             </h2>
@@ -26,7 +28,7 @@ const WhyChooseUs = ({ data }: WhyChooseUsProps) => {
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-[hsl(var(--golden))] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-6 h-6 bg-[black] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-4 h-4 text-white" />
                   </div>
                   <span className="text-foreground font-medium leading-relaxed">
@@ -38,12 +40,12 @@ const WhyChooseUs = ({ data }: WhyChooseUsProps) => {
           </div>
 
           {/* Image Side */}
-          <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative order-2">
+            <div className="">
               <img
                 src={image}
                 alt="Professional"
-                className="w-full h-[600px] object-cover"
+                className="w-[300px] h-[400px] object-cover"
               />
             </div>
           </div>
