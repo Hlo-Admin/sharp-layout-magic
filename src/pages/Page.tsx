@@ -116,6 +116,20 @@ const Page = () => {
       icon: Plane,
       category: "Immigration Services",
     },
+    {
+      path: "/office-space",
+      title: "Office Space",
+      description: "Office space solutions and workspace services",
+      icon: Building,
+      category: "Business Services",
+    },
+    {
+      path: "/additional-service",
+      title: "Additional Services",
+      description: "Additional business services and support",
+      icon: Briefcase,
+      category: "Business Services",
+    },
   ];
 
   const categories = pages.reduce((acc, page) => {
