@@ -1,8 +1,8 @@
 export const heroData = {
-  title: "Finance Innovate,",
-  subtitle: "Create, Elevate",
-  description: "Unlocking Possibilities, One Code at a Time",
-  buttonText: "Contact Business Team",
+  title: "Office’s Made with",
+  subtitle: "International Standards",
+  description: "Business Hub and Buildings, Office Space, Real estate farm that makes your dreams true",
+  buttonText: "Book Office Space Now",
   bannerImage: "/officespace/banner.png",
   services: [
     {

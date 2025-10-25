@@ -34,17 +34,27 @@ const FinancialHero = ({ data }: FinancialHeroProps) => {
           }}
         />
 
+        {/* Gradient Overlay - white left (40%) to transparent right (60%) */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-transparent"
+          style={{
+            height: "calc(100% + 150px)", // Matches background height
+            background:
+              "linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 25%, rgba(255, 255, 255, 0.4) 40%, transparent 60%)",
+          }}
+        />
+
         <div className="container relative z-10 mx-auto px-4">
           {/* Hero Content */}
           <div className="py-20 min-h-[500px] flex items-center">
             <div className="grid lg:grid-cols-2 gap-8 items-center w-full">
               {/* Left Content */}
-              <div className="text-gray-900 space-y-6 max-w-2xl">
-                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+              <div className="text-gray-900 space-y-6 max-w-xl">
+                <h1 className="text-5xl md:text-6xl font-bold leading-tight">
                   {title}
                   <br />
                   {subtitle}
-                </h2>
+                </h1>
                 <p className="text-xl text-gray-700">{description}</p>
                 <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-6 text-lg rounded-lg flex items-center gap-2 w-fit">
                   {buttonText} <ArrowRight className="w-5 h-5" />
@@ -57,11 +67,11 @@ const FinancialHero = ({ data }: FinancialHeroProps) => {
 
       {/* Services Grid - Positioned to overlap with background */}
       <div className="container relative mx-auto px-4 -mt-16 pb-16">
-        {/* Second Row - 2 cards centered */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-8xl mx-auto">
-          {services.slice(0, 2).map((service, index) => (
+        {/* First Row - 3 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+          {services.slice(0, 3).map((service, index) => (
             <div
-              key={index + 3}
+              key={index}
               className="group relative h-[300px] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
             >
               {/* Background Image */}
