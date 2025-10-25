@@ -19,6 +19,8 @@ import DocumentLegalService from "./pages/DocumentLegalService";
 import VisaImmigration from "./pages/VisaImmigration";
 import OfficeSpace from "./pages/OfficeSpace";
 import AdditionalService from "./pages/AdditionalService";
+
+import BlogHome from "./pages/BlogHome"
 import Page from "./pages/Page";
 import NotFound from "./pages/NotFound";
 
@@ -34,7 +36,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/aboutus" element={<Aboutus />} />
+          <Route path="/about-us" element={<Aboutus />} />
           <Route path="/mainland" element={<Mainland />} />
           <Route path="/freezone" element={<Freezone />} />
           <Route path="/offshore" element={<Offshore />} />
@@ -54,6 +56,7 @@ const App = () => (
           <Route path="/visa-immigration" element={<VisaImmigration />} />
           <Route path="/office-space" element={<OfficeSpace />} />
           <Route path="/additional-service" element={<AdditionalService />} />
+          <Route path="/blog" element={<BlogHome/>} /> 
           <Route path="/1" element={<Page />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
