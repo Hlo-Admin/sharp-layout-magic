@@ -1,53 +1,56 @@
 import LandingHero from "@/components/landing/LandingHero";
-import LandingInfoSection from "@/components/landing/LandingInfoSection";
-import ServicesSection from "@/components/landing/ServicesSection";
-import Services from "@/components/landing/Services";
-import WhyChooseSection from "@/components/landing/WhyChooseSection";
-import LogoMarquee from "@/components/landing/LogoMarquee";
-import QuickGuideSection from "@/components/landing/QuickGuideSection";
-import BusinessGuideSection from "@/components/landing/BusinessGuideSection";
-import ServicesGridSection from "@/components/landing/ServicesGridSection";
-import WorkingProcessSection from "@/components/landing/WorkingProcessSection";
-import ClientTestimonials from "@/components/landing/Testimonials";
-import BlogSection from "@/components/landing/BlogSection";
+// import LandingInfoSection from "@/components/landing/LandingInfoSection";
+// import ServicesSection from "@/components/landing/ServicesSection";
+// import Services from "@/components/landing/Services";
+// import WhyChooseSection from "@/components/landing/WhyChooseSection";
+// import LogoMarquee from "@/components/landing/LogoMarquee";
+// import QuickGuideSection from "@/components/landing/QuickGuideSection";
+// import BusinessGuideSection from "@/components/landing/BusinessGuideSection";
+// import ServicesGridSection from "@/components/landing/ServicesGridSection";
+// import WorkingProcessSection from "@/components/landing/WorkingProcessSection";
+// import ClientTestimonials from "@/components/landing/Testimonials";
+// import BlogSection from "@/components/landing/BlogSection";
 import FAQ from "@/components/services/FAQ";
 import Footer from "@/components/common/Footer";
 import landingPageData from "../data/landingPage";
+import Body from "@/components/landingpage/Body";
+import FirstSection from "@/components/landingpage/FirstSection";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <LandingHero data={landingPageData} />
-      <LandingInfoSection data={landingPageData.infoSection} />
-      <ServicesSection data={landingPageData.servicesSection} />
-      <Services data={landingPageData.freeZonesData} />
-      <WhyChooseSection data={landingPageData.whyChooseSection} />
-      <LogoMarquee
+
+      {/* <LandingInfoSection data={landingPageData.infoSection} /> */}
+      {/* <ServicesSection data={landingPageData.servicesSection} /> */}
+      {/* <Services data={landingPageData.freeZonesData} /> */}
+      {/* <WhyChooseSection data={landingPageData.whyChooseSection} /> */}
+      {/* <LogoMarquee
         title={landingPageData.logoSection.title}
         logos={landingPageData.logoSection.logos}
-      />
-      <ServicesGridSection
+      /> */}
+      {/* <ServicesGridSection
         services={landingPageData.servicesGridSection.services}
         ctaButtons={landingPageData.servicesGridSection.ctaButtons}
-      />
-      <QuickGuideSection
+      /> */}
+      {/* <QuickGuideSection
         title={landingPageData.quickGuideSection.title}
         subtitle={landingPageData.quickGuideSection.subtitle}
         description={landingPageData.quickGuideSection.description}
         cards={landingPageData.quickGuideSection.cards}
-      />
-      <BusinessGuideSection
+      /> */}
+      {/* <BusinessGuideSection
         cards={landingPageData.businessGuideSection.cards}
-      />
-      <WorkingProcessSection
+      /> */}
+      {/* <WorkingProcessSection
         title={landingPageData.workingProcessSection.title}
         subtitle={landingPageData.workingProcessSection.subtitle}
         features={landingPageData.workingProcessSection.features}
         cards={landingPageData.workingProcessSection.cards}
         ctaButton={landingPageData.workingProcessSection.ctaButton}
-      />
+      /> */}
 
-      <BlogSection
+      {/* <BlogSection
         title={landingPageData.blogSection.title}
         subtitle={landingPageData.blogSection.subtitle}
         description={landingPageData.blogSection.description}
@@ -59,7 +62,9 @@ const Index = () => {
         testimonials={landingPageData.testimonialsSection.testimonials}
         customerStats={landingPageData.testimonialsSection.customerStats}
       />
-      <FAQ data={landingPageData.faqSection} />
+      <FAQ data={landingPageData.faqSection} /> */}
+      <FirstSection/>
+      <Body/>
       <Footer />
     </div>
   );
