@@ -17,6 +17,7 @@ import Tax from "./pages/Tax";
 import BrandRegister from "./pages/BrandRegister";
 import DocumentLegalService from "./pages/DocumentLegalService";
 import VisaImmigration from "./pages/VisaImmigration";
+import OfficeSpace from "./pages/OfficeSpace";
 import Page from "./pages/Page";
 import NotFound from "./pages/NotFound";
 
@@ -50,6 +51,7 @@ const App = () => (
             element={<DocumentLegalService />}
           />
           <Route path="/visa-immigration" element={<VisaImmigration />} />
+          <Route path="/office-space" element={<OfficeSpace />} />
           <Route path="/1" element={<Page />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
