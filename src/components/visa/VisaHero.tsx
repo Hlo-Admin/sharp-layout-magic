@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import BookingPopup from "@/components/common/Booking";
 
 const ArrowRightIcon = ({ className }: { className?: string }) => (
   <svg
@@ -64,6 +66,7 @@ const FloatingSocialIcons = ({ icons }: { icons: any[] }) => {
 
 const VisaHero = ({ data }: VisaHeroProps) => {
   const { title, subtitle, buttonText, visaCards, socialIcons } = data;
+  const [showBookingPopup, setShowBookingPopup] = useState(false);
 
   return (
     <section className="relative overflow-hidden bg-white min-h-screen">
@@ -91,7 +94,10 @@ const VisaHero = ({ data }: VisaHeroProps) => {
               <p className="text-lg sm:text-xl md:text-2xl text-white mb-8">
                 {subtitle}
               </p>
-              <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-6 text-base rounded-md shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button
+                onClick={() => setShowBookingPopup(true)}
+                className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-6 text-base rounded-md shadow-lg hover:shadow-xl transition-all duration-300"
+              >
                 {buttonText} <ArrowRightIcon className="ml-2 w-5 h-5 inline" />
               </Button>
             </div>
@@ -143,6 +149,33 @@ const VisaHero = ({ data }: VisaHeroProps) => {
           })}
         </div>
       </div>
+
+      {/* Booking Popup */}
+      {showBookingPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="relative w-full max-w-3xl">
+            <button
+              onClick={() => setShowBookingPopup(false)}
+              className="absolute top-4 right-4 z-10 text-white hover:text-gray-300 transition-colors"
+            >
+              <svg
+                className="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <BookingPopup />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

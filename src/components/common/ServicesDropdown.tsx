@@ -1,0 +1,275 @@
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+
+const ServicesDropdown = () => {
+  return (
+    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1100px] bg-white rounded-lg shadow-2xl border border-gray-300 z-50 overflow-hidden">
+      <div className="flex">
+        {/* Left Column - Two Sections */}
+        <div className="w-1/2 flex flex-col">
+          {/* Top Section - Branding & Company Registration */}
+          <div
+            className="bg-[#f7c332] p-3 flex-1 relative bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/service-card/top.png')" }}
+          >
+            <div className="relative z-10 max-w-[60%]">
+              <h3 className="text-lg font-bold text-black mb-2 leading-tight">
+                Branding & Company Registration - Legal Licence
+              </h3>
+              <p className="text-xs text-black mb-3 leading-relaxed">
+                We are keen on making processes easier, decreasing setup time,
+                and making sure that they are fully compliant - and you can
+                concentrate on growth.
+              </p>
+              <button className="bg-black text-white px-3 py-1.5 rounded-md text-xs font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors">
+                TALK TO AGENT
+                <ArrowRight className="w-3 h-3" />
+              </button>
+            </div>
+          </div>
+
+          {/* Bottom Section - Shaping the Next Era */}
+          <div
+            className="bg-[#0f766e] p-3 flex-1 relative bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/service-card/bottom.png')" }}
+          >
+            <div className="relative z-10 max-w-[60%]">
+              <h3 className="text-lg font-bold text-white mb-2 leading-tight">
+                Shaping the Next Era of UAE Business
+              </h3>
+              <p className="text-xs text-white mb-3 leading-relaxed">
+                We are keen on making processes easier, decreasing setup time,
+                and making sure that they are fully compliant - and you can
+                concentrate on growth.
+              </p>
+              <button className="bg-black text-white px-3 py-1.5 rounded-md text-xs font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors">
+                ABOUT US
+                <ArrowRight className="w-3 h-3" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column - Services List with Two Sub-columns */}
+        <div className="w-1/2 bg-white p-3">
+          <div className="flex gap-6">
+            {/* Sub-column 1: Business Setup & Legal Services */}
+            <div className="flex-1">
+              <h4 className="text-sm font-bold text-black mb-3 uppercase tracking-wide">
+                BUSINESS SETUP & LEGAL SERVICES PAPERWORK
+              </h4>
+              <div className="space-y-2">
+                {/* Brand Registration */}
+                <div className="flex items-start gap-2">
+                  <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                    <img
+                      src="/landingpage/service-icon-1.png"
+                      alt="Brand Registration"
+                      className="w-6 h-6"
+                    />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-black text-xs mb-1">
+                      Brand Registration
+                    </h5>
+                    <p className="text-xs text-gray-600">
+                      Logo, Tradename, Real Estate, Domain
+                    </p>
+                  </div>
+                </div>
+
+                {/* Government Approval */}
+                <div className="flex items-start gap-2">
+                  <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                    <img
+                      src="/landingpage/service-icon-2.png"
+                      alt="Government Approval"
+                      className="w-6 h-6"
+                    />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-black text-xs mb-1">
+                      Government Approval
+                    </h5>
+                    <p className="text-xs text-gray-600">
+                      SIRA, TDRA, Civil Defense, UAE Municipality Services,
+                      Paper Work
+                    </p>
+                  </div>
+                </div>
+
+                {/* Business Legal Attestation */}
+                <div className="flex items-start gap-2">
+                  <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                    <img
+                      src="/landingpage/service-icon-3.png"
+                      alt="Business Legal Attestation"
+                      className="w-6 h-6"
+                    />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-black text-xs mb-1">
+                      Business Legal Attestation
+                    </h5>
+                    <p className="text-xs text-gray-600">
+                      Personal, Education, Commercial, Apostille Certification
+                    </p>
+                  </div>
+                </div>
+
+                {/* Tax Registration */}
+                <div className="flex items-start gap-2">
+                  <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                    <img
+                      src="/landingpage/service-icon-4.png"
+                      alt="Tax Registration"
+                      className="w-6 h-6"
+                    />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-black text-xs mb-1">
+                      Tax Registration
+                    </h5>
+                    <p className="text-xs text-gray-600">
+                      FTA, Corporate Tax, VAT Registration, Application
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Business Setup Guide */}
+              <div className="mt-4">
+                <h4 className="font-bold text-black text-xs mb-2">
+                  Business Setup Guide
+                </h4>
+                <div className="space-y-1">
+                  <Link
+                    to="/startup"
+                    className="block text-blue-600 text-xs hover:underline"
+                  >
+                    Startup, MSME Business Paperwork
+                  </Link>
+                  <Link
+                    to="/attestation"
+                    className="block text-blue-600 text-xs hover:underline"
+                  >
+                    Attestation Services
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Sub-column 2: Visa, Application, Court */}
+            <div className="flex-1">
+              <h4 className="text-sm font-bold text-black mb-3 uppercase tracking-wide">
+                VISA, APPLICATION, <br /> COURT
+              </h4>
+              <div className="space-y-2">
+                {/* Typing & Translation */}
+                <div className="flex items-start gap-2">
+                  <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                    <img
+                      src="/landingpage/service-icon-5.png"
+                      alt="Typing & Translation"
+                      className="w-6 h-6"
+                    />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-black text-xs mb-1">
+                      Typing & Translation
+                    </h5>
+                    <p className="text-xs text-gray-600">
+                      MOA, POA, Legal Translation, Official Translation, Normal
+                      Translation
+                    </p>
+                  </div>
+                </div>
+
+                {/* Visa Services */}
+                <div className="flex items-start gap-2">
+                  <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                    <img
+                      src="/landingpage/service-icon-6.png"
+                      alt="Visa Services"
+                      className="w-6 h-6"
+                    />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-black text-xs mb-1">
+                      Visa Services
+                    </h5>
+                    <p className="text-xs text-gray-600">
+                      Golden VISA, Investor VISA, Family VISA, Employment
+                    </p>
+                  </div>
+                </div>
+
+                {/* Legal Support */}
+                <div className="flex items-start gap-2">
+                  <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                    <img
+                      src="/landingpage/service-icon-7.png"
+                      alt="Legal Support"
+                      className="w-6 h-6"
+                    />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-black text-xs mb-1">
+                      Legal Support
+                    </h5>
+                    <p className="text-xs text-gray-600">
+                      Case Registration, Complainant Filing, Rental Dispute,
+                      Court Memo
+                    </p>
+                  </div>
+                </div>
+
+                {/* Office Space & Real Estate */}
+                <div className="flex items-start gap-2">
+                  <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                    <img
+                      src="/landingpage/service-icon-8.png"
+                      alt="Office Space & Real Estate"
+                      className="w-6 h-6"
+                    />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-black text-xs mb-1">
+                      Office Space & Real Estate
+                    </h5>
+                    <p className="text-xs text-gray-600">
+                      Commercial, Business, professional
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Other Services */}
+              <div className="mt-4">
+                <h4 className="font-bold text-black text-xs mb-2">
+                  Other Services
+                </h4>
+                <div className="space-y-1">
+                  <Link
+                    to="/documentation"
+                    className="block text-blue-600 text-xs hover:underline"
+                  >
+                    Share & Business Documentation
+                  </Link>
+                  <Link
+                    to="/additional"
+                    className="block text-blue-600 text-xs hover:underline"
+                  >
+                    Additional Services
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ServicesDropdown;

@@ -1,12 +1,17 @@
 // src/components/Navbar.tsx
 import { Button } from "@/components/ui/button";
-import { Globe, X } from "lucide-react";
+import { Globe, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import ServicesDropdown from "./ServicesDropdown";
+import CostCalculatorPopup from "./CostCalculatorPopup";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isCostCalculatorOpen, setIsCostCalculatorOpen] = useState(false);
   const location = useLocation();
+  const servicesRef = useRef<HTMLDivElement>(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -16,6 +21,26 @@ const Navbar = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        servicesRef.current &&
+        !servicesRef.current.contains(event.target as Node)
+      ) {
+        setIsServicesDropdownOpen(false);
+      }
+    };
+
+    if (isServicesDropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isServicesDropdownOpen]);
 
   return (
     <>
@@ -45,12 +70,20 @@ const Navbar = () => {
           >
             Business Setup
           </Link>
-          <a
-            href="#services"
-            className="text-base font-medium text-white hover:text-white/80 transition"
-          >
-            Our Services
-          </a>
+          <div ref={servicesRef} className="relative">
+            <button
+              onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+              className="text-base font-medium text-white hover:text-white/80 transition cursor-pointer flex items-center gap-1"
+            >
+              Our Services
+              <ChevronDown
+                className={`w-4 h-4 transition-transform ${
+                  isServicesDropdownOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {isServicesDropdownOpen && <ServicesDropdown />}
+          </div>
           <a
             href="#about"
             className="text-base font-medium text-white hover:text-white/80 transition"
@@ -70,6 +103,7 @@ const Navbar = () => {
           <Button
             variant="secondary"
             size="sm"
+            onClick={() => setIsCostCalculatorOpen(true)}
             className="hidden sm:flex bg-[#f7c332] text-[#193954] font-bold px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 rounded shadow hover:opacity-90 text-xs sm:text-sm"
             style={{ boxShadow: "0 2px 8px #0002" }}
           >
@@ -119,13 +153,26 @@ const Navbar = () => {
             >
               Business Setup
             </Link>
-            <a
-              href="#services"
-              onClick={toggleMobileMenu}
-              className="text-sm sm:text-base font-medium text-white hover:text-white/80 transition py-2.5 px-3 rounded hover:bg-white/10"
-            >
-              Our Services
-            </a>
+            <div className="relative">
+              <button
+                onClick={() =>
+                  setIsServicesDropdownOpen(!isServicesDropdownOpen)
+                }
+                className="text-sm sm:text-base font-medium text-white hover:text-white/80 transition py-2.5 px-3 rounded hover:bg-white/10 flex items-center gap-1 w-full text-left"
+              >
+                Our Services
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform ${
+                    isServicesDropdownOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {isServicesDropdownOpen && (
+                <div className="mt-2">
+                  <ServicesDropdown />
+                </div>
+              )}
+            </div>
             <a
               href="#about"
               onClick={toggleMobileMenu}
@@ -146,6 +193,7 @@ const Navbar = () => {
               <Button
                 variant="secondary"
                 size="sm"
+                onClick={() => setIsCostCalculatorOpen(true)}
                 className="w-full bg-[#f7c332] text-[#193954] font-bold py-2.5 rounded shadow hover:opacity-90 text-sm"
                 style={{ boxShadow: "0 2px 8px #0002" }}
               >
@@ -159,6 +207,12 @@ const Navbar = () => {
           </div>
         </div>
       )}
+
+      {/* Cost Calculator Popup */}
+      <CostCalculatorPopup
+        isOpen={isCostCalculatorOpen}
+        onClose={() => setIsCostCalculatorOpen(false)}
+      />
     </>
   );
 };
