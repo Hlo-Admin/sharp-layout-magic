@@ -62,11 +62,14 @@ const ServicesDropdown = () => {
             {/* Sub-column 1: Business Setup & Legal Services */}
             <div className="flex-1">
               <h4 className="text-sm font-bold text-black mb-3 uppercase tracking-wide">
-                BUSINESS SETUP & LEGAL SERVICES PAPERWORK
+                BUSINESS SETUP & <br />LEGAL SERVICES PAPERWORK
               </h4>
               <div className="space-y-2">
                 {/* Brand Registration */}
-                <div className="flex items-start gap-2">
+                <Link
+                  to="/brand-register"
+                  className="flex items-start gap-2 hover:bg-gray-50 p-1 rounded transition-colors"
+                >
                   <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
                     <img
                       src="/landingpage/service-icon-1.png"
@@ -79,13 +82,16 @@ const ServicesDropdown = () => {
                       Brand Registration
                     </h5>
                     <p className="text-xs text-gray-600">
-                      Logo, Tradename, Real Estate, Domain
+                      Logo, Tradename, <br /> Real Estate, Domain
                     </p>
                   </div>
-                </div>
+                </Link>
 
                 {/* Government Approval */}
-                <div className="flex items-start gap-2">
+                <Link
+                  to="/document-legal-service"
+                  className="flex items-start gap-2 hover:bg-gray-50 p-1 rounded transition-colors"
+                >
                   <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
                     <img
                       src="/landingpage/service-icon-2.png"
@@ -102,10 +108,13 @@ const ServicesDropdown = () => {
                       Paper Work
                     </p>
                   </div>
-                </div>
+                </Link>
 
                 {/* Business Legal Attestation */}
-                <div className="flex items-start gap-2">
+                <Link
+                  to="/document-legal-service"
+                  className="flex items-start gap-2 hover:bg-gray-50 p-1 rounded transition-colors"
+                >
                   <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
                     <img
                       src="/landingpage/service-icon-3.png"
@@ -121,10 +130,13 @@ const ServicesDropdown = () => {
                       Personal, Education, Commercial, Apostille Certification
                     </p>
                   </div>
-                </div>
+                </Link>
 
                 {/* Tax Registration */}
-                <div className="flex items-start gap-2">
+                <Link
+                  to="/tax"
+                  className="flex items-start gap-2 hover:bg-gray-50 p-1 rounded transition-colors"
+                >
                   <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
                     <img
                       src="/landingpage/service-icon-4.png"
@@ -140,7 +152,7 @@ const ServicesDropdown = () => {
                       FTA, Corporate Tax, VAT Registration, Application
                     </p>
                   </div>
-                </div>
+                </Link>
               </div>
 
               {/* Business Setup Guide */}
@@ -150,13 +162,13 @@ const ServicesDropdown = () => {
                 </h4>
                 <div className="space-y-1">
                   <Link
-                    to="/startup"
+                    to="/document-legal-service"
                     className="block text-blue-600 text-xs hover:underline"
                   >
                     Startup, MSME Business Paperwork
                   </Link>
                   <Link
-                    to="/attestation"
+                    to="/document-legal-service"
                     className="block text-blue-600 text-xs hover:underline"
                   >
                     Attestation Services
@@ -172,7 +184,10 @@ const ServicesDropdown = () => {
               </h4>
               <div className="space-y-2">
                 {/* Typing & Translation */}
-                <div className="flex items-start gap-2">
+                <Link
+                  to="/document-legal-service"
+                  className="flex items-start gap-2 hover:bg-gray-50 p-1 rounded transition-colors"
+                >
                   <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
                     <img
                       src="/landingpage/service-icon-5.png"
@@ -189,10 +204,13 @@ const ServicesDropdown = () => {
                       Translation
                     </p>
                   </div>
-                </div>
+                </Link>
 
                 {/* Visa Services */}
-                <div className="flex items-start gap-2">
+                <Link
+                  to="/visa-immigration"
+                  className="flex items-start gap-2 hover:bg-gray-50 p-1 rounded transition-colors"
+                >
                   <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
                     <img
                       src="/landingpage/service-icon-6.png"
@@ -208,10 +226,13 @@ const ServicesDropdown = () => {
                       Golden VISA, Investor VISA, Family VISA, Employment
                     </p>
                   </div>
-                </div>
+                </Link>
 
                 {/* Legal Support */}
-                <div className="flex items-start gap-2">
+                <Link
+                  to="/legal-document-services"
+                  className="flex items-start gap-2 hover:bg-gray-50 p-1 rounded transition-colors"
+                >
                   <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
                     <img
                       src="/landingpage/service-icon-7.png"
@@ -228,10 +249,13 @@ const ServicesDropdown = () => {
                       Court Memo
                     </p>
                   </div>
-                </div>
+                </Link>
 
                 {/* Office Space & Real Estate */}
-                <div className="flex items-start gap-2">
+                <Link
+                  to="/office-space"
+                  className="flex items-start gap-2 hover:bg-gray-50 p-1 rounded transition-colors"
+                >
                   <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
                     <img
                       src="/landingpage/service-icon-8.png"
@@ -244,10 +268,10 @@ const ServicesDropdown = () => {
                       Office Space & Real Estate
                     </h5>
                     <p className="text-xs text-gray-600">
-                      Commercial, Business, professional
+                      Commercial, Business, <br /> professional
                     </p>
                   </div>
-                </div>
+                </Link>
               </div>
 
               {/* Other Services */}
@@ -257,13 +281,13 @@ const ServicesDropdown = () => {
                 </h4>
                 <div className="space-y-1">
                   <Link
-                    to="/documentation"
+                    to="/document-legal-service"
                     className="block text-blue-600 text-xs hover:underline"
                   >
                     Share & Business Documentation
                   </Link>
                   <Link
-                    to="/additional"
+                    to="/additional-service"
                     className="block text-blue-600 text-xs hover:underline"
                   >
                     Additional Services
