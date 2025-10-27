@@ -136,7 +136,7 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-2xl w-[500px] max-w-[90vw] mx-4 relative">
+      <div className="bg-white rounded-lg shadow-2xl w-[600px] max-w-[90vw] mx-4 relative">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <h2 className="text-lg font-bold text-gray-900 uppercase tracking-wide">
