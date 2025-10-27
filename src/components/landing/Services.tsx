@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import BookingPopup from "../common/Booking";
 
 type Zone = {
   title: string;
@@ -20,6 +21,8 @@ type Props = {
 };
 
 const FreeZones: React.FC<Props> = ({ data }) => {
+  const [showBooking, setShowBooking] = useState(false);
+
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-6 max-w-8xl">
@@ -66,7 +69,10 @@ const FreeZones: React.FC<Props> = ({ data }) => {
 
               {/* Button */}
               <div className="flex justify-start mt-auto relative">
-                <button className="flex items-center justify-center gap-2 w-52 bg-white-50 text-gray-800 border border-[#F0BA1A] px-4 py-2 rounded-lg text-sm font-medium hover:bg-yellow-100 transition">
+                <button
+                  onClick={() => setShowBooking(true)}
+                  className="flex items-center justify-center gap-2 w-52 bg-white-50 text-gray-800 border border-[#F0BA1A] px-4 py-2 rounded-lg text-sm font-medium hover:bg-yellow-100 transition"
+                >
                   {zone.button}
                   <ArrowUpRight size={16} className="text-[#F0BA1A]" />
                 </button>
@@ -82,6 +88,21 @@ const FreeZones: React.FC<Props> = ({ data }) => {
           ))}
         </div>
       </div>
+
+      {/* Booking Modal */}
+      {showBooking && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="relative">
+            <button
+              onClick={() => setShowBooking(false)}
+              className="absolute -top-4 -right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 z-10"
+            >
+              ✕
+            </button>
+            <BookingPopup />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

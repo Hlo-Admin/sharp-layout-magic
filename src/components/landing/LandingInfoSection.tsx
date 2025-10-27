@@ -1,4 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import BookingPopup from "../common/Booking";
 
 type LandingInfoSectionData = {
   title: string;
@@ -13,6 +15,7 @@ type Props = {
 };
 
 export default function LandingInfoSection({ data }: Props) {
+  const [showBooking, setShowBooking] = useState(false);
   return (
     <section className="bg-white py-16 px-4 md:px-12">
       <div className="max-w-7xl mx-auto">
@@ -28,7 +31,10 @@ export default function LandingInfoSection({ data }: Props) {
             <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-8 max-w-2xl">
               {data.description}
             </p>
-            <button className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-lg font-medium hover:bg-gray-800 transition-colors w-fit">
+            <button
+              onClick={() => setShowBooking(true)}
+              className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-lg font-medium hover:bg-gray-800 transition-colors w-fit"
+            >
               {data.buttonText}
               <ArrowUpRight className="w-5 h-5 text-[yellow]" />
             </button>
@@ -46,6 +52,21 @@ export default function LandingInfoSection({ data }: Props) {
           </div>
         </div>
       </div>
+
+      {/* Booking Modal */}
+      {showBooking && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="relative">
+            <button
+              onClick={() => setShowBooking(false)}
+              className="absolute -top-4 -right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 z-10"
+            >
+              ✕
+            </button>
+            <BookingPopup />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

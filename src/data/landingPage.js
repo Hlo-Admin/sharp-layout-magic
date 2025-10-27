@@ -119,11 +119,26 @@ const landingPageData = {
   logoSection: {
     title: "Trusted by Leading Businesses",
     logos: [
-      "/landingpage/logos/logo-1.png",
-      "/landingpage/logos/logo-2.png",
-      "/landingpage/logos/logo-3.png",
-      "/landingpage/logos/logo-4.png",
-      "/landingpage/logos/logo-5.png",
+      {
+        src: "/landingpage/logos/logo-1.png",
+        alt: "Partner Company 1",
+      },
+      {
+        src: "/landingpage/logos/logo-2.png",
+        alt: "Partner Company 2",
+      },
+      {
+        src: "/landingpage/logos/logo-3.png",
+        alt: "Partner Company 3",
+      },
+      {
+        src: "/landingpage/logos/logo-4.png",
+        alt: "Partner Company 4",
+      },
+      {
+        src: "/landingpage/logos/logo-5.png",
+        alt: "Partner Company 5",
+      },
     ],
   },
   quickGuideSection: {
@@ -259,7 +274,7 @@ const landingPageData = {
     ctaButtons: [
       {
         text: "Get Personalized Audit",
-        href: "#audit",
+        href: "/tax",
       },
       {
         text: "Investments in UAE",
@@ -267,11 +282,11 @@ const landingPageData = {
       },
       {
         text: "Office Setup",
-        href: "#office",
+        href: "/office-space",
       },
       {
         text: "Tax & business Governance in UAE",
-        href: "#tax",
+        href: "/tax",
       },
     ],
   },
@@ -466,62 +481,55 @@ const landingPageData = {
       },
     ],
   },
-   freeZonesData: {
-  title: "Our Pro Service of Business Setup & Consultations",
-  descriptions:'Our extensive range of services, combined with our core expertise in business setup, is complemented by a variety of additional services.',
-  zones: [
-    {
-      title: "Business Setup",
-      description:
-        "Complete company formation in UAE with Gokite Pro.",
-      points: [
-        "Mainland License",
-        "Freezone License",
-        "Offshore Formation",
-      ],
-      button: "Setup Business Pro",
-      img:'/landingpage/services/business.png',
-    },
-    {
-      title: "Pro Services",
-      description:
-        "Dedicated PRO team for faster approvals. Full correspondence with government entities.",
-      button: "Government Paperwork",
-      img:'/landingpage/services/pro.png',
-    },
-    {
-      title: "Golden Visa",
-      description:
-        "Get UAE Lifetime Golden Visa, Recommend the best Golden Visa category according to your profile. Help such categories as investors in public investments, real estate investors, doctors, PHDs and so on.",
-      button: "Get Golden Visa",
-      img:'/landingpage/services/goldenvisa.png',
-    },
-    {
-      title: "Corporate Tax",
-      description:
-        "We are keen on making processes easier, decreasing setup time, and making sure that they are fully compliant - and you can concentrate on growth.",
-      button: "File Corporate Tax",
-      img:'/landingpage/services/corporatetax.png',
-    },
-    {
-      title: "VAT Registration",
-      description:
-        "Our tax experts register your business for VAT, prepare accurate filings, and ensure compliance with Federal Tax Authority guidelines. We also provide advisory to optimize your tax strategy.",
-      button: "Register for VAT",
-      img:'/landingpage/services/vat.png',
-    },
-    {
-      title: "Attestation & Legal Translation",
-      description:
-        "we provide attestation services for educational, personal, and commercial documents, making them valid for use in UAE government offices and abroad.",
-      button: "Get Documents Attested",
-      img:'/landingpage/services/attestation.png',
-    },
-  ],
-},
-
+  freeZonesData: {
+    title: "Our Pro Service of Business Setup & Consultations",
+    descriptions:
+      "Our extensive range of services, combined with our core expertise in business setup, is complemented by a variety of additional services.",
+    zones: [
+      {
+        title: "Business Setup",
+        description: "Complete company formation in UAE with Gokite Pro.",
+        points: ["Mainland License", "Freezone License", "Offshore Formation"],
+        button: "Setup Business Pro",
+        img: "/landingpage/services/business.png",
+      },
+      {
+        title: "Pro Services",
+        description:
+          "Dedicated PRO team for faster approvals. Full correspondence with government entities.",
+        button: "Government Paperwork",
+        img: "/landingpage/services/pro.png",
+      },
+      {
+        title: "Golden Visa",
+        description:
+          "Get UAE Lifetime Golden Visa, Recommend the best Golden Visa category according to your profile. Help such categories as investors in public investments, real estate investors, doctors, PHDs and so on.",
+        button: "Get Golden Visa",
+        img: "/landingpage/services/goldenvisa.png",
+      },
+      {
+        title: "Corporate Tax",
+        description:
+          "We are keen on making processes easier, decreasing setup time, and making sure that they are fully compliant - and you can concentrate on growth.",
+        button: "File Corporate Tax",
+        img: "/landingpage/services/corporatetax.png",
+      },
+      {
+        title: "VAT Registration",
+        description:
+          "Our tax experts register your business for VAT, prepare accurate filings, and ensure compliance with Federal Tax Authority guidelines. We also provide advisory to optimize your tax strategy.",
+        button: "Register for VAT",
+        img: "/landingpage/services/vat.png",
+      },
+      {
+        title: "Attestation & Legal Translation",
+        description:
+          "we provide attestation services for educational, personal, and commercial documents, making them valid for use in UAE government offices and abroad.",
+        button: "Get Documents Attested",
+        img: "/landingpage/services/attestation.png",
+      },
+    ],
+  },
 };
-
-
 
 export default landingPageData;
