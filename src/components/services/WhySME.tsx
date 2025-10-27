@@ -1,10 +1,12 @@
 // components/mainland/WhatIsMainland.tsx
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 type TypeItem = {
   name: string;
   description: string;
+  href?: string;
 };
 
 type ListItem = string; // each list bullet
@@ -22,26 +24,6 @@ type Props = {
 
 const WhatIsMainland: React.FC<Props> = ({ data }) => {
   const { title, paragraphs, listItems = [], types = [] } = data;
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    let scrollAmount = 0;
-    if (!container) return;
-
-    const scrollStep = () => {
-      if (container.scrollHeight > container.clientHeight) {
-        scrollAmount += 1;
-        if (scrollAmount >= container.scrollHeight - container.clientHeight) {
-          scrollAmount = 0;
-        }
-        container.scrollTop = scrollAmount;
-      }
-    };
-
-    const interval = setInterval(scrollStep, 50);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section className="py-16 bg-white">
@@ -79,16 +61,9 @@ const WhatIsMainland: React.FC<Props> = ({ data }) => {
           {/* Sidebar */}
           {types.length > 0 && (
             <div className="lg:col-span-1">
-              <div
-                ref={containerRef}
-                className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm max-h-[450px] overflow-y-auto scrollbar-none"
-                style={{ scrollBehavior: "smooth" }}
-              >
-                {types.map((type, index) => (
-                  <div
-                    key={index}
-                    className="group p-6 border-b border-gray-200 last:border-0 hover:bg-gray-50 transition-colors cursor-pointer"
-                  >
+              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                {types.map((type, index) => {
+                  const content = (
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <h3 className="font-semibold text-gray-900 mb-2 text-base">
@@ -100,8 +75,26 @@ const WhatIsMainland: React.FC<Props> = ({ data }) => {
                       </div>
                       <ArrowRight className="w-5 h-5 text-black ml-4 flex-shrink-0 group-hover:text-gray-600 group-hover:translate-x-1 transition-all" />
                     </div>
-                  </div>
-                ))}
+                  );
+
+                  return (
+                    <div
+                      key={index}
+                      className="group border-b border-gray-200 last:border-0 hover:bg-gray-50 transition-colors"
+                    >
+                      {type.href ? (
+                        <Link
+                          to={type.href}
+                          className="block p-6 cursor-pointer"
+                        >
+                          {content}
+                        </Link>
+                      ) : (
+                        <div className="p-6 cursor-pointer">{content}</div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           )}

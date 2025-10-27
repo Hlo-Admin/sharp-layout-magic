@@ -1,4 +1,3 @@
-
 export const heroData = {
   breadcrumbs: {
     home: "Home",
@@ -43,10 +42,31 @@ export const Whattarakhees = {
     "Specialized Areas, Jebel Ali Free Zone",
   ],
   types: [
-    { name: "Tarakhess Company Formation", description: "Get your UAE Business Registered in 24hrs" },
-    { name: "Freezone Company Formation", description: "Get your UAE Business Registered in 24hrs" },
-    { name: "SME Company Formation", description: "Get your UAE Business Registered in 24hrs" },
-    { name: "Offshore Company Formation", description: "Get your UAE Business Registered in 24hrs" },
+    {
+      name: "Taraklness Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/tarakhees",
+    },
+    {
+      name: "Freezone Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/freezone",
+    },
+    {
+      name: "SME Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/smecompany",
+    },
+    {
+      name: "Offshore Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/offshore",
+    },
+    {
+      name: "Mainland Business Setup",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/mainland",
+    },
   ],
 };
 
@@ -56,7 +76,8 @@ export const benefitsData = {
   benefits: [
     {
       title: "",
-      description: "Work in Special Areas (maritime, industrial, logistics, etc.)p",
+      description:
+        "Work in Special Areas (maritime, industrial, logistics, etc.)p",
     },
     {
       title: "",
@@ -72,22 +93,21 @@ export const benefitsData = {
     },
     {
       title: "",
-      description: "Availability of Modern Infrastructure warehouses, ports, office spaces",
+      description:
+        "Availability of Modern Infrastructure warehouses, ports, office spaces",
     },
     {
       title: "",
-      description: "Flexible Business Structures such as LLCs, branches, and representative offices",  
+      description:
+        "Flexible Business Structures such as LLCs, branches, and representative offices",
     },
     {
       title: "",
       description: "Nearness to World Trade Routes and Ports",
     },
-   
   ],
   image: "/services/benefits/tarakhees.png",
 };
-
-
 
 export const processData = {
   title: "The Procedure of Establishing a Tarakhees Company in Dubai",
@@ -136,18 +156,16 @@ export const tarakheesIndustriesData = {
   ],
 };
 
-
 export const documentData = {
   title: "Documents Required for Tarakhees Company Formation",
-  description:
-    "",
+  description: "",
   documents: [
     "Passport copies of shareholders/directors",
     "Trade name reservation certificate",
     "Business plan or project proposal (if applicable)",
     "Lease agreement within a Tarakhees zone",
     "NOC from sponsor (for UAE residents)",
-    "Memorandum of Association (MoA)"
+    "Memorandum of Association (MoA)",
   ],
 };
 
@@ -156,18 +174,17 @@ export const costData = {
   paragraphs: [
     "The total cost of setting up a Tarakhees company depends on your business type, activity, and facilities required. Estimated costs include:",
     "__LIST__",
-    "Customized packages available through Go Kite Business Setup Services."
+    "Customized packages available through Go Kite Business Setup Services.",
   ],
-  listItems : [
-  "License Fee: Starting from <b>AED 10,000</b>/year",
-  "Office/Warehouse Rent: Starting from <b>AED 15,000</b>/year",
-  "Administrative Charges: <b>AED 5,000–AED 10,000</b> (visa, documentation, etc.)"
-],
+  listItems: [
+    "License Fee: Starting from <b>AED 10,000</b>/year",
+    "Office/Warehouse Rent: Starting from <b>AED 15,000</b>/year",
+    "Administrative Charges: <b>AED 5,000–AED 10,000</b> (visa, documentation, etc.)",
+  ],
   highlightedText: "AED 10,000",
   buttonText: "Get Quote for your business Setup",
   image: "/services/cost-tarakhees.png",
 };
-
 
 export const faqData = {
   title: "Frequently Asked Questions",
@@ -191,16 +208,13 @@ export const faqData = {
   ],
 };
 
-
-
-
 export default {
   heroData,
   Whattarakhees,
   benefitsData,
-  processData,tarakheesIndustriesData,
+  processData,
+  tarakheesIndustriesData,
   documentData,
   costData,
   faqData,
 };
-

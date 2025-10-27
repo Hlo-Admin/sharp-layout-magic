@@ -33,13 +33,33 @@ export const whatIsMainlandData = {
     "An offshore company is a company that is registered in a jurisdiction which is meant to provide financial and legal benefits including zero taxation and high confidentiality. The Dubai offshore companies are ideal to international trade, asset protection and wealth management without having a physical presence in the country.",
     "UAE is the leading international destination of offshore companies, which provide unrivaled benefits to companies that want privacy, asset protection, and tax efficiency. UAE is a legal, economical, and strategic approach to setting up an offshore company that can be used to increase your business presence in other countries.",
     "Go Kite Business Setup Services is a service provider that specializes in smooth offshore company incorporation according to your business requirements. Our team of professionals will help you to smoothly set up and enjoy the advantages of the Dubai offshore with ease and confidence.",
-    ],
+  ],
   types: [
-    { name: "Tarakhess Company Formation", description: "Get your UAE Business Registered in 24hrs" },
-    { name: "Freezone Company Formation", description: "Get your UAE Business Registered in 24hrs" },
-    { name: "SME Company Formation", description: "Get your UAE Business Registered in 24hrs" },
-    { name: "Offshore Company Formation", description: "Get your UAE Business Registered in 24hrs" },
-    { name: "Government Approval", description: "Get your UAE Business Registered in 24hrs" },
+    {
+      name: "Taraklness Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/tarakhees",
+    },
+    {
+      name: "Freezone Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/freezone",
+    },
+    {
+      name: "SME Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/smecompany",
+    },
+    {
+      name: "Offshore Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/offshore",
+    },
+    {
+      name: "Mainland Business Setup",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/mainland",
+    },
   ],
 };
 
@@ -48,15 +68,18 @@ export const benefitsData = {
   benefits: [
     {
       title: "Full Foreign Ownership",
-      description: "You keep full control without having to find a local partner.",
+      description:
+        "You keep full control without having to find a local partner.",
     },
     {
       title: "Zero Taxation",
-      description: "Take advantage of exemptions on corporate tax, income tax and import/export duties.",
+      description:
+        "Take advantage of exemptions on corporate tax, income tax and import/export duties.",
     },
     {
       title: "High Confidentiality",
-      description: "Offshore jurisdiction protects the privacy of shareholders and directors.",
+      description:
+        "Offshore jurisdiction protects the privacy of shareholders and directors.",
     },
     {
       title: "Asset Protection",
@@ -64,11 +87,13 @@ export const benefitsData = {
     },
     {
       title: "Economical Establishment",
-      description: "Low cost of licensing and operations in comparison with mainland firms.",
+      description:
+        "Low cost of licensing and operations in comparison with mainland firms.",
     },
     {
       title: "Global Market Access",
-      description: "Do international business and open multi-currency bank accounts.",
+      description:
+        "Do international business and open multi-currency bank accounts.",
     },
     {
       title: "Flexible Operations",
@@ -78,7 +103,6 @@ export const benefitsData = {
       title: "Simplified Compliance",
       description: "Reduced reporting and audit requirements.",
     },
-   
   ],
   image: "/services/benefits/freezone.png",
 };
@@ -112,7 +136,6 @@ export const freeZonesData = {
     },
   ],
 };
-
 
 export const documentsData = {
   title: "Uses of Offshore Companies Common Uses",
@@ -171,24 +194,21 @@ export const faqData = {
         "The process includes selecting business activity, choosing legal form, reserving trade name, obtaining initial approval, renting office space, drafting agreements, submitting documents, and receiving the business license.",
     },
     {
-      question: "Is a physical office required for an offshore company in the UAE?",
+      question:
+        "Is a physical office required for an offshore company in the UAE?",
       answer:
         "The three main types are Commercial License (for trading), Professional License (for services), and Industrial License (for manufacturing). The type depends on your business activity.",
     },
   ],
 };
 
-
-
-
 export default {
   heroData,
   whatIsMainlandData,
   benefitsData,
-    freeZonesData,
+  freeZonesData,
   procedureData,
-    documentsData,
+  documentsData,
   faqData,
-    costSectionData,
+  costSectionData,
 };
-

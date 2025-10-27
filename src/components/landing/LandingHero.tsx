@@ -53,14 +53,14 @@ const LandingHero = ({ data }: LandingHeroProps) => {
               +971 50 357 8847
             </a>
             <a
-             href="mailto:info@gokitepro.com"
+              href="mailto:info@gokitepro.com"
               className="text-[#193954] font-medium hover:underline truncate"
             >
               info@gokitepro.com
             </a>
           </div>
         </div>
-      </div> 
+      </div>
 
       {/* Background Image with Dubai Skyline */}
       <div
@@ -71,14 +71,16 @@ const LandingHero = ({ data }: LandingHeroProps) => {
         }}
       >
         {/* Gradient overlay for better text readability */}
-        <div 
-        className="absolute inset-0 
+        <div
+          className="absolute inset-0 
         bg-gradient-to-b from-blue-900/40 via-transparent to-black/30 rounded-xl"
-         />
+        />
       </div>
 
       {/* Navigation */}
-      <LandingNavigation />
+      <div className="relative z-40 pt-10 sm:pt-12 md:pt-14 lg:pt-16 mt-8">
+        <LandingNavigation />
+      </div>
 
       {/* Floating Social Icons */}
       {/* <FloatingSocialIcons icons={socialIcons} /> */}
@@ -104,7 +106,7 @@ const LandingHero = ({ data }: LandingHeroProps) => {
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
-              > 
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -112,7 +114,7 @@ const LandingHero = ({ data }: LandingHeroProps) => {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </a> 
+            </a>
           </div>
 
           {/* Business Setup Cards */}

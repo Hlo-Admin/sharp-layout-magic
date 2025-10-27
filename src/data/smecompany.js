@@ -33,18 +33,41 @@ export const WhySME = {
     "The government of the UAE is actively engaged in SME development by offering initiatives, funding, and regulatory ease. This is why it is a good idea to start an SME here:",
     "__LIST__",
     "The UAE economy relies on Small and Medium Enterprises (SMEs) which are the drivers of economic growth and play a major role in the innovation, diversification and sustainability of the economy. With its investor-friendly laws, state-of-the-art infrastructure, and zero personal income tax, UAE is an ideal location where one can create and grow an SME.",
-    "Our expertise lies in the company formation of SMEs in the UAE and our services are available on an end to end basis depending on your business requirements. Whether you are a first-time entrepreneur or a full-time investor, we make it easy by streamlining the process to enable you concentrate on the establishment of a successful business."
+    "Our expertise lies in the company formation of SMEs in the UAE and our services are available on an end to end basis depending on your business requirements. Whether you are a first-time entrepreneur or a full-time investor, we make it easy by streamlining the process to enable you concentrate on the establishment of a successful business.",
   ],
   listItems: [
     "Strategic Position: Proximity to Asia, Europe and Africa, very convenient in terms of trade and logistics.",
     "Tax-Free Environment: No personal income tax and exemption of corporate taxes in specified zones.",
     "Ease of Doing Business: Streamlined processes, online services and business-friendly reforms.",
     "Funding: SMEs have access to bank funding, government programs and privately-run incubators.",
-    "Pro-SME Policies: Lower licensing charges, grant schemes and business-friendly legislations."
+    "Pro-SME Policies: Lower licensing charges, grant schemes and business-friendly legislations.",
   ],
   types: [
-    { name: "Tarakhess Company Formation", description: "Get your UAE Business Registered in 24hrs" },
-    { name: "Freezone Company Formation", description: "Get your UAE Business Registered in 24hrs" },
+    {
+      name: "Taraklness Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/tarakhees",
+    },
+    {
+      name: "Freezone Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/freezone",
+    },
+    {
+      name: "SME Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/smecompany",
+    },
+    {
+      name: "Offshore Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/offshore",
+    },
+    {
+      name: "Mainland Business Setup",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/mainland",
+    },
   ],
 };
 
@@ -57,7 +80,8 @@ export const benefitsData = {
     },
     {
       title: "",
-      description: "In the majority of industries, 100 percent foreign ownership is permitted.",
+      description:
+        "In the majority of industries, 100 percent foreign ownership is permitted.",
     },
     {
       title: "",
@@ -71,12 +95,9 @@ export const benefitsData = {
       title: "",
       description: "Staff Easy Visa Sponsorship",
     },
-   
   ],
   image: "/services/benefits/smecompany.png",
 };
-
-
 
 export const processData = {
   title: "The Process of Establishing an SME in the UAE",
@@ -120,7 +141,6 @@ export const whysmeData = {
   ],
 };
 
-
 export const faqData = {
   title: "Frequently Asked Questions",
   subtitle: "Know about your query and popularly asked questions",
@@ -143,9 +163,6 @@ export const faqData = {
   ],
 };
 
-
-
-
 export default {
   heroData,
   WhySME,
@@ -155,4 +172,3 @@ export default {
   whysmeData,
   faqData,
 };
-

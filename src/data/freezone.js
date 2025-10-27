@@ -33,13 +33,34 @@ export const whatIsMainlandData = {
     "A freezone company is a company registered in any of the free zones in Dubai. The advantages of these firms are full foreign ownership, exemptions of corporate taxes, and easy regulations. Freezone companies are ideal in the international trade, logistics, IT, e-commerce, manufacturing and so on.",
     "The benefits of Freezone Company Formation in the Dubai",
     "There are numerous free zones in the Dubai that are aimed at promoting international trade, drawing foreign investment, and creating a favorable business climate. These free zones provide such outstanding advantages as 100 percent foreign ownership, exemption of taxes, and access to the most advanced infrastructure, which makes them a perfect option to choose by entrepreneurs and investors",
-    "Go Kite Business Setup Services is an expert in the freezone company setup in Dubai without any hassles. Our professional team will help you with all the steps, so that you can have a comfortable setup according to the business requirements"
+    "Go Kite Business Setup Services is an expert in the freezone company setup in Dubai without any hassles. Our professional team will help you with all the steps, so that you can have a comfortable setup according to the business requirements",
   ],
   types: [
-    { name: "Taraklness Company Formation", description: "Get your UAE Business Registered in 24hrs" },
-    { name: "Freezone Company Formation", description: "Get your UAE Business Registered in 24hrs" },
-    { name: "SME Company Formation", description: "Get your UAE Business Registered in 24hrs" },
-    { name: "Offshore Company Formation", description: "Get your UAE Business Registered in 24hrs" },
+    {
+      name: "Taraklness Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/tarakhees",
+    },
+    {
+      name: "Freezone Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/freezone",
+    },
+    {
+      name: "SME Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/smecompany",
+    },
+    {
+      name: "Offshore Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/offshore",
+    },
+    {
+      name: "Mainland Business Setup",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/mainland",
+    },
   ],
 };
 
@@ -68,7 +89,8 @@ export const benefitsData = {
     },
     {
       title: "Flexible Business",
-      description: "Carry on a broad variety of commercial, professional or industrial operations.",
+      description:
+        "Carry on a broad variety of commercial, professional or industrial operations.",
     },
     {
       title: "Profit Repatriation",
@@ -137,8 +159,6 @@ export const freeZonesData = {
   ],
 };
 
-
-
 export const procedureData = {
   title: "The Procedure of Establishing a Freezone Company in the Dubai",
   documents: [
@@ -161,11 +181,9 @@ export const documentsData = {
     "Business plan (if applicable)",
     "Trade name reservation certificate",
     "Bank reference letter (optional based on free zone)",
-    "No Objection Certificate (NOC) from current employer (for UAE residents)"
+    "No Objection Certificate (NOC) from current employer (for UAE residents)",
   ],
 };
-
-
 
 export const costSectionData = {
   title: "Cost of Freezone Company Formation",
@@ -195,24 +213,21 @@ export const faqData = {
         "The process includes selecting business activity, choosing legal form, reserving trade name, obtaining initial approval, renting office space, drafting agreements, submitting documents, and receiving the business license.",
     },
     {
-      question: "Is it possible that freezone company trades directly in the mainland of the Dubai?",
+      question:
+        "Is it possible that freezone company trades directly in the mainland of the Dubai?",
       answer:
         "The three main types are Commercial License (for trading), Professional License (for services), and Industrial License (for manufacturing). The type depends on your business activity.",
     },
   ],
 };
 
-
-
-
 export default {
   heroData,
   whatIsMainlandData,
   benefitsData,
-    freeZonesData,
+  freeZonesData,
   procedureData,
-    documentsData,
+  documentsData,
   faqData,
-    costSectionData,
+  costSectionData,
 };
-

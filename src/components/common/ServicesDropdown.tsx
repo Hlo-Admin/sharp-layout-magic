@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const ServicesDropdown = () => {
   return (
-    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1100px] bg-white rounded-lg shadow-2xl border border-gray-300 z-50 overflow-hidden">
+    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1100px] bg-white rounded-lg shadow-2xl border border-gray-300 z-[9999] overflow-hidden">
       <div className="flex">
         {/* Left Column - Two Sections */}
         <div className="w-1/2 flex flex-col">
@@ -21,10 +21,13 @@ const ServicesDropdown = () => {
                 and making sure that they are fully compliant - and you can
                 concentrate on growth.
               </p>
-              <button className="bg-black text-white px-3 py-1.5 rounded-md text-xs font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors">
+              <Link
+                to="/brand-register"
+                className="bg-black text-white w-fit px-3 py-1.5 rounded-md text-xs font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors"
+              >
                 TALK TO AGENT
                 <ArrowRight className="w-3 h-3" />
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -42,10 +45,13 @@ const ServicesDropdown = () => {
                 and making sure that they are fully compliant - and you can
                 concentrate on growth.
               </p>
-              <button className="bg-black text-white px-3 py-1.5 rounded-md text-xs font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors">
+              <Link
+                to="/about"
+                className="bg-black w-fit text-white px-3 py-1.5 rounded-md text-xs font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors"
+              >
                 ABOUT US
                 <ArrowRight className="w-3 h-3" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>

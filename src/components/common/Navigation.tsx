@@ -4,13 +4,17 @@ import { Globe, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import ServicesDropdown from "./ServicesDropdown";
+import BusinessSetupDropdown from "./BusinessSetupDropdown";
 import CostCalculatorPopup from "./CostCalculatorPopup";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isBusinessSetupDropdownOpen, setIsBusinessSetupDropdownOpen] =
+    useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isCostCalculatorOpen, setIsCostCalculatorOpen] = useState(false);
   const location = useLocation();
+  const businessSetupRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
 
   const toggleMobileMenu = () => {
@@ -26,6 +30,12 @@ const Navbar = () => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
+        businessSetupRef.current &&
+        !businessSetupRef.current.contains(event.target as Node)
+      ) {
+        setIsBusinessSetupDropdownOpen(false);
+      }
+      if (
         servicesRef.current &&
         !servicesRef.current.contains(event.target as Node)
       ) {
@@ -33,18 +43,18 @@ const Navbar = () => {
       }
     };
 
-    if (isServicesDropdownOpen) {
+    if (isBusinessSetupDropdownOpen || isServicesDropdownOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isServicesDropdownOpen]);
+  }, [isBusinessSetupDropdownOpen, isServicesDropdownOpen]);
 
   return (
     <>
-      <nav className="absolute top-3 sm:top-4 md:top-6 left-2 sm:left-3 md:left-5 right-2 sm:right-3 md:right-5 bg-[#487b99] flex items-center justify-between h-[56px] sm:h-[60px] md:h-[64px] px-3 sm:px-5 md:px-7 rounded-lg shadow-xl z-20">
+      <nav className="absolute top-3 sm:top-4 md:top-6 left-2 sm:left-3 md:left-5 right-2 sm:right-3 md:right-5 bg-[#487b99] flex items-center justify-between h-[56px] sm:h-[60px] md:h-[64px] px-3 sm:px-5 md:px-7 rounded-lg shadow-xl z-[100]">
         {/* Left Logo */}
         <Link to="/" className="flex items-center gap-2 sm:gap-3">
           <img
@@ -64,12 +74,22 @@ const Navbar = () => {
 
         {/* Center Links */}
         <div className="hidden lg:flex gap-7 items-center pt-1">
-          <Link
-            to="/"
-            className="text-base font-medium text-white hover:text-white/80 transition"
-          >
-            Business Setup
-          </Link>
+          <div ref={businessSetupRef} className="relative">
+            <button
+              onClick={() =>
+                setIsBusinessSetupDropdownOpen(!isBusinessSetupDropdownOpen)
+              }
+              className="text-base font-medium text-white hover:text-white/80 transition cursor-pointer flex items-center gap-1"
+            >
+              Business Setup
+              <ChevronDown
+                className={`w-4 h-4 transition-transform ${
+                  isBusinessSetupDropdownOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {isBusinessSetupDropdownOpen && <BusinessSetupDropdown />}
+          </div>
           <div ref={servicesRef} className="relative">
             <button
               onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
@@ -144,15 +164,28 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="absolute top-[62px] sm:top-[68px] md:top-[76px] left-2 sm:left-3 md:left-5 right-2 sm:right-3 md:right-5 bg-[#487b99] backdrop-blur-md rounded-lg shadow-2xl z-50 lg:hidden overflow-hidden border border-white/10">
+        <div className="absolute top-[62px] sm:top-[68px] md:top-[76px] left-2 sm:left-3 md:left-5 right-2 sm:right-3 md:right-5 bg-[#487b99] backdrop-blur-md rounded-lg shadow-2xl z-[200] lg:hidden overflow-hidden border border-white/10">
           <div className="flex flex-col p-3 sm:p-4 space-y-2">
-            <Link
-              to="/"
-              onClick={toggleMobileMenu}
-              className="text-sm sm:text-base font-medium text-white hover:text-white/80 transition py-2.5 px-3 rounded hover:bg-white/10"
-            >
-              Business Setup
-            </Link>
+            <div className="relative">
+              <button
+                onClick={() =>
+                  setIsBusinessSetupDropdownOpen(!isBusinessSetupDropdownOpen)
+                }
+                className="text-sm sm:text-base font-medium text-white hover:text-white/80 transition py-2.5 px-3 rounded hover:bg-white/10 flex items-center gap-1 w-full text-left"
+              >
+                Business Setup
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform ${
+                    isBusinessSetupDropdownOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {isBusinessSetupDropdownOpen && (
+                <div className="mt-2">
+                  <BusinessSetupDropdown />
+                </div>
+              )}
+            </div>
             <div className="relative">
               <button
                 onClick={() =>

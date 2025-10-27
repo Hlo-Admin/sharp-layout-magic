@@ -27,19 +27,39 @@ export const heroData = {
   ],
 };
 
-
 export const whatIsMainlandData = {
   title: "WHAT IS MAINLAND COMPANY?",
   paragraphs: [
     "A mainland company is a company which is licensed by the Department of Economic Development (DED) of a particular emirate, e.g. Dubai, Abu Dhabi or Sharjah. Mainland businesses can be located anywhere within the UAE and are also capable of direct trading with the local market without any restrictions as opposed to the free zone companies.",
     "The mainland in the UAE provides one of the most vibrant and business friendly environment in the region. Having a wide customer base, little trade barriers, and the chance to collaborate with the government and the private sector, the establishment of the mainland company is the best option that an entrepreneur could choose to have a firm presence in the local and international market.",
-    "Go Kite Business Setup Services is a company formation expert in the UAE with extensive experience in mainland company formation, end-to-end support to have a smooth and compliant business set up experience."
+    "Go Kite Business Setup Services is a company formation expert in the UAE with extensive experience in mainland company formation, end-to-end support to have a smooth and compliant business set up experience.",
   ],
   types: [
-    { name: "Taraklness Company Formation", description: "Get your UAE Business Registered in 24hrs" },
-    { name: "Freezone Company Formation", description: "Get your UAE Business Registered in 24hrs" },
-    { name: "SME Company Formation", description: "Get your UAE Business Registered in 24hrs" },
-    { name: "Offshore Company Formation", description: "Get your UAE Business Registered in 24hrs" },
+    {
+      name: "Taraklness Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/tarakhees",
+    },
+    {
+      name: "Freezone Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/freezone",
+    },
+    {
+      name: "SME Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/smecompany",
+    },
+    {
+      name: "Offshore Company Formation",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/offshore",
+    },
+    {
+      name: "Mainland Business Setup",
+      description: "Get your UAE Business Registered in 24hrs",
+      href: "/mainland",
+    },
   ],
 };
 
@@ -48,11 +68,13 @@ export const benefitsData = {
   benefits: [
     {
       title: "UAE Market Access",
-      description: "Be able to operate within the UAE without any restrictions.",
+      description:
+        "Be able to operate within the UAE without any restrictions.",
     },
     {
       title: "No Trading Restrictions",
-      description: "Do business with the government and the private customers in the UAE.",
+      description:
+        "Do business with the government and the private customers in the UAE.",
     },
     {
       title: "Several Office Locations",
@@ -60,7 +82,8 @@ export const benefitsData = {
     },
     {
       title: "Unlimited Visa Quota",
-      description: "Mainland companies are allowed to apply to an unlimited amount of employee visas (depending on office space).",
+      description:
+        "Mainland companies are allowed to apply to an unlimited amount of employee visas (depending on office space).",
     },
     {
       title: "Freedom of Trade",
@@ -68,21 +91,21 @@ export const benefitsData = {
     },
     {
       title: "Flexible Business",
-      description: "Carry on a broad variety of commercial, professional or industrial operations.",
+      description:
+        "Carry on a broad variety of commercial, professional or industrial operations.",
     },
     {
       title: "Eligibility to Government Contracts",
-      description: "Get involved in profitable government tenders and contracts.",
+      description:
+        "Get involved in profitable government tenders and contracts.",
     },
     {
       title: "Repatriation of Profits",
       description: "Capital and profits may be fully repatriated.",
     },
   ],
-  image: "/Benefits.png"
+  image: "/Benefits.png",
 };
-
-
 
 export const licenseTypesData = {
   title: "MAINLAND COMPANY LICENSE TYPES",
@@ -105,7 +128,6 @@ export const licenseTypesData = {
   ],
 };
 
-
 export const costSectionData = {
   title: "Costs of Mainland Company Formation in the UAE",
   description: `Mainland company setup costs vary depending on the emirate,
@@ -116,7 +138,6 @@ export const costSectionData = {
   buttonText: "Get Quote for your business Setup",
   image: "/Cost.png",
 };
-
 
 export const stepsData = {
   title: "STEPS TO ESTABLISH A MAINLAND COMPANY IN UAE",
@@ -131,8 +152,6 @@ export const stepsData = {
     "Get the Business License: Get your trade license at the DED.",
   ],
 };
-
-
 
 export const documentsData = {
   title: "DOCUMENTS REQUIRED FOR MAINLAND COMPANY FORMATION",
@@ -173,13 +192,13 @@ export const faqData = {
         "The process includes selecting business activity, choosing legal form, reserving trade name, obtaining initial approval, renting office space, drafting agreements, submitting documents, and receiving the business license.",
     },
     {
-      question: "What types of licenses are required for a Business setup in UAE?",
+      question:
+        "What types of licenses are required for a Business setup in UAE?",
       answer:
         "The three main types are Commercial License (for trading), Professional License (for services), and Industrial License (for manufacturing). The type depends on your business activity.",
     },
   ],
 };
-
 
 export default {
   heroData,
@@ -190,5 +209,5 @@ export default {
   stepsData,
   documentsData,
   whyTrustUsData,
-  faqData
+  faqData,
 };
