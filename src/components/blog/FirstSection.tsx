@@ -1,16 +1,16 @@
 import React from 'react';
-import img1 from "/landingpage/leftimage.png"
-import img2 from "/landingpage/Rightimage.png"
-import img3 from "/landingpage/Item1.png"
-import img4 from "/landingpage/item2.png"
-import img5 from "/landingpage/Item3.png"
+import img1 from "/blog/corporatesetup.png"
+import img2 from "/blog/greenenergy.png"
+import img3 from "/blog/work.png"
+import img4 from "/blog/drone.png"
+import img5 from "/blog/phone.png"
 import img6 from "/landingpage/round2.png"
 import img7 from "/landingpage/round22.png"
 import img8 from "/landingpage/round33.png"
 function FirstSection() {
     return (
-        <div className="mt-[-261px]">
-            <div className="max-w-7xl mx-auto  sm:px-6 lg:px-8">
+        <div className="mt-40">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="">
                     <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 ">
@@ -29,12 +29,11 @@ function FirstSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                     {/* Top Row - Left Card */}
                     <div className="relative group">
-                        <div className="relative h-80 rounded-lg overflow-hidden shadow-lg">
+                        <div className="relative h-100 rounded-lg overflow-hidden shadow-lg">
                             <img 
-                                // src="https://images.unsplash.com/photo-1544117519-31a4b719223d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                               src={img1}
                                 alt="Smartwatch" 
-                                className="w-half h-half object-cover"
+                                className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                             
@@ -66,7 +65,7 @@ function FirstSection() {
 
                     {/* Top Row - Right Card */}
                     <div className="relative group">
-                        <div className="relative h-80 rounded-lg overflow-hidden shadow-lg">
+                        <div className="relative h-100 rounded-lg overflow-hidden shadow-lg">
                             <img 
                                 src={img2}
                                 alt="Wind Turbine" 
@@ -105,9 +104,8 @@ function FirstSection() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* Future of Work */}
                     <div className="relative group">
-                        <div className="relative h-64 rounded-lg overflow-hidden shadow-lg">
+                        <div className="relative  rounded-lg overflow-hidden shadow-lg">
                             <img 
-                                // src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                               src={img3}
                                 alt="Laptop with code" 
                                 className="w-full h-full object-cover"
@@ -136,16 +134,14 @@ function FirstSection() {
                                     </div>
                                     <span className="text-sm">02 May</span>
                                    
-                                </div>
-                              &nbsp   
+                                </div>              
                             </div>
-                            
                         </div>
                     </div>
 
                     {/* Future of Data */}
                     <div className="relative group">
-                        <div className="relative h-64 rounded-lg overflow-hidden shadow-lg">
+                        <div className="relative rounded-lg overflow-hidden shadow-lg">
                             <img 
                                 // src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                              src={img4}   alt="Drone" 
@@ -184,7 +180,7 @@ function FirstSection() {
 
                     {/* Future of Learning */}
                     <div className="relative group">
-                        <div className="relative h-64 rounded-lg overflow-hidden shadow-lg">
+                        <div className="relative  rounded-lg overflow-hidden shadow-lg">
                             <img 
                                 // src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                            src={img5}   
