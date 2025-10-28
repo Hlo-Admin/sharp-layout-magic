@@ -88,7 +88,11 @@ const Navbar = () => {
                 }`}
               />
             </button>
-            {isBusinessSetupDropdownOpen && <BusinessSetupDropdown />}
+            {isBusinessSetupDropdownOpen && (
+              <BusinessSetupDropdown
+                onClose={() => setIsBusinessSetupDropdownOpen(false)}
+              />
+            )}
           </div>
           <div ref={servicesRef} className="relative">
             <button
@@ -102,7 +106,11 @@ const Navbar = () => {
                 }`}
               />
             </button>
-            {isServicesDropdownOpen && <ServicesDropdown />}
+            {isServicesDropdownOpen && (
+              <ServicesDropdown
+                onClose={() => setIsServicesDropdownOpen(false)}
+              />
+            )}
           </div>
           <a
             href="/about-us"
@@ -182,7 +190,9 @@ const Navbar = () => {
               </button>
               {isBusinessSetupDropdownOpen && (
                 <div className="mt-2">
-                  <BusinessSetupDropdown />
+                  <BusinessSetupDropdown
+                    onClose={() => setIsBusinessSetupDropdownOpen(false)}
+                  />
                 </div>
               )}
             </div>
@@ -202,7 +212,9 @@ const Navbar = () => {
               </button>
               {isServicesDropdownOpen && (
                 <div className="mt-2">
-                  <ServicesDropdown />
+                  <ServicesDropdown
+                    onClose={() => setIsServicesDropdownOpen(false)}
+                  />
                 </div>
               )}
             </div>
