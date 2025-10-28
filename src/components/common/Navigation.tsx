@@ -105,13 +105,13 @@ const Navbar = () => {
             {isServicesDropdownOpen && <ServicesDropdown />}
           </div>
           <a
-            href="#about"
+            href="/about-us"
             className="text-base font-medium text-white hover:text-white/80 transition"
           >
             About Us
           </a>
           <a
-            href="#contact"
+            href="/contact"
             className="text-base font-medium text-white hover:text-white/80 transition"
           >
             Contact Us
