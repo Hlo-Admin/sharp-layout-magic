@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Clock, Phone, ChevronLeft, ChevronRight, Globe } from "lucide-react";
+import {
+  Clock,
+  Phone,
+  ChevronLeft,
+  ChevronRight,
+  Globe,
+  X,
+} from "lucide-react";
 
 interface BookingConfig {
   businessName: string;
@@ -13,7 +20,11 @@ interface BookingConfig {
   timezoneTime: string;
 }
 
-const BookingPopup = () => {
+interface BookingPopupProps {
+  onClose?: () => void;
+}
+
+const BookingPopup = ({ onClose }: BookingPopupProps = {}) => {
   // Dynamic configuration - Change these values as needed
   const [config, setConfig] = useState<BookingConfig>({
     businessName: "Go kite Pro.",
@@ -120,17 +131,25 @@ const BookingPopup = () => {
   };
 
   return (
-    <div className="flex bg-white rounded-lg shadow-2xl max-w-3xl w-full overflow-hidden">
+    <div className="flex bg-white rounded-lg shadow-2xl max-w-4xl w-full overflow-hidden relative">
+      {/* Close Button */}
+      <button
+        className="absolute top-4 right-4 z-10 text-red-500 hover:text-red-600 transition-colors"
+        onClick={onClose}
+      >
+        <X className="w-6 h-6" />
+      </button>
+
       {/* Left Panel */}
-      <div className="w-2/5 p-6 bg-white border-r border-gray-200">
-        <div className="mb-4">
-          <p className="text-gray-600 text-sm mb-1">{config.businessName}</p>
+      <div className="w-2/5 p-8 bg-white border-r border-gray-200 flex flex-col">
+        <div className="mb-6">
+          <p className="text-gray-600 text-sm mb-2">{config.businessName}</p>
           <h1 className="text-2xl font-bold text-gray-900">
             {config.serviceName}
           </h1>
         </div>
 
-        <div className="space-y-3 mb-6">
+        <div className="space-y-3 mb-8">
           <div className="flex items-center text-gray-700">
             <Clock className="w-5 h-5 mr-3 text-gray-500" />
             <span className="font-medium">{config.duration}</span>
@@ -141,13 +160,13 @@ const BookingPopup = () => {
           </div>
         </div>
 
-        <div className="mb-4">
-          <p className="text-gray-900 font-semibold mb-3">
+        <div className="mb-6">
+          <p className="text-gray-900 font-semibold mb-4">
             Book your free consultation Now:
           </p>
 
-          <div className="mb-3">
-            <label className="block text-sm font-medium text-gray-900 mb-1">
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-gray-900 mb-2">
               Email Address*
             </label>
             <input
@@ -155,16 +174,16 @@ const BookingPopup = () => {
               placeholder="Enter your Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border-2 border-yellow-400 rounded-lg focus:outline-none focus:border-yellow-500 text-gray-700"
+              className="w-full px-4 py-2.5 border-2 border-yellow-400 rounded-lg focus:outline-none focus:border-yellow-500 text-gray-700 placeholder:text-gray-400"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-900 mb-1">
+            <label className="block text-sm font-medium text-gray-900 mb-2">
               Phone Number*
             </label>
             <div className="flex border-2 border-yellow-400 rounded-lg overflow-hidden">
-              <span className="px-3 py-2 bg-white text-gray-700 border-r border-gray-300">
+              <span className="px-4 py-2.5 bg-white text-gray-700 border-r border-gray-300 font-medium">
                 +
               </span>
               <input
@@ -172,33 +191,33 @@ const BookingPopup = () => {
                 placeholder="Contact Number"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-3 py-2 focus:outline-none text-gray-700"
+                className="w-full px-4 py-2.5 focus:outline-none text-gray-700 placeholder:text-gray-400"
               />
             </div>
           </div>
         </div>
 
-        <div className="flex justify-between items-center text-sm mt-auto pt-4">
-          <button className="text-blue-600 hover:underline">
+        <div className="flex justify-between items-center text-sm mt-auto pt-6">
+          <button className="text-blue-600 hover:underline transition-colors">
             Cookie settings
           </button>
-          <button className="text-gray-700 hover:underline">
+          <button className="text-gray-700 hover:underline transition-colors">
             Report abuse
           </button>
         </div>
       </div>
 
       {/* Right Panel - Calendar */}
-      <div className="w-3/5 p-6 bg-white relative">
-        <h2 className="text-xl font-bold text-gray-900 mb-4">
+      <div className="w-3/5 p-8 bg-white relative">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">
           Select a Date & Time
         </h2>
 
         {/* Month Navigation */}
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-6">
           <button
             onClick={handlePrevMonth}
-            className="p-2 hover:bg-gray-100 rounded-full"
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           >
             <ChevronLeft className="w-5 h-5 text-gray-600" />
           </button>
@@ -207,14 +226,14 @@ const BookingPopup = () => {
           </span>
           <button
             onClick={handleNextMonth}
-            className="p-2 hover:bg-yellow-100 bg-yellow-200 rounded-full"
+            className="p-2 bg-yellow-300 hover:bg-yellow-400 rounded-full transition-colors"
           >
-            <ChevronRight className="w-5 h-5 text-gray-700" />
+            <ChevronRight className="w-5 h-5 text-gray-800" />
           </button>
         </div>
 
         {/* Calendar Header */}
-        <div className="grid grid-cols-7 gap-1 mb-2">
+        <div className="grid grid-cols-7 gap-2 mb-3">
           {daysOfWeek.map((day) => (
             <div
               key={day}
@@ -226,14 +245,14 @@ const BookingPopup = () => {
         </div>
 
         {/* Calendar Days */}
-        <div className="grid grid-cols-7 gap-1 mb-4">
+        <div className="grid grid-cols-7 gap-2 mb-6">
           {calendarDays.map((day, idx) => (
             <button
               key={idx}
               onClick={() => day.date && setSelectedDate(day.date)}
               disabled={!day.date}
               className={`
-                  aspect-square flex items-center justify-center rounded-lg text-sm transition-colors
+                  aspect-square flex items-center justify-center rounded-lg text-sm font-medium transition-colors
                   ${getDateStyle(day.date)}
                 `}
             >
@@ -245,15 +264,15 @@ const BookingPopup = () => {
         {/* Book Slot Button */}
         <button
           onClick={handleBookSlot}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-full mb-4 transition-colors"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 rounded-full mb-6 transition-colors shadow-sm"
         >
           Book Slot
         </button>
 
         {/* Timezone */}
-        <div className="border-t border-gray-200 pt-3">
-          <p className="text-sm font-semibold text-gray-900 mb-2">Time zone</p>
-          <div className="flex items-center text-gray-700">
+        <div className="border-t border-gray-200 pt-4">
+          <p className="text-sm font-semibold text-gray-900 mb-3">Time zone</p>
+          <div className="flex items-center text-gray-700 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors">
             <Globe className="w-4 h-4 mr-2 text-gray-600" />
             <span className="text-sm">
               {config.timezone} ({config.timezoneTime})

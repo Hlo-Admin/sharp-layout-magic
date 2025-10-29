@@ -172,7 +172,7 @@ const VisaHero = ({ data }: VisaHeroProps) => {
                 />
               </svg>
             </button>
-            <BookingPopup />
+            <BookingPopup onClose={() => setShowBookingPopup(false)} />
           </div>
         </div>
       )}

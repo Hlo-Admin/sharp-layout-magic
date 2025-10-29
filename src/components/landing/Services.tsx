@@ -24,7 +24,7 @@ const FreeZones: React.FC<Props> = ({ data }) => {
   const [showBooking, setShowBooking] = useState(false);
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-[#ffffff]">
       <div className="container mx-auto px-6 max-w-8xl">
         {/* Section Title */}
         <h1 className="pt-4 text-4xl font-bold text-black uppercase tracking-wide">
@@ -53,13 +53,13 @@ const FreeZones: React.FC<Props> = ({ data }) => {
               </div>
 
               {/* Description + Points */}
-              <div className="mb-5 text-gray-600 text-sm space-y-2">
+              <div className="mb-5 text-black text-sm space-y-2">
                 <p>{zone.description}</p>
                 {zone.points && (
                   <ul className="space-y-1 pt-2">
                     {zone.points.map((point, j) => (
                       <li key={j} className="flex items-start gap-1">
-                        <span className="text-sky-500 font-bold">→</span>
+                        <span className="text-black font-bold">•</span>
                         <span>{point}</span>
                       </li>
                     ))}
@@ -99,7 +99,7 @@ const FreeZones: React.FC<Props> = ({ data }) => {
             >
               ✕
             </button>
-            <BookingPopup />
+            <BookingPopup onClose={() => setShowBooking(false)} />
           </div>
         </div>
       )}

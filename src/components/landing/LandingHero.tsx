@@ -40,12 +40,12 @@ const LandingHero = ({ data }: LandingHeroProps) => {
   return (
     <section className="relative min-h-screen overflow-hidden mx-3 my-6 rounded-xl">
       {/* Top Yellow Bar */}
-      <div className="absolute top-0 left-0 right-0 bg-[#f7c332] py-1 sm:py-1.5 md:py-2 px-2 sm:px-4 md:px-6 lg:px-8 z-30">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-2 text-[10px] xs:text-xs sm:text-sm md:text-base">
-          <div className="text-[#193954] font-medium text-center sm:text-left truncate max-w-full sm:max-w-none">
+      <div className="absolute top-0 left-0 right-0 bg-[#f7c332] py-1 sm:py-1.5 md:py-2 z-30">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-2 text-[10px] xs:text-xs sm:text-sm md:text-base">
+          <div className="text-[#193954] font-medium text-center sm:text-left truncate max-w-full sm:max-w-none pl-2 sm:pl-3">
             Dubai 85549, United Arab Emirates
           </div>
-          <div className="flex items-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 flex-wrap justify-center sm:justify-end">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 flex-wrap justify-center sm:justify-end pr-2 sm:pr-3 md:pr-4">
             <a
               href="tel:+971503578847"
               className="text-[#193954] font-medium hover:underline whitespace-nowrap"

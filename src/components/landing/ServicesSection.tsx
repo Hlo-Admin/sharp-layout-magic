@@ -62,7 +62,7 @@ export default function ServicesSection({ data }: Props) {
   }, [isHovered]);
 
   return (
-    <section className="bg-gray-50 py-12 px-4 md:px-8 lg:px-12">
+    <section className="bg-[#f2f2f2] py-12 px-4 md:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="flex justify-between items-start mb-10">
@@ -79,7 +79,7 @@ export default function ServicesSection({ data }: Props) {
           <div className="hidden lg:block ml-8">
             <button
               onClick={() => setShowBooking(true)}
-              className="inline-flex items-center gap-2 bg-black text-white px-5 py-3 rounded-md text-xl font-medium hover:bg-gray-800 transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-black text-white px-5 py-3 rounded-xl text-xl font-medium hover:bg-gray-800 transition-colors whitespace-nowrap"
             >
               {data.buttonText}
               <ArrowUpRight className="w-4 h-4 text-[yellow]" />
@@ -109,12 +109,12 @@ export default function ServicesSection({ data }: Props) {
             {[...data.services, ...data.services].map((service, index) => (
               <div
                 key={index}
-                className="bg-gray-100 rounded-2xl p-4 hover:shadow-lg transition-shadow cursor-pointer flex flex-col min-w-[220px] max-w-[220px]"
+                className="bg-white rounded-2xl p-4 hover:shadow-lg transition-shadow cursor-pointer flex flex-col min-w-[220px] max-w-[220px]"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
                 {/* Image Container with rounded background */}
-                <div className="bg-white rounded-2xl overflow-hidden mb-3 shadow-sm">
+                <div className="bg-[#f2f2f2] rounded-2xl overflow-hidden mb-3 shadow-sm">
                   <div className="h-32">
                     <img
                       src={service.image}
@@ -156,7 +156,7 @@ export default function ServicesSection({ data }: Props) {
             >
               ✕
             </button>
-            <BookingPopup />
+            <BookingPopup onClose={() => setShowBooking(false)} />
           </div>
         </div>
       )}

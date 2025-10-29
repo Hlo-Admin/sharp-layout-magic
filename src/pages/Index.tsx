@@ -10,7 +10,7 @@ import ServicesGridSection from "@/components/landing/ServicesGridSection";
 import WorkingProcessSection from "@/components/landing/WorkingProcessSection";
 import ClientTestimonials from "@/components/landing/Testimonials";
 import BlogSection from "@/components/landing/BlogSection";
-import FAQ from "@/components/services/FAQ";
+import FAQ from "@/components/landing/FAQ";
 import Footer from "@/components/common/Footer";
 import landingPageData from "../data/landingPage";
 

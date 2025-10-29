@@ -1,3 +1,4 @@
+import { ChevronRight } from "lucide-react";
 import React from "react";
 
 interface Feature {
@@ -35,7 +36,7 @@ export default function StandardWorkingProcess({
   ctaButton,
 }: WorkingProcessSectionProps) {
   return (
-    <div className="bg-white pt-8 pb-16 px-4">
+    <div className="bg-white pb-16 px-4 -mt-2 ">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-12">
@@ -50,7 +51,7 @@ export default function StandardWorkingProcess({
             {features.map((feature, index) => (
               <div key={index} className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12  rounded-lg flex items-center justify-center">
                     <img
                       src={feature.icon}
                       alt={feature.title}
@@ -102,19 +103,7 @@ export default function StandardWorkingProcess({
                       </p>
                       <button className="text-[#53B0F5] font-semibold text-sm hover:text-cyan-600 transition-colors flex items-center gap-1 group self-start">
                         {card.linkText}
-                        <svg
-                          className="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
+                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </button>
                     </div>
                   </div>

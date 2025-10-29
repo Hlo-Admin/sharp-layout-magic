@@ -156,18 +156,16 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
             {Array.from({ length: 9 }, (_, index) => (
               <div key={index} className="flex items-center flex-1">
                 <div
-                  className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium ${
+                  className={`w-3 h-3 rounded-full border-2 ${
                     index + 1 <= currentStep
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-200 text-gray-500"
+                      ? "border-blue-500 bg-blue-500"
+                      : "border-gray-300"
                   }`}
-                >
-                  {index + 1}
-                </div>
+                />
                 {index < 8 && (
                   <div
                     className={`flex-1 h-0.5 mx-1 ${
-                      index + 1 < currentStep ? "bg-blue-500" : "bg-gray-200"
+                      index + 1 < currentStep ? "bg-blue-500" : "bg-gray-300"
                     }`}
                   />
                 )}
@@ -182,10 +180,10 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
           {currentStep === 1 && (
             <>
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-2xl font-bold text-black mb-2">
                   1. Choose your Business Category
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-500">
                   Select your UAE business activity to determine license,
                   location, and setup cost.
                 </p>
@@ -199,7 +197,7 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
                 <div className="relative">
                   <button
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-left flex items-center justify-between bg-white hover:border-gray-400 transition-colors"
+                    className="w-full px-4 py-3 border border-gray-100 rounded-lg text-left flex items-center justify-between bg-white hover:border-gray-400 transition-colors"
                   >
                     <span
                       className={
@@ -208,7 +206,7 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
                     >
                       {selectedBusinessType || "Choose Your Business Type"}
                     </span>
-                    <ChevronDown className="w-5 h-5 text-gray-400" />
+                   <img src="/dropdown.png" alt="" className="w-3 h-3" />
                   </button>
 
                   {isDropdownOpen && (
@@ -308,7 +306,7 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
           {currentStep === 3 && (
             <>
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   3. How many owners/shareholders will your company have?
                 </h3>
                 <p className="text-sm text-gray-600">
@@ -321,7 +319,7 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
 
               {/* Number Selection */}
               <div className="mb-6">
-                <div className="flex justify-left gap-4">
+                <div className="flex justify-left gap-9">
                   {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((number) => (
                     <button
                       key={number}
@@ -362,7 +360,7 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
           {currentStep === 4 && (
             <>
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   4. How many residence visas will you need?
                 </h3>
                 <p className="text-sm text-gray-600">
@@ -374,7 +372,7 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
 
               {/* Number Selection */}
               <div className="mb-6">
-                <div className="flex justify-left gap-4">
+                <div className="flex justify-left gap-9">
                   {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((number) => (
                     <button
                       key={number}

@@ -1,17 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
-interface Service {
-  text: string;
-  icon: string;
-}
-
 interface BusinessGuideCard {
   title: string;
   description: string;
   buttonText: string;
+  priceLabel?: string;
   price?: string;
-  services?: Service[];
   additionalText?: string;
   additionalButtons?: string[];
   backgroundColor: string;
@@ -57,7 +52,7 @@ export default function BusinessGuideSection({
   }, [currentIndex, cards.length]);
 
   return (
-    <div className="min-h-screen pt-6 sm:pt-12 px-2 sm:px-4 pb-0">
+    <div className="pt-6 sm:pt-12 px-2 sm:px-4 pb-20">
       <div className="max-w-full mx-auto">
         <div className="relative">
           <div
@@ -80,34 +75,26 @@ export default function BusinessGuideSection({
                   backgroundColor: index === 0 ? "#3690AD" : undefined,
                 }}
               >
-                {/* Business Guide Image - Only on first card */}
-                {index === 0 && (
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[20rem] h-[20rem] sm:w-[35rem] sm:h-[35rem] md:w-[50rem] md:h-[50rem] pointer-events-none opacity-30 sm:opacity-50 md:opacity-100">
-                    <img
-                      src="/landingpage/business-guide.png"
-                      alt="Business Guide"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                )}
+                {/* Business Guide Image - On all cards */}
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[20rem] h-[20rem] sm:w-[35rem] sm:h-[35rem] md:w-[50rem] md:h-[50rem] pointer-events-none opacity-30 sm:opacity-50 md:opacity-100">
+                  <img
+                    src="/landingpage/business-guide.png"
+                    alt="Business Guide"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
 
-                {/* Services Box - Positioned on right for first card (Desktop only) */}
-                {card.services && index === 0 && (
-                  <div className="hidden md:block absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-2 sm:p-3 md:p-4 shadow-xl z-20 w-40 sm:w-48 md:w-56">
-                    {card.services.map((service, serviceIndex) => (
-                      <div
-                        key={serviceIndex}
-                        className="text-gray-800 text-[0.65rem] sm:text-xs font-semibold mb-1.5 sm:mb-2 flex items-center gap-1 sm:gap-2"
-                      >
-                        <span className="text-gray-600">→</span>
-                        <span>{service.text}</span>
-                      </div>
-                    ))}
-                    {card.price && (
-                      <div className="text-cyan-600 font-bold text-xs sm:text-sm md:text-base mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-gray-200">
-                        {card.price}
+                {/* Price Box - Positioned on right for first card (Desktop only) */}
+                {card.price && index === 0 && (
+                  <div className="hidden md:block absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 shadow-xl z-20 w-52 sm:w-60 md:w-60">
+                    {card.priceLabel && (
+                      <div className="text-black text-[0.65rem] sm:text-xs font-bold mb-1.5 sm:mb-2 uppercase tracking-wide leading-tight">
+                        {card.priceLabel}
                       </div>
                     )}
+                    <div className="text-cyan-600 font-bold text-sm sm:text-base md:text-lg">
+                      {card.price}
+                    </div>
                   </div>
                 )}
 
@@ -142,23 +129,17 @@ export default function BusinessGuideSection({
                     <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4 text-[yellow] flex-shrink-0" />
                   </button>
 
-                  {/* Services Box - Mobile Only (after button) */}
-                  {card.services && index === 0 && (
+                  {/* Price Box - Mobile Only (after button) */}
+                  {card.price && index === 0 && (
                     <div className="block md:hidden bg-white/95 backdrop-blur-sm rounded-xl p-3 shadow-xl mb-4 w-full max-w-xs">
-                      {card.services.map((service, serviceIndex) => (
-                        <div
-                          key={serviceIndex}
-                          className="text-gray-800 text-xs font-semibold mb-2 flex items-center gap-2"
-                        >
-                          <span className="text-gray-600">→</span>
-                          <span>{service.text}</span>
-                        </div>
-                      ))}
-                      {card.price && (
-                        <div className="text-cyan-600 font-bold text-sm mt-3 pt-3 border-t border-gray-200">
-                          {card.price}
+                      {card.priceLabel && (
+                        <div className="text-gray-800 text-[0.65rem] font-bold mb-1.5 uppercase tracking-wide leading-tight">
+                          {card.priceLabel}
                         </div>
                       )}
+                      <div className="text-cyan-600 font-bold text-base">
+                        {card.price}
+                      </div>
                     </div>
                   )}
 
@@ -174,14 +155,14 @@ export default function BusinessGuideSection({
 
                   {/* Additional Buttons */}
                   {card.additionalButtons && (
-                    <div className="flex gap-2 sm:gap-3 flex-wrap">
+                    <div className="flex gap-2 sm:gap-3">
                       {card.additionalButtons.map((buttonText, buttonIndex) => (
                         <button
                           key={buttonIndex}
-                          className={`${card.buttonColor} ${card.buttonTextColor} px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-1 sm:gap-2 hover:scale-105 transition-transform shadow-md whitespace-nowrap`}
+                          className={`${card.buttonColor} ${card.buttonTextColor} px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[0.65rem] sm:text-xs font-semibold flex items-center gap-1 hover:scale-105 transition-transform shadow-md whitespace-nowrap flex-shrink-0`}
                         >
-                          <span className="truncate">{buttonText}</span>
-                          <ArrowUpRight className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[yellow] flex-shrink-0" />
+                          <span>{buttonText}</span>
+                          <ArrowUpRight className="w-2.5 h-2.5 text-[yellow] flex-shrink-0" />
                         </button>
                       ))}
                     </div>

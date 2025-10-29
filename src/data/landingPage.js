@@ -191,18 +191,13 @@ const landingPageData = {
         description:
           "We are keen on making processes easier, decreasing setup time, and making sure that they are fully compliant - and you can concentrate on growth. Committed To Enhancing Convenience & Efficiency For Entrepreneurs",
         buttonText: "Get Commercial office Space",
-        services: [
-          { text: "GET TRADE LICENSE", icon: "→" },
-          { text: "FREE ZONE", icon: "→" },
-          { text: "VISA", icon: "→" },
-          { text: "FLEXI DESK", icon: "→" },
-        ],
-        price: "JUST AED 4,888",
+        priceLabel: "GET YOUR BUSINESS LICENSE AT",
+        price: "JUST AED 4,499",
         additionalText:
           "We offer all types of service you would need to start a business in UAE",
         additionalButtons: [
           "Office Space",
-          "Staffing for your Business",
+          "Setup your Business",
           "Legal Support",
           "Government Approval",
         ],
@@ -212,13 +207,17 @@ const landingPageData = {
         buttonTextColor: "text-white",
       },
       {
-        title: "Standard",
+        title: "Standard working Protocol",
         description:
-          "We are keen on making processes easier, decreasing setup time, and making sure that they are fully compliant - and you can concentrate on growth. Committed To Enhancing Convenience & Efficiency For Entrepreneurs",
+          "We are keen on making processes easier, decreasing setup time, and making sure that they are fully compliant - and you can concentrate on growth.",
         buttonText: "Setup My SOP",
         additionalText:
           "We offer all types of service you would need to start a business in UAE",
-        additionalButtons: ["Business Service"],
+        additionalButtons: [
+          "Financial & Advisory Services",
+          "Legal & Documentation Service",
+          "Company Liquidation & Cancellation",
+        ],
         backgroundColor: "bg-yellow-400",
         textColor: "text-black",
         buttonColor: "bg-white",
@@ -447,37 +446,23 @@ const landingPageData = {
   },
   faqSection: {
     title: "Frequently Asked Questions",
-    subtitle: "Everything you need to know about business setup in UAE",
+    subtitle: "Know about your query and popularly asked questions",
     faqs: [
       {
-        question: "How long does it take to set up a business in UAE?",
+        question: "What is a mainland company in the UAE?",
         answer:
-          "The timeline varies depending on the type of business setup. Mainland companies typically take 7-14 days, while Free zone companies can be set up in 3-7 days. We ensure a smooth and efficient process to get your business running as quickly as possible.",
+          "A mainland company in the UAE is a business entity registered with the Department of Economic Development (DED) that allows you to operate anywhere within the UAE and trade directly with the local market. Mainland companies can conduct business throughout the UAE without restrictions and can bid for government contracts.",
       },
       {
-        question: "What are the costs involved in setting up a business?",
+        question: "What are the steps involved in a Business setup in UAE?",
         answer:
-          "Costs depend on the jurisdiction (Mainland, Free zone, or Offshore), business activities, and visa requirements. Packages start from AED 4,888 for basic setups. Contact us for a detailed quote tailored to your specific needs.",
+          "The business setup process involves: 1) Choosing your business activity and legal structure, 2) Selecting a trade name and getting initial approval, 3) Preparing and submitting required documents, 4) Obtaining necessary approvals from relevant authorities, 5) Securing office space, 6) Receiving your trade license, and 7) Processing visa applications. We guide you through each step efficiently.",
       },
       {
-        question: "Do I need a local sponsor for my business in UAE?",
+        question:
+          "What types of licenses are required for a Business setup in UAE?",
         answer:
-          "For Mainland companies with 100% foreign ownership in most activities, you no longer need a local sponsor. Free zone companies never required a local sponsor. Our team will guide you through the requirements based on your business type.",
-      },
-      {
-        question: "What documents are required for business setup?",
-        answer:
-          "Typically, you'll need passport copies, passport-sized photographs, business plan, and proof of address. Additional documents may be required based on your business activity. We'll provide you with a comprehensive checklist.",
-      },
-      {
-        question: "Can I get business visas for my employees?",
-        answer:
-          "Yes, once your company is established, you can sponsor employment visas for your staff. The number of visas depends on your office space and business activity. We handle all PRO services and visa processing for your team.",
-      },
-      {
-        question: "What support do you provide after business setup?",
-        answer:
-          "We offer comprehensive post-setup services including PRO services, visa processing, legal support, accounting, tax registration, office space solutions, and government approvals. We're your long-term partner for business success in UAE.",
+          "There are three main types of licenses in UAE: 1) Commercial License - for trading activities, 2) Professional License - for service providers and professionals, and 3) Industrial License - for manufacturing and industrial activities. The type of license depends on your business activities. We help you identify and obtain the right license for your business.",
       },
     ],
   },
@@ -496,7 +481,8 @@ const landingPageData = {
       {
         title: "Pro Services",
         description:
-          "Dedicated PRO team for faster approvals. Full correspondence with government entities.",
+          "Dedicated PRO team for faster approvals.\nFull correspondence with government entities.",
+
         button: "Government Paperwork",
         img: "/landingpage/services/pro.png",
       },
