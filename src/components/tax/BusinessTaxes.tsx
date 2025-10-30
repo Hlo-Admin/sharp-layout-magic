@@ -20,7 +20,7 @@ const BusinessTaxes = ({ data }: BusinessTaxesProps) => {
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl">
           {/* Left - Image */}
           <div className="order-2 lg:order-1">
-            <div className="rounded-2xl overflow-hidden shadow-2xl h-[500px]">
+            <div className="rounded-2xl overflow-hidden h-[500px]">
               <img
                 src={image}
                 alt="Modern building"
@@ -31,6 +31,9 @@ const BusinessTaxes = ({ data }: BusinessTaxesProps) => {
 
           {/* Right - Content */}
           <div className="order-1 lg:order-2 space-y-6">
+            <div className="text-3xl font-normal text-[#487b99] leading-none">
+              01
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-black">
               {title}
             </h2>
@@ -39,15 +42,15 @@ const BusinessTaxes = ({ data }: BusinessTaxesProps) => {
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-black flex items-center justify-center flex-shrink-0 mt-1">
-                    <Check className="w-4 h-4 text-white" />
+                  <div className="w-4 h-4 rounded-full bg-black flex items-center justify-center flex-shrink-0 mt-1">
+                    <Check className="w-2 h-2 text-white" />
                   </div>
                   <span className="text-lg text-gray-700">{benefit}</span>
                 </li>
               ))}
             </ul>
 
-            <Button className="bg-[#487b99] hover:bg-teal-600 text-white font-semibold px-8 py-6 text-lg rounded-lg mt-8">
+            <Button className="bg-[#f0ba1a] hover:bg-teal-600 text-white font-semibold px-8 py-6 text-lg rounded-lg mt-8">
               {buttonText} <ArrowRight className="ml-2" />
             </Button>
           </div>

@@ -44,7 +44,7 @@ const IndustriesSection = ({ data }: IndustriesSectionProps) => {
             </p>
 
             {/* Call to Action Button */}
-            <Button className="bg-[#487b99] hover:bg-teal-700 text-white px-6 py-3 rounded-lg flex items-center gap-2 w-fit">
+            <Button className="bg-[#3790ad] hover:bg-teal-700 text-white px-6 py-3 rounded-lg flex items-center gap-2 w-fit">
               {buttonText}
               <ArrowRight className="w-4 h-4" />
             </Button>
@@ -60,7 +60,7 @@ const IndustriesSection = ({ data }: IndustriesSectionProps) => {
               {statistics.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 rounded-lg p-4 border-l-4 border-[#487b99]"
+                  className="bg-gray-50 rounded-lg p-4 border-l-4 border-[#3790ad]"
                 >
                   <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
                     {stat.value}

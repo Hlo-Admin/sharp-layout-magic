@@ -2,8 +2,8 @@ import Navigation from "@/components/common/Navigation";
 import Footer from "@/components/common/Footer";
 import TaxHero from "@/components/tax/TaxHero";
 import IndustriesSection from "@/components/tax/IndustriesSection";
-import BusinessTaxes from "@/components/financial/BusinessTaxes";
-import ProcessSteps from "@/components/financial/ProcessSteps";
+import BusinessTaxes from "@/components/tax/BusinessTaxes";
+import ProcessSteps from "@/components/tax/ProcessSteps";
 import LegalComplaintService from "@/components/tax/LegalComplaintService";
 import FAQ from "@/components/services/FAQ";
 import {

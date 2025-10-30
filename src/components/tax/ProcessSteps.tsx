@@ -27,6 +27,9 @@ const ProcessSteps = ({ data }: ProcessStepsProps) => {
           {/* Left - Content */}
           <div className="space-y-8">
             <div>
+              <div className="text-3xl font-normal mb-4 text-[#487b99] leading-none">
+                02
+              </div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                 {title}
               </h2>
@@ -37,7 +40,7 @@ const ProcessSteps = ({ data }: ProcessStepsProps) => {
               {steps.map((step, index) => (
                 <div key={index} className="flex items-start gap-4">
                   <div className="w-4 h-4 rounded-full bg-black flex items-center justify-center flex-shrink-0 text-white font-bold text-lg">
-                    <Check className="w-4 h-4" />
+                    <Check className="w-2 h-2" />
                   </div>
                   <div>
                     <p className="text-gray-600">{step.description}</p>
@@ -46,14 +49,14 @@ const ProcessSteps = ({ data }: ProcessStepsProps) => {
               ))}
             </div>
 
-            <Button className="bg-[#487b99] hover:bg-teal-600 text-white font-semibold px-8 py-6 text-lg rounded-lg">
+            <Button className="bg-[#f0ba1a] hover:bg-teal-600 text-white font-semibold px-8 py-6 text-lg rounded-lg">
               {buttonText} <ArrowRight className="ml-2" />
             </Button>
           </div>
 
           {/* Right - Image */}
           <div className="order-first lg:order-last">
-            <div className="rounded-2xl overflow-hidden shadow-2xl h-[600px]">
+            <div className="rounded-2xl overflow-hidden h-[600px]">
               <img
                 src={image}
                 alt="UAE building"

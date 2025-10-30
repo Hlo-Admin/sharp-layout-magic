@@ -7,6 +7,25 @@ export const heroData = {
     "Stress-free tax solutions that save you time, maximize your returns and eliminate the hassle.",
   buttonText: "Contact Business Team",
   bannerImage: "/tax/tax-banner.jpg",
+  socialIcons: [
+    {
+      icon: "/phone.png",
+      href: "#contact",
+      alt: "Live Chat",
+    },
+    {
+      icon: "/whatsapp.png",
+      href: "https://wa.me/971503578847",
+      alt: "WhatsApp",
+      target: "_blank",
+      rel: "noopener noreferrer",
+    },
+    {
+      icon: "/message.png",
+      href: "mailto:info@gokitepro.com",
+      alt: "Email",
+    },
+  ],
   services: [
     {
       icon: "/finance/icon-1.png",
@@ -148,11 +167,11 @@ export const taxLegalServicesData = {
   mainTitle: "Our Tax  Services in Dubai",
   mainCards: [
     {
-      title: "Tax Advisory & Compliance",
+      title: "FTA Works Services in UAE",
       description:
-        "Businesses in the UAE have to interact with the Federal Tax Authority (FTA). Our Go Kite Business Setup Services is a company specialized in providing highly reliable and efficient FTA Works Services in Dubai",
+        "Businesses in the UAE have to interact with the Federal Tax Authority (FTA). Our Go Kite Pro Business Setup Services is a company specialized in providing highly reliable and efficient FTA Works Services in UAE",
       image: "/tax/legal-1.jpg",
-      buttonText: "Get Started →",
+      buttonText: "Apply Now →",
       buttonColor: "bg-[#3790ad]",
       bgColor: "bg-[yellow]",
       height: "h-[450px] sm:h-96",
@@ -172,7 +191,7 @@ export const taxLegalServicesData = {
     },
   ],
   detailsSection: {
-    title: "FTA Works Services in Dubai",
+    title: "FTA Works Services in UAE",
     mainCards: [
       {
         icon: "/finance/icon-1.png",
@@ -192,7 +211,7 @@ export const taxLegalServicesData = {
       },
     ],
     description:
-      "We provide end-to-end tax advisory and compliance services, ensuring your business meets all UAE tax obligations while optimizing your tax position.",
+      "At Go Kite Business Setup Services we offer complete services to all your FTA requirements:",
     processes: [
       {
         title: "1. FTA Registration",

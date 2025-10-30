@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import FloatingSocialIcons from "@/components/landing/FloatingSocialIcons";
 
 interface Service {
   icon: string;
@@ -16,14 +17,32 @@ interface FinancialHeroProps {
     buttonText: string;
     bannerImage: string;
     services: Service[];
+    socialIcons?: Array<{
+      icon: string;
+      href: string;
+      alt: string;
+      target?: string;
+      rel?: string;
+    }>;
   };
 }
 
 const FinancialHero = ({ data }: FinancialHeroProps) => {
-  const { title, subtitle, description, buttonText, bannerImage, services } =
-    data;
+  const {
+    title,
+    subtitle,
+    description,
+    buttonText,
+    bannerImage,
+    services,
+    socialIcons,
+  } = data;
   return (
     <section className="relative overflow-hidden bg-white">
+      {/* Floating Social Icons */}
+      {socialIcons && socialIcons.length > 0 && (
+        <FloatingSocialIcons icons={socialIcons} />
+      )}
       {/* Background Image Container - Only covers hero content and half of first row cards */}
       <div className="relative">
         {/* Background Image */}
@@ -67,7 +86,7 @@ const FinancialHero = ({ data }: FinancialHeroProps) => {
       </div>
 
       {/* Services Grid - Positioned to overlap with background */}
-      <div className="container relative mx-auto px-4 -mt-16 pb-16">
+      <div className="container relative mx-auto px-4 mt-8 pb-16">
         {/* First Row - 3 cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           {services.slice(0, 3).map((service, index) => (
@@ -82,7 +101,7 @@ const FinancialHero = ({ data }: FinancialHeroProps) => {
               />
 
               {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/60 to-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/40 to-black/10" />
 
               {/* Content */}
               <div className="relative h-full p-6 flex flex-col justify-end text-white">
@@ -114,7 +133,7 @@ const FinancialHero = ({ data }: FinancialHeroProps) => {
               />
 
               {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/60 to-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/40 to-black/10" />
 
               {/* Content */}
               <div className="relative h-full p-6 flex flex-col justify-end text-white">

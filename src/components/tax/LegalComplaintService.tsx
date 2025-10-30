@@ -59,7 +59,7 @@ const LegalComplaintService: React.FC<LegalComplaintServiceProps> = ({
               {data.mainCards.map((card, index) => (
                 <div
                   key={index}
-                  className={`relative overflow-hidden rounded-lg ${card.height}`}
+                  className={`relative overflow-hidden rounded-lg ${card.height} h-[360px] sm:h-[320px] lg:h-[420px]`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-b from-gray-400 to-gray-500">
                     <img
@@ -87,7 +87,7 @@ const LegalComplaintService: React.FC<LegalComplaintServiceProps> = ({
                     <>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                       <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-                        <h3 className="text-white text-base sm:text-lg font-bold">
+                        <h3 className="text-white text-2xl text-center sm:text-xl font-bold">
                           {card.title}
                         </h3>
                       </div>
@@ -99,7 +99,7 @@ const LegalComplaintService: React.FC<LegalComplaintServiceProps> = ({
           </div>
 
           {/* Second Card - Complaint Filing Services Details */}
-          <div className="bg-white rounded-lg p-4 sm:p-6 lg:p-8">
+          <div className="bg-white rounded-2xl p-4 sm:p-6 lg:p-8">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black text-left mb-6 sm:mb-8 lg:mb-12">
               {data.detailsSection.title}
             </h2>
@@ -145,17 +145,12 @@ const LegalComplaintService: React.FC<LegalComplaintServiceProps> = ({
               <div className="space-y-4 sm:space-y-6">
                 {data.detailsSection.processes.map((process, index) => (
                   <div key={index}>
-                    <h4 className="text-sm sm:text-base font-bold text-black mb-2 sm:mb-3">
+                    <h4 className="text-sm sm:text-base font-normal text-black mb-2 sm:mb-3">
                       {process.title}
                     </h4>
-                    <ul className="space-y-2 ml-3 sm:ml-4 text-xs sm:text-sm text-gray-700">
-                      {process.items.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <p className="ml-0 sm:ml-0 text-xs sm:text-sm text-gray-700 leading-relaxed">
+                      {process.items.join(" ")}
+                    </p>
                   </div>
                 ))}
               </div>
