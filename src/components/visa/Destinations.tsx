@@ -1,9 +1,9 @@
 import {
-  ChevronLeft,
-  ChevronRight,
+
   Calendar,
   User,
   ArrowRight,
+  ArrowLeft,
 } from "lucide-react";
 
 interface BlogCard {
@@ -40,10 +40,10 @@ const Destinations = ({ data }: DestinationsProps) => {
           </div>
           <div className="flex items-center gap-3">
             <button className="w-12 h-12 bg-[#FEF3C7] rounded-full flex items-center justify-center hover:bg-[#FDE68A] transition-colors">
-              <ChevronLeft className="w-5 h-5 text-black" />
+              <ArrowLeft className="w-5 h-5 text-black" />
             </button>
             <button className="w-12 h-12 bg-[#FCD34D] rounded-full flex items-center justify-center hover:bg-[#F59E0B] transition-colors">
-              <ChevronRight className="w-5 h-5 text-black" />
+              <ArrowRight className="w-5 h-5 text-black" />
             </button>
           </div>
         </div>
@@ -52,7 +52,7 @@ const Destinations = ({ data }: DestinationsProps) => {
           {destinations.map((blog, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
             >
               <div className="relative h-64">
                 <img

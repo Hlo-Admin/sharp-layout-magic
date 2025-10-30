@@ -14,13 +14,16 @@ const ServiceBenefits = ({ data }: ServiceBenefitsProps) => {
   const { benefits } = data;
 
   return (
-    <section className="py-20 px-4 bg-[hsl(var(--section-alt))]">
+    <section className="py-20 px-4 bg-white">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-3 gap-12">
           {benefits.map((benefit, index) => {
             return (
-              <div key={index} className="text-left">
-                <div className="inline-flex items-center justify-center w-24 h-24 bg-[hsl(var(--golden))] rounded-full mb-6 shadow-lg">
+              <div
+                key={index}
+                className="text-left bg-gray-50 border border-gray-200 rounded-xl p-8 shadow-sm"
+              >
+                <div className="inline-flex items-center justify-center w-24 h-24 bg-[#f0ba1a] rounded-full mb-6 shadow">
                   <img
                     src={benefit.icon}
                     alt={benefit.title}

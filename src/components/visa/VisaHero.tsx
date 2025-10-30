@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import BookingPopup from "@/components/common/Booking";
+import FloatingSocialIcons from "@/components/landing/FloatingSocialIcons";
 
 const ArrowRightIcon = ({ className }: { className?: string }) => (
   <svg
@@ -30,6 +31,7 @@ interface VisaHeroProps {
     title: string;
     subtitle: string;
     buttonText: string;
+    backgroundImage: string;
     visaCards: VisaCard[];
     socialIcons: Array<{
       icon: string;
@@ -41,31 +43,17 @@ interface VisaHeroProps {
   };
 }
 
-// Floating Social Icons Component
-const FloatingSocialIcons = ({ icons }: { icons: any[] }) => {
-  return (
-    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
-      {icons.map((icon, index) => (
-        <a
-          key={index}
-          href={icon.href}
-          target={icon.target}
-          rel={icon.rel}
-          className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300"
-        >
-          <img
-            src={icon.icon}
-            alt={icon.alt}
-            className="w-6 h-6 object-contain"
-          />
-        </a>
-      ))}
-    </div>
-  );
-};
+// Using shared FloatingSocialIcons for consistent design
 
 const VisaHero = ({ data }: VisaHeroProps) => {
-  const { title, subtitle, buttonText, visaCards, socialIcons } = data;
+  const {
+    title,
+    subtitle,
+    buttonText,
+    visaCards,
+    socialIcons,
+    backgroundImage,
+  } = data;
   const [showBookingPopup, setShowBookingPopup] = useState(false);
 
   return (
@@ -75,7 +63,17 @@ const VisaHero = ({ data }: VisaHeroProps) => {
 
       {/* Background Banner Container */}
       <div className="relative">
-        {/* Background with Gradient - Simulating the image */}
+        {/* Background Image */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "calc(100% + 120px)",
+          }}
+        />
+        {/* Gradient Overlay */}
         <div
           className="absolute inset-0"
           style={{

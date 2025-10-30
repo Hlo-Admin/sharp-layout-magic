@@ -17,6 +17,10 @@ interface ApplicationProcessProps {
 const ApplicationProcess = ({ data }: ApplicationProcessProps) => {
   const { title, subtitle, steps } = data;
 
+  // Divide steps into two rows:
+  const firstRow = steps.slice(0, 3);
+  const secondRow = steps.slice(3);
+
   return (
     <section className="py-20 px-4 bg-gray-50 relative overflow-hidden">
       {/* Background decorative elements */}
@@ -34,21 +38,68 @@ const ApplicationProcess = ({ data }: ApplicationProcessProps) => {
           <h2 className="text-4xl md:text-5xl font-bold text-black">{title}</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {steps.map((step, index) => (
+        {/* First row: steps 1–3 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-6">
+          {firstRow.map((step, index) => (
             <div
               key={index}
               className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300"
             >
-              <div
-                className="text-6xl font-bold text-transparent bg-clip-text  mb-6"
-                style={{
-                  WebkitTextStroke: "2px #F0D9A6",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                {step.number}
-              </div>
+              {/^0[1-5]$/.test(step.number) ? (
+                <div className="mb-6">
+                  <img
+                    src={`/visa/${step.number}.png`}
+                    alt={`Step ${step.number}`}
+                    className="w-16 h-16 object-contain"
+                  />
+                </div>
+              ) : (
+                <div
+                  className="text-6xl font-bold text-transparent bg-clip-text mb-6"
+                  style={{
+                    WebkitTextStroke: "2px #F0D9A6",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  {step.number}
+                </div>
+              )}
+              <h3 className="text-xl font-bold text-black mb-4">
+                {step.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Second row: steps 4 & 5, centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          {secondRow.map((step, index) => (
+            <div
+              key={index + 3}
+              className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300"
+            >
+              {/^0[1-5]$/.test(step.number) ? (
+                <div className="mb-6">
+                  <img
+                    src={`/visa/${step.number}.png`}
+                    alt={`Step ${step.number}`}
+                    className="w-16 h-16 object-contain"
+                  />
+                </div>
+              ) : (
+                <div
+                  className="text-6xl font-bold text-transparent bg-clip-text mb-6"
+                  style={{
+                    WebkitTextStroke: "2px #F0D9A6",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  {step.number}
+                </div>
+              )}
               <h3 className="text-xl font-bold text-black mb-4">
                 {step.title}
               </h3>

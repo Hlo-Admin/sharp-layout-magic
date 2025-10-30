@@ -1,5 +1,3 @@
-import { Check } from "lucide-react";
-
 interface WhyChooseUsProps {
   data: {
     title: string;
@@ -15,39 +13,37 @@ const WhyChooseUs = ({ data }: WhyChooseUsProps) => {
   return (
     <section className="py-20 px-4 bg-[hsl(var(--section-alt))]">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-3 gap-60 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content Side */}
-          <div className="order-1 lg:col-span-2">
-            {/* <p className="text-[hsl(var(--golden-foreground))] font-semibold mb-2">
-              {subtitle}
-            </p> */}
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+          <div className="order-1">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 whitespace-pre-line">
               {title}
             </h2>
+            {subtitle && (
+              <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl">
+                {subtitle}
+              </p>
+            )}
 
-            <ul className="space-y-4">
+            <ul className="space-y-4 list-disc pl-6">
               {benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-[black] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-foreground font-medium leading-relaxed">
-                    {benefit}
-                  </span>
+                <li
+                  key={index}
+                  className="text-foreground font-medium leading-relaxed"
+                >
+                  {benefit}
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Image Side */}
-          <div className="relative order-2">
-            <div className="">
-              <img
-                src={image}
-                alt="Professional"
-                className="w-[300px] h-[400px] object-cover"
-              />
-            </div>
+          <div className="relative order-2 flex justify-center lg:justify-end">
+            <img
+              src={image}
+              alt="Why choose Go Kite PRO"
+              className="w-[320px] md:w-[360px] lg:w-[400px] h-auto object-contain"
+            />
           </div>
         </div>
       </div>

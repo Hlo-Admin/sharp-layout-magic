@@ -43,7 +43,7 @@ const JourneySteps = ({ data }) => {
 
               {/* Yellow experience badge overlapping top-right of small image */}
               <div className="absolute left-[270px] top-[-6px] translate-x-0 z-20">
-                <div className="bg-yellow-400 rounded-2xl px-5 py-4 min-w-[110px] flex flex-col items-center justify-center shadow-md border border-yellow-500">
+                <div className="bg-[#f0ba1a] rounded-2xl px-5 py-4 min-w-[110px] flex flex-col items-center justify-center shadow-md border border-yellow-500">
                   <div className="text-white font-extrabold text-2xl leading-none">
                     {journeySteps.experience.years}
                   </div>
@@ -104,7 +104,7 @@ const JourneySteps = ({ data }) => {
                   className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100"
                 >
                   <div className="flex items-start gap-3 mb-4">
-                    <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#f0ba1a] rounded-full flex items-center justify-center flex-shrink-0">
                       <img src={card.icon} alt="" />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900">

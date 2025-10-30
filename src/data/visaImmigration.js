@@ -3,18 +3,19 @@ const visaImmigrationData = {
     title: "Visa Made Easy",
     subtitle: "Dreams Made Possible",
     buttonText: "Get Started Today",
+    backgroundImage: "/visa/banner.png",
     socialIcons: [
+      {
+        icon: "/phone.png",
+        href: "tel:+1234567890",
+        alt: "Phone",
+      },
       {
         icon: "/whatsapp.png",
         href: "https://wa.me/1234567890",
         alt: "WhatsApp",
         target: "_blank",
         rel: "noopener noreferrer",
-      },
-      {
-        icon: "/phone.png",
-        href: "tel:+1234567890",
-        alt: "Phone",
       },
       {
         icon: "/message.png",
@@ -25,45 +26,45 @@ const visaImmigrationData = {
     visaCards: [
       {
         icon: "/visa/icon-1.png",
-        title: "Tourist Visa",
+        title: "Golden Visa",
         description:
-          "Explore new destinations with hassle-free tourist visa services for your dream vacation.",
-        link: "#tourist",
+          "Get your long-term UAE residency with full assistance — from eligibility check to visa stamping. High-skill categories include investors, real estate owners, doctors, and PhDs.",
+        link: "#golden",
       },
       {
         icon: "/visa/icon-2.png",
-        title: "Business Visa",
+        title: "Employment Visa",
         description:
-          "Expand your business globally with our efficient business visa processing services.",
-        link: "#business",
+          "Hire talent legally with complete visa processing support — from application typing to stamping and medical tests.",
+        link: "#employment",
       },
       {
         icon: "/visa/icon-3.png",
-        title: "Student Visa",
-        description:
-          "Pursue your education abroad with our comprehensive student visa assistance.",
-        link: "#student",
-      },
-      {
-        icon: "/visa/icon-4.png",
         title: "Family Visa",
         description:
-          "Bring your loved ones together with our comprehensive family visa services.",
+          "Bring your family to the UAE with dependent visa support for spouses, children, and relatives. We handle all documentation and approvals.",
         link: "#family",
       },
       {
-        icon: "/visa/icon-5.png",
-        title: "Work Visa",
+        icon: "/visa/icon-4.png",
+        title: "Residency Visa",
         description:
-          "Start your international career with our professional work visa assistance.",
-        link: "#work",
+          "We assist individuals and families with long-term residency options, including renewals and government processing.",
+        link: "#residency",
+      },
+      {
+        icon: "/visa/icon-5.png",
+        title: "Emirates ID & Medical Typing",
+        description:
+          "Fast and hassle-free processing of Emirates ID applications, biometrics, and medical typing — all managed under one roof.",
+        link: "#emiratesid",
       },
       {
         icon: "/visa/icon-6.png",
-        title: "Residency Visa",
+        title: "Investor Visa",
         description:
-          "Secure long-term residency with our expert guidance and support.",
-        link: "#residency",
+          "Secure long-term residency as a business owner or shareholder. We manage medical tests, Emirates ID, and approvals for a smooth process.",
+        link: "#investor",
       },
     ],
   },
@@ -190,16 +191,15 @@ const visaImmigrationData = {
 
   whyChooseUs: {
     title: "Why Choose\nGo Kite PRO Business Setup Services?",
-    subtitle: "Your Trusted Partner",
+    subtitle:
+      "At Go Kite Business Setup Services, we make your Golden Visa journey easy, quick, and reliable:",
     image: "/visa/why-choose.png",
     benefits: [
-      "Over 20 years of experience in UAE immigration services",
-      "Team of certified immigration consultants and legal experts",
-      "Personalized service tailored to your specific needs",
-      "Transparent pricing with no hidden fees",
-      "Strong relationships with government authorities",
-      "Proven track record of successful visa applications",
-      "Multi-language support for international clients",
+      "Deep Expertise in UAE Immigration Rules",
+      "Customizable Visa Solutions for Every Category",
+      "Transparent and Fair Pricing",
+      "Dedicated Support Team",
+      "Strong Government Relations",
     ],
   },
 
@@ -241,7 +241,7 @@ const visaImmigrationData = {
   },
 
   servicesOverview: {
-    title: "Why to Use Golden Visa Services in Dubai?",
+    title: "Why to Use Golden Visa Services in UAE?",
     description:
       "The UAE Golden Visa is a wise step for investors, entrepreneurs, specialized talents, and researchers seeking long-term residency in the UAE. Our comprehensive services ensure a smooth application process with expert guidance every step of the way.",
     features: [

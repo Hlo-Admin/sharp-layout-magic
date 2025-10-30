@@ -16,16 +16,16 @@ const ServicesOverview = ({ data }: ServicesOverviewProps) => {
   return (
     <section className="py-20 px-4 bg-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="max-w-3xl">
+        <div className="max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 text-left">
             {title}
           </h2>
 
-          <p className="text-gray-700 text-lg mb-8 leading-relaxed text-left">
+          <p className="text-gray-700 text-lg mb-1  text-left">
             {description}
           </p>
 
-          <ul className="mb-8 text-left">
+          <ul className=" mb-1 text-left">
             {features.map((feature, index) => (
               <li key={index} className="flex items-start gap-3 mb-3">
                 <div className="w-2 h-2 bg-black rounded-full flex-shrink-0 mt-3"></div>
@@ -36,7 +36,7 @@ const ServicesOverview = ({ data }: ServicesOverviewProps) => {
             ))}
           </ul>
 
-          <p className="text-gray-700 text-lg mb-4 leading-relaxed text-left">
+          <p className="text-gray-700 text-lg leading-relaxed text-left">
             Start your Dubai Golden Visa application today with GoKite Business
             Setup Services.
           </p>
