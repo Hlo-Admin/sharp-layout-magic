@@ -14,6 +14,7 @@ export type MainlandData = {
   whatIsMainlandData: WhatIsMainlandData;
   companyTypes: CompanyType[];
   benefitsData: any; // Replace `any` with actual type if you want stricter typing
+  mainlandBenefitsData: any;
   licenseTypesData: any;
   costSectionData: any;
   stepsData: any;

@@ -107,23 +107,74 @@ export const benefitsData = {
   image: "/Benefits.png",
 };
 
+// New: tailored for Mainland Benefits section with UAE wording
+export const mainlandBenefitsData = {
+  title: "BENEFITS OF MAINLAND COMPANY FORMATION IN UAE",
+  benefits: [
+    {
+      title: "UAE Market Access",
+      description:
+        "Be able to operate within the UAE without any restrictions.",
+    },
+    {
+      title: "No Trading Restrictions",
+      description:
+        "Do business with the government and the private customers in the UAE.",
+    },
+    {
+      title: "Several Office Locations",
+      description: "Select between flexible offices in various emirates.",
+    },
+    {
+      title: "Unlimited Visa Quota",
+      description:
+        "Mainland companies are allowed to apply to an unlimited amount of employee visas (depending on office space).",
+    },
+    {
+      title: "Freedom of Trade",
+      description: "The right to trade locally and internationally.",
+    },
+    {
+      title: "Flexible Business",
+      description:
+        "Carry on a broad variety of commercial, professional or industrial operations.",
+    },
+    {
+      title: "Eligibility to Government Contracts",
+      description:
+        "Get involved in profitable government tenders and contracts.",
+    },
+    {
+      title: "Repatriation of Profits",
+      description: "Capital and profits may be fully repatriated.",
+    },
+  ],
+  image: "/Benefits.png",
+};
+
 export const licenseTypesData = {
   title: "MAINLAND COMPANY LICENSE TYPES",
   licenses: [
     {
       icon: "/license-icon-1.png",
       title: "Commercial License",
-      description: "To trade and general business",
+      subtitle: "Trade and General Business",
+      description:
+        "Required for trading, import/export, retail, and commercial activities. We manage all approvals, renewals, and documentation, helping you launch and operate smoothly.",
     },
     {
       icon: "/license-icon-2.png",
       title: "Professional License",
-      description: "To service providers, professionals & consultants.",
+      subtitle: "Service, Professionals & Consultants.",
+      description:
+        "Designed for consultants, freelancers, and service providers. We ensure your license is issued quickly while keeping you fully compliant with UAE regulations.",
     },
     {
       icon: "/license-icon-3.png",
       title: "Industrial Licence",
-      description: "To be used by manufacturing or industrial based businesses",
+      subtitle: "Machinery or Industrial based businesses",
+      description:
+        "Necessary for manufacturing, industrial, and production activities. Our team handles feasibility studies, environmental clearances, and approvals to help you start operations seamlessly.",
     },
   ],
 };
@@ -136,7 +187,7 @@ export const costSectionData = {
     including license fees, local service agent fees, and documentation.`,
   highlightedText: "AED 15,000 to AED 35,000",
   buttonText: "Get Quote for your business Setup",
-  image: "/Cost.png",
+  image: "/Cost-1.png",
 };
 
 export const stepsData = {
@@ -204,6 +255,7 @@ export default {
   heroData,
   whatIsMainlandData,
   benefitsData,
+  mainlandBenefitsData,
   licenseTypesData,
   costSectionData,
   stepsData,

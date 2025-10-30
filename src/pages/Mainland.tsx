@@ -2,6 +2,7 @@ import Navigation from "@/components/common/Navigation";
 import Hero from "@/components/services/Hero";
 import WhatIsMainland from "@/components/services/WhatIsMainland";
 import Benefits from "@/components/services/Benefits";
+import MainlandBenefits from "@/components/services/MainlandBenefits";
 import LicenseTypes from "@/components/services/LicenseTypes";
 import CostSection from "@/components/services/CostSection";
 import Steps from "@/components/services/Steps";
@@ -18,7 +19,7 @@ const Index = () => {
       {/* <Navigation /> */}
       <Hero data={mainlandData.heroData} />
       <WhatIsMainland data={mainlandData.whatIsMainlandData} />
-      <Benefits data={mainlandData.benefitsData} />
+      <MainlandBenefits data={(mainlandData as any).mainlandBenefitsData} />
       <LicenseTypes data={mainlandData.licenseTypesData} />
       <hr />
       <CostSection data={mainlandData.costSectionData} />

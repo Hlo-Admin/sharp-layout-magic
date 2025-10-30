@@ -11,7 +11,7 @@ const Hero = ({ data }) => {
     >
       {/* Banner background */}
       <div
-        className="absolute inset-0 bg-cover bg-center rounded-xl"
+        className="absolute inset-0 bg-cover bg-center rounded-3xl"
         style={{
           backgroundImage: `url(${image})`,
           filter: "brightness(1)",

@@ -56,7 +56,7 @@ const WhatIsMainland: React.FC<Props> = ({ data }) => {
                           {type.description}
                         </p>
                       </div>
-                      <ArrowRight className="w-5 h-5 text-black ml-4 flex-shrink-0 group-hover:text-gray-600 group-hover:translate-x-1 transition-all" />
+                      <ArrowRight className="w-5 h-5 text-yellow-500 border border-gray-100 rounded-full ml-4 flex-shrink-0 group-hover:text-gray-600 group-hover:translate-x-1 transition-all" />
                     </div>
                   );
 
