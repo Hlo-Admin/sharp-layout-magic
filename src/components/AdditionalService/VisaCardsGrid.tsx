@@ -32,7 +32,7 @@ const VisaCardsGrid = ({ data }: VisaCardsGridProps) => {
   const { title, visaCards } = data;
 
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="py-16 px-4 bg-gray-50">
       <div className="container mx-auto">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
@@ -42,7 +42,7 @@ const VisaCardsGrid = ({ data }: VisaCardsGridProps) => {
         </div>
 
         {/* Visa Cards Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {visaCards.map((card, index) => (
             <div
               key={index}
@@ -58,7 +58,7 @@ const VisaCardsGrid = ({ data }: VisaCardsGridProps) => {
                   <div className="flex-1 h-0.5 bg-[#487b99]"></div>
                   <div className="w-2 h-2 bg-[#487b99] rounded-full mr-2"></div>
                 </div>
-                <p className="text-gray-600 mb-6 text-base leading-relaxed pr-20 flex-grow">
+                <p className="text-black mb-6 text-base leading-relaxed pr-20 flex-grow">
                   {card.description}
                 </p>
                 <a

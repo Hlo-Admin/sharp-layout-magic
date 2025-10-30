@@ -56,7 +56,7 @@ const FinancialHero = ({ data }: FinancialHeroProps) => {
                   {subtitle}
                 </h1>
                 <p className="text-xl text-gray-700">{description}</p>
-                <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-6 text-lg rounded-lg flex items-center gap-2 w-fit">
+                <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-6 text-lg rounded-3xl flex items-center gap-2 w-fit">
                   {buttonText} <ArrowRight className="w-5 h-5" />
                 </Button>
               </div>
@@ -66,7 +66,7 @@ const FinancialHero = ({ data }: FinancialHeroProps) => {
       </div>
 
       {/* Services Grid - Positioned to overlap with background */}
-      <div className="container relative mx-auto px-4 -mt-16 pb-16">
+      <div className="container relative mx-auto px-4 -mt-2 pb-16">
         {/* First Row - 3 cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           {services.slice(0, 3).map((service, index) => (
@@ -81,7 +81,7 @@ const FinancialHero = ({ data }: FinancialHeroProps) => {
               />
 
               {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/60 to-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/30 to-black/10" />
 
               {/* Content */}
               <div className="relative h-full p-6 flex flex-col justify-end text-white">

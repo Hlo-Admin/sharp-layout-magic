@@ -29,8 +29,14 @@ export const heroData = {
 
 export const trademarkBannerData = {
   backgroundImage: "/legal/trade-banner.jpg",
-  icon: "/legal/c.png",
-  title: "Trademark Registration",
+  icon: "/additionalservice/c.png",
+  icons: [
+    "/additionalservice/c.png",
+    "/additionalservice/r.png",
+    "/additionalservice/TM.png",
+    "/additionalservice/IP.png",
+  ],
+  title: "Brand Registration",
   description:
     "Our team ensures quick and accurate trademark registration so your brand identity is protected from unauthorized use.",
   buttonText: "Apply Now →",

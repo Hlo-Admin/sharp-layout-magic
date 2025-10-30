@@ -23,7 +23,7 @@ const ServicesGridTwo = ({ data }: ServicesGridTwoProps) => {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-0">
             {title}
           </h2>
-          <button className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors duration-300 flex items-center gap-2 self-start md:self-auto">
+          <button className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-3xl font-semibold hover:bg-yellow-500 transition-colors duration-300 flex items-center gap-2 self-start md:self-auto">
             {buttonText}
             <svg
               className="w-5 h-5"
@@ -53,7 +53,7 @@ const ServicesGridTwo = ({ data }: ServicesGridTwoProps) => {
               />
 
               {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/40 to-black/10" />
 
               {/* Content */}
               <div className="relative h-full p-6 flex flex-col justify-end text-white">
