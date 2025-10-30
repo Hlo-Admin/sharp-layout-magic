@@ -44,8 +44,7 @@ export const businessSetupData = {
     "Client Success Stories",
   ],
 
-  image:
-    "/aboutus/business.png",
+  image: "/aboutus/business.png",
 
   features: [
     {
@@ -70,25 +69,23 @@ export const businessSetupData = {
 };
 
 export const costData = {
-  mainTitle: "The Go Kite Advantage",
+  mainTitle: "The Go Kite PRO Advantage",
   mainContent: [
-    "Our parent company, Go Kite Travel & Tours, has cultivated customer trust and operational rigor since 2008, scaling across UAE • Oman • India with a reputation for frictionless execution. Go Kite PRO translates that operational DNA into corporate services—so your incorporation, licensing, and visas run on time and without surprises."
+    "Our parent company, Go Kite PRO  Travel & Tours, has cultivated customer trust and operational rigor since 2008, scaling across UAE · Oman · India with a reputation for frictionless execution. Go Kite PRO  translates that operational DNA into corporate services—so your incorporation, licensing, and visas run on time and without surprises.",
   ],
   subTitle: "Who We Serve",
   points: [
     "Global founders expanding into the UAE",
     "SMEs seeking compliant scale",
     "Individuals, Family offices & investors optimizing structures",
-    "Corporate venture builds & spin-outs"
+    "Corporate venture builds & spin-outs",
   ],
   buttonText: "Talk to an advisor today",
   image: "/aboutus/advantage.png",
 };
 
-
-
 export default {
-    heroData,
-    businessSetupData,
-    costData,
+  heroData,
+  businessSetupData,
+  costData,
 };

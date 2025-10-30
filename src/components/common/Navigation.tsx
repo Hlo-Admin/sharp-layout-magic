@@ -13,9 +13,12 @@ const Navbar = () => {
     useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isCostCalculatorOpen, setIsCostCalculatorOpen] = useState(false);
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("English");
   const location = useLocation();
   const businessSetupRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
+  const languageRef = useRef<HTMLDivElement>(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -41,16 +44,30 @@ const Navbar = () => {
       ) {
         setIsServicesDropdownOpen(false);
       }
+      if (
+        languageRef.current &&
+        !languageRef.current.contains(event.target as Node)
+      ) {
+        setIsLanguageDropdownOpen(false);
+      }
     };
 
-    if (isBusinessSetupDropdownOpen || isServicesDropdownOpen) {
+    if (
+      isBusinessSetupDropdownOpen ||
+      isServicesDropdownOpen ||
+      isLanguageDropdownOpen
+    ) {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isBusinessSetupDropdownOpen, isServicesDropdownOpen]);
+  }, [
+    isBusinessSetupDropdownOpen,
+    isServicesDropdownOpen,
+    isLanguageDropdownOpen,
+  ]);
 
   return (
     <>
@@ -138,10 +155,39 @@ const Navbar = () => {
             <span className="hidden md:inline">COST CALCULATOR</span>
             <span className="md:hidden">CALCULATOR</span>
           </Button>
-          <button className="hidden sm:flex items-center gap-1 text-xs sm:text-sm font-semibold text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded hover:bg-white/20">
-            <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-            ENG
-          </button>
+          <div ref={languageRef} className="relative">
+            <button
+              onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+              className="hidden sm:flex items-center gap-1 text-xs sm:text-sm font-semibold text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded hover:bg-white/20"
+            >
+              <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              {selectedLanguage === "English"
+                ? "ENG"
+                : selectedLanguage === "Arabic"
+                ? "AR"
+                : selectedLanguage === "Chinese"
+                ? "CN"
+                : "RU"}
+            </button>
+            {isLanguageDropdownOpen && (
+              <div className="absolute top-full right-0 mt-2 bg-white rounded-lg shadow-xl overflow-hidden z-50 min-w-[140px]">
+                {["Arabic", "Chinese", "Russian", "English"].map((lang) => (
+                  <button
+                    key={lang}
+                    onClick={() => {
+                      setSelectedLanguage(lang);
+                      setIsLanguageDropdownOpen(false);
+                    }}
+                    className={`w-full text-left px-4 py-3 text-sm transition-colors text-gray-700 hover:bg-gray-100 ${
+                      selectedLanguage === lang ? "font-bold" : "font-normal"
+                    }`}
+                  >
+                    {lang}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
           <button
             onClick={(e) => {
               if (window.innerWidth < 1024) {
@@ -244,10 +290,43 @@ const Navbar = () => {
               >
                 COST CALCULATOR
               </Button>
-              <button className="w-full flex items-center justify-center gap-2 text-sm font-semibold text-white py-2 px-3 rounded hover:bg-white/20">
-                <Globe className="w-4 h-4" />
-                ENG
-              </button>
+              <div className="relative">
+                <button
+                  onClick={() =>
+                    setIsLanguageDropdownOpen(!isLanguageDropdownOpen)
+                  }
+                  className="w-full flex items-center justify-center gap-2 text-sm font-semibold text-white py-2 px-3 rounded hover:bg-white/20"
+                >
+                  <Globe className="w-4 h-4" />
+                  {selectedLanguage === "English"
+                    ? "ENG"
+                    : selectedLanguage === "Arabic"
+                    ? "AR"
+                    : selectedLanguage === "Chinese"
+                    ? "CN"
+                    : "RU"}
+                </button>
+                {isLanguageDropdownOpen && (
+                  <div className="mt-2 bg-white rounded-lg shadow-xl overflow-hidden">
+                    {["Arabic", "Chinese", "Russian", "English"].map((lang) => (
+                      <button
+                        key={lang}
+                        onClick={() => {
+                          setSelectedLanguage(lang);
+                          setIsLanguageDropdownOpen(false);
+                        }}
+                        className={`w-full text-left px-4 py-3 text-sm transition-colors text-gray-700 hover:bg-gray-100 ${
+                          selectedLanguage === lang
+                            ? "font-bold"
+                            : "font-normal"
+                        }`}
+                      >
+                        {lang}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ const testimonials = [
     id: 1,
     name: "John Smith",
     company: "Tech Solutions",
-    image: "/aboutus/testimonials.png",
+    image: "/aboutus/testimonial-1.png",
     content:
       "Go Kite visa processing and PRO services were professional, quick and reliable. I was supported all through and when I sponsored my family. What a client-oriented team! – Ravi Menon, Founder",
   },
@@ -13,7 +13,7 @@ const testimonials = [
     id: 2,
     name: "Sarah Johnson",
     company: "Creative Studio",
-    image: "/aboutus/testimonials.png",
+    image: "/aboutus/testimonial-2.png",
     content:
       "Amazing experience! The team was responsive and ensured everything went smoothly. I highly recommend Go Kite for any visa-related service.",
   },
@@ -21,7 +21,7 @@ const testimonials = [
     id: 3,
     name: "Ali Khan",
     company: "BuildTech",
-    image: "/aboutus/testimonials.png",
+    image: "/aboutus/testimonial-3.png",
     content:
       "Fast, efficient, and professional. They handled all my paperwork flawlessly. Special thanks to the support team.",
   },
@@ -29,7 +29,7 @@ const testimonials = [
     id: 4,
     name: "Emily Davis",
     company: "DesignHub",
-    image: "/aboutus/testimonials.png",
+    image: "/aboutus/testimonial-4.png",
     content:
       "I had a seamless experience. The staff was kind, helpful, and very knowledgeable throughout.",
   },
@@ -55,7 +55,9 @@ const TestimonialSection = () => {
                   src={testimonial.image}
                   alt={testimonial.name}
                   onClick={() => handleClick(testimonial.id)}
-                  className={`w-40 h-40 object-cover rounded-md cursor-pointer border-2 transition duration-300 ${
+                  className={`w-40 ${
+                    activeId === testimonial.id ? "h-60" : "h-40"
+                  } object-cover rounded-md cursor-pointer border-2 transition duration-300 ${
                     activeId === testimonial.id
                       ? "border-blue-500 shadow-md"
                       : "border-transparent"
@@ -83,12 +85,17 @@ const TestimonialSection = () => {
           <div className="flex items-center gap-4">
             {/* Avatars */}
             <div className="flex -space-x-2">
-              {testimonials.map((user) => (
+              {[
+                "/aboutus/avatar-1.png",
+                "/aboutus/avatar-2.png",
+                "/aboutus/avatar-3.png",
+                "/aboutus/avatar-4.png",
+              ].map((src, i) => (
                 <img
-                  key={user.id}
-                  src={user.image}
+                  key={i}
+                  src={src}
                   className="w-10 h-10 rounded-full border-2 border-white"
-                  alt={user.name}
+                  alt={`Avatar ${i + 1}`}
                 />
               ))}
             </div>

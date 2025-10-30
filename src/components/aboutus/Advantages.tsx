@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
 
 type CostSectionData = {
   mainTitle: string;
@@ -18,12 +18,18 @@ export default function CostSection({ data }: Props) {
 
   return (
     <>
+      <div className="container mx-auto px-6 pt-4 pb-16">
+        <p className="text-center text-4xl lg:text-6xl font-medium text-black">
+          “ Digital where it helps,
+          <br className="hidden lg:block" /> human where it matters ”
+        </p>
+      </div>
       {/* First div: Left - main title + content */}
-      <div className="container mx-auto px-6 mb-8">
+      <div className="container mx-auto px-6 mb-4">
         <h1 className="text-2xl lg:text-3xl font-semibold text-black mb-6">
           {mainTitle}
         </h1>
-        <div className="text-black text-base lg:text-lg space-y-4">
+        <div className="text-black text-sm lg:text-base leading-7 space-y-4 lg:max-w-5xl">
           {mainContent.map((para, idx) => (
             <p key={idx}>{para}</p>
           ))}
@@ -31,34 +37,39 @@ export default function CostSection({ data }: Props) {
       </div>
 
       {/* Second div: left side (title + points) and right side (image + button) */}
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-6 items-center">
         {/* Left side */}
         <div className="">
-          <h2 className="text-xl lg:text-2xl font-semibold text-black mb-6">
+          <h2 className="text-lg lg:text-xl font-semibold text-black mb-4">
             {subTitle}
           </h2>
-          <ul className="list-disc list-inside space-y-3  text-base lg:text-lg max-w-xl">
+          <div className="space-y-2 text-sm lg:text-base max-w-xl">
             {points.map((point, idx) => (
-              <li key={idx} dangerouslySetInnerHTML={{ __html: point }} />
+              <div key={idx} className="flex items-start gap-2 text-black">
+                <ChevronRight className="mt-1 h-4 w-4" />
+                <span dangerouslySetInnerHTML={{ __html: point }} />
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
 
         {/* Right side */}
-        {/* Right side */}
-        <div className="flex flex-col lg:w-[250px] rounded-xl shadow-sm overflow-hidden justify-end self-start ml-auto">
-        <img
-            src={image}
-            alt="Business consultant in meeting"
-            className="w-full h-auto object-cover"
-        />
+        <div className="flex flex-col items-end justify-end self-start ml-auto">
+          <div className="w-[220px] lg:w-[260px] overflow-hidden">
+            <img
+              src={image}
+              alt="Business consultant in meeting"
+              className="w-full h-auto object-cover"
+            />
+          </div>
 
-        <button className="inline-flex items-center w-full gap-2 bg-black text-white px-6 py-3 rounded-md  hover:bg-gray-800 transition-colors  justify-center">
-            {buttonText}
-            <ArrowUpRight className="w-5 h-5 text-yellow-400" />
-        </button>
+          <button className="mt-3 inline-flex items-center gap-3 bg-black text-white px-5 py-2 rounded-full hover:bg-gray-900 transition-colors">
+            <span className="text-sm font-medium">{buttonText}</span>
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-yellow-400 text-black">
+              <ArrowUpRight className="h-4 w-4" />
+            </span>
+          </button>
         </div>
-
       </div>
     </>
   );

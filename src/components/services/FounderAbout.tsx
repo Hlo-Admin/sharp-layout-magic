@@ -1,8 +1,8 @@
 export default function FounderSection() {
   return (
-    <div className="w-full bg-[#E1EFF2] py-16 px-4">
+    <div className="w-full bg-[#E1EFF2] pt-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-white rounded-3xl shadow-xl p-12">
+        <div className="bg-white rounded-t-3xl shadow-xl p-12">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
             {/* Left side - Image and Name */}
             <div className="flex flex-col items-center lg:items-start space-y-6 lg:w-1/4">
@@ -15,9 +15,9 @@ export default function FounderSection() {
               </div>
               <div className="text-center lg:text-left">
                 <h2 className="text-2xl font-bold tracking-wider text-black">
-                  ZAID AMEEN
+                  MR. ZAID AMEEN
                 </h2>
-                <p className="text-sm mt-1 text-gray-600">
+                <p className="text-sm mt-1 text-black">
                   Founder & Group Entrepreneur
                 </p>
               </div>

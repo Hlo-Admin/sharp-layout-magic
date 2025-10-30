@@ -1,10 +1,20 @@
-import React from "react";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { ArrowRight, Linkedin, Facebook, Instagram } from "lucide-react";
 
 import { openZohoPopup } from "../common/ZohoCrm";
-import { Button } from "react-day-picker";
+// Button import removed as it's not used
 
 const HeroFooterSection = () => {
+  const labels = ["Business", "Real Estate", "Project", "Paperwork"];
+  const [labelIndex, setLabelIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setLabelIndex((prev) => (prev + 1) % labels.length);
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <section className="bg-white text-center pt-16 pb-4 px-4 sm:px-6 lg:px-8">
       {/* Heading */}
@@ -18,8 +28,8 @@ const HeroFooterSection = () => {
       </div>
 
       {/* Subheading */}
-      <h2 className="text-3xl sm:text-4xl font-bold text-[#3790AE] mb-8">
-        Business
+      <h2 className="text-3xl sm:text-4xl font-bold text-[#3790AE] mb-8 transition-opacity duration-300">
+        {labels[labelIndex]}
       </h2>
 
       {/* CTA Button */}
@@ -30,7 +40,7 @@ const HeroFooterSection = () => {
         >
           Let's Talk!
           <span className="w-8 h-8 rounded-full bg-white border-2 border-[#F0BA1A] flex items-center justify-center text-black">
-            <ArrowRight className="w-4 h-4 bg-black rounded-sm text-white" />
+            <ArrowRight className="w-4 h-4 rounded-full text-black" />
           </span>
         </button>
       </div>
@@ -48,19 +58,30 @@ const HeroFooterSection = () => {
         {/* Social Media */}
         <div className="text-center md:text-left">
           <h4 className="font-medium mb-1">Social Media</h4>
-          <div className="flex gap-4">
-            <a href="#">twitter</a>
-            <a href="#">dribbble</a>
-            <a href="#">linkedin</a>
-          </div>
-        </div>
+          <div className="flex items-center gap-3">
+            <a
+              href="#"
+              aria-label="Facebook"
+              className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition"
+            >
+              <Facebook className="w-4 h-4" />
+            </a>
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition"
+            >
+              <Linkedin className="w-4 h-4" />
+            </a>
 
-        {/* Portfolio */}
-        <div className="text-center md:text-left">
-          <h4 className="font-medium mb-1">Our Portfolio</h4>
-          <a href="#" className="hover:underline">
-            Case Study, Our Works →
-          </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition"
+            >
+              <Instagram className="w-4 h-4" />
+            </a>
+          </div>
         </div>
 
         {/* CTA Black Button */}
