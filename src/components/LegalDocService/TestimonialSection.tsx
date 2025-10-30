@@ -58,17 +58,14 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({ data }) => {
           <div className="flex items-center lg:col-span-3">
             <div className="bg-black rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 xl:p-12 relative w-full">
               {/* Quote Mark */}
-              <div className="text-white text-5xl sm:text-6xl lg:text-7xl font-serif leading-none mb-4 sm:mb-6 lg:mb-8">
+              <div className="text-white text-7xl sm:text-8xl lg:text-9xl font-serif leading-none mb-4 sm:mb-6 lg:mb-8">
                 "
               </div>
 
               {/* Testimonial Text */}
-              <blockquote className="text-white text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8 lg:mb-10 font-light">
+              <blockquote className="text-white text-base sm:text-lg lg:text-xl xl:text-2xl leading-relaxed mb-6 sm:mb-8 lg:mb-10 font-light">
                 {data.testimonials[activeSlide].quote}
               </blockquote>
-
-              {/* Divider Line */}
-              <div className="border-t border-gray-700 mb-4 sm:mb-6 lg:mb-8"></div>
 
               {/* Author Info */}
               <div className="mb-6 sm:mb-8">
@@ -80,29 +77,31 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({ data }) => {
                 </p>
               </div>
 
-              {/* Navigation Dots and Arrows */}
-              <div className="flex items-center justify-between">
-                <div className="flex gap-1.5 sm:gap-2">
-                  <button
-                    className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white transition-all"
-                    onClick={() => setActiveSlide(0)}
-                  ></button>
-                  <button
-                    className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full border border-white/50 transition-all"
-                    onClick={() => setActiveSlide(1)}
-                  ></button>
-                </div>
-
+              {/* Divider and Arrows Row */}
+              <div className="flex items-center gap-4 sm:gap-6">
+                <div className="flex-1 border-t border-gray-700"></div>
                 <div className="flex gap-2 sm:gap-3">
                   <button
                     className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition-colors"
                     aria-label="Previous testimonial"
+                    onClick={() =>
+                      setActiveSlide(
+                        (prev) =>
+                          (prev - 1 + data.testimonials.length) %
+                          data.testimonials.length
+                      )
+                    }
                   >
                     <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
                   </button>
                   <button
                     className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition-colors"
                     aria-label="Next testimonial"
+                    onClick={() =>
+                      setActiveSlide(
+                        (prev) => (prev + 1) % data.testimonials.length
+                      )
+                    }
                   >
                     <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
                   </button>

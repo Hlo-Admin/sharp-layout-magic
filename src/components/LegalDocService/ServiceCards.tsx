@@ -19,11 +19,11 @@ const ServiceCards: React.FC<ServiceCardsProps> = ({ data }) => {
           {data.cards.map((card, index) => (
             <div key={index} className="text-left space-y-4 p-6">
               <div
-                className={`w-16 h-16 ${card.bgColor} rounded-full flex items-center justify-center`}
+                className={`w-16 h-16 ${card.bgColor} rounded-2xl flex items-center justify-center`}
               >
                 <img src={card.icon} alt={card.title} className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold text-black">{card.title}</h3>
+              <h3 className="text-xl font-normal text-black">{card.title}</h3>
               <p className="text-gray-600">{card.description}</p>
             </div>
           ))}

@@ -14,13 +14,13 @@ interface TrademarkBannerProps {
 
 const TrademarkBanner: React.FC<TrademarkBannerProps> = ({ data }) => {
   return (
-    <section className="relative w-full min-h-[200px] sm:min-h-[220px] flex items-center justify-center py-6 sm:py-10 lg:py-16 px-3 sm:px-6 lg:ml-16 lg:px-10 mb-8 sm:mb-12">
+    <section className="relative w-full min-h-[140px] sm:min-h-[160px] flex items-center justify-center py-3 sm:py-6 lg:py-8 px-3 sm:px-6 lg:px-10 mb-8 sm:mb-12">
       {/* Background */}
       <img
         src={data.backgroundImage}
         alt="Background"
         className="absolute inset-0 w-full h-full object-cover rounded-lg sm:rounded-xl -z-2"
-        style={{ minHeight: 200 }}
+        style={{ minHeight: 140 }}
       />
       <div className="absolute inset-0 bg-black/40 rounded-lg sm:rounded-xl -z-10" />
 
@@ -43,11 +43,15 @@ const TrademarkBanner: React.FC<TrademarkBannerProps> = ({ data }) => {
         </div>
 
         {/* Right: Info Card */}
-        <div className="bg-[#ffffff] rounded-lg shadow-xl px-4 sm:px-6 lg:px-8 py-5 sm:py-7 lg:py-9 max-w-4xl w-full z-10">
+        <div className="bg-[#ffffff] rounded-lg shadow-xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10 max-w-4xl w-full z-10">
           <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-black mb-2 sm:mb-3">
             {data.title}
           </h2>
-          <div className="h-0.5 w-12 sm:w-16 bg-[#00C5C5] rounded-full mb-3 sm:mb-4 lg:mb-5" />
+          <div className="flex items-center mb-4">
+            <div className="w-2 h-2 bg-black rounded-full"></div>
+            <div className="flex-1 h-0.5 bg-black"></div>
+            <div className="w-2 h-2 bg-black rounded-full mr-2"></div>
+          </div>
           <p className="text-gray-700 text-sm sm:text-base lg:text-lg mb-4 sm:mb-5 lg:mb-6 leading-relaxed">
             {data.description}
           </p>

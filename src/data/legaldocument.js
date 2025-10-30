@@ -205,7 +205,7 @@ export const trademarkBannerData = {
 };
 
 export const testimonialData = {
-  image: "/legal/testimonials.jpg",
+  image: "/legal/testimonials.png",
   logo: "/footer-logo.png",
   companyName: "GO KITE PRO",
   companyTagline: "BUSINESS & BEYOND",

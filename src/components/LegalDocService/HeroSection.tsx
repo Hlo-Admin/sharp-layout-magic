@@ -34,7 +34,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6 lg:space-y-8">
-            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-black leading-tight uppercase">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-black uppercase">
               {data.title}
             </h1>
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
@@ -50,7 +50,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
           <div className="relative">
             {/* Lady Justice Statue */}
             <div className="relative z-10 flex justify-center">
-              <div className="w-64 h-[350px] sm:w-80 sm:h-[450px] lg:h-[500px] flex items-center justify-center">
+              <div className="w-72 h-[400px] sm:w-80 sm:h-[500px] lg:w-96 lg:h-[650px] xl:w-[28rem] xl:h-[720px] flex items-center justify-center">
                 <img
                   src={data.image}
                   alt="Lady Justice Statue"
@@ -67,21 +67,21 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
         <div className="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
           {/* Client Avatars */}
           <div className="flex -space-x-2">
-            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-500 rounded-full border-2 border-white flex items-center justify-center">
-              <span className="text-white text-[10px] sm:text-xs font-bold">
-                A
-              </span>
-            </div>
-            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
-              <span className="text-white text-[10px] sm:text-xs font-bold">
-                B
-              </span>
-            </div>
-            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-purple-500 rounded-full border-2 border-white flex items-center justify-center">
-              <span className="text-white text-[10px] sm:text-xs font-bold">
-                C
-              </span>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=80&h=80&q=80"
+              alt="Client avatar 1"
+              className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=80&h=80&q=80"
+              alt="Client avatar 2"
+              className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=80&h=80&q=80"
+              alt="Client avatar 3"
+              className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover"
+            />
           </div>
           <div className="text-orange-500 font-semibold text-xs sm:text-sm">
             {data.trustIndicator.clients}

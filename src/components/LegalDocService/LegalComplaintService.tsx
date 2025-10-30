@@ -72,7 +72,7 @@ const LegalComplaintService: React.FC<LegalComplaintServiceProps> = ({
 
                   {card.isFeatured ? (
                     <div
-                      className={`absolute bottom-0 left-0 right-0 p-4 sm:p-6 ${card.bgColor} rounded-t-lg`}
+                      className={`absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-yellow-500 rounded-t-lg`}
                     >
                       <h3 className="text-black text-base sm:text-lg font-bold mb-2 sm:mb-3">
                         {card.title}
@@ -126,7 +126,7 @@ const LegalComplaintService: React.FC<LegalComplaintServiceProps> = ({
                     <ul className="space-y-2 text-xs sm:text-sm text-gray-700">
                       {card.points.map((point, idx) => (
                         <li key={idx} className="flex items-start gap-2">
-                          <span className="text-green-500 mt-0.5">✓</span>
+                          <span className="text-yellow-500 mt-0.5">✓</span>
                           <span>{point}</span>
                         </li>
                       ))}
@@ -145,7 +145,7 @@ const LegalComplaintService: React.FC<LegalComplaintServiceProps> = ({
               <div className="space-y-4 sm:space-y-6">
                 {data.detailsSection.processes.map((process, index) => (
                   <div key={index}>
-                    <h4 className="text-sm sm:text-base font-bold text-black mb-2 sm:mb-3">
+                    <h4 className="text-sm sm:text-base font-normal text-black mb-2 sm:mb-3">
                       {process.title}
                     </h4>
                     <ul className="space-y-2 ml-3 sm:ml-4 text-xs sm:text-sm text-gray-700">
