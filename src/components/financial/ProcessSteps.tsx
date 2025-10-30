@@ -27,17 +27,17 @@ const ProcessSteps = ({ data }: ProcessStepsProps) => {
           {/* Left - Content */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              <h2 className="text-4xl md:text-5xl font-normal text-gray-900 mb-4">
                 {title}
               </h2>
-              <p className="text-lg text-gray-600">{subtitle}</p>
+              <p className="text-lg font-bold text-gray-600">{subtitle}</p>
             </div>
 
             <div className="space-y-6">
               {steps.map((step, index) => (
                 <div key={index} className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-black flex items-center justify-center flex-shrink-0 text-white font-bold text-lg">
-                    <Check className="w-6 h-6" />
+                  <div className="w-4 h-4 rounded-full bg-black flex items-center justify-center flex-shrink-0 text-white font-bold text-lg">
+                    <Check className="w-3 h-3" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-1">
@@ -49,7 +49,7 @@ const ProcessSteps = ({ data }: ProcessStepsProps) => {
               ))}
             </div>
 
-            <Button className="bg-[#487b99] hover:bg-teal-600 text-white font-semibold px-8 py-6 text-lg rounded-lg">
+            <Button className="bg-[#487b99] hover:bg-teal-600 text-white font-semibold px-8 py-6 text-lg rounded-2xl">
               {buttonText} <ArrowRight className="ml-2" />
             </Button>
           </div>

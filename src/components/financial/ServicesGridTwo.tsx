@@ -29,7 +29,7 @@ const ServicesGridTwo = ({ data }: ServicesGridTwoProps) => {
               />
 
               {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/30 to-black/10" />
 
               {/* Content */}
               <div className="relative h-full p-6 flex flex-col justify-end text-white">

@@ -31,10 +31,13 @@ const LegalTranslation = ({ data }: LegalTranslationProps) => {
 
           {/* Right - Content */}
           <div className="space-y-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-black">
+          <div className="text-3xl font-normal text-[#487b99] leading-none">
+              01
+            </div>
+            <h2 className="text-2xl md:text-3xl font-normal text-black">
               {title}
             </h2>
-            <p className="text-lg text-black font-semibold">{subtitle}</p>
+            <p className="text-lg text-black font-bold">{subtitle}</p>
 
             <ul className="space-y-4">
               {services.map((service, index) => (
@@ -47,7 +50,7 @@ const LegalTranslation = ({ data }: LegalTranslationProps) => {
               ))}
             </ul>
 
-            <Button className="bg-[#487b99] hover:bg-teal-600 text-white font-semibold px-8 py-6 text-lg rounded-lg mt-8">
+            <Button className="bg-[#487b99] hover:bg-teal-600 text-white font-semibold px-8 py-6 text-lg rounded-2xl mt-8">
               {buttonText} <ArrowRight className="ml-2" />
             </Button>
           </div>
