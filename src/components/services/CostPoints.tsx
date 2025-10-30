@@ -54,7 +54,7 @@ export default function CostSection({ data }: Props) {
           </div>
 
           {/* Right Image */}
-          <div className="flex lg:justify-end justify-center mt-10 lg:mt-0">
+          {/* <div className="flex lg:justify-end justify-center mt-10 lg:mt-0">
             <div className="rounded-2xl overflow-hidden shadow-xl w-80 h-80 md:w-96 md:h-96 bg-gray-100 flex items-center justify-center">
               <img
                 src={data.image}
@@ -62,7 +62,7 @@ export default function CostSection({ data }: Props) {
                 className="w-full h-full object-cover"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

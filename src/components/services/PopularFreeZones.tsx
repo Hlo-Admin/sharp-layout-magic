@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 type Zone = {
   title: string;
@@ -26,7 +26,7 @@ const FreeZones: React.FC<Props> = ({ data }) => {
         </h1>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
           {data.zones.map((zone, i) => (
             <div
               key={i}
@@ -38,16 +38,12 @@ const FreeZones: React.FC<Props> = ({ data }) => {
                   {zone.title}
                 </h3>
 
-                <div className="relative mt-2 w-full h-px bg-[#197B7D]">
-                  {/* Left diamond */}
-                  <span
-                    className="absolute left-0 -top-[4px] w-2 h-2 bg-[#197B7D] rotate-45"
-                  ></span>
-
-                  {/* Right diamond */}
-                  <span
-                    className="absolute right-0 -top-[4px] w-2 h-2 bg-[#197B7D] rotate-45"
-                  ></span>
+                {/* Separator line with arrow on the right */}
+                <div className="relative mt-2 w-full h-0.5 bg-[#197B7D]">
+                  {/* Left dot */}
+                  <span className="absolute -top-[3px] left-0 w-1.5 h-1.5 rounded-full bg-[#197B7D]"></span>
+                  {/* Right arrow */}
+                  <ArrowRight className="absolute -top-2 right-0 w-4 h-4 text-[#197B7D]" />
                 </div>
               </div>
 
