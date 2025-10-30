@@ -47,16 +47,19 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ data }) => {
           {/* Service Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 mb-12">
             {data.services.map((item, idx) => (
-              <div key={idx} className="bg-white p-6 sm:p-8">
+              <div
+                key={idx}
+                className="bg-white p-6 sm:p-8 border border-gray-400 rounded-xl"
+              >
                 <h3 className="text-lg sm:text-xl font-bold text-black mb-3">
                   {item.title}
                 </h3>
                 <div className="flex items-center mb-4">
-                    <div className="w-2 h-2 bg-[#487b99] rounded-full"></div>
-                    <div className="flex-1 h-0.5 bg-[#487b99]"></div>
-                    <div className="w-2 h-2 bg-[#487b99] rounded-full mr-2"></div>
-                  </div>
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                  <div className="w-2 h-2 bg-[#487b99] rounded-full"></div>
+                  <div className="flex-1 h-0.5 bg-[#487b99]"></div>
+                  <div className="w-2 h-2 bg-[#487b99] rounded-full mr-2"></div>
+                </div>
+                <p className="text-black text-sm sm:text-base leading-relaxed">
                   {item.description}
                 </p>
               </div>

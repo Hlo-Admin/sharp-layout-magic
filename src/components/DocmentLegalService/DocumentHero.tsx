@@ -45,7 +45,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
           <div className="relative flex justify-end">
             {/* Lady Justice Statue */}
             <div className="relative z-10">
-              <div className="w-64 h-[400px] sm:w-80 sm:h-[480px] lg:w-96 lg:h-[580px] flex items-center justify-center">
+              <div className="w-72 h-[460px] sm:w-96 sm:h-[560px] lg:w-[28rem] lg:h-[680px] flex items-center justify-center">
                 <img
                   src={data.image}
                   alt="Lady Justice Statue"
