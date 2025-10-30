@@ -71,7 +71,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="absolute top-3 sm:top-4 md:top-6 left-2 sm:left-3 md:left-5 right-2 sm:right-3 md:right-5 bg-[#487b99] flex items-center justify-between h-[56px] sm:h-[60px] md:h-[64px] px-3 sm:px-5 md:px-7 rounded-lg shadow-xl z-[100]">
+      <nav className="absolute top-3 sm:top-4 md:top-6 left-2 sm:left-3 md:left-5 right-2 sm:right-3 md:right-5 bg-[#487b99] flex items-center justify-between h-[56px] sm:h-[60px] md:h-[64px] px-3 sm:px-5 md:px-7 rounded-2xl shadow-xl z-[100]">
         {/* Left Logo */}
         <Link to="/" className="flex items-center gap-2 sm:gap-3">
           <img

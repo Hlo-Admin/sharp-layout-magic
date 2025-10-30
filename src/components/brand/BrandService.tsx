@@ -35,11 +35,11 @@ const ServicesGridTwo = ({ data }: ServicesGridProps) => {
 
               {/* Content */}
               <div className="relative h-full p-6 flex flex-col justify-end text-white">
-              <img
-                src={service.icon}
-                alt={service.title}
-                className="w-6 h-6 mb-4"
-              />
+                <img
+                  src={service.icon}
+                  alt={service.title}
+                  className="w-6 h-6 mb-4"
+                />
                 <h3 className="text-xl font-bold mb-2">{service.title}</h3>
                 <p className="text-sm text-gray-200 leading-relaxed">
                   {service.description}

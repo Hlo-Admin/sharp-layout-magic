@@ -20,15 +20,15 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
   return (
-    <section className="relative bg-white overflow-hidden">
+    <section className="relative bg-white">
       {/* Floating Social Icons */}
       <FloatingSocialIcons icons={data.socialIcons} />
 
       {/* Main Hero Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:pb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-6 lg:space-y-8">
+          <div className="space-y-4 lg:space-y-6">
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-black leading-tight uppercase">
               {data.title}
             </h1>
@@ -45,7 +45,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
           <div className="relative">
             {/* Lady Justice Statue */}
             <div className="relative z-10 flex justify-center">
-              <div className="w-96 h-[500px] sm:w-[450px] sm:h-[600px] lg:w-[600px] lg:h-[750px] flex items-center justify-center">
+              <div className="w-[480px] h-[420px] sm:w-[520px] sm:h-[520px] lg:w-[640px] lg:h-[640px] flex items-center justify-center">
                 <img
                   src={data.image}
                   alt="Lady Justice Statue"

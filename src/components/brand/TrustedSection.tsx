@@ -64,7 +64,7 @@ const TrustedSection: React.FC<TrustedSectionProps> = ({ data }) => {
             {data.stats.map((stat, idx) => (
               <div key={idx} className="flex flex-col items-start bg-white p-6">
                 <div className="w-12 h-12 flex items-center justify-center mb-4">
-                  <img src={stat.icon} alt={stat.title} className="w-8 h-8" />
+                  <img src={stat.icon} alt={stat.title} className="w-12 h-12" />
                 </div>
                 <h3 className="text-[1.15rem] font-bold text-gray-900 mb-1">
                   {stat.title}

@@ -101,7 +101,7 @@ export const trustedData = {
       description: "for Flowbite, with zero maintenance downtime",
     },
     {
-      icon: "/brand/icon-2.png",
+      icon: "/brand/icon-4.png",
       title: "600M+ Users",
       description: "trusted by over 600 million users around the world",
     },
@@ -111,7 +111,7 @@ export const trustedData = {
       description: "of transactions per day",
     },
     {
-      icon: "/brand/icon-4.png",
+      icon: "/brand/icon-2.png",
       title: "100+ countries",
       description: "have used Flowbite to create functional websites",
     },
