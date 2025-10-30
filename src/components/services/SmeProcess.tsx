@@ -15,7 +15,7 @@ const Documents = ({ data }: Props) => {
   return (
     <section className="pt-8 pb-8">
       <div className="container mx-auto px-4">
-        <h1 className="inline-block bg-white border border-gray-300 rounded-3xl px-8 py-4 text-2xl font-bold text-black uppercase tracking-wide shadow-sm mb-10">
+        <h1 className="inline-block px-8 py-4 text-2xl font-bold text-black uppercase tracking-wide mb-10">
           {data.title}
         </h1>
         <p className="text-xl pb-4">{data.description}</p>

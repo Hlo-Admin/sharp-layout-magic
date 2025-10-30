@@ -23,7 +23,7 @@ const Benefits: React.FC<Props> = ({ data }) => {
   return (
     <section className="py-4 bg-white">
       <div className="container mx-auto px-6 max-w-8xl">
-        <h1 className="inline-block bg-white border border-gray-300 rounded-3xl px-8 py-4 text-2xl font-bold text-black uppercase tracking-wide shadow-sm mb-10">
+        <h1 className="inline-block bg-white border border-gray-100 rounded-3xl px-8 py-4 text-2xl font-bold text-black uppercase tracking-wide shadow-sm mb-10">
           {title}
         </h1>
 
@@ -48,7 +48,7 @@ const Benefits: React.FC<Props> = ({ data }) => {
           </div>
 
           {/* Right side - Image */}
-          <div className="flex-shrink-0 lg:w-[350px] w-full bg-gray-100 rounded-2xl">
+          <div className="flex-shrink-0 lg:w-[450px] w-full bg-gray-100 rounded-2xl">
             <img
               src={image}
               alt="Benefits of Mainland Company Formation"
