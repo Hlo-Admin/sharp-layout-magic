@@ -76,7 +76,7 @@ const FinancialHero = ({ data }: FinancialHeroProps) => {
                   {subtitle}
                 </h2>
                 <p className="text-xl text-gray-700 max-w-2xl">{description}</p>
-                <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-6 text-lg rounded-lg flex items-center gap-2 w-fit">
+                <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-6 text-lg rounded-3xl flex items-center gap-2 w-fit">
                   {buttonText} <ArrowRight className="w-5 h-5" />
                 </Button>
               </div>

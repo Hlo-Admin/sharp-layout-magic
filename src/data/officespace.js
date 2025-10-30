@@ -1,7 +1,8 @@
 export const heroData = {
   title: "Office’s Made with",
   subtitle: "International Standards",
-  description: "Business Hub and Buildings, Office Space, Real estate farm that makes your dreams true",
+  description:
+    "Business Hub and Buildings, Office Space, Real estate farm that makes your dreams true",
   buttonText: "Book Office Space Now",
   bannerImage: "/officespace/banner.png",
   services: [
@@ -23,10 +24,11 @@ export const heroData = {
 export const trademarkBannerData = {
   backgroundImage: "/legal/trade-banner.jpg",
   icon: "/legal/c.png",
-  title: "Trademark Registration",
+  leftText: "RERA",
+  title: "RERA Compliance",
   description:
-    "Our team ensures quick and accurate trademark registration so your brand identity is protected from unauthorized use.",
-  buttonText: "Apply Now →",
+    "Legally do business in Dubai real estate industry by registering a name that is in accordance with the RERA rules.",
+  buttonText: "Contact us →",
   buttonColor: "bg-yellow-400",
 };
 

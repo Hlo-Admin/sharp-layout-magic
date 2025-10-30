@@ -10,7 +10,7 @@ export default function RealEstateHero() {
           {/* Left Side - Image */}
           <div className="relative">
             <div className="absolute top-8 left-0 bg-white px-4 py-2 shadow-sm">
-              <p className="text-sm font-medium text-gray-800">
+              <p className="text-sm font-bold text-gray-800">
                 → RERA COMPLIANCE
               </p>
             </div>
@@ -75,7 +75,7 @@ export default function RealEstateHero() {
         {/* Bottom Cards Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Commercial License Card */}
-          <div className="bg-[#3790ad] text-white p-8 rounded-sm shadow-lg">
+          <div className="bg-[#3790ad] text-white p-8 rounded-xl shadow-lg">
             <Building2 className="w-10 h-10 mb-4" strokeWidth={1.5} />
             <h3 className="text-xl font-bold mb-3">Commercial License</h3>
             <p className="text-teal-50 text-sm leading-relaxed">
@@ -86,7 +86,7 @@ export default function RealEstateHero() {
           </div>
 
           {/* Professional License Card */}
-          <div className="bg-[#3790ad] text-white p-8 rounded-sm shadow-lg">
+          <div className="bg-[#3790ad] text-white p-8 rounded-xl shadow-lg">
             <Smartphone className="w-10 h-10 mb-4" strokeWidth={1.5} />
             <h3 className="text-xl font-bold mb-3">Professional License</h3>
             <p className="text-teal-50 text-sm leading-relaxed">
@@ -97,7 +97,7 @@ export default function RealEstateHero() {
           </div>
 
           {/* Industrial License Card */}
-          <div className="bg-[#3790ad] text-white p-8 rounded-sm shadow-lg">
+          <div className="bg-[#3790ad] text-white p-8 rounded-xl shadow-lg">
             <Factory className="w-10 h-10 mb-4" strokeWidth={1.5} />
             <h3 className="text-xl font-bold mb-3">Industrial License</h3>
             <p className="text-teal-50 text-sm leading-relaxed">
