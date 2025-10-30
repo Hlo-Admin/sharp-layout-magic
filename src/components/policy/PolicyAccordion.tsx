@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 interface AccordionItem {
   title: string;
@@ -24,9 +25,10 @@ const PolicyAccordion: React.FC = () => {
           </p>
           <p className="text-sm leading-relaxed mb-3">
             All content available on this website — including but not limited to
-            text, graphics, logos, icons, images, videos, digital downloads, data
-            compilations, and software — is the exclusive property of Go Kite
-            Pro Business Services LLC (“Go Kite Pro”) or its content suppliers.
+            text, graphics, logos, icons, images, videos, digital downloads,
+            data compilations, and software — is the exclusive property of Go
+            Kite Pro Business Services LLC (“Go Kite Pro”) or its content
+            suppliers.
           </p>
           <p className="text-sm leading-relaxed">
             All rights are reserved under Federal Decree-Law No. 38 of 2021 on
@@ -60,6 +62,13 @@ const PolicyAccordion: React.FC = () => {
     },
   ];
 
+  // Ensure first (or defaultOpen) section is open on initial render
+  useEffect(() => {
+    const firstDefault = accordions.findIndex((a) => a.defaultOpen);
+    setOpenIndex(firstDefault >= 0 ? firstDefault : 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="space-y-4">
       {accordions.map((item, index) => (
@@ -68,14 +77,16 @@ const PolicyAccordion: React.FC = () => {
           className="border border-gray-200 rounded-md overflow-hidden"
         >
           <button
-            onClick={() =>
-              setOpenIndex(openIndex === index ? null : index)
-            }
+            onClick={() => setOpenIndex(openIndex === index ? null : index)}
             className="flex justify-between items-center w-full px-5 py-4 text-left bg-white hover:bg-gray-50 transition-colors"
           >
-            <span className="font-medium text-gray-800">{item.title}</span>
-            <span className="text-gray-500 text-xl">
-              {openIndex === index ? "−" : "+"}
+            <span className="flex items-center gap-2">
+              <span className="font-bold text-gray-800">{item.title}</span>
+              <ArrowRight
+                className={`w-4 h-4 text-gray-600 transition-transform ${
+                  openIndex === index ? "rotate-90" : "rotate-0"
+                }`}
+              />
             </span>
           </button>
 

@@ -7,7 +7,7 @@ import Footer from "@/components/common/Footer";
 const PolicyPage: React.FC = () => {
   return (
     <div className="pt-40 bg-gray-50">
-        <LandingNavigation />
+      <LandingNavigation />
       <div className="max-w-7xl mx-auto">
         <h1 className="text-6xl font-bold text-gray-900 mb-8">
           Our <br /> Company Policy’s
@@ -21,7 +21,6 @@ const PolicyPage: React.FC = () => {
 
           {/* Sticky Sidebar */}
           <Sidebar />
-          
         </div>
       </div>
       <Footer />

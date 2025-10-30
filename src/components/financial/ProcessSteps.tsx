@@ -27,6 +27,9 @@ const ProcessSteps = ({ data }: ProcessStepsProps) => {
           {/* Left - Content */}
           <div className="space-y-8">
             <div>
+            <div className="text-3xl font-normal mb-4 text-[#487b99] leading-none">
+                02
+              </div>
               <h2 className="text-4xl md:text-5xl font-normal text-gray-900 mb-4">
                 {title}
               </h2>

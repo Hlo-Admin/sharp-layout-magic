@@ -1,18 +1,14 @@
 import React from "react";
-import Mail from "/blog/mail.png"
+import Mail from "/blog/mail.png";
 
 const Sidebar: React.FC = () => {
   return (
-    <aside className="sticky top-20 h-fit bg-white shadow-sm border border-gray-100 rounded-md p-6 flex flex-col items-center">
+    <aside className="sticky top-4 lg:top-6 h-fit bg-white shadow-sm border border-gray-100 rounded-md p-6 flex flex-col items-center">
       {/* Icon */}
-      <img
-        src={Mail}
-        alt="Mail Icon"
-        className="w-12 h-12 mb-4"
-      />
+      <img src={Mail} alt="Mail Icon" className="w-12 h-12 mb-4" />
 
       {/* Title */}
-      <h3 className="text-lg font-semibold text-gray-800 mb-3">
+      <h3 className="text-lg font-bold text-gray-800 mb-3">
         Do you have more questions?
       </h3>
 
