@@ -20,10 +20,10 @@ import VisaImmigration from "./pages/VisaImmigration";
 import OfficeSpace from "./pages/OfficeSpace";
 import AdditionalService from "./pages/AdditionalService";
 
-import BlogHome from "./pages/BlogHome"
-import BlogContent from "./pages/BlogContent"
-import Policy from "./pages/PolicyPage"
-import PolicyTemplate from "./pages/PolicyTemplate"
+import BlogHome from "./pages/BlogHome";
+import BlogContent from "./pages/BlogContent";
+import Policy from "./pages/PolicyPage";
+import PolicyTemplate from "./pages/PolicyTemplate";
 import ContactUs from "./pages/Contactus";
 import Page from "./pages/Page";
 import NotFound from "./pages/NotFound";
@@ -60,10 +60,10 @@ const App = () => (
           <Route path="/visa-immigration" element={<VisaImmigration />} />
           <Route path="/office-space" element={<OfficeSpace />} />
           <Route path="/additional-service" element={<AdditionalService />} />
-          <Route path="/blog" element={<BlogHome/>} /> 
-          <Route path="/blog-content" element={<BlogContent/>} />
-          <Route path="/policy" element={<Policy/>} />
-          <Route path="/policy-template" element={<PolicyTemplate/>} />
+          <Route path="/blog" element={<BlogHome />} />
+          <Route path="/blog-content/:id" element={<BlogContent />} />
+          <Route path="/policy" element={<Policy />} />
+          <Route path="/policy-template" element={<PolicyTemplate />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/1" element={<Page />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
