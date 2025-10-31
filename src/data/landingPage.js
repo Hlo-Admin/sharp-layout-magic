@@ -367,7 +367,7 @@ const landingPageData = {
         id: 1,
         name: "John Smith",
         company: "Tech Solutions",
-        image: "/landingpage/client-1.jpg",
+        image: "/landingpage/client-1.png",
         quote: "Client-oriented team!",
         fullTestimonial:
           "Go Kite visa processing and PRO services were professional, quick and reliable. I was supported all through and when I sponsored my family. What a client-oriented team! - Ravi Menon, Founder",
@@ -377,7 +377,7 @@ const landingPageData = {
         id: 2,
         name: "Sarah Johnson",
         company: "Digital Ventures",
-        image: "/landingpage/client-1.jpg",
+        image: "/landingpage/client-1.png",
         quote: "Outstanding service!",
         fullTestimonial:
           "The team at Go Kite PRO exceeded all my expectations. Their expertise in company formation and visa processing made the entire process seamless. Highly recommended for anyone looking to establish their business in Dubai!",
@@ -387,7 +387,7 @@ const landingPageData = {
         id: 3,
         name: "Ahmed Al Rashid",
         company: "Emirates Trading",
-        image: "/landingpage/client-1.jpg",
+        image: "/landingpage/client-1.png",
         quote: "Exceptional professionalism!",
         fullTestimonial:
           "From start to finish, Go Kite PRO demonstrated exceptional professionalism. They handled all documentation efficiently and kept me informed at every step. Their knowledge of UAE regulations is impressive.",
@@ -397,7 +397,7 @@ const landingPageData = {
         id: 4,
         name: "Maria Rodriguez",
         company: "Global Consulting",
-        image: "/landingpage/client-1.jpg",
+        image: "/landingpage/client-1.png",
         quote: "Highly efficient team!",
         fullTestimonial:
           "Setting up my business in Dubai was stress-free thanks to Go Kite PRO. Their team guided me through every requirement with clarity and efficiency. I couldn't have asked for better support.",
