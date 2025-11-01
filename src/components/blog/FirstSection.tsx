@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import img3 from "/blog/work.png";
 import img4 from "/blog/drone.png";
 import img5 from "/blog/phone.png";
@@ -12,7 +12,34 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 function FirstSection() {
   const postsPerPage = 5; // 2 featured + 3 regular
   const totalPages = Math.ceil(blogPosts.length / postsPerPage);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // Get page from URL params or default to 1
+  const pageFromUrl = parseInt(searchParams.get("page") || "1", 10);
+  const initialPage =
+    pageFromUrl >= 1 && pageFromUrl <= totalPages ? pageFromUrl : 1;
+  const [currentPage, setCurrentPage] = useState(initialPage);
+
+  // Sync state when URL params change (e.g., when navigating back from blog content page)
+  useEffect(() => {
+    const urlPage = parseInt(searchParams.get("page") || "1", 10);
+    const validPage = urlPage >= 1 && urlPage <= totalPages ? urlPage : 1;
+    if (validPage !== currentPage) {
+      setCurrentPage(validPage);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [searchParams, totalPages, currentPage]);
+
+  // Update URL when page changes (but don't create history entry for internal page changes)
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+    if (newPage > 1) {
+      setSearchParams({ page: newPage.toString() }, { replace: false });
+    } else {
+      setSearchParams({}, { replace: false });
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const startIndex = (currentPage - 1) * postsPerPage;
   const endIndex = startIndex + postsPerPage;
@@ -22,24 +49,69 @@ function FirstSection() {
   const regularPosts = currentPosts.slice(2, 5);
 
   const handlePrevious = () => {
-    setCurrentPage((prev) => Math.max(prev - 1, 1));
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const newPage = Math.max(currentPage - 1, 1);
+    handlePageChange(newPage);
   };
 
   const handleNext = () => {
-    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const newPage = Math.min(currentPage + 1, totalPages);
+    handlePageChange(newPage);
   };
 
   const handlePageClick = (page: number) => {
-    setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    handlePageChange(page);
   };
 
   // Get avatar for regular posts (cycle through available avatars)
   const getAvatar = (index: number) => {
     const avatars = [img6, img7, img8];
     return avatars[index % avatars.length];
+  };
+
+  // Calculate visible page numbers (show 5 at a time with ellipsis)
+  const getVisiblePages = () => {
+    const maxVisiblePages = 5;
+    const pages: (number | string)[] = [];
+
+    if (totalPages <= maxVisiblePages + 2) {
+      // Show all pages if total is small
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      // Always show first page
+      pages.push(1);
+
+      const startPage =
+        Math.floor((currentPage - 1) / maxVisiblePages) * maxVisiblePages + 1;
+      const endPage = Math.min(startPage + maxVisiblePages - 1, totalPages);
+
+      // Show ellipsis before current range if needed
+      if (startPage > 2) {
+        pages.push("...");
+      }
+
+      // Show current range (but not first or last page as they're always shown)
+      for (
+        let i = Math.max(2, startPage);
+        i <= Math.min(totalPages - 1, endPage);
+        i++
+      ) {
+        pages.push(i);
+      }
+
+      // Show ellipsis after current range if needed
+      if (endPage < totalPages - 1) {
+        pages.push("...");
+      }
+
+      // Always show last page
+      if (totalPages > 1) {
+        pages.push(totalPages);
+      }
+    }
+
+    return pages;
   };
 
   return (
@@ -68,7 +140,7 @@ function FirstSection() {
             {featuredPosts.map((blog) => (
               <Link
                 key={blog.id}
-                to={`/blog-content/${blog.id}`}
+                to={`/blog-content/${blog.id}?page=${currentPage}`}
                 className="relative group cursor-pointer transition-transform hover:scale-105"
               >
                 <div className="relative h-100 rounded-lg overflow-hidden shadow-lg">
@@ -98,8 +170,12 @@ function FirstSection() {
                     </p>
                     <div className="flex items-center justify-between text-white">
                       <div className="flex items-center gap-2">
-                        <span>
-                          <img src={blog.avatar} alt="" />
+                        <span className="w-8 h-8">
+                          <img
+                            src={blog.avatar}
+                            alt=""
+                            className="w-8 h-8 rounded-full "
+                          />
                         </span>
                         <span className="text-sm font-medium">
                           {blog.author}
@@ -134,7 +210,7 @@ function FirstSection() {
             {regularPosts.map((blog, index) => (
               <Link
                 key={blog.id}
-                to={`/blog-content/${blog.id}`}
+                to={`/blog-content/${blog.id}?page=${currentPage}`}
                 className="relative group cursor-pointer transition-transform hover:scale-105"
               >
                 <div className="relative rounded-lg overflow-hidden shadow-lg">
@@ -157,8 +233,12 @@ function FirstSection() {
                     </p>
                     <div className="flex items-center justify-between text-white">
                       <div className="flex items-center gap-2">
-                        <span>
-                          <img src={blog.avatar || getAvatar(index)} alt="" />
+                        <span className="w-8 h-8">
+                          <img
+                            src={blog.avatar || getAvatar(index)}
+                            alt=""
+                            className="w-8 h-8 rounded-full object-cover"
+                          />
                         </span>
                         <span className="text-sm font-medium">
                           {blog.author}
@@ -200,8 +280,20 @@ function FirstSection() {
             </button>
 
             <div className="flex items-center gap-2">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                (page) => (
+              {getVisiblePages().map((page, index) => {
+                if (typeof page === "string") {
+                  // Render ellipsis
+                  return (
+                    <span
+                      key={`ellipsis-${index}`}
+                      className="px-4 py-2 text-gray-700 font-medium"
+                    >
+                      {page}
+                    </span>
+                  );
+                }
+                // Render page number button
+                return (
                   <button
                     key={page}
                     onClick={() => handlePageClick(page)}
@@ -213,8 +305,8 @@ function FirstSection() {
                   >
                     {page}
                   </button>
-                )
-              )}
+                );
+              })}
             </div>
 
             <button
