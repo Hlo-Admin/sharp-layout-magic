@@ -1,35 +1,29 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { Link } from "react-router-dom";
+import { blogPosts } from "@/data/blog";
+
+// Helper function to create URL-friendly slug from title
+const createSlug = (title: string, id: number) => {
+  const slug = title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return `${id}-${slug}`;
+};
 
 const RecentBlogs: React.FC = () => {
-  const recentBlogs = [
-    {
-      id: 1,
-      date: "October 19, 2022",
-      author: "By admin",
-      title: "The Impact of Technology on the Visa processing",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      image: "/blog/blogr1.png",
-    },
-    {
-      id: 2,
-      date: "October 19, 2022",
-      author: "By admin",
-      title: "Search of Serenity Tranquil Retreats and Escapes",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      image: "/blog/blogr2.png",
-    },
-    {
-      id: 3,
-      date: "October 19, 2022",
-      author: "By admin",
-      title: "Road to Adventure Embarking on New Horizons",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      image: "/blog/blogr3.png",
-    },
-  ];
+  // Get 3 random blog posts
+  const recentBlogs = useMemo(() => {
+    const shuffled = [...blogPosts].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 3).map((post) => ({
+      id: post.id,
+      date: post.date,
+      author: post.author,
+      title: post.title,
+      description: post.description,
+      image: post.cardImage || post.mainImage,
+    }));
+  }, []);
 
   return (
     <section className="mt-16">
@@ -39,9 +33,10 @@ const RecentBlogs: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {recentBlogs.map((blog) => (
-          <div
+          <Link
             key={blog.id}
-            className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
+            to={`/blog/${createSlug(blog.title, blog.id)}`}
+            className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
           >
             <img
               src={blog.image}
@@ -56,14 +51,11 @@ const RecentBlogs: React.FC = () => {
                 {blog.title}
               </h3>
               <p className="text-gray-600 text-sm mb-3">{blog.description}</p>
-              <a
-                href="#"
-                className="text-blue-600 text-sm font-medium hover:underline"
-              >
+              <span className="text-blue-600 text-sm font-medium hover:underline">
                 Read More →
-              </a>
+              </span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

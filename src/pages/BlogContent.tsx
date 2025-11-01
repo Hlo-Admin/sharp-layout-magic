@@ -6,8 +6,17 @@ import LandingNavigation from "@/components/landing/LandingNavigation";
 import { blogPosts } from "@/data/blog";
 
 const BlogPage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const blogPost = blogPosts.find((post) => post.id === Number(id));
+  const { slug } = useParams<{ slug: string }>();
+
+  // Extract ID from slug (format: "id-title-slug")
+  const extractIdFromSlug = (slug: string | undefined): number | null => {
+    if (!slug) return null;
+    const match = slug.match(/^(\d+)-/);
+    return match ? Number(match[1]) : null;
+  };
+
+  const blogId = extractIdFromSlug(slug);
+  const blogPost = blogPosts.find((post) => post.id === blogId);
 
   if (!blogPost) {
     return (

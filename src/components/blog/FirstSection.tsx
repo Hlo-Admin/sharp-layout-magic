@@ -9,6 +9,15 @@ import img8 from "/landingpage/round33.png";
 import { blogPosts } from "@/data/blog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+// Helper function to create URL-friendly slug from title
+const createSlug = (title: string, id: number) => {
+  const slug = title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return `${id}-${slug}`;
+};
+
 function FirstSection() {
   const postsPerPage = 5; // 2 featured + 3 regular
   const totalPages = Math.ceil(blogPosts.length / postsPerPage);
@@ -140,7 +149,7 @@ function FirstSection() {
             {featuredPosts.map((blog) => (
               <Link
                 key={blog.id}
-                to={`/blog-content/${blog.id}?page=${currentPage}`}
+                to={`/blog/${createSlug(blog.title, blog.id)}`}
                 className="relative group cursor-pointer transition-transform hover:scale-105"
               >
                 <div className="relative h-100 rounded-lg overflow-hidden shadow-lg">
@@ -210,7 +219,7 @@ function FirstSection() {
             {regularPosts.map((blog, index) => (
               <Link
                 key={blog.id}
-                to={`/blog-content/${blog.id}?page=${currentPage}`}
+                to={`/blog/${createSlug(blog.title, blog.id)}`}
                 className="relative group cursor-pointer transition-transform hover:scale-105"
               >
                 <div className="relative rounded-lg overflow-hidden shadow-lg">
