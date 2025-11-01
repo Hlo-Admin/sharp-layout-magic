@@ -124,73 +124,68 @@ function FirstSection() {
   };
 
   return (
-    <div className="mt-40">
+    <div className="mt-20 sm:mt-32 lg:mt-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 ">
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
             All Articles
           </h2>
-          <br />
-          <br />
 
-          <p className="text-gray-600  ">
+          <p className="text-gray-600 mt-4 sm:mt-6 text-sm sm:text-base">
             We share common trends, strategies ideas, opinions, short & long
-            stories from the
-            <br /> team behind company.
+            stories from the team behind company.
           </p>
-          <br />
-          <br />
         </div>
 
         {/* Articles Grid - Featured Posts */}
         {featuredPosts.length > 0 && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
             {featuredPosts.map((blog) => (
               <Link
                 key={blog.id}
                 to={`/blog/${createSlug(blog.title, blog.id)}`}
-                className="relative group cursor-pointer transition-transform hover:scale-105"
+                className="relative group cursor-pointer transition-transform hover:scale-105 w-full"
               >
-                <div className="relative h-100 rounded-lg overflow-hidden shadow-lg">
-                  <div className="aspect-[16/9] w-full">
+                <div className="relative rounded-lg overflow-hidden shadow-lg w-full">
+                  <div className="aspect-[16/9] w-full relative overflow-hidden">
                     <img
                       src={blog.cardImage}
                       alt={blog.title}
-                      className="w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   </div>
 
                   {/* Featured Tag */}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">
+                  <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
+                    <span className="bg-blue-500 text-white px-2 py-1 sm:px-3 rounded-full text-xs font-semibold uppercase tracking-wide">
                       FEATURED
                     </span>
                   </div>
 
                   {/* Content Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-2xl font-bold text-white mb-3 leading-tight">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 leading-tight">
                       {blog.title}
                     </h3>
-                    <p className="text-sm text-gray-200 mb-3">
+                    <p className="text-xs sm:text-sm text-gray-200 mb-3 line-clamp-2">
                       {blog.description}
                     </p>
-                    <div className="flex items-center justify-between text-white">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-white">
                       <div className="flex items-center gap-2">
-                        <span className="w-8 h-8">
+                        <span className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0">
                           <img
                             src={blog.avatar}
                             alt=""
-                            className="w-8 h-8 rounded-full "
+                            className="w-6 h-6 sm:w-8 sm:h-8 rounded-full"
                           />
                         </span>
-                        <span className="text-sm font-medium">
+                        <span className="text-xs sm:text-sm font-medium truncate">
                           {blog.author}
                         </span>
                         <svg
-                          className="w-4 h-4 text-green-400"
+                          className="w-3 h-3 sm:w-4 sm:h-4 text-green-400 flex-shrink-0"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -200,11 +195,11 @@ function FirstSection() {
                             clipRule="evenodd"
                           />
                         </svg>
-                        <span className="text-xs text-gray-300">
+                        <span className="text-xs text-gray-300 hidden sm:inline">
                           Verified writer
                         </span>
                       </div>
-                      <span className="text-sm">{blog.date}</span>
+                      <span className="text-xs sm:text-sm">{blog.date}</span>
                     </div>
                   </div>
                 </div>
@@ -215,45 +210,45 @@ function FirstSection() {
 
         {/* Bottom Row - Regular Posts */}
         {regularPosts.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
             {regularPosts.map((blog, index) => (
               <Link
                 key={blog.id}
                 to={`/blog/${createSlug(blog.title, blog.id)}`}
-                className="relative group cursor-pointer transition-transform hover:scale-105"
+                className="relative group cursor-pointer transition-transform hover:scale-105 w-full"
               >
-                <div className="relative rounded-lg overflow-hidden shadow-lg">
-                  <div className="aspect-[3/4] w-full">
+                <div className="relative rounded-lg overflow-hidden shadow-lg w-full">
+                  <div className="aspect-[3/4] w-full relative overflow-hidden">
                     <img
                       src={blog.cardImage}
                       alt={blog.title}
-                      className="w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   </div>
 
                   {/* Content Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-xl font-bold text-white mb-2 leading-tight">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                    <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 leading-tight line-clamp-2">
                       {blog.title}
                     </h3>
-                    <p className="text-sm text-gray-200 mb-3">
+                    <p className="text-xs sm:text-sm text-gray-200 mb-3 line-clamp-2">
                       {blog.description}
                     </p>
-                    <div className="flex items-center justify-between text-white">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-white">
                       <div className="flex items-center gap-2">
-                        <span className="w-8 h-8">
+                        <span className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0">
                           <img
                             src={blog.avatar || getAvatar(index)}
                             alt=""
-                            className="w-8 h-8 rounded-full object-cover"
+                            className="w-6 h-6 sm:w-8 sm:h-8 rounded-full object-cover"
                           />
                         </span>
-                        <span className="text-sm font-medium">
+                        <span className="text-xs sm:text-sm font-medium truncate">
                           {blog.author}
                         </span>
                         <svg
-                          className="w-4 h-4 text-green-400"
+                          className="w-3 h-3 sm:w-4 sm:h-4 text-green-400 flex-shrink-0"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -264,7 +259,7 @@ function FirstSection() {
                           />
                         </svg>
                       </div>
-                      <span className="text-sm">{blog.date}</span>
+                      <span className="text-xs sm:text-sm">{blog.date}</span>
                     </div>
                   </div>
                 </div>
@@ -275,27 +270,27 @@ function FirstSection() {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="flex items-center justify-center gap-2 mt-12">
+          <div className="flex items-center justify-center gap-1 sm:gap-2 mt-8 sm:mt-12 px-2">
             <button
               onClick={handlePrevious}
               disabled={currentPage === 1}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              className={`px-2 py-2 sm:px-4 rounded-lg font-medium transition-colors ${
                 currentPage === 1
                   ? "bg-gray-200 text-gray-400 cursor-not-allowed"
                   : "bg-blue-500 text-white hover:bg-blue-600"
               }`}
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1 sm:gap-2 overflow-x-auto scrollbar-hide">
               {getVisiblePages().map((page, index) => {
                 if (typeof page === "string") {
                   // Render ellipsis
                   return (
                     <span
                       key={`ellipsis-${index}`}
-                      className="px-4 py-2 text-gray-700 font-medium"
+                      className="px-2 py-2 sm:px-4 text-gray-700 font-medium text-sm sm:text-base"
                     >
                       {page}
                     </span>
@@ -306,7 +301,7 @@ function FirstSection() {
                   <button
                     key={page}
                     onClick={() => handlePageClick(page)}
-                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                    className={`px-3 py-2 sm:px-4 rounded-lg font-medium transition-colors text-sm sm:text-base min-w-[40px] sm:min-w-[44px] ${
                       currentPage === page
                         ? "bg-blue-500 text-white"
                         : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -321,13 +316,13 @@ function FirstSection() {
             <button
               onClick={handleNext}
               disabled={currentPage === totalPages}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              className={`px-2 py-2 sm:px-4 rounded-lg font-medium transition-colors ${
                 currentPage === totalPages
                   ? "bg-gray-200 text-gray-400 cursor-not-allowed"
                   : "bg-blue-500 text-white hover:bg-blue-600"
               }`}
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
         )}
