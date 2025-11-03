@@ -130,19 +130,20 @@ export const faqData = {
   subtitle: "Know about your query and popularly asked questions",
   faqs: [
     {
-      question: "How long does it take for a Legal Case?",
+      question: "What are the reasons to register my logo in the UAE?",
       answer:
-        "The duration depends on the complexity of your case and the court's schedule. Simple cases may take 2-4 weeks, while complex matters could take several months. We provide regular updates throughout the process.",
+        "Registering your logo (trademark) gives you exclusive legal rights to use and enforce the mark nationwide, deters copying, enables enforcement through courts and customs, allows licensing or assignment, lets you use the ® symbol after registration, and strengthens brand value and customer trust.",
     },
     {
-      question: "How can I get a personal Lawyer?",
+      question:
+        "What is the typical time duration for logo (trademark) registration?",
       answer:
-        "Our team of experienced lawyers is available for personal consultation and representation. Contact us to schedule a meeting with one of our qualified legal professionals who will assess your case and provide personalized guidance.",
+        "A standard, uncontested registration typically completes in about 6–12 months from filing. The process includes formalities, substantive examination, publication (opposition) period and issuance. Oppositions or objections can extend the timeline to 12–18 months or longer.",
     },
     {
-      question: "Where can I check my case Progress?",
+      question: "Can I register a trade name in English and Arabic?",
       answer:
-        "You can track your case progress through our online portal, receive regular email updates, or contact our support team directly. We ensure complete transparency throughout the legal process.",
+        "For a company trade name (trade license), an Arabic version is required on official records; an English translation is usually allowed but Arabic is the authoritative form. For trademarks (logos/word marks) you can register in any script—if you use both Arabic and English publicly, it’s advisable to register both versions to maximize protection.",
     },
   ],
 };

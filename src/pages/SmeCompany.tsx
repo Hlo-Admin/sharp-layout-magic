@@ -4,7 +4,7 @@ import WhySME from "@/components/services/WhySME";
 import SmeAdvantages from "@/components/services/SmeAdvantages";
 import SmeProcess from "@/components/services/SmeProcess";
 
-import FAQ from "@/components/services/FAQ";
+import FAQ from "@/components/services/FAQService";
 import Footer from "@/components/common/Footer";
 import TextImage from "@/components/services/CostPoints";
 import smecompany from "../data/smecompany";

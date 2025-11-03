@@ -5,7 +5,7 @@ import Benefits from "@/components/services/Benefits";
 import PopularFreeZones from "@/components/services/PopularFreeZones";
 import Documents from "@/components/services/Documents";
 
-import FAQ from "@/components/services/FAQ";
+import FAQ from "@/components/services/FAQService";
 import Footer from "@/components/common/Footer";
 import TextImage from "@/components/services/CostPoints";
 import offshore from "../data/offshore";
@@ -16,7 +16,7 @@ const Index = () => {
       {/* <Navigation /> */}
       <Hero data={offshore.heroData} />
       <WhatIsMainland data={offshore.whatIsMainlandData} />
-      <Benefits data={offshore.benefitsData} />
+      {/* <Benefits data={offshore.benefitsData} /> */}
       <PopularFreeZones data={offshore.freeZonesData} />
       <Documents data={offshore.documentsData} />
       <Documents data={offshore.procedureData} />

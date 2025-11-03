@@ -233,20 +233,19 @@ export const faqData = {
   subtitle: "Know about your query and popularly asked questions",
   faqs: [
     {
-      question: "What are the benefits of a Business setup in UAE?",
+      question: "What is a mainland company in the UAE?",
       answer:
-        "UAE offers 100% foreign ownership in mainland, tax-free income, strategic location, access to international markets, and world-class infrastructure for business growth.",
+        "A mainland company is a business entity licensed by the Department of Economic Development (DED) of an emirate. It can be located anywhere in the UAE and has unrestricted access to the local market, allowing direct trading with UAE customers and businesses without limitations.",
     },
     {
-      question: "What are the steps involved in a Business setup in UAE?",
+      question: "Can I own 100% of a mainland company as a foreign investor?",
       answer:
-        "The process includes selecting business activity, choosing legal form, reserving trade name, obtaining initial approval, renting office space, drafting agreements, submitting documents, and receiving the business license.",
+        "Yes, as of recent UAE regulations, foreign investors can now own 100% of a mainland company in most business activities. Previously, a local sponsor holding 51% was mandatory, but current laws allow full foreign ownership in many sectors, making the UAE more attractive for international entrepreneurs.",
     },
     {
-      question:
-        "What types of licenses are required for a Business setup in UAE?",
+      question: "How much does it cost to set up a mainland company?",
       answer:
-        "The three main types are Commercial License (for trading), Professional License (for services), and Industrial License (for manufacturing). The type depends on your business activity.",
+        "Mainland company setup costs vary depending on the emirate, business activity, visa quota, and office space. On average, prices range between AED 15,000 to AED 35,000, including license fees, local service agent fees, and documentation. Contact us for a customized quote based on your specific requirements.",
     },
   ],
 };

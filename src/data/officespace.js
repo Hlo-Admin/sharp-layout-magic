@@ -58,19 +58,20 @@ export const faqData = {
   subtitle: "Know about your query and inquire related questions",
   faqs: [
     {
-      question: "How may does it take for as Legal Clinic?",
+      question: "How long does real estate name registration take in Dubai?",
       answer:
-        "The timeline varies depending on the type of service and complexity of the case. Typically, legal translations take 2-3 business days, while corporate documentation can take 5-7 business days. We'll provide you with a detailed timeline during your consultation.",
+        "Name reservation via Dubai authorities or free‑zone portals is usually approved within a few hours to 1–2 business days. Full name registration as part of licence issuance typically completes in 3–10 business days depending on required approvals and document readiness.",
     },
     {
-      question: "How soon i get a personal Lawyer?",
+      question: "Can I use any name for my real estate company?",
       answer:
-        "You can schedule a consultation with one of our experienced lawyers within 24-48 hours of your initial inquiry. For urgent matters, same-day consultations may be available.",
+        "No. The name must be unique and comply with UAE naming rules: no offensive, religious or governmental references, no names of public figures or existing companies, and it must include the legal form (e.g., LLC). Authorities may require an Arabic version and can reject non‑compliant names.",
     },
     {
-      question: "Where can i check my case Progress?",
+      question:
+        "Is real estate name registration mandatory for all firms in this sector?",
       answer:
-        "We provide a dedicated client portal where you can track your case progress in real-time. You'll also receive regular email updates and can contact your assigned case manager directly for any questions.",
+        "Yes. Any business operating in the real estate sector must reserve and register a trade name and obtain the appropriate licence/registration (e.g., RERA registration or licence under the relevant authority). Operating without proper registration can result in fines, blocked transactions or closure.",
     },
   ],
 };

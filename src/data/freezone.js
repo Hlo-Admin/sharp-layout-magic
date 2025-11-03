@@ -203,20 +203,20 @@ export const faqData = {
   subtitle: "Know about your query and popularly asked questions",
   faqs: [
     {
-      question: "What is a freezone firm in Dubai?",
+      question: "What is a freezone firm in UAE?",
       answer:
-        "UAE offers 100% foreign ownership in mainland, tax-free income, strategic location, access to international markets, and world-class infrastructure for business growth.",
+        "A freezone firm is a business entity registered in one of the UAE's designated free zones. These zones offer 100% foreign ownership, full tax exemptions, 100% profit repatriation, customs duty exemptions, and simplified business setup procedures. Freezone companies are ideal for international trade, e-commerce, logistics, IT, and various other business activities.",
     },
     {
       question: "Which free zone is the most suitable to my business?",
       answer:
-        "The process includes selecting business activity, choosing legal form, reserving trade name, obtaining initial approval, renting office space, drafting agreements, submitting documents, and receiving the business license.",
+        "The ideal free zone depends on your business activity, budget, and operational needs. For example, DMCC and JAFZA are great for trading and logistics, Dubai Internet City suits tech companies, DAFZA works well for import/export businesses, and IFZA offers cost-effective solutions for startups. Our team can help you choose the best free zone based on your specific requirements and business goals.",
     },
     {
       question:
-        "Is it possible that freezone company trades directly in the mainland of the Dubai?",
+        "Is it possible that freezone company trades directly in the mainland of the UAE?",
       answer:
-        "The three main types are Commercial License (for trading), Professional License (for services), and Industrial License (for manufacturing). The type depends on your business activity.",
+        "Generally, freezone companies have restrictions on direct trading within the UAE mainland market. To trade in the mainland, freezone companies typically need to appoint a local distributor or agent, or establish a separate mainland branch. However, some free zones offer flexible licenses that allow limited mainland trading. We can guide you on the best structure based on your business needs and help with the necessary setup.",
     },
   ],
 };

@@ -28,7 +28,7 @@ export const heroData = {
 };
 
 export const businessSetupData = {
-  title: "Your Partner for Smooth Business Setup in Dubai",
+  title: "Your Partner for Smooth Business Setup in UAE",
 
   description: `Go Kite PRO Business Setup Services offers a complete business
   setup service that is focused on entrepreneurs, startups, and

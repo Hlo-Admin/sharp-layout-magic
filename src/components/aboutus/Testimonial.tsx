@@ -45,6 +45,11 @@ const TestimonialSection = () => {
   return (
     <div className="bg-white px-4 py-12 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl font-bold text-left mb-8">
+          Our Testimonials
+        </h2>
+
         {/* Image row with injected testimonial box */}
         <div className="flex flex-wrap items-start gap-4">
           {testimonials.map((testimonial, index) => (
@@ -56,7 +61,7 @@ const TestimonialSection = () => {
                   alt={testimonial.name}
                   onClick={() => handleClick(testimonial.id)}
                   className={`w-40 ${
-                    activeId === testimonial.id ? "h-60" : "h-40"
+                    activeId === testimonial.id ? "h-55" : "h-40"
                   } object-cover rounded-md cursor-pointer border-2 transition duration-300 ${
                     activeId === testimonial.id
                       ? "border-blue-500 shadow-md"

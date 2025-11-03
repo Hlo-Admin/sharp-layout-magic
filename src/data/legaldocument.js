@@ -3,7 +3,7 @@ export const heroData = {
     home: "Home",
     current: "Legal Document Services",
   },
-  title: "HIGH QUALITY LEGAL CONSULTANCY IN DUBAI",
+  title: "HIGH QUALITY LEGAL CONSULTANCY IN UAE",
   description:
     "Take the stress out of legal filings. Trust Go Kite Business Setup Services to handle your case registration in Dubai Courts professionally and efficiently. Contact us today for a consultation or to begin your case filing.",
   buttonText: "Let's simplify your Legal",

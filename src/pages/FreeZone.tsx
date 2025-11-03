@@ -5,7 +5,7 @@ import Benefits from "@/components/services/Benefits";
 import PopularFreeZones from "@/components/services/PopularFreeZones";
 import Documents from "@/components/services/Documents";
 
-import FAQ from "@/components/services/FAQ";
+import FAQ from "@/components/services/FAQService";
 import Footer from "@/components/common/Footer";
 import TextImage from "@/components/services/CostPoints";
 import freezone from "../data/freezone";
@@ -16,7 +16,7 @@ const Index = () => {
       {/* <Navigation /> */}
       <Hero data={freezone.heroData} />
       <WhatIsMainland data={freezone.whatIsMainlandData} />
-      <Benefits data={freezone.benefitsData} />
+      {/* <Benefits data={freezone.benefitsData} /> */}
       <PopularFreeZones data={freezone.freeZonesData} />
       <hr />
       <Documents data={freezone.procedureData} />

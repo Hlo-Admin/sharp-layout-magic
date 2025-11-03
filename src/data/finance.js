@@ -207,19 +207,20 @@ export const faqData = {
   subtitle: "Know about your query and inquire related questions",
   faqs: [
     {
-      question: "How may does it take for as Legal Clinic?",
+      question: "Which documents require legal translation?",
       answer:
-        "The timeline varies depending on the type of service and complexity of the case. Typically, legal translations take 2-3 business days, while corporate documentation can take 5-7 business days. We'll provide you with a detailed timeline during your consultation.",
+        "Common documents needing legal translation include contracts and agreements, court pleadings and judgments, powers of attorney, incorporation and company registration documents, shareholder agreements, licences and permits, patents and IP filings, immigration papers, birth/marriage/death certificates, academic records and diplomas, affidavits and notarised statements, and any official government correspondence. Documents destined for UAE authorities or courts typically require certified translations.",
     },
     {
-      question: "How soon i get a personal Lawyer?",
+      question: "Do you ensure confidentiality of my legal documents?",
       answer:
-        "You can schedule a consultation with one of our experienced lawyers within 24-48 hours of your initial inquiry. For urgent matters, same-day consultations may be available.",
+        "Yes. All documents are handled under strict confidentiality: translators and staff sign NDAs, files are transferred and stored using encrypted channels, access is restricted to authorised personnel only, and secure disposal policies are followed after project completion. Additional contractual confidentiality terms can be provided on request.",
     },
     {
-      question: "Where can i check my case Progress?",
+      question:
+        "How do you ensure my translated document complies with UAE law?",
       answer:
-        "We provide a dedicated client portal where you can track your case progress in real-time. You'll also receive regular email updates and can contact your assigned case manager directly for any questions.",
+        "Compliance is ensured by using certified legal translators and subject-matter reviewers familiar with UAE legal terminology and procedures, applying a multi-step QA process (translation, legal review, proofreading), and preparing any required attestation or notarisation. When needed, documents are reviewed with legal counsel and formatted to meet the submission requirements of UAE authorities and courts.",
     },
   ],
 };

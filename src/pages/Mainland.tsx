@@ -8,7 +8,7 @@ import CostSection from "@/components/services/CostSection";
 import Steps from "@/components/services/Steps";
 import Documents from "@/components/services/Documents";
 import WhyTrustUs from "@/components/services/WhyTrustUs";
-import FAQ from "@/components/services/FAQ";
+import FAQ from "@/components/services/FAQService";
 import Footer from "@/components/common/Footer";
 
 import mainlandData from "../data/mainland";

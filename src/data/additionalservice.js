@@ -155,19 +155,20 @@ export const faqData = {
   subtitle: "Know about your query and inquire related questions",
   faqs: [
     {
-      question: "How may does it take for as Legal Clinic?",
+      question: "What are the reasons to register my logo in the UAE?",
       answer:
-        "The timeline varies depending on the type of service and complexity of the case. Typically, legal translations take 2-3 business days, while corporate documentation can take 5-7 business days. We'll provide you with a detailed timeline during your consultation.",
+        "Registering your logo (trademark) gives you exclusive legal rights to use and enforce the mark across the UAE, deters copying and unauthorized use, enables enforcement through courts and customs, allows licensing or assignment, permits use of the ® symbol after registration, and strengthens brand value and customer trust.",
     },
     {
-      question: "How soon i get a personal Lawyer?",
+      question:
+        "What is the typical time duration for logo (trademark) registration?",
       answer:
-        "You can schedule a consultation with one of our experienced lawyers within 24-48 hours of your initial inquiry. For urgent matters, same-day consultations may be available.",
+        "A standard, uncontested registration typically completes in about 6–12 months from filing. The timeline includes formality checks, substantive examination, publication (opposition) period and issuance; oppositions or objections can extend the process.",
     },
     {
-      question: "Where can i check my case Progress?",
+      question: "How long does a registered logo last?",
       answer:
-        "We provide a dedicated client portal where you can track your case progress in real-time. You'll also receive regular email updates and can contact your assigned case manager directly for any questions.",
+        "A registered trademark in the UAE is valid for 10 years from the filing date and can be renewed indefinitely for subsequent 10‑year periods by paying the renewal fees.",
     },
   ],
 };

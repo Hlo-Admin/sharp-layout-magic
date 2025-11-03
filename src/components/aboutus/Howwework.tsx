@@ -36,7 +36,7 @@ const WhatWeDo = () => {
         {/* Left: Text Content */}
         <div className="md:w-3/5 space-y-8">
         <h2 className="text-2xl md:text-4xl font-semibold">
-            What  Do <span className="font-normal">(End-to-End)</span>
+           How We Work <span className="font-normal">(End-to-End)</span>
         </h2>
 
         <ul className="space-y-6">

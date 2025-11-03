@@ -5,7 +5,7 @@ import TarakheesBenefits from "@/components/services/TarakheesBenefits";
 import TarakheesIndustries from "@/components/services/TarakheesIndustries";
 import SmeProcess from "@/components/services/SmeProcess";
 import TarakheesCost from "@/components/services/TarakheesCost";
-import FAQ from "@/components/services/FAQ";
+import FAQ from "@/components/services/FAQService";
 import Footer from "@/components/common/Footer";
 import tarakhees from "../data/tarakhees";
 
