@@ -12,6 +12,7 @@ import ClientTestimonials from "@/components/landing/Testimonials";
 import BlogSection from "@/components/landing/BlogSection";
 import FAQ from "@/components/landing/FAQ";
 import Footer from "@/components/common/Footer";
+import ContactForm from "@/components/common/ContactForm";
 import landingPageData from "../data/landingPage";
 
 const Index = () => {
@@ -62,6 +63,7 @@ const Index = () => {
       />
       <FAQ data={landingPageData.faqSection} />
       <Footer />
+      <ContactForm />
     </div>
   );
 };
