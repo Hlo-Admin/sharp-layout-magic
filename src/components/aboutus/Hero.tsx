@@ -5,7 +5,7 @@ const Hero = ({ data }) => {
   const { breadcrumbs, title, subtitle, contactIcons, image } = data;
 
   return (
-    <section className="relative h-[340px] overflow-hidden mx-3 my-6 px-0 rounded-xl">
+    <section className="relative h-[340px] mx-3 my-6 px-0 rounded-xl">
       {/* Banner background */}
       <div
         className="absolute inset-0 bg-cover bg-center rounded-xl"

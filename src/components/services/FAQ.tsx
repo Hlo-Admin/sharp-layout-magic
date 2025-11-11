@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import BookingPopup from "../common/Booking";
 
 type FAQItem = {
   question: string;
@@ -23,6 +24,8 @@ type Props = {
 };
 
 const FAQ = ({ data }: Props) => {
+  const [showBooking, setShowBooking] = useState(false);
+  
   if (!data) return null;
   
   return (
@@ -56,11 +59,19 @@ const FAQ = ({ data }: Props) => {
       <Button
         variant="default"
         size="lg"
+        onClick={() => setShowBooking(true)}
         className="bg-black text-white rounded-full px-7 py-4 text-base font-semibold flex items-center gap-2 shadow hover:bg-gray-800 transition"
       >
         Contact Us now ~ it's free
       </Button>
     </div>
+
+    {/* Booking Modal */}
+    {showBooking && (
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <BookingPopup onClose={() => setShowBooking(false)} />
+      </div>
+    )}
   </section>
   );
 };

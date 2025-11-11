@@ -2,20 +2,21 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const services = [
-  { name: "Attestation Services", href: "#" },
-  { name: "PRO Services", href: "#" },
-  { name: "Government Approvals", href: "#" },
-  { name: "Legal Support Services", href: "#" },
-  { name: "Translation Services", href: "#" },
-  { name: "GHQ Services", href: "#" },
-  { name: "Brand Registration", href: "#" },
+  { name: "Attestation Services", href: "/document-legal-service" },
+  { name: "PRO Services", href: "/additional-service" },
+  { name: "Government Approvals", href: "/document-legal-service" },
+  { name: "Legal Support Services", href: "/legal-document-services" },
+  { name: "Translation Services", href: "/document-legal-service" },
+  { name: "GHQ Services", href: "/document-legal-service" },
+  { name: "Brand Registration", href: "/brand-register" },
 ];
 
 const social = [
-  { name: "Instagram", href: "https://www.instagram.com/gokitepro" },
+  { name: "Instagram", href: "https://www.instagram.com/gokitepro/" },
+  { name: "Linkedin", href: "https://www.linkedin.com/company/go-kite-pro/" },
+  { name: "Facebook", href: "https://www.facebook.com/people/Go-Kite-PRO/61578056361465/" },
   { name: "X", href: "https://twitter.com/gokitepro" },
   { name: "Threads", href: "https://www.threads.net/@gokitepro" },
-  { name: "Facebook", href: "https://www.facebook.com/gokitepro" },
   { name: "Snapchat", href: "https://www.snapchat.com/add/gokitepro" },
 ];
 

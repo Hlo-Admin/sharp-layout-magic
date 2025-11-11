@@ -110,7 +110,7 @@ const ServicesDropdown = ({ onClose }: ServicesDropdownProps) => {
 
   const businessSetupLinks: LinkItem[] = [
     {
-      to: "/document-legal-service",
+      to: "/tax",
       label: "Startup, MSME Business Paperwork",
     },
     { to: "/document-legal-service", label: "Attestation Services" },
