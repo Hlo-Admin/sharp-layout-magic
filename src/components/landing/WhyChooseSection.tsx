@@ -24,10 +24,10 @@ export default function WhyChooseSection({ data }: Props) {
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               {data.description}
             </p>
-            <button className="inline-flex items-center gap-2 bg-black text-white px-6 py-4 rounded-md text-lg font-medium hover:bg-gray-800 transition-colors">
+            {/* <button className="inline-flex items-center gap-2 bg-black text-white px-6 py-4 rounded-md text-lg font-medium hover:bg-gray-800 transition-colors">
               {data.buttonText}
               <ArrowUpRight className="w-5 h-5 text-[yellow]" />
-            </button>
+            </button> */}
           </div>
 
           {/* Right Image - Takes up 1 column */}

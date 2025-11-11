@@ -314,7 +314,7 @@ const BookingPopup = ({ onClose }: BookingPopupProps = {}) => {
               onClick={() => day.date && setSelectedDate(day.date)}
               disabled={!day.date}
               className={`
-                  aspect-square flex items-center justify-center rounded-lg text-xs font-medium transition-colors
+                  aspect-square flex items-center justify-center rounded-full text-xs font-medium transition-colors
                   ${getDateStyle(day.date)}
                 `}
             >

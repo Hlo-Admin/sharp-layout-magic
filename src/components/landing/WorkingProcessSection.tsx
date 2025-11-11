@@ -1,5 +1,6 @@
 import { ChevronRight } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
+import BookingPopup from "../common/Booking";
 
 interface Feature {
   icon: string;
@@ -35,6 +36,8 @@ export default function StandardWorkingProcess({
   cards,
   ctaButton,
 }: WorkingProcessSectionProps) {
+  const [showBooking, setShowBooking] = useState(false);
+
   return (
     <div className="bg-white pb-16 px-4 -mt-2 ">
       <div className="max-w-7xl mx-auto">
@@ -103,7 +106,7 @@ export default function StandardWorkingProcess({
                       </p>
                       <button className="text-[#53B0F5] font-semibold text-sm hover:text-cyan-600 transition-colors flex items-center gap-1 group self-start">
                         {card.linkText}
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </button>
                     </div>
                   </div>
@@ -115,7 +118,10 @@ export default function StandardWorkingProcess({
 
         {/* CTA Button */}
         <div className="mt-12 flex justify-center">
-          <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-8 py-4 rounded-xl text-base flex items-center gap-2 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+          <button
+            onClick={() => setShowBooking(true)}
+            className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-8 py-4 rounded-xl text-base flex items-center gap-2 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+          >
             {ctaButton.text}
             <svg
               className="w-5 h-5"
@@ -133,6 +139,13 @@ export default function StandardWorkingProcess({
           </button>
         </div>
       </div>
+
+      {/* Booking Modal */}
+      {showBooking && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <BookingPopup onClose={() => setShowBooking(false)} />
+        </div>
+      )}
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import { ArrowUpRight, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import BookingPopup from "../common/Booking";
+import CostCalculatorPopup from "../common/CostCalculatorPopup";
 
 type ServiceCard = {
   title: string;
   description: string;
   linkText: string;
+  href: string;
   image: string;
 };
 
@@ -23,7 +24,7 @@ type Props = {
 export default function ServicesSection({ data }: Props) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
-  const [showBooking, setShowBooking] = useState(false);
+  const [showCostCalculator, setShowCostCalculator] = useState(false);
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -78,7 +79,7 @@ export default function ServicesSection({ data }: Props) {
           {/* CTA Button - Desktop */}
           <div className="hidden lg:block ml-8">
             <button
-              onClick={() => setShowBooking(true)}
+              onClick={() => setShowCostCalculator(true)}
               className="inline-flex items-center gap-2 bg-black text-white px-5 py-3 rounded-xl text-xl font-medium hover:bg-gray-800 transition-colors whitespace-nowrap"
             >
               {data.buttonText}
@@ -90,7 +91,7 @@ export default function ServicesSection({ data }: Props) {
         {/* Mobile CTA Button */}
         <div className="lg:hidden mb-8">
           <button
-            onClick={() => setShowBooking(true)}
+            onClick={() => setShowCostCalculator(true)}
             className="w-full inline-flex items-center justify-center gap-2 bg-black text-white px-5 py-3 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors"
           >
             {data.buttonText}
@@ -133,7 +134,7 @@ export default function ServicesSection({ data }: Props) {
                     {service.description}
                   </p>
                   <a
-                    href="#"
+                    href={service.href}
                     className="inline-flex items-center gap-1 text-[#3790ad] text-sm font-medium hover:text-blue-700 transition-colors"
                   >
                     {service.linkText}
@@ -146,20 +147,11 @@ export default function ServicesSection({ data }: Props) {
         </div>
       </div>
 
-      {/* Booking Modal */}
-      {showBooking && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="relative">
-            <button
-              onClick={() => setShowBooking(false)}
-              className="absolute -top-4 -right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 z-10"
-            >
-              ✕
-            </button>
-            <BookingPopup onClose={() => setShowBooking(false)} />
-          </div>
-        </div>
-      )}
+      {/* Cost Calculator Popup */}
+      <CostCalculatorPopup
+        isOpen={showCostCalculator}
+        onClose={() => setShowCostCalculator(false)}
+      />
     </section>
   );
 }

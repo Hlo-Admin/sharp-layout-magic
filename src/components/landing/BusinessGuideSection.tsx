@@ -1,5 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import BookingPopup from "../common/Booking";
+
+interface AdditionalButton {
+  text: string;
+  href: string;
+}
 
 interface BusinessGuideCard {
   title: string;
@@ -8,7 +15,7 @@ interface BusinessGuideCard {
   priceLabel?: string;
   price?: string;
   additionalText?: string;
-  additionalButtons?: string[];
+  additionalButtons?: AdditionalButton[];
   backgroundColor: string;
   textColor: string;
   buttonColor: string;
@@ -25,6 +32,10 @@ export default function BusinessGuideSection({
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [showBooking, setShowBooking] = useState(false);
 
   // Auto-carousel effect - change card every 2 seconds
   useEffect(() => {
@@ -39,7 +50,7 @@ export default function BusinessGuideSection({
 
   // Scroll to the current card
   useEffect(() => {
-    if (!scrollContainerRef.current) return;
+    if (!scrollContainerRef.current || isDragging) return;
 
     const container = scrollContainerRef.current;
     const cardWidth = container.scrollWidth / cards.length;
@@ -49,7 +60,69 @@ export default function BusinessGuideSection({
       left: targetScrollLeft,
       behavior: "smooth",
     });
-  }, [currentIndex, cards.length]);
+  }, [currentIndex, cards.length, isDragging]);
+
+  // Handle mouse drag start
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setScrollLeft(scrollContainerRef.current.scrollLeft);
+  };
+
+  // Handle mouse drag move
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Multiply by 2 for faster scrolling
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  // Handle mouse drag end
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    // Snap to nearest card
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const cardWidth = container.scrollWidth / cards.length;
+      const newIndex = Math.round(container.scrollLeft / cardWidth);
+      setCurrentIndex(newIndex);
+    }
+  };
+
+  // Handle mouse leave
+  const handleMouseLeave = () => {
+    if (isDragging) {
+      setIsDragging(false);
+      // Snap to nearest card
+      if (scrollContainerRef.current) {
+        const container = scrollContainerRef.current;
+        const cardWidth = container.scrollWidth / cards.length;
+        const newIndex = Math.round(container.scrollLeft / cardWidth);
+        setCurrentIndex(newIndex);
+      }
+    }
+    setIsHovered(false);
+  };
+
+  // Prevent click during drag
+  const handleClick = (e: React.MouseEvent) => {
+    if (Math.abs(scrollLeft - (scrollContainerRef.current?.scrollLeft || 0)) > 5) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  };
+
+  // Handle button click - only open booking if it wasn't a drag
+  const handleButtonClick = (e: React.MouseEvent) => {
+    if (Math.abs(scrollLeft - (scrollContainerRef.current?.scrollLeft || 0)) > 5) {
+      e.preventDefault();
+      e.stopPropagation();
+      return;
+    }
+    setShowBooking(true);
+  };
 
   return (
     <div className="pt-6 sm:pt-12 px-2 sm:px-4 pb-20">
@@ -58,9 +131,18 @@ export default function BusinessGuideSection({
           <div
             ref={scrollContainerRef}
             className="flex gap-3 sm:gap-6 overflow-x-auto scrollbar-hide"
-            style={{ scrollBehavior: "smooth", maxWidth: "100vw" }}
+            style={{ 
+              scrollBehavior: isDragging ? "auto" : "smooth", 
+              maxWidth: "100vw",
+              cursor: "default",
+              userSelect: "none"
+            }}
             onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseLeave={handleMouseLeave}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onClick={handleClick}
           >
             {cards.map((card, index) => (
               <div
@@ -81,6 +163,7 @@ export default function BusinessGuideSection({
                     src="/landingpage/business-guide.png"
                     alt="Business Guide"
                     className="w-full h-full object-contain"
+                    draggable="false"
                   />
                 </div>
 
@@ -123,6 +206,7 @@ export default function BusinessGuideSection({
 
                   {/* Main Button */}
                   <button
+                    onClick={handleButtonClick}
                     className={`${card.buttonColor} ${card.buttonTextColor} px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base md:text-lg mb-4 sm:mb-6 flex items-center gap-2 hover:scale-105 transition-transform shadow-lg`}
                   >
                     <span className="truncate">{card.buttonText}</span>
@@ -156,14 +240,15 @@ export default function BusinessGuideSection({
                   {/* Additional Buttons */}
                   {card.additionalButtons && (
                     <div className="flex gap-2 sm:gap-3">
-                      {card.additionalButtons.map((buttonText, buttonIndex) => (
-                        <button
+                      {card.additionalButtons.map((button, buttonIndex) => (
+                        <Link
                           key={buttonIndex}
+                          to={button.href}
                           className={`${card.buttonColor} ${card.buttonTextColor} px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[0.65rem] sm:text-xs font-semibold flex items-center gap-1 hover:scale-105 transition-transform shadow-md whitespace-nowrap flex-shrink-0`}
                         >
-                          <span>{buttonText}</span>
+                          <span>{button.text}</span>
                           <ArrowUpRight className="w-2.5 h-2.5 text-[yellow] flex-shrink-0" />
-                        </button>
+                        </Link>
                       ))}
                     </div>
                   )}
@@ -183,6 +268,13 @@ export default function BusinessGuideSection({
           display: none;
         }
       `}</style>
+
+      {/* Booking Modal */}
+      {showBooking && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <BookingPopup onClose={() => setShowBooking(false)} />
+        </div>
+      )}
     </div>
   );
 }

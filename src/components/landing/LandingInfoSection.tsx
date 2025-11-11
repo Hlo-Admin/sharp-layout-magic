@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
-import BookingPopup from "../common/Booking";
+import CostCalculatorPopup from "../common/CostCalculatorPopup";
 
 type LandingInfoSectionData = {
   title: string;
@@ -15,7 +15,7 @@ type Props = {
 };
 
 export default function LandingInfoSection({ data }: Props) {
-  const [showBooking, setShowBooking] = useState(false);
+  const [showCostCalculator, setShowCostCalculator] = useState(false);
   return (
     <section className="bg-white py-16 px-4 md:px-12">
       <div className="max-w-7xl mx-auto">
@@ -32,7 +32,7 @@ export default function LandingInfoSection({ data }: Props) {
               {data.description}
             </p>
             <button
-              onClick={() => setShowBooking(true)}
+              onClick={() => setShowCostCalculator(true)}
               className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-lg font-medium hover:bg-gray-800 transition-colors w-fit"
             >
               {data.buttonText}
@@ -53,14 +53,11 @@ export default function LandingInfoSection({ data }: Props) {
         </div>
       </div>
 
-      {/* Booking Modal */}
-      {showBooking && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="relative">
-            <BookingPopup onClose={() => setShowBooking(false)} />
-          </div>
-        </div>
-      )}
+      {/* Cost Calculator Popup */}
+      <CostCalculatorPopup
+        isOpen={showCostCalculator}
+        onClose={() => setShowCostCalculator(false)}
+      />
     </section>
   );
 }
