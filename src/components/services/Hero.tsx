@@ -26,7 +26,7 @@ const Hero = ({ data }) => {
         {contactIcons.map((icon, index) => (
           <div
             key={index}
-            className="bg-white/95 shadow-xl rounded-l-2xl px-2 py-2"
+            className="group bg-white/95 shadow-xl rounded-l-2xl px-2 py-2 transition-all duration-300 hover:shadow-2xl hover:px-4 overflow-hidden"
             style={{
               borderTopLeftRadius: 16,
               borderBottomLeftRadius: 16,
@@ -36,9 +36,16 @@ const Hero = ({ data }) => {
               href={icon.href}
               target={icon.target}
               rel={icon.rel}
-              className="flex items-center justify-center w-10 h-10"
+              className="flex items-center justify-start gap-3 whitespace-nowrap"
             >
-              <img src={icon.src} alt={icon.alt} className="w-10 h-10" />
+              <img
+                src={icon.src}
+                alt={icon.alt}
+                className="w-10 h-10 flex-shrink-0 transition-transform duration-300"
+              />
+              <span className="text-black font-bold text-sm opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-[150px] transition-all duration-300 overflow-hidden">
+                {icon.label}
+              </span>
             </a>
           </div>
         ))}

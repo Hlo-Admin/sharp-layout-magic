@@ -7,13 +7,15 @@ const visaImmigrationData = {
     socialIcons: [
       {
         icon: "/phone.png",
-        href: "tel:+1234567890",
+        href: "tel:+971503578847",
         alt: "Phone",
+        label: "Let's Talk",
       },
       {
         icon: "/whatsapp.png",
-        href: "https://wa.me/1234567890",
+        href: "https://wa.me/971503578847",
         alt: "WhatsApp",
+        label: "WhatsApp",
         target: "_blank",
         rel: "noopener noreferrer",
       },
@@ -21,6 +23,7 @@ const visaImmigrationData = {
         icon: "/message.png",
         href: "mailto:info@gokitepro.com",
         alt: "Email",
+        label: "Email Us",
       },
     ],
     visaCards: [

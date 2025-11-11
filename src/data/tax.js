@@ -10,13 +10,15 @@ export const heroData = {
   socialIcons: [
     {
       icon: "/phone.png",
-      href: "#contact",
+      href: "tel:+971503578847",
       alt: "Live Chat",
+      label: "Let's Talk",
     },
     {
       icon: "/whatsapp.png",
       href: "https://wa.me/971503578847",
       alt: "WhatsApp",
+      label: "WhatsApp",
       target: "_blank",
       rel: "noopener noreferrer",
     },
@@ -24,6 +26,7 @@ export const heroData = {
       icon: "/message.png",
       href: "mailto:info@gokitepro.com",
       alt: "Email",
+      label: "Email Us",
     },
   ],
   services: [

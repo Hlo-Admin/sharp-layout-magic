@@ -8,21 +8,24 @@ export const heroData = {
   subtitle: "BUSINESS & BEYOND",
   contactIcons: [
     {
-      href: "tel:123456789",
+      href: "tel:+971503578847",
       src: "/phone.png",
       alt: "Phone",
+      label: "Let's Talk",
     },
     {
-      href: "https://wa.me/123456789",
+      href: "https://wa.me/971503578847",
       src: "/whatsapp.png",
       alt: "WhatsApp",
+      label: "WhatsApp",
       target: "_blank",
       rel: "noopener",
     },
     {
-      href: "#contact",
+      href: "mailto:info@gokitepro.com",
       src: "/message.png",
       alt: "Message",
+      label: "Email Us",
     },
   ],
 };
