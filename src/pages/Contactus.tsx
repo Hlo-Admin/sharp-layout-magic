@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import LandingNavigation from "@/components/landing/LandingNavigation";
 import Footer from "@/components/common/Footer";
@@ -42,6 +42,121 @@ const contactData = {
 };
 
 const ContactUs: React.FC = () => {
+  // Contact Form State
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  // Newsletter Form State
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [isNewsletterSubmitting, setIsNewsletterSubmitting] = useState(false);
+  const [newsletterStatus, setNewsletterStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const GOOGLE_SHEET_URL =
+    "https://script.google.com/macros/s/AKfycbwUXb--95Fx_kwYhVeAb8bpt4i5OEHUSMOn4aCvKZSazqqRiGAKOekAX4f1xqb1dIwg8A/exec";
+
+  // Handle Contact Form Input Change
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Handle Contact Form Submit
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      // Create form data to match the Apps Script's e.parameter structure
+      const formDataToSend = new URLSearchParams();
+      formDataToSend.append("formType", "contact"); // Identify this as contact form
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("phone", formData.phone || "");
+      formDataToSend.append("message", formData.message);
+      // timestamp will be automatically added by the Apps Script
+
+      const response = await fetch(GOOGLE_SHEET_URL, {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      const result = await response.json();
+
+      if (result.result === "success") {
+        setSubmitStatus({
+          type: "success",
+          message: "Thank you! Your message has been sent successfully.",
+        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        throw new Error(result.error || "Submission failed");
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "Sorry, something went wrong. Please try again.",
+      });
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Handle Newsletter Form Submit
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsNewsletterSubmitting(true);
+    setNewsletterStatus({ type: null, message: "" });
+
+    try {
+      // Create form data for newsletter
+      const formDataToSend = new URLSearchParams();
+      formDataToSend.append("formType", "newsletter"); // Identify this as newsletter form
+      formDataToSend.append("email", newsletterEmail);
+      // timestamp will be automatically added by the Apps Script
+
+      const response = await fetch(GOOGLE_SHEET_URL, {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      const result = await response.json();
+
+      if (result.result === "success") {
+        setNewsletterStatus({
+          type: "success",
+          message: "Successfully subscribed to our newsletter!",
+        });
+        setNewsletterEmail("");
+      } else {
+        throw new Error(result.error || "Subscription failed");
+      }
+    } catch (error) {
+      setNewsletterStatus({
+        type: "error",
+        message: "Failed to subscribe. Please try again.",
+      });
+      console.error("Newsletter subscription error:", error);
+    } finally {
+      setIsNewsletterSubmitting(false);
+    }
+  };
+
   return (
     <>
       <LandingNavigation />
@@ -62,20 +177,46 @@ const ContactUs: React.FC = () => {
                   {contactData.hero.subheading}
                 </h2>
 
-                <form className="space-y-10">
+                <form className="space-y-10" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-3 gap-6">
-                    {contactData.hero.fields.map((field, i) => (
-                      <div key={i}>
-                        <label className="block text-gray-600 mb-2 text-sm font-medium">
-                          {field.label}
-                        </label>
-                        <input
-                          type={field.type}
-                          required={field.required}
-                          className="w-full border-b border-gray-500 focus:border-gray-800 focus:outline-none py-2 text-gray-700"
-                        />
-                      </div>
-                    ))}
+                    <div>
+                      <label className="block text-gray-600 mb-2 text-sm font-medium">
+                        Your Name
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full border-b border-gray-500 focus:border-gray-800 focus:outline-none py-2 text-gray-700"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-600 mb-2 text-sm font-medium">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full border-b border-gray-500 focus:border-gray-800 focus:outline-none py-2 text-gray-700"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-600 mb-2 text-sm font-medium">
+                        Phone Number (optional)
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className="w-full border-b border-gray-500 focus:border-gray-800 focus:outline-none py-2 text-gray-700"
+                      />
+                    </div>
                   </div>
 
                   <div>
@@ -83,16 +224,32 @@ const ContactUs: React.FC = () => {
                       {contactData.hero.messageLabel}
                     </label>
                     <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       required
                       className="w-full border-b border-gray-300 focus:border-gray-800 focus:outline-none py-2 text-gray-700 h-28 resize-none"
                     ></textarea>
                   </div>
 
+                  {submitStatus.type && (
+                    <div
+                      className={`p-4 rounded-md ${
+                        submitStatus.type === "success"
+                          ? "bg-green-50 text-green-800 border border-green-200"
+                          : "bg-red-50 text-red-800 border border-red-200"
+                      }`}
+                    >
+                      {submitStatus.message}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="inline-flex items-center bg-sky-700 text-white px-6 py-3 rounded-full hover:bg-sky-800 transition font-medium"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center bg-sky-700 text-white px-6 py-3 rounded-full hover:bg-sky-800 transition font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {contactData.hero.buttonText}
+                    {isSubmitting ? "Sending..." : contactData.hero.buttonText}
                   </button>
                 </form>
               </div>
@@ -169,20 +326,41 @@ const ContactUs: React.FC = () => {
             </div>
 
             {/* Right - Form */}
-            <form className="md:w-1/2 flex flex-col sm:flex-row justify-center md:justify-end">
-              <input
-                type="email"
-                placeholder={contactData.newsletter.placeholder}
-                required
-                className="flex-1 px-4 py-2 rounded-md bg-[#33A0C4] placeholder-white text-white focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="bg-white text-sky-700 font-medium px-6 py-2 rounded-md hover:bg-sky-100 transition"
+            <div className="md:w-1/2 flex flex-col justify-center md:justify-end">
+              <form
+                className="flex flex-col sm:flex-row gap-2"
+                onSubmit={handleNewsletterSubmit}
               >
-                {contactData.newsletter.button}
-              </button>
-            </form>
+                <input
+                  type="email"
+                  placeholder={contactData.newsletter.placeholder}
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  required
+                  className="flex-1 px-4 py-2 rounded-md bg-[#33A0C4] placeholder-white text-white focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  disabled={isNewsletterSubmitting}
+                  className="bg-white text-sky-700 font-medium px-6 py-2 rounded-md hover:bg-sky-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isNewsletterSubmitting
+                    ? "Subscribing..."
+                    : contactData.newsletter.button}
+                </button>
+              </form>
+              {newsletterStatus.type && (
+                <div
+                  className={`mt-3 p-3 rounded-md text-sm ${
+                    newsletterStatus.type === "success"
+                      ? "bg-white/20 text-white"
+                      : "bg-red-100 text-red-800"
+                  }`}
+                >
+                  {newsletterStatus.message}
+                </div>
+              )}
+            </div>
           </div>
         </section>
       </div>

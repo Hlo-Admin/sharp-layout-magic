@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X, ChevronDown, ArrowRight, ArrowLeft } from "lucide-react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { GetCountries } from "react-country-state-city";
 
 interface CostCalculatorPopupProps {
   isOpen: boolean;
@@ -27,6 +28,26 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
   const [isFreeZoneDropdownOpen, setIsFreeZoneDropdownOpen] = useState(false);
   const [isNationalityDropdownOpen, setIsNationalityDropdownOpen] =
     useState(false);
+  const [countriesList, setCountriesList] = useState<any[]>([]);
+  const [nationalitySearchQuery, setNationalitySearchQuery] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Google Apps Script Web App URL
+  const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbwUXb--95Fx_kwYhVeAb8bpt4i5OEHUSMOn4aCvKZSazqqRiGAKOekAX4f1xqb1dIwg8A/exec";
+
+  // Fetch countries on component mount
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const countries = await GetCountries();
+        setCountriesList(countries);
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+      }
+    };
+    fetchCountries();
+  }, []);
 
   const businessTypes = [
     "Trading",
@@ -52,53 +73,6 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
     "RAK Free Trade Zone",
     "Fujairah Free Zone",
     "IFZA (International Free Zone Authority)",
-  ];
-
-  const nationalities = [
-    "Afghan",
-    "Algerian",
-    "Argentine",
-    "Australian",
-    "Bangladeshi",
-    "Belgian",
-    "Brazilian",
-    "British",
-    "Canadian",
-    "Chinese",
-    "Egyptian",
-    "French",
-    "German",
-    "Indian",
-    "Indonesian",
-    "Iranian",
-    "Iraqi",
-    "Italian",
-    "Japanese",
-    "Jordanian",
-    "Kenyan",
-    "Lebanese",
-    "Malaysian",
-    "Moroccan",
-    "Nigerian",
-    "Pakistani",
-    "Palestinian",
-    "Philippine",
-    "Polish",
-    "Portuguese",
-    "Russian",
-    "Saudi",
-    "South African",
-    "Spanish",
-    "Sri Lankan",
-    "Sudanese",
-    "Syrian",
-    "Thai",
-    "Tunisian",
-    "Turkish",
-    "Ukrainian",
-    "American",
-    "Yemeni",
-    "Other",
   ];
 
   const handleNext = () => {
@@ -130,6 +104,100 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
   const handleNationalitySelect = (nationality: string) => {
     setSelectedNationality(nationality);
     setIsNationalityDropdownOpen(false);
+    setNationalitySearchQuery("");
+  };
+
+  // Filter countries based on search query
+  const filteredCountries = countriesList.filter((country) =>
+    country.name.toLowerCase().includes(nationalitySearchQuery.toLowerCase())
+  );
+
+  // Handle form submission to Google Sheets
+  const handleSubmit = async () => {
+    // Validation
+    if (!email || !contactNumber) {
+      toast.error(
+        "Please fill in all required fields (Email and Contact Number)",
+        {
+          position: "top-right",
+          autoClose: 3000,
+        }
+      );
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Prepare form data
+      const formData = new URLSearchParams();
+      formData.append("formType", "costCalculator"); // Identify this as cost calculator form
+      formData.append("businessType", selectedBusinessType);
+      formData.append("jurisdiction", selectedJurisdiction);
+      formData.append("numberOfOwners", selectedOwners.toString());
+      formData.append("numberOfVisas", selectedVisas.toString());
+      formData.append("officeSpaceType", selectedOfficeSpace);
+      formData.append("nationality", selectedNationality);
+      formData.append("firstName", firstName);
+      formData.append("cityOfResidence", cityOfResidence);
+      formData.append("contactNumber", contactNumber);
+      formData.append("email", email);
+      formData.append("businessStartTime", businessStartTime);
+
+      // Send data to Google Sheets
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.result === "success") {
+        toast.success(
+          "Form submitted successfully! We'll send you a detailed cost estimate shortly.",
+          {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          }
+        );
+      } else {
+        throw new Error(result.error || "Submission failed");
+      }
+
+      // Reset form and close popup after a delay
+      setTimeout(() => {
+        onClose();
+        // Reset all fields
+        setCurrentStep(1);
+        setSelectedBusinessType("");
+        setSelectedJurisdiction("");
+        setSelectedFreeZone("");
+        setSelectedOwners(3);
+        setSelectedVisas(3);
+        setSelectedOfficeSpace("Virtual Office");
+        setSelectedNationality("");
+        setFirstName("");
+        setCityOfResidence("");
+        setContactNumber("");
+        setEmail("");
+        setBusinessStartTime("");
+      }, 2000);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error(
+        "There was an error submitting your form. Please try again.",
+        {
+          position: "top-right",
+          autoClose: 5000,
+        }
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -206,7 +274,7 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
                     >
                       {selectedBusinessType || "Choose Your Business Type"}
                     </span>
-                   <img src="/dropdown.png" alt="" className="w-3 h-3" />
+                    <img src="/dropdown.png" alt="" className="w-3 h-3" />
                   </button>
 
                   {isDropdownOpen && (
@@ -275,7 +343,7 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
                       selectedJurisdiction === "Mainland" ? "" : ""
                     }`}
                   >
-                    <span className="font-bold text-blue-500 text-lg">
+                    <span className="font-bold text-[#66b0ff] text-2xl">
                       Mainland
                     </span>
                   </button>
@@ -541,16 +609,47 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
                   </button>
 
                   {isNationalityDropdownOpen && (
-                    <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-y-auto">
-                      {nationalities.map((nationality) => (
-                        <button
-                          key={nationality}
-                          onClick={() => handleNationalitySelect(nationality)}
-                          className="w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors first:rounded-t-lg last:rounded-b-lg"
-                        >
-                          {nationality}
-                        </button>
-                      ))}
+                    <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                      {/* Search Input */}
+                      <div className="p-3 border-b border-gray-200 sticky top-0 bg-white">
+                        <input
+                          type="text"
+                          value={nationalitySearchQuery}
+                          onChange={(e) =>
+                            setNationalitySearchQuery(e.target.value)
+                          }
+                          placeholder="Search country..."
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                          autoFocus
+                        />
+                      </div>
+
+                      {/* Countries List */}
+                      <div className="max-h-60 overflow-y-auto">
+                        {countriesList.length > 0 ? (
+                          filteredCountries.length > 0 ? (
+                            filteredCountries.map((country) => (
+                              <button
+                                key={country.id}
+                                onClick={() =>
+                                  handleNationalitySelect(country.name)
+                                }
+                                className="w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors"
+                              >
+                                {country.name}
+                              </button>
+                            ))
+                          ) : (
+                            <div className="px-4 py-3 text-gray-500 text-center">
+                              No countries found
+                            </div>
+                          )
+                        ) : (
+                          <div className="px-4 py-3 text-gray-500 text-center">
+                            Loading countries...
+                          </div>
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -760,25 +859,21 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
               </div>
 
               {/* Submit Button */}
-              <div className="flex justify-center">
+              <div className="flex justify-between">
                 <button
-                  onClick={() => {
-                    toast.success(
-                      "Form submitted successfully! We'll send you a detailed cost estimate shortly.",
-                      {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                      }
-                    );
-                    console.log("Submit form");
-                  }}
-                  className="bg-[#f7c332] text-gray-900 font-bold px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-[#e6b02a] transition-colors"
+                  onClick={handleBack}
+                  className="text-gray-900 font-bold px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-gray-100 transition-colors"
+                  disabled={isSubmitting}
                 >
-                  Submit Form
+                  <ArrowLeft className="w-4 h-4" />
+                  Back
+                </button>
+                <button
+                  onClick={handleSubmit}
+                  disabled={isSubmitting}
+                  className="bg-[#f7c332] text-gray-900 font-bold px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-[#e6b02a] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? "Submitting..." : "Submit Form"}
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
