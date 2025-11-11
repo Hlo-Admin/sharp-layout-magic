@@ -136,6 +136,12 @@ const Navbar = () => {
             About Us
           </a>
           <a
+            href="/blog"
+            className="text-base font-medium text-white hover:text-white/80 transition"
+          >
+            Blog
+          </a>
+          <a
             href="/contact"
             className="text-base font-medium text-white hover:text-white/80 transition"
           >
@@ -194,11 +200,11 @@ const Navbar = () => {
                 toggleMobileMenu();
               }
             }}
-            className="ml-1 sm:ml-2 md:ml-4 px-1.5 sm:px-2 py-1 rounded lg:cursor-default hover:bg-white/20 lg:hover:bg-transparent flex items-center justify-center"
+            className="lg:hidden ml-1 sm:ml-2 md:ml-4 px-1.5 sm:px-2 py-1 rounded hover:bg-white/20 flex items-center justify-center"
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
-              <X className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white lg:hidden" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
             ) : (
               <svg
                 width="24"
@@ -270,6 +276,13 @@ const Navbar = () => {
               className="text-sm sm:text-base font-medium text-white hover:text-white/80 transition py-2.5 px-3 rounded hover:bg-white/10"
             >
               About Us
+            </a>
+            <a
+              href="/blog"
+              onClick={toggleMobileMenu}
+              className="text-sm sm:text-base font-medium text-white hover:text-white/80 transition py-2.5 px-3 rounded hover:bg-white/10"
+            >
+              Blog
             </a>
             <a
               href="#contact"

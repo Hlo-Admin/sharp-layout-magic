@@ -64,7 +64,7 @@ const ContactUs: React.FC = () => {
   }>({ type: null, message: "" });
 
   const GOOGLE_SHEET_URL =
-    "https://script.google.com/macros/s/AKfycbwUXb--95Fx_kwYhVeAb8bpt4i5OEHUSMOn4aCvKZSazqqRiGAKOekAX4f1xqb1dIwg8A/exec";
+    "https://script.google.com/macros/s/AKfycbz6BS0fIvfePFIHF7fymPEJqKIgx-GONz1zApGbZ9qTcJVxW-3OscYPDm-jHYwwkrx9Hg/exec";
 
   // Handle Contact Form Input Change
   const handleInputChange = (

@@ -34,7 +34,7 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
 
   // Google Apps Script Web App URL
   const GOOGLE_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbwUXb--95Fx_kwYhVeAb8bpt4i5OEHUSMOn4aCvKZSazqqRiGAKOekAX4f1xqb1dIwg8A/exec";
+    "https://script.google.com/macros/s/AKfycbz6BS0fIvfePFIHF7fymPEJqKIgx-GONz1zApGbZ9qTcJVxW-3OscYPDm-jHYwwkrx9Hg/exec";
 
   // Fetch countries on component mount
   useEffect(() => {
