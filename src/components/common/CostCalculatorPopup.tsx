@@ -14,8 +14,8 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
   const [selectedBusinessType, setSelectedBusinessType] = useState("");
   const [selectedJurisdiction, setSelectedJurisdiction] = useState("");
   const [selectedFreeZone, setSelectedFreeZone] = useState("");
-  const [selectedOwners, setSelectedOwners] = useState(3);
-  const [selectedVisas, setSelectedVisas] = useState(3);
+  const [selectedOwners, setSelectedOwners] = useState<number | null>(null);
+  const [selectedVisas, setSelectedVisas] = useState<number | null>(null);
   const [selectedOfficeSpace, setSelectedOfficeSpace] =
     useState("Virtual Office");
   const [selectedNationality, setSelectedNationality] = useState("");
@@ -134,8 +134,14 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
       formData.append("formType", "costCalculator"); // Identify this as cost calculator form
       formData.append("businessType", selectedBusinessType);
       formData.append("jurisdiction", selectedJurisdiction);
-      formData.append("numberOfOwners", selectedOwners.toString());
-      formData.append("numberOfVisas", selectedVisas.toString());
+      formData.append(
+        "numberOfOwners",
+        selectedOwners !== null ? selectedOwners.toString() : "0"
+      );
+      formData.append(
+        "numberOfVisas",
+        selectedVisas !== null ? selectedVisas.toString() : "0"
+      );
       formData.append("officeSpaceType", selectedOfficeSpace);
       formData.append("nationality", selectedNationality);
       formData.append("firstName", firstName);
@@ -176,8 +182,8 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
         setSelectedBusinessType("");
         setSelectedJurisdiction("");
         setSelectedFreeZone("");
-        setSelectedOwners(3);
-        setSelectedVisas(3);
+        setSelectedOwners(null);
+        setSelectedVisas(null);
         setSelectedOfficeSpace("Virtual Office");
         setSelectedNationality("");
         setFirstName("");
@@ -325,13 +331,23 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
                 <div className="space-y-3">
                   <button
                     onClick={() => handleJurisdictionSelect("Free Zones")}
-                    className={`w-full px-4 py-3 text-left transition-colors ${
-                      selectedJurisdiction === "Free Zones" ? "" : ""
-                    }`}
+                    className="w-full px-4 py-3 text-left transition-colors"
                   >
                     <span className="flex items-center gap-2">
-                      <ArrowRight className="w-5 h-5 text-blue-500" />
-                      <span className="font-bold text-blue-500 text-lg">
+                      <ArrowRight
+                        className={`w-5 h-5 transition-colors ${
+                          selectedJurisdiction === "Free Zones"
+                            ? "text-[#007bff]"
+                            : "text-blue-500"
+                        }`}
+                      />
+                      <span
+                        className={`font-bold text-lg transition-colors ${
+                          selectedJurisdiction === "Free Zones"
+                            ? "text-[#007bff]"
+                            : "text-blue-500"
+                        }`}
+                      >
                         Free Zones
                       </span>
                     </span>
@@ -339,11 +355,15 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
 
                   <button
                     onClick={() => handleJurisdictionSelect("Mainland")}
-                    className={`w-full px-4 py-3 text-left  ${
-                      selectedJurisdiction === "Mainland" ? "" : ""
-                    }`}
+                    className="w-full px-4 py-3 text-left transition-colors"
                   >
-                    <span className="font-bold text-[#66b0ff] text-2xl">
+                    <span
+                      className={`font-bold text-2xl transition-colors ${
+                        selectedJurisdiction === "Mainland"
+                          ? "text-[#007bff]"
+                          : "text-[#66b0ff]"
+                      }`}
+                    >
                       Mainland
                     </span>
                   </button>

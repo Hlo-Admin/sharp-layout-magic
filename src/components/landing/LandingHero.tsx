@@ -1,6 +1,8 @@
+import { useState } from "react";
 import LandingNavigation from "@/components/landing/LandingNavigation";
 import BusinessSetupCards from "../../components/landing/BusinessSetupCards";
 import FloatingSocialIcons from "../../components/landing/FloatingSocialIcons";
+import CostCalculatorPopup from "@/components/common/CostCalculatorPopup";
 
 interface LandingHeroProps {
   data: {
@@ -36,6 +38,8 @@ const LandingHero = ({ data }: LandingHeroProps) => {
     businessSetupOptions,
     socialIcons,
   } = data;
+
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
 
   return (
     <section className="relative min-h-screen overflow-hidden mx-3 my-6 rounded-xl">
@@ -97,8 +101,8 @@ const LandingHero = ({ data }: LandingHeroProps) => {
             <p className="text-xl md:text-2xl text-white/90 mb-8 drop-shadow-lg max-w-3xl mx-auto">
               {subtitle}
             </p>
-            <a
-              href={ctaButton.href}
+            <button
+              onClick={() => setIsCalculatorOpen(true)}
               className="inline-flex items-center gap-2 bg-[#f7c332] hover:bg-[#e6b52a] text-[#193954] font-bold px-8 py-4 rounded-lg shadow-xl transition-all duration-300 hover:scale-105"
             >
               {ctaButton.text}
@@ -115,13 +119,19 @@ const LandingHero = ({ data }: LandingHeroProps) => {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </a>
+            </button>
           </div>
 
           {/* Business Setup Cards */}
           <BusinessSetupCards options={businessSetupOptions} />
         </div>
       </div>
+
+      {/* Cost Calculator Popup */}
+      <CostCalculatorPopup
+        isOpen={isCalculatorOpen}
+        onClose={() => setIsCalculatorOpen(false)}
+      />
     </section>
   );
 };
