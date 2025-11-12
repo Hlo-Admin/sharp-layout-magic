@@ -5,9 +5,12 @@ import { blogPosts } from "@/data/blog";
 // Helper function to create URL-friendly slug from title
 const createSlug = (title: string, id: number) => {
   const slug = title
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+    .replace(/[^a-z0-9]+/g, "-") // Replace non-alphanumeric with hyphens
+    .replace(/^-+|-+$/g, "") // Trim hyphens
+    .substring(0, 80); // Limit to 80 characters
   return `${id}-${slug}`;
 };
 
