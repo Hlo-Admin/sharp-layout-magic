@@ -12,7 +12,8 @@ interface CostCalculatorPopupProps {
 const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedBusinessType, setSelectedBusinessType] = useState("");
-  const [selectedJurisdiction, setSelectedJurisdiction] = useState("");
+  const [selectedJurisdiction, setSelectedJurisdiction] =
+    useState("Free Zones");
   const [selectedFreeZone, setSelectedFreeZone] = useState("");
   const [selectedOwners, setSelectedOwners] = useState<number | null>(null);
   const [selectedVisas, setSelectedVisas] = useState<number | null>(null);
@@ -180,7 +181,7 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
         // Reset all fields
         setCurrentStep(1);
         setSelectedBusinessType("");
-        setSelectedJurisdiction("");
+        setSelectedJurisdiction("Free Zones");
         setSelectedFreeZone("");
         setSelectedOwners(null);
         setSelectedVisas(null);
@@ -334,18 +335,14 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
                     className="w-full px-4 py-3 text-left transition-colors"
                   >
                     <span className="flex items-center gap-2">
-                      <ArrowRight
-                        className={`w-5 h-5 transition-colors ${
-                          selectedJurisdiction === "Free Zones"
-                            ? "text-[#007bff]"
-                            : "text-blue-500"
-                        }`}
-                      />
+                      {selectedJurisdiction === "Free Zones" && (
+                        <ArrowRight className="w-5 h-5 text-[#007bff] transition-colors" />
+                      )}
                       <span
                         className={`font-bold text-lg transition-colors ${
                           selectedJurisdiction === "Free Zones"
                             ? "text-[#007bff]"
-                            : "text-blue-500"
+                            : "text-blue-400"
                         }`}
                       >
                         Free Zones
@@ -357,14 +354,19 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
                     onClick={() => handleJurisdictionSelect("Mainland")}
                     className="w-full px-4 py-3 text-left transition-colors"
                   >
-                    <span
-                      className={`font-bold text-2xl transition-colors ${
-                        selectedJurisdiction === "Mainland"
-                          ? "text-[#007bff]"
-                          : "text-[#66b0ff]"
-                      }`}
-                    >
-                      Mainland
+                    <span className="flex items-center gap-2">
+                      {selectedJurisdiction === "Mainland" && (
+                        <ArrowRight className="w-5 h-5 text-[#007bff] transition-colors" />
+                      )}
+                      <span
+                        className={`font-bold text-2xl transition-colors ${
+                          selectedJurisdiction === "Mainland"
+                            ? "text-[#007bff]"
+                            : "text-blue-400"
+                        }`}
+                      >
+                        Mainland
+                      </span>
                     </span>
                   </button>
                 </div>
@@ -516,60 +518,102 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
                 <div className="grid grid-cols-3 gap-3">
                   <button
                     onClick={() => setSelectedOfficeSpace("Virtual Office")}
-                    className={`w-full px-4 pt-3 text-left transition-colors ${
-                      selectedOfficeSpace === "Virtual Office"
-                        ? "text-blue-600"
-                        : "text-blue-500"
-                    }`}
+                    className="w-full px-4 pt-3 text-left transition-colors"
                   >
                     <span className="flex items-center gap-2">
-                      <ArrowRight className="w-5 h-5" />
-                      <span className="font-bold text-xs">Virtual Office</span>
+                      {selectedOfficeSpace === "Virtual Office" && (
+                        <ArrowRight className="w-5 h-5 text-blue-600" />
+                      )}
+                      <span
+                        className={`font-bold text-xs ${
+                          selectedOfficeSpace === "Virtual Office"
+                            ? "text-blue-600"
+                            : "text-blue-400"
+                        }`}
+                      >
+                        Virtual Office
+                      </span>
                     </span>
                   </button>
 
                   <button
                     onClick={() => setSelectedOfficeSpace("Physical Office")}
-                    className={`w-full px-4 pt-3 text-left transition-colors ${
-                      selectedOfficeSpace === "Physical Office"
-                        ? "text-blue-600"
-                        : "text-blue-500"
-                    }`}
+                    className="w-full px-4 pt-3 text-left transition-colors"
                   >
-                    <span className="font-bold text-xs">Physical Office</span>
+                    <span className="flex items-center gap-2">
+                      {selectedOfficeSpace === "Physical Office" && (
+                        <ArrowRight className="w-5 h-5 text-blue-600" />
+                      )}
+                      <span
+                        className={`font-bold text-xs ${
+                          selectedOfficeSpace === "Physical Office"
+                            ? "text-blue-600"
+                            : "text-blue-400"
+                        }`}
+                      >
+                        Physical Office
+                      </span>
+                    </span>
                   </button>
 
                   <button
                     onClick={() => setSelectedOfficeSpace("Shop Front")}
-                    className={`w-full px-4 pt-3 text-left transition-colors ${
-                      selectedOfficeSpace === "Shop Front"
-                        ? "text-blue-600"
-                        : "text-blue-500"
-                    }`}
+                    className="w-full px-4 pt-3 text-left transition-colors"
                   >
-                    <span className="font-bold text-xs">Shop Front</span>
+                    <span className="flex items-center gap-2">
+                      {selectedOfficeSpace === "Shop Front" && (
+                        <ArrowRight className="w-5 h-5 text-blue-600" />
+                      )}
+                      <span
+                        className={`font-bold text-xs ${
+                          selectedOfficeSpace === "Shop Front"
+                            ? "text-blue-600"
+                            : "text-blue-400"
+                        }`}
+                      >
+                        Shop Front
+                      </span>
+                    </span>
                   </button>
 
                   <button
                     onClick={() => setSelectedOfficeSpace("Business Centre")}
-                    className={`w-full px-4 py-3 text-left transition-colors ${
-                      selectedOfficeSpace === "Business Centre"
-                        ? "text-blue-600"
-                        : "text-blue-500"
-                    }`}
+                    className="w-full px-4 py-3 text-left transition-colors"
                   >
-                    <span className="font-bold text-xs">Business Centre</span>
+                    <span className="flex items-center gap-2">
+                      {selectedOfficeSpace === "Business Centre" && (
+                        <ArrowRight className="w-5 h-5 text-blue-600" />
+                      )}
+                      <span
+                        className={`font-bold text-xs ${
+                          selectedOfficeSpace === "Business Centre"
+                            ? "text-blue-600"
+                            : "text-blue-400"
+                        }`}
+                      >
+                        Business Centre
+                      </span>
+                    </span>
                   </button>
 
                   <button
                     onClick={() => setSelectedOfficeSpace("Warehouse")}
-                    className={`w-full px-4 py-3 text-left transition-colors ${
-                      selectedOfficeSpace === "Warehouse"
-                        ? "text-blue-600"
-                        : "text-blue-500"
-                    }`}
+                    className="w-full px-4 py-3 text-left transition-colors"
                   >
-                    <span className="font-bold text-xs">Warehouse</span>
+                    <span className="flex items-center gap-2">
+                      {selectedOfficeSpace === "Warehouse" && (
+                        <ArrowRight className="w-5 h-5 text-blue-600" />
+                      )}
+                      <span
+                        className={`font-bold text-xs ${
+                          selectedOfficeSpace === "Warehouse"
+                            ? "text-blue-600"
+                            : "text-blue-400"
+                        }`}
+                      >
+                        Warehouse
+                      </span>
+                    </span>
                   </button>
                 </div>
               </div>
@@ -842,38 +886,62 @@ const CostCalculatorPopup = ({ isOpen, onClose }: CostCalculatorPopupProps) => {
                 <div className="grid grid-cols-3 gap-3">
                   <button
                     onClick={() => setBusinessStartTime("This Month")}
-                    className={`px-4 py-3 text-left transition-colors ${
-                      businessStartTime === "This Month"
-                        ? "text-blue-600"
-                        : "text-blue-500"
-                    }`}
+                    className="px-4 py-3 text-left transition-colors"
                   >
                     <span className="flex items-center gap-2">
-                      <ArrowRight className="w-5 h-5" />
-                      <span className="font-bold text-sm">This Month</span>
+                      {businessStartTime === "This Month" && (
+                        <ArrowRight className="w-5 h-5 text-blue-600" />
+                      )}
+                      <span
+                        className={`font-bold text-sm ${
+                          businessStartTime === "This Month"
+                            ? "text-blue-600"
+                            : "text-blue-400"
+                        }`}
+                      >
+                        This Month
+                      </span>
                     </span>
                   </button>
 
                   <button
                     onClick={() => setBusinessStartTime("Next Month")}
-                    className={`px-4 py-3 text-left transition-colors ${
-                      businessStartTime === "Next Month"
-                        ? "text-blue-600"
-                        : "text-blue-500"
-                    }`}
+                    className="px-4 py-3 text-left transition-colors"
                   >
-                    <span className="font-bold text-sm">Next Month</span>
+                    <span className="flex items-center gap-2">
+                      {businessStartTime === "Next Month" && (
+                        <ArrowRight className="w-5 h-5 text-blue-600" />
+                      )}
+                      <span
+                        className={`font-bold text-sm ${
+                          businessStartTime === "Next Month"
+                            ? "text-blue-600"
+                            : "text-blue-400"
+                        }`}
+                      >
+                        Next Month
+                      </span>
+                    </span>
                   </button>
 
                   <button
                     onClick={() => setBusinessStartTime("Next 3 Months")}
-                    className={`px-4 py-3 text-left transition-colors ${
-                      businessStartTime === "Next 3 Months"
-                        ? "text-blue-600"
-                        : "text-blue-500"
-                    }`}
+                    className="px-4 py-3 text-left transition-colors"
                   >
-                    <span className="font-bold text-sm">Next 3 Months</span>
+                    <span className="flex items-center gap-2">
+                      {businessStartTime === "Next 3 Months" && (
+                        <ArrowRight className="w-5 h-5 text-blue-600" />
+                      )}
+                      <span
+                        className={`font-bold text-sm ${
+                          businessStartTime === "Next 3 Months"
+                            ? "text-blue-600"
+                            : "text-blue-400"
+                        }`}
+                      >
+                        Next 3 Months
+                      </span>
+                    </span>
                   </button>
                 </div>
               </div>
