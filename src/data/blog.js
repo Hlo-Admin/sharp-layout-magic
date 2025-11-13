@@ -1,7 +1,7 @@
 export const blogPosts = [
   {
     id: 111,
-    slug: "111-benefits-of-starting-a-mainland-company-in-dubai",
+    slug: "benefits-of-starting-a-mainland-company-in-dubai",
     tag: "Business Setup",
     title: "Benefits of Starting a Mainland Company in Dubai",
     author: "Go Kite PRO",

@@ -62,8 +62,8 @@ const App = () => (
           <Route path="/visa-immigration" element={<VisaImmigration />} />
           <Route path="/office-space" element={<OfficeSpace />} />
           <Route path="/additional-service" element={<AdditionalService />} />
-          <Route path="/blog" element={<BlogHome />} />
-          <Route path="/blog/:slug" element={<BlogContent />} />
+          <Route path="/blogs" element={<BlogHome />} />
+          <Route path="/blogs/:slug" element={<BlogContent />} />
           <Route path="/policy" element={<Policy />} />
           <Route path="/policy-template" element={<PolicyTemplate />} />
           <Route path="/contact" element={<ContactUs />} />
