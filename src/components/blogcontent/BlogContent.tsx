@@ -18,6 +18,11 @@ interface BlogData {
   subSections: BlogSection[];
   conclusion: string;
   secondaryImage: string;
+  faq?: Array<{
+    question: string;
+    answer: string;
+  }>;
+  keywords?: string;
 }
 
 interface BlogContentProps {
@@ -213,6 +218,38 @@ const BlogContent: React.FC<BlogContentProps> = ({ blogData }) => {
         <h2 className="text-xl font-semibold text-gray-800 mb-3">Conclusion</h2>
         <p className="text-gray-700 leading-relaxed">{blogData.conclusion}</p>
       </section>
+
+      {/* FAQ Section */}
+      {blogData.faq && blogData.faq.length > 0 && (
+        <section className="mt-10">
+          <h2 className="text-xl font-semibold text-gray-800 mb-6">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            {blogData.faq.map((item, index) => (
+              <div
+                key={index}
+                className="border-b border-gray-200 pb-6 last:border-b-0"
+              >
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {item.question}
+                </h3>
+                <p className="text-gray-700 leading-relaxed">{item.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Related Keywords Section */}
+      {blogData.keywords && (
+        <div className="related-keywords mt-6 pt-6 border-t border-gray-200">
+          <strong className="text-gray-800 font-semibold">
+            Related Topics:
+          </strong>{" "}
+          <span className="text-gray-700">{blogData.keywords}</span>
+        </div>
+      )}
     </article>
   );
 };
