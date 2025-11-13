@@ -144,7 +144,7 @@ function FirstSection() {
             {featuredPosts.map((blog) => (
               <Link
                 key={blog.id}
-                to={`/blog/${createSlug(blog.title, blog.id)}`}
+                to={`/blogs/${createSlug(blog.title, blog.id)}`}
                 className="relative group cursor-pointer transition-transform hover:scale-105 w-full"
               >
                 <div className="relative rounded-lg overflow-hidden shadow-lg w-full">
@@ -214,7 +214,7 @@ function FirstSection() {
             {regularPosts.map((blog, index) => (
               <Link
                 key={blog.id}
-                to={`/blog/${createSlug(blog.title, blog.id)}`}
+                to={`/blogs/${createSlug(blog.title, blog.id)}`}
                 className="relative group cursor-pointer transition-transform hover:scale-105 w-full"
               >
                 <div className="relative rounded-lg overflow-hidden shadow-lg w-full">

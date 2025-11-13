@@ -136,7 +136,7 @@ const Navbar = () => {
             About Us
           </a>
           <a
-            href="/blog"
+            href="/blogs"
             className="text-base font-medium text-white hover:text-white/80 transition"
           >
             Blog
@@ -278,7 +278,7 @@ const Navbar = () => {
               About Us
             </a>
             <a
-              href="/blog"
+              href="/blogs"
               onClick={toggleMobileMenu}
               className="text-sm sm:text-base font-medium text-white hover:text-white/80 transition py-2.5 px-3 rounded hover:bg-white/10"
             >

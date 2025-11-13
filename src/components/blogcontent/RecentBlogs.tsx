@@ -35,7 +35,7 @@ const RecentBlogs: React.FC = () => {
         {recentBlogs.map((blog) => (
           <Link
             key={blog.id}
-            to={`/blog/${createSlug(blog.title, blog.id)}`}
+            to={`/blogs/${createSlug(blog.title, blog.id)}`}
             className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
           >
             <img
