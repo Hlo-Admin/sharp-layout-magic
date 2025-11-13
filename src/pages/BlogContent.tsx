@@ -9,15 +9,16 @@ import { blogPosts } from "@/data/blog";
 const BlogPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
 
-  // Extract ID from slug (format: "id-title-slug")
-  const extractIdFromSlug = (slug: string | undefined): number | null => {
-    if (!slug) return null;
-    const match = slug.match(/^(\d+)-/);
-    return match ? Number(match[1]) : null;
-  };
+  // Find blog post by slug - strip any number prefix and match by slug content only
+  const blogPost = blogPosts.find((post) => {
+    if (!slug || !post.slug) return false;
 
-  const blogId = extractIdFromSlug(slug);
-  const blogPost = blogPosts.find((post) => post.id === blogId);
+    // Remove any leading number prefix (format: "id-slug" or just "slug")
+    const slugWithoutPrefix = slug.replace(/^\d+-/, "");
+
+    // Match by slug property directly (exact match)
+    return post.slug === slugWithoutPrefix;
+  });
 
   if (!blogPost) {
     return (

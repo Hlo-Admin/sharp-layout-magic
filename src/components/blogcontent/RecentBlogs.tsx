@@ -2,13 +2,18 @@ import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blog";
 
-// Helper function to create URL-friendly slug from title
-const createSlug = (title: string, id: number) => {
-  const slug = title
+// Helper function to get slug from blog post (use slug property directly)
+const getSlug = (blog: { slug?: string; title: string; id: number }) => {
+  // Use slug property if available, otherwise fallback to generated slug
+  if (blog.slug) {
+    return blog.slug;
+  }
+  // Fallback: generate slug from title (without ID prefix)
+  const slug = blog.title
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
-  return `${id}-${slug}`;
+  return slug;
 };
 
 const RecentBlogs: React.FC = () => {
@@ -22,6 +27,7 @@ const RecentBlogs: React.FC = () => {
       title: post.title,
       description: post.description,
       image: post.cardImage || post.mainImage,
+      slug: post.slug,
     }));
   }, []);
 
@@ -35,7 +41,7 @@ const RecentBlogs: React.FC = () => {
         {recentBlogs.map((blog) => (
           <Link
             key={blog.id}
-            to={`/blogs/${createSlug(blog.title, blog.id)}`}
+            to={`/blogs/${getSlug(blog)}`}
             className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
           >
             <img

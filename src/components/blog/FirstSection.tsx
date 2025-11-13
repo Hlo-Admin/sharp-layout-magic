@@ -9,13 +9,18 @@ import img8 from "/landingpage/round33.png";
 import { blogPosts } from "@/data/blog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Helper function to create URL-friendly slug from title
-const createSlug = (title: string, id: number) => {
-  const slug = title
+// Helper function to get slug from blog post (use slug property directly)
+const getSlug = (blog: { slug?: string; title: string; id: number }) => {
+  // Use slug property if available, otherwise fallback to generated slug
+  if (blog.slug) {
+    return blog.slug;
+  }
+  // Fallback: generate slug from title (without ID prefix)
+  const slug = blog.title
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
-  return `${id}-${slug}`;
+  return slug;
 };
 
 function FirstSection() {
@@ -144,7 +149,7 @@ function FirstSection() {
             {featuredPosts.map((blog) => (
               <Link
                 key={blog.id}
-                to={`/blogs/${createSlug(blog.title, blog.id)}`}
+                to={`/blogs/${getSlug(blog)}`}
                 className="relative group cursor-pointer transition-transform hover:scale-105 w-full"
               >
                 <div className="relative rounded-lg overflow-hidden shadow-lg w-full">
@@ -214,7 +219,7 @@ function FirstSection() {
             {regularPosts.map((blog, index) => (
               <Link
                 key={blog.id}
-                to={`/blogs/${createSlug(blog.title, blog.id)}`}
+                to={`/blogs/${getSlug(blog)}`}
                 className="relative group cursor-pointer transition-transform hover:scale-105 w-full"
               >
                 <div className="relative rounded-lg overflow-hidden shadow-lg w-full">
