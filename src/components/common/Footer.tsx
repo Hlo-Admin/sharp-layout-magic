@@ -15,9 +15,9 @@ const social = [
   { name: "Instagram", href: "https://www.instagram.com/gokitepro/" },
   { name: "Linkedin", href: "https://www.linkedin.com/company/go-kite-pro/" },
   { name: "Facebook", href: "https://www.facebook.com/people/Go-Kite-PRO/61578056361465/" },
-  { name: "X", href: "https://twitter.com/gokitepro" },
-  { name: "Threads", href: "https://www.threads.net/@gokitepro" },
-  { name: "Snapchat", href: "https://www.snapchat.com/add/gokitepro" },
+  // { name: "X", href: "https://twitter.com/gokitepro" },
+  // { name: "Threads", href: "https://www.threads.net/@gokitepro" },
+  // { name: "Snapchat", href: "https://www.snapchat.com/add/gokitepro" },
 ];
 
 const Footer = () => (

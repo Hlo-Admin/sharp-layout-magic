@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
 const businessSetupOptions = [
-  { path: "/mainland", label: "Mainland Business Setup" },
-  { path: "/freezone", label: "Freezone Company" },
-  { path: "/offshore", label: "Offshore Company" },
-  { path: "/smecompany", label: "SME Company Formation" },
-  { path: "/tarakhees", label: "Tarakhees Company Formation" },
+  { path: "/business-setup/mainland-company-formation-in-dubai", label: "Mainland Business Setup" },
+  { path: "/business-setup/freezone-company-formation-in-dubai", label: "Freezone Company" },
+  { path: "/business-setup/offshore-company-formation-in-dubai", label: "Offshore Company" },
+  { path: "/business-setup/sme-company-formation-in-dubai/", label: "SME Company Formation" },
+  { path: "/business-setup/tarakhees-company-formation-in-dubai/", label: "Tarakhees Company Formation" },
 ];
 
 interface BusinessSetupDropdownProps {

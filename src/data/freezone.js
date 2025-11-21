@@ -1,10 +1,10 @@
 export const heroData = {
   breadcrumbs: {
     home: "Home",
-    current: "Free zone Company Formation in Dubai",
+    current: "Free Zone Company Formation in Dubai",
   },
   image: "/services/banners/freezone-banner.png",
-  title: " Free zone Company",
+  title: "Free Zone Company",
   subtitle: "BUSINESS & BEYOND",
   contactIcons: [
     {
@@ -31,17 +31,17 @@ export const heroData = {
 };
 
 export const whatIsMainlandData = {
-  title: "What is Free zone Company",
+  title: "What is a Free Zone Company?",
   paragraphs: [
-    "A freezone company is a company registered in any of the free zones in Dubai. The advantages of these firms are full foreign ownership, exemptions of corporate taxes, and easy regulations. Freezone companies are ideal in the international trade, logistics, IT, e-commerce, manufacturing and so on.",
-    "The benefits of Freezone Company Formation in the Dubai",
-    "There are numerous free zones in the Dubai that are aimed at promoting international trade, drawing foreign investment, and creating a favorable business climate. These free zones provide such outstanding advantages as 100 percent foreign ownership, exemption of taxes, and access to the most advanced infrastructure, which makes them a perfect option to choose by entrepreneurs and investors",
-    "Go Kite Business Setup Services is an expert in the freezone company setup in Dubai without any hassles. Our professional team will help you with all the steps, so that you can have a comfortable setup according to the business requirements",
+    "A free zone company is a business entity registered in one of Dubai’s designated free zones. These jurisdictions provide tax exemptions, full foreign ownership, and simplified business regulations — ideal for companies focusing on international markets.",
+    "Free Zone Company Formation in Dubai offers powerful advantages such as 100% foreign ownership, tax benefits, customs duty exemptions, and world-class infrastructure. These benefits make free zones the preferred choice for investors engaged in international trade, logistics, IT, e-commerce, media, and manufacturing.",
+    "Dubai free zones are strategically designed to attract foreign investment and promote global business. Entrepreneurs can enjoy fast licensing, flexible workspace options, and complete operational freedom.",
+    "Go Kite PRO Business Setup Services ensures a smooth UAE free zone company setup with end-to-end documentation, approvals, and business licensing support tailored to your requirements.",
   ],
   types: [
     {
-      name: "Taraklness Company Formation",
-      description: "Get your UAE Business Registered in 24hrs",
+      name: "Tarakhees Company Formation",
+      description: "Fast business setup for industrial & commercial licensing",
       href: "/tarakhees",
     },
     {
@@ -51,66 +51,35 @@ export const whatIsMainlandData = {
     },
     {
       name: "SME Company Formation",
-      description: "Get your UAE Business Registered in 24hrs",
+      description: "Affordable setup solutions for startups & SMEs",
       href: "/smecompany",
     },
     {
       name: "Offshore Company Formation",
-      description: "Get your UAE Business Registered in 24hrs",
+      description: "Ideal for international expansion and asset protection",
       href: "/offshore",
     },
     {
       name: "Mainland Business Setup",
-      description: "Get your UAE Business Registered in 24hrs",
+      description: "Operate anywhere within the UAE",
       href: "/mainland",
     },
   ],
 };
 
 export const benefitsData = {
-  title: "BENEFITS OF Free Zone COMPANY FORMATION IN DUBAI",
+  title: "BENEFITS OF FREE ZONE COMPANY FORMATION IN DUBAI",
   benefits: [
-    {
-      title: "Full Foreign Ownership",
-      description: "No requirement of a local partner or sponsor.",
-    },
-    {
-      title: "Tax Benefits",
-      description: "Exemption on corporate tax and personal income tax.",
-    },
-    {
-      title: "Several Office Locations",
-      description: "Select between flexible offices in various emirates.",
-    },
-    {
-      title: "Customs Exemptions",
-      description: "There are no import/export duties in free zones.",
-    },
-    {
-      title: "Easy set-up",
-      description: "Little paperwork and simplified procedures.",
-    },
-    {
-      title: "Flexible Business",
-      description:
-        "Carry on a broad variety of commercial, professional or industrial operations.",
-    },
-    {
-      title: "Profit Repatriation",
-      description: "Repatriation of 100 percent capital and profits.",
-    },
-    {
-      title: "State-of-the-Art Infrastructure",
-      description: "Premium access to offices, warehouses, and facilities.",
-    },
-    {
-      title: "Flexible Licensing",
-      description: "Various business activities on a single license.",
-    },
-    {
-      title: "Strategic Location",
-      description: "Good access to international markets.",
-    },
+    { title: "100% Foreign Ownership", description: "No requirement for a local partner or sponsor." },
+    { title: "Tax Exemptions", description: "Zero corporate and personal income tax." },
+    { title: "Customs Benefits", description: "No import or export duties in free zones." },
+    { title: "Quick & Easy Setup", description: "Fast licensing and simplified paperwork." },
+    { title: "Profit Repatriation", description: "100% repatriation of profits and capital." },
+    { title: "Premium Infrastructure", description: "Access to world-class offices, warehouses & logistics." },
+    { title: "Multiple Business Activities", description: "Run various activities under one license." },
+    { title: "Strategic Global Connectivity", description: "Ideal for worldwide operations and trade routes." },
+    { title: "Simplified Visa Processing", description: "Sponsor visas for employees and dependents." },
+    { title: "Innovation & Tech Support", description: "Access to business incubators and R&D hubs." },
   ],
   image: "/services/benefits/freezone.png",
 };
@@ -147,7 +116,7 @@ export const freeZonesData = {
     {
       title: "Ras Al Khaimah Free Zones",
       links: ["RAK Free Trade Zone", "RAK Maritime City Free Zone"],
-      button: "Setup In Ras AI Khaimah",
+      button: "Setup In Ras Al Khaimah",
     },
     {
       title: "Ajman Free Zone",
@@ -163,41 +132,41 @@ export const freeZonesData = {
 };
 
 export const procedureData = {
-  title: "The Procedure of Establishing a Freezone Company in the Dubai",
+  title: "The Procedure of Establishing a Free Zone Company in Dubai",
   documents: [
-    "Choose the Right Free Zone based on your business activity and goals.",
-    "Decide on Business Activities you plan to conduct.",
-    "Select Business Structure such as Free Zone Establishment (FZE) or Free Zone Company (FZC).",
-    "Register a Unique Trade Name with the relevant authority.",
-    "Submit Required Documents including passports, visa copies, and business plans.",
-    "Obtain Initial Approvals from the free zone authority.",
-    "Lease Office or Warehouse Space as per free zone requirements.",
-    "Complete Payments and Obtain Your Business License.",
+    "Choose the Right Free Zone based on your business activity and long-term goals.",
+    "Identify the Business Activities you will conduct under the license.",
+    "Choose Business Structure: FZE or FZC.",
+    "Reserve a Trade Name with the free zone authority.",
+    "Submit Required Documents such as passport and visa copies.",
+    "Obtain Initial Approval from the authority.",
+    "Lease Office or Warehouse Space depending on business needs.",
+    "Complete Payments and Receive Your Business License.",
   ],
 };
 
 export const documentsData = {
-  title: "Documents Required for Freezone Company Formation",
+  title: "Documents Required for Free Zone Company Formation",
   documents: [
     "Passport copies of shareholders and directors",
-    "Proof of residence (e.g., utility bills)",
-    "Business plan (if applicable)",
+    "Proof of residence (e.g., utility bill)",
     "Trade name reservation certificate",
-    "Bank reference letter (optional based on free zone)",
-    "No Objection Certificate (NOC) from current employer (for UAE residents)",
+    "Business plan (if required by the free zone)",
+    "No Objection Certificate (for UAE residents)",
+    "Bank reference letter (if applicable)",
   ],
 };
 
 export const costSectionData = {
-  title: "Cost of Freezone Company Formation",
+  title: "Cost of Free Zone Company Formation",
   description: [
-    "Expert Guidance: Comprehensive knowledge of all UAE free zones to help you pick the best option.",
-    "End-to-End Support: We manage everything from paperwork to license issuance.",
-    "Clear and Competitive Pricing: Transparent prices and no hidden cost.",
-    "Customized Solutions: Tailored packages designed around your specific needs.",
-    "Quick Turnaround: Efficient processes to get your business operational swiftly.",
+    "Costs vary depending on the free zone, office space, and visa requirements.",
+    "Free zone company setup typically ranges from AED 10,000 to AED 50,000.",
+    "Transparent packages with no hidden charges.",
+    "Quick turnaround to get your business operational sooner.",
+    "Our experts assist with banking support, visas, and setup formalities.",
   ],
-  buttonText: "Get Quote for your business Setup",
+  buttonText: "Get Quote for Your Business Setup",
   image: "/services/cost-freezone.png",
 };
 
@@ -206,20 +175,44 @@ export const faqData = {
   subtitle: "Know about your query and popularly asked questions",
   faqs: [
     {
-      question: "What is a freezone firm in UAE?",
+      question: "What is a free zone company in Dubai?",
       answer:
-        "A freezone firm is a business entity registered in one of the UAE's designated free zones. These zones offer 100% foreign ownership, full tax exemptions, 100% profit repatriation, customs duty exemptions, and simplified business setup procedures. Freezone companies are ideal for international trade, e-commerce, logistics, IT, and various other business activities.",
+        "A free zone company is incorporated within one of Dubai’s free zones, offering 100% foreign ownership, tax benefits, customs exemptions, and simplified licensing for businesses targeting global markets.",
     },
     {
-      question: "Which free zone is the most suitable to my business?",
+      question: "Which free zone is best for my business?",
       answer:
-        "The ideal free zone depends on your business activity, budget, and operational needs. For example, DMCC and JAFZA are great for trading and logistics, Dubai Internet City suits tech companies, DAFZA works well for import/export businesses, and IFZA offers cost-effective solutions for startups. Our team can help you choose the best free zone based on your specific requirements and business goals.",
+        "It depends on your business model. DMCC is suitable for trading, DAFZA for logistics, Dubai Internet City for IT and tech businesses, and IFZA offers affordable options. We help you select the ideal free zone based on your requirements.",
     },
     {
-      question:
-        "Is it possible that freezone company trades directly in the mainland of the UAE?",
+      question: "Can a free zone company trade in mainland Dubai?",
       answer:
-        "Generally, freezone companies have restrictions on direct trading within the UAE mainland market. To trade in the mainland, freezone companies typically need to appoint a local distributor or agent, or establish a separate mainland branch. However, some free zones offer flexible licenses that allow limited mainland trading. We can guide you on the best structure based on your business needs and help with the necessary setup.",
+        "Direct mainland trading is not allowed without a local distributor or establishing a mainland branch. However, service-based activities may allow certain exceptions depending on the license.",
+    },
+    {
+      question: "What is the cost of opening a free zone company?",
+      answer:
+        "The overall cost ranges from AED 10,000 to AED 50,000, depending on the free zone, license type, and visa quota required.",
+    },
+    {
+      question: "Is a physical office mandatory in a free zone?",
+      answer:
+        "Most free zones require leasing a dedicated or flexi-desk space. Some allow virtual office options for startup licenses.",
+    },
+    {
+      question: "How long does free zone company formation take?",
+      answer:
+        "The process typically takes 7–14 working days depending on approvals and documentation readiness.",
+    },
+    {
+      question: "Can a free zone company sponsor visas?",
+      answer:
+        "Yes, visa eligibility depends on the license type and office space leased.",
+    },
+    {
+      question: "What tax benefits do free zone companies enjoy?",
+      answer:
+        "They benefit from exemptions on corporate tax, personal income tax, and customs duties within free zone jurisdictions.",
     },
   ],
 };

@@ -33,13 +33,13 @@ export const heroData = {
 export const whatIsMainlandData = {
   title: "WHAT IS MAINLAND COMPANY?",
   paragraphs: [
-    "A mainland company is a company which is licensed by the Department of Economic Development (DED) of a particular emirate, e.g. Dubai, Abu Dhabi or Sharjah. Mainland businesses can be located anywhere within the UAE and are also capable of direct trading with the local market without any restrictions as opposed to the free zone companies.",
-    "The mainland in the UAE provides one of the most vibrant and business friendly environment in the region. Having a wide customer base, little trade barriers, and the chance to collaborate with the government and the private sector, the establishment of the mainland company is the best option that an entrepreneur could choose to have a firm presence in the local and international market.",
-    "Go Kite Business Setup Services is a company formation expert in the UAE with extensive experience in mainland company formation, end-to-end support to have a smooth and compliant business set up experience.",
+    "A mainland company is a business licensed by the Department of Economic Development (DED) in any of the UAE emirates including Dubai, Abu Dhabi or Sharjah. These companies can operate anywhere within the UAE without restrictions, unlike Free Zone companies.",
+    "Mainland Company Formation in Dubai offers entrepreneurs one of the most dynamic, business-friendly, and economically growing environments in the world. With minimum trade restrictions, wider customer reach, and the ability to collaborate with both government and private sector entities, setting up a mainland company is the most strategic way to establish a solid business presence in the UAE.",
+    "Go Kite PRO Business Setup Services is a trusted company formation firm in the UAE, offering complete support for Dubai mainland company registration with full compliance, transparency, and faster approvals."
   ],
   types: [
     {
-      name: "Taraklness Company Formation",
+      name: "Tarakhees Company Formation",
       description: "Get your UAE Business Registered in 24hrs",
       href: "/tarakhees",
     },
@@ -70,47 +70,46 @@ export const benefitsData = {
   title: "BENEFITS OF MAINLAND COMPANY FORMATION IN DUBAI",
   benefits: [
     {
-      title: "UAE Market Access",
+      title: "100% Foreign Ownership",
       description:
-        "Be able to operate within the UAE without any restrictions.",
+        "Complete ownership in many approved business activities without needing a local sponsor.",
     },
     {
-      title: "No Trading Restrictions",
+      title: "Access to Government Projects",
       description:
-        "Do business with the government and the private customers in the UAE.",
+        "Mainland companies can participate in government tenders and secure high-value contracts.",
     },
     {
-      title: "Several Office Locations",
-      description: "Select between flexible offices in various emirates.",
+      title: "Wide UAE Market Access",
+      description: "Operate in any part of the UAE and globally without limitations.",
     },
     {
       title: "Unlimited Visa Quota",
       description:
-        "Mainland companies are allowed to apply to an unlimited amount of employee visas (depending on office space).",
+        "Hire more employees based on your office size and business needs.",
     },
     {
       title: "Freedom of Trade",
-      description: "The right to trade locally and internationally.",
+      description: "Trade directly with the local UAE market and internationally.",
     },
     {
-      title: "Flexible Business",
+      title: "Flexible Office Options",
       description:
-        "Carry on a broad variety of commercial, professional or industrial operations.",
+        "Choose office spaces anywhere in the UAE depending on budget and preference.",
     },
     {
-      title: "Eligibility to Government Contracts",
+      title: "No Restrictions on Business Activities",
       description:
-        "Get involved in profitable government tenders and contracts.",
+        "Mainland licenses cover a wide range of commercial, professional, and industrial sectors.",
     },
     {
-      title: "Repatriation of Profits",
-      description: "Capital and profits may be fully repatriated.",
+      title: "Full Repatriation of Profits",
+      description: "100% repatriation of profits and capital outside UAE.",
     },
   ],
   image: "/Benefits.png",
 };
 
-// New: tailored for Mainland Benefits section with UAE wording
 export const mainlandBenefitsData = {
   title: "BENEFITS OF MAINLAND COMPANY FORMATION IN UAE",
   benefits: [
@@ -196,14 +195,14 @@ export const costSectionData = {
 export const stepsData = {
   title: "STEPS TO ESTABLISH A MAINLAND COMPANY IN UAE",
   steps: [
-    "Select the Business Activity: You can pick the activities of your choice among the 141 approved by the DED.",
-    "Choose Legal Form: E.g., Establishment, Civil Company, etc.",
-    "Reservation of Trade Name: Select and reserve a trade name.",
-    "Apply to obtain Initial Approval: Obtain prior approval with DED.",
-    "Rent an office: Rent a physical office and obtain Ejari (tenancy contract).",
-    "Draft MOA/LSA Agreement: Draft Memorandum of Association or Local Service Agent agreement.",
-    "Final Documents: Hand in all the necessary documents to get the license.",
-    "Get the Business License: Get your trade license at the DED.",
+    "Select the Business Activity: Choose from DED-approved activities.",
+    "Choose Legal Form: E.g., LLC, Sole Establishment, Civil Company.",
+    "Reserve Trade Name: Secure a unique and compliant company name.",
+    "Initial Approval: Get pre-approval from DED.",
+    "Rent Office Space: Secure physical office and Ejari.",
+    "Prepare MOA/LSA Agreement: Depending on business type.",
+    "Submit Final Documents: To DED for compliance check.",
+    "Receive Trade License & Start Operations Immediately.",
   ],
 };
 
@@ -223,11 +222,11 @@ export const documentsData = {
 export const whyTrustUsData = {
   title: "WHY ENTREPRENEURS TRUST US:",
   reasons: [
-    "Local Market Expertise: We understand DED processes and UAE compliance thoroughly.",
-    "Transparent Pricing: No hidden charges. Full cost breakdown.",
-    "Quick Turnaround: Get your business license in as little as 3-5 working days.",
-    "Custom Solutions: Tailored packages based on your business goals.",
-    "Full Support: From legal drafting to office leasing and visa processing.",
+    "Local Market Expertise & DED Compliance",
+    "Transparent Pricing With No Hidden Charges",
+    "Quick Turnaround: Business license in 3–5 working days",
+    "Tailored Business Setup Packages",
+    "Full Support With Legal Documentation, Office Leasing & Visas",
   ],
 };
 
@@ -238,17 +237,47 @@ export const faqData = {
     {
       question: "What is a mainland company in the UAE?",
       answer:
-        "A mainland company is a business entity licensed by the Department of Economic Development (DED) of an emirate. It can be located anywhere in the UAE and has unrestricted access to the local market, allowing direct trading with UAE customers and businesses without limitations.",
+        "A mainland company is a business licensed by the DED, allowing unrestricted business operations anywhere in the UAE.",
     },
     {
-      question: "Can I own 100% of a mainland company as a foreign investor?",
+      question: "What is the difference between a mainland and free zone company?",
       answer:
-        "Yes, as of recent UAE regulations, foreign investors can now own 100% of a mainland company in most business activities. Previously, a local sponsor holding 51% was mandatory, but current laws allow full foreign ownership in many sectors, making the UAE more attractive for international entrepreneurs.",
+        "Mainland companies can trade in the UAE and take government contracts, while free zone companies are limited to operations within their designated zones and require a distributor for mainland trade.",
     },
     {
       question: "How much does it cost to set up a mainland company?",
       answer:
-        "Mainland company setup costs vary depending on the emirate, business activity, visa quota, and office space. On average, prices range between AED 15,000 to AED 35,000, including license fees, local service agent fees, and documentation. Contact us for a customized quote based on your specific requirements.",
+        "Costs vary by emirate and activity but typically range between AED 15,000 to AED 35,000 including licensing and registration.",
+    },
+    {
+      question: "Do I need a physical office for mainland company formation?",
+      answer:
+        "Yes, a physical office and Ejari (tenancy contract) are mandatory for mainland licenses.",
+    },
+    {
+      question: "How long does it take to set up a mainland company?",
+      answer:
+        "Company formation usually takes between 3 to 7 working days depending on activity type and document readiness.",
+    },
+    {
+      question: "Can a mainland company sponsor visas?",
+      answer:
+        "Yes, mainland companies can sponsor employment visas based on office space and quota eligibility.",
+    },
+    {
+      question: "Do I need a local partner for a professional license?",
+      answer:
+        "No, a UAE national is only required as a Local Service Agent (LSA) without ownership rights.",
+    },
+    {
+      question: "Can I upgrade my free zone company to mainland?",
+      answer:
+        "Yes, you can convert a free zone company to a mainland structure by fulfilling DED requirements and closing the free zone entity.",
+    },
+    {
+      question: "Why choose Go Kite PRO Business Setup Services?",
+      answer:
+        "We provide complete support with legal expertise, transparent pricing, and fast licensing — ensuring a smooth and compliant company formation process.",
     },
   ],
 };

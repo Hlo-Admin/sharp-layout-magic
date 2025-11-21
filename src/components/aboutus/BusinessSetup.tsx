@@ -1,7 +1,7 @@
 import React from "react";
 
 const BusinessSetupSection = ({ data }) => {
-  const { title, description, bulletPoints, image, features } = data;
+  const { title,title2, description, bulletPoints, image, features } = data;
 
   return (
     <section className="py-4 bg-white">
@@ -13,7 +13,10 @@ const BusinessSetupSection = ({ data }) => {
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Left Content */}
           <div className="flex-1 space-y-4">
-            <h2 className="text-2xl lg:text-3xl font-semibold text-black mb-4">
+            <h1 className="text-2xl lg:text-3xl font-semibold text-black mb-4">
+          {title2}
+        </h1>
+        <h2 className="text-xl lg:text-2xl font-semibold text-black mb-4">
           {title}
         </h2>
             <p className="text-lg text-black leading-relaxed">{description}</p>

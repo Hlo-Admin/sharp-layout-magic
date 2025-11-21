@@ -67,7 +67,7 @@ const visaImmigrationData = {
         title: "Investor Visa",
         description:
           "Secure long-term residency as a business owner or shareholder. We manage medical tests, Emirates ID, and approvals for a smooth process.",
-        link: "#investor",
+        link: "http://localhost:8080/pro-services/investor-visa/",
       },
     ],
   },

@@ -67,7 +67,7 @@ const Index = () => {
       name: "United Arab Emirates",
     },
     description:
-      "Expert mainland company formation in UAE. Get your business license in 3-5 days. 100% foreign ownership, no restrictions, full market access.",
+      "Set up your Mainland Company Formation in UAE with expert guidance. We handle licensing, approvals, and paperwork for a smooth, compliant business launch.",
     offers: {
       "@type": "Offer",
       priceCurrency: "AED",
@@ -102,16 +102,15 @@ const Index = () => {
       <Helmet>
         {/* ---------- SEO META ---------- */}
         <title>
-          Mainland Business Setup UAE - Company Formation in 3-5 Days | Go Kite
-          PRO
+          Mainland Company Formation in UAE | Start Your Business Easily
         </title>
         <meta
           name="title"
-          content="Mainland Business Setup UAE - Company Formation in 3-5 Days | Go Kite PRO"
+          content="Mainland Company Formation in UAE | Start Your Business Easily"
         />
         <meta
           name="description"
-          content="Expert mainland company formation in UAE. Get your business license in 3-5 days. 100% foreign ownership, no restrictions, full market access. Professional setup services with DED licensing."
+          content="Set up your Mainland Company Formation in UAE with expert guidance. We handle licensing, approvals, and paperwork for a smooth, compliant business launch."
         />
         <meta name="keywords" content={keywords} />
         <meta name="author" content="Go Kite PRO Business Setup" />
@@ -129,7 +128,7 @@ const Index = () => {
         />
         <meta
           property="og:description"
-          content="Expert mainland company formation in UAE. Get your business license in 3-5 days. 100% foreign ownership, no restrictions, full market access. Professional setup services."
+          content="Set up your Mainland Company Formation in UAE with expert guidance. We handle licensing, approvals, and paperwork for a smooth, compliant business launch."
         />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:image:width" content="1200" />
@@ -145,7 +144,7 @@ const Index = () => {
         />
         <meta
           name="twitter:description"
-          content="Expert mainland company formation in UAE. Get your business license in 3-5 days. 100% foreign ownership, no restrictions, full market access."
+          content="Set up your Mainland Company Formation in UAE with expert guidance. We handle licensing, approvals, and paperwork for a smooth, compliant business launch."
         />
         <meta name="twitter:image" content={imageUrl} />
 

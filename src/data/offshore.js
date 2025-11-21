@@ -33,13 +33,13 @@ export const heroData = {
 export const whatIsMainlandData = {
   title: "Offshore Company Formation in Dubai",
   paragraphs: [
-    "An offshore company is a company that is registered in a jurisdiction which is meant to provide financial and legal benefits including zero taxation and high confidentiality. The Dubai offshore companies are ideal to international trade, asset protection and wealth management without having a physical presence in the country.",
-    "UAE is the leading international destination of offshore companies, which provide unrivaled benefits to companies that want privacy, asset protection, and tax efficiency. UAE is a legal, economical, and strategic approach to setting up an offshore company that can be used to increase your business presence in other countries.",
-    "Go Kite Business Setup Services is a service provider that specializes in smooth offshore company incorporation according to your business requirements. Our team of professionals will help you to smoothly set up and enjoy the advantages of the Dubai offshore with ease and confidence.",
+    "An offshore company is a business entity registered in a jurisdiction designed to provide financial privacy, zero taxation, and enhanced asset protection. Offshore company formation in Dubai is especially beneficial for businesses involved in international trade, estate planning, and wealth management — without needing a physical presence in the UAE.",
+    "The UAE remains a global hub for offshore entities due to its strong regulatory framework, reputation, financial security, and strategic location. Dubai offshore companies offer full foreign ownership, confidentiality, and tax advantages while enabling global business operations.",
+    "Go Kite PRO Business Setup Services specializes in seamless UAE offshore company incorporation. Our expert consultants ensure a fast, compliant, and secure setup process tailored to your business goals.",
   ],
   types: [
     {
-      name: "Taraklness Company Formation",
+      name: "Tarakhees Company Formation",
       description: "Get your UAE Business Registered in 24hrs",
       href: "/tarakhees",
     },
@@ -69,43 +69,14 @@ export const whatIsMainlandData = {
 export const benefitsData = {
   title: "ADVANTAGES OF OFFSHORE COMPANY FORMATION IN DUBAI",
   benefits: [
-    {
-      title: "Full Foreign Ownership",
-      description:
-        "You keep full control without having to find a local partner.",
-    },
-    {
-      title: "Zero Taxation",
-      description:
-        "Take advantage of exemptions on corporate tax, income tax and import/export duties.",
-    },
-    {
-      title: "High Confidentiality",
-      description:
-        "Offshore jurisdiction protects the privacy of shareholders and directors.",
-    },
-    {
-      title: "Asset Protection",
-      description: "Shield your investments and assets against litigation.",
-    },
-    {
-      title: "Economical Establishment",
-      description:
-        "Low cost of licensing and operations in comparison with mainland firms.",
-    },
-    {
-      title: "Global Market Access",
-      description:
-        "Do international business and open multi-currency bank accounts.",
-    },
-    {
-      title: "Flexible Operations",
-      description: "No need of office space or local employees in UAE.",
-    },
-    {
-      title: "Simplified Compliance",
-      description: "Reduced reporting and audit requirements.",
-    },
+    { title: "100% Foreign Ownership", description: "No UAE national sponsorship required." },
+    { title: "Zero Taxation", description: "No corporate tax, income tax, or customs duties." },
+    { title: "High Confidentiality", description: "Privacy for shareholders and directors." },
+    { title: "Asset Protection", description: "Secure your wealth and holdings internationally." },
+    { title: "Cost-Effective Setup", description: "Lower licensing & operational cost vs. mainland firms." },
+    { title: "Global Market Access", description: "Ideal for international trade with multi-currency bank accounts." },
+    { title: "No Physical Office Required", description: "Business can operate remotely without staff." },
+    { title: "Simplified Regulations", description: "Minimal reporting & no yearly audit obligations." },
   ],
   image: "/services/benefits/freezone.png",
 };
@@ -116,24 +87,24 @@ export const freeZonesData = {
     {
       title: "Jebel Ali Free Zone (JAFZA) Offshore",
       links: [
-        "Known as the place of secrecy and security of assets.",
-        "It is suitable to hold companies and international trade.",
+        "Ideal for holding companies and international trade.",
+        "High confidentiality and strong legal protections.",
       ],
       button: "Setup In JAFZA",
     },
     {
       title: "Ras Al Khaimah International Corporate Centre (RAK ICC)",
       links: [
-        "Easy and quick establishment of companies.",
-        "Preferred as trading, consulting and holding structures.",
+        "Quick and cost-effective incorporation.",
+        "Perfect for consulting, trading & holding entities.",
       ],
       button: "Setup In RAK ICC",
     },
     {
       title: "Ajman Offshore",
       links: [
-        "Low cost of installation and maintenance.",
-        "Ideal to SMEs and independent consultants.",
+        "Low setup and maintenance costs.",
+        "Suitable for SMEs and individual consultants.",
       ],
       button: "Setup In Ajman",
     },
@@ -141,42 +112,35 @@ export const freeZonesData = {
 };
 
 export const documentsData = {
-  title: "Uses of Offshore Companies Common Uses",
+  title: "Uses of Offshore Companies",
   documents: [
-    "International Trading: The process of enabling business across borders.",
-    "Asset Protection: Protect personal and corporate assets.",
-    "Wealth Management: Effectively manage investments and personal wealth.",
-    "Structures: Own shares in other companies or intellectual properties.",
+    "International Trading",
+    "Asset & Wealth Protection",
+    "Investment & Wealth Management",
+    "Holding Company Structure",
   ],
 };
 
 export const procedureData = {
-  title: "Procedures to Incorporate an Offshore Company in the Dubai",
+  title: "Procedures to Incorporate an Offshore Company in Dubai",
   documents: [
-    "Select the best offshore jurisdiction.",
-    "Specify what you do in business.",
-    "Book a special trading name.",
-    "Get ready with the documentation (shareholders, directors information).",
-    "Prepare a draft of Memorandum and Articles of Association (MOA).",
-    "Apply to the offshore authority.",
-    "Get the certificate of incorporation",
-    "Open a business bank account.",
-    "Records to be provided to form an Offshore Company",
-    "Copies of passports of shareholders and directors",
-    "Residence (utility bill or other)",
-    "Description of business propositions",
-    "Reservation certificate of trade name",
-    "Memorandum and Articles of Association (MOA)",
-    "Bank reference letter (depending on jurisdiction)",
+    "Select the preferred offshore jurisdiction.",
+    "Identify business activities and objectives.",
+    "Reserve a unique business name.",
+    "Submit required shareholder and director documents.",
+    "Draft the Memorandum & Articles of Association.",
+    "Apply for authority approval and incorporation.",
+    "Receive Certificate of Incorporation.",
+    "Proceed with corporate bank account opening.",
   ],
 };
 
 export const costSectionData = {
   title: "UAE Offshore Company Formation Cost",
   description: [
-    "Incorporation Fees: AED 10,000 and upwards",
-    "Maintenance: AED 5,000 to AED 8,000 per year",
-    "Bank Account Setup: The charges can differ based on the bank",
+    "Setup Costs: Starting from AED 10,000",
+    "Annual Maintenance: AED 5,000 to AED 8,000 per year",
+    "Bank Account Assistance: Based on bank requirements",
   ],
   buttonText: "Get Quote for your business Setup",
   image: "/services/cost-offshore.png",
@@ -189,18 +153,27 @@ export const faqData = {
     {
       question: "Which offshore jurisdiction should I choose?",
       answer:
-        "UAE offers 100% foreign ownership in mainland, tax-free income, strategic location, access to international markets, and world-class infrastructure for business growth.",
+        "JAFZA offers strong confidentiality protections, RAK ICC is cost-effective and faster to incorporate, while Ajman Offshore is best for SMEs and consultancy structures.",
     },
     {
-      question: "What are the fees involved in offshore company formation?",
+      question: "What are the costs involved in offshore company formation?",
       answer:
-        "The process includes selecting business activity, choosing legal form, reserving trade name, obtaining initial approval, renting office space, drafting agreements, submitting documents, and receiving the business license.",
+        "Initial incorporation typically starts from AED 10,000 with annual renewal fees ranging between AED 5,000 and AED 8,000 depending on the jurisdiction.",
     },
     {
-      question:
-        "Is a physical office required for an offshore company in the UAE?",
+      question: "Is a physical office required for an offshore company in the UAE?",
       answer:
-        "The three main types are Commercial License (for trading), Professional License (for services), and Industrial License (for manufacturing). The type depends on your business activity.",
+        "No. Offshore companies do not require physical office space or local employees in the UAE.",
+    },
+    {
+      question: "Are offshore companies taxed in the UAE?",
+      answer:
+        "No. Offshore entities benefit from zero corporate tax and zero income tax, with no customs duties.",
+    },
+    {
+      question: "Is 100% foreign ownership allowed?",
+      answer:
+        "Yes. Offshore companies permit complete foreign ownership without needing a local partner.",
     },
   ],
 };
