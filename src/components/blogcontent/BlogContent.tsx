@@ -199,9 +199,9 @@ const BlogContent: React.FC<BlogContentProps> = ({ blogData }) => {
       </div>
 
       {/* Advertisement */}
-      <div className="w-full bg-gray-100 border border-gray-200 text-gray-600 text-center py-8 rounded mb-10">
+      {/* <div className="w-full bg-gray-100 border border-gray-200 text-gray-600 text-center py-8 rounded mb-10">
         {blogData.adText}
-      </div>
+      </div> */}
 
       {/* Sub-sections */}
       {blogData.subSections.map((sub, index) => (
