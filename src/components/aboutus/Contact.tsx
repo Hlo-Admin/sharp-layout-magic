@@ -60,14 +60,16 @@ const HeroFooterSection = () => {
           <h4 className="font-medium mb-1">Social Media</h4>
           <div className="flex items-center gap-3">
             <a
-              href="#"
+              href="https://www.facebook.com/people/Go-Kite-PRO/61578056361465/"
+              target="_blank"
               aria-label="Facebook"
               className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition"
             >
               <Facebook className="w-4 h-4" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/go-kite-pro/"
+              target="_blank"
               aria-label="LinkedIn"
               className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition"
             >
@@ -75,7 +77,8 @@ const HeroFooterSection = () => {
             </a>
 
             <a
-              href="#"
+              href="https://www.instagram.com/gokitepro/"
+              target="_blank"
               aria-label="Instagram"
               className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition"
             >
@@ -97,9 +100,9 @@ const HeroFooterSection = () => {
       </div>
 
       {/* Copyright */}
-      <div className="mt-10 text-xs text-gray-500">
+      {/* <div className="mt-10 text-xs text-gray-500">
         © Copyright 2026 - Gokite Pro
-      </div>
+      </div> */}
     </section>
   );
 };
