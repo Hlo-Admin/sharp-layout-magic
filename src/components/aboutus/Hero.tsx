@@ -19,7 +19,7 @@ const Hero = ({ data }) => {
       <Navbar />
 
       {/* Right-side icon bar */}
-      <div className="absolute z-30 right-0 top-[120px] flex flex-col items-end gap-4">
+      {/* <div className="absolute z-30 right-0 top-[120px] flex flex-col items-end gap-4">
         {contactIcons && contactIcons.map((icon, index) => (
           <div
             key={index}
@@ -48,7 +48,7 @@ const Hero = ({ data }) => {
             </a>
           </div>
         ))}
-      </div>
+      </div> */}
 
       {/* Hero content - Centered */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-20 text-center pt-5 mt-16 px-4">

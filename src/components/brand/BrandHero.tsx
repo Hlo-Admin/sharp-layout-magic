@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import FloatingSocialIcons from "@/components/landing/FloatingSocialIcons";
 
 interface HeroSectionProps {
   data: {
@@ -8,22 +7,12 @@ interface HeroSectionProps {
     description: string;
     buttonText: string;
     image: string;
-    socialIcons: Array<{
-      icon: string;
-      href: string;
-      alt: string;
-      target?: string;
-      rel?: string;
-    }>;
   };
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
   return (
     <section className="relative bg-white">
-      {/* Floating Social Icons */}
-      <FloatingSocialIcons icons={data.socialIcons} />
-
       {/* Main Hero Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">

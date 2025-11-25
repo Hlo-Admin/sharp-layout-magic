@@ -83,6 +83,7 @@ import BrandRegistration from "./pages/BrandRegistration";
 import NotFound from "./pages/NotFound";
 
 import ZohoPopup from "./components/common/ZohoCrm";
+import GlobalSocialIcons from "./components/common/GlobalSocialIcons";
 
 const queryClient = new QueryClient();
 
@@ -92,6 +93,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <GlobalSocialIcons />
         <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />

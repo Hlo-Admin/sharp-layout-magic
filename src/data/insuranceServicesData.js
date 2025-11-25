@@ -8,20 +8,6 @@ export const heroData = {
     "Affordable and compliant insurance services in Dubai — protect your health, vehicles, assets, employees & business operations with expert support.",
   buttonText: "Get Insurance Support",
   image: "/services/banners/insurance-services.jpg",
-  socialIcons: [
-    { icon: "/phone.png", href: "tel:+971503578847", label: "Call Us" },
-    {
-      icon: "/whatsapp.png",
-      href: "https://wa.me/971503578847",
-      label: "WhatsApp",
-      target: "_blank",
-    },
-    {
-      icon: "/message.png",
-      href: "mailto:info@gokitepro.com",
-      label: "Email Us",
-    },
-  ],
 };
 
 // Why Go Kite + Services Highlights

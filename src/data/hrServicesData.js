@@ -8,24 +8,6 @@ export const heroData = {
     "Streamline your HR operations with expert Human Resource Services in Dubai. We ensure compliance with UAE labor laws, efficient payroll processing, and organized employee record management so your business can grow stress-free.",
   buttonText: "Get HR Support",
   image: "/services/banners/hr-services.jpg",
-  socialIcons: [
-    {
-      icon: "/phone.png",
-      href: "tel:+971503578847",
-      label: "Call Us",
-    },
-    {
-      icon: "/whatsapp.png",
-      href: "https://wa.me/971503578847",
-      target: "_blank",
-      label: "WhatsApp",
-    },
-    {
-      icon: "/message.png",
-      href: "mailto:info@gokitepro.com",
-      label: "Email Us",
-    },
-  ],
 };
 
 // Services Cards Section

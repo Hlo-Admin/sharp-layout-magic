@@ -8,16 +8,6 @@ export const heroData = {
     "Professional typing services for legal, business, immigration, and corporate documents. Accurate, compliant, and fast processing to meet UAE authority standards.",
   buttonText: "Get Typing Support",
   image: "/services/banners/typing-services.jpg",
-  socialIcons: [
-    { icon: "/phone.png", href: "tel:+971503578847", label: "Call Us" },
-    {
-      icon: "/whatsapp.png",
-      href: "https://wa.me/971503578847",
-      target: "_blank",
-      label: "WhatsApp",
-    },
-    { icon: "/message.png", href: "mailto:info@gokitepro.com", label: "Email Us" },
-  ],
 };
 
 export const serviceCardsData = {

@@ -38,25 +38,6 @@ const landingPageData = {
       href: "/business-setup/tarakhees-company-formation-in-dubai", // You can create a separate route for this if needed
     },
   ],
-  socialIcons: [
-    {
-      icon: "/message.png",
-      href: "#contact",
-      alt: "Live Chat",
-    },
-    {
-      icon: "/whatsapp.png",
-      href: "https://wa.me/123456789",
-      alt: "WhatsApp",
-      target: "_blank",
-      rel: "noopener noreferrer",
-    },
-    {
-      icon: "/message.png",
-      href: "mailto:info@gokitepro.com",
-      alt: "Email",
-    },
-  ],
   infoSection: {
     title: "Setup your Dream Business in UAE",
     subtitle: "By UAE's Top Elite Pro Team",

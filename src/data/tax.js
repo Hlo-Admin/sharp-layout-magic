@@ -7,28 +7,6 @@ export const heroData = {
     "Stress-free tax solutions that save you time, maximize your returns and eliminate the hassle.",
   buttonText: "Contact Business Team",
   bannerImage: "/tax/tax-banner.jpg",
-  socialIcons: [
-    {
-      icon: "/phone.png",
-      href: "tel:+971503578847",
-      alt: "Live Chat",
-      label: "Let's Talk",
-    },
-    {
-      icon: "/whatsapp.png",
-      href: "https://wa.me/971503578847",
-      alt: "WhatsApp",
-      label: "WhatsApp",
-      target: "_blank",
-      rel: "noopener noreferrer",
-    },
-    {
-      icon: "/message.png",
-      href: "mailto:info@gokitepro.com",
-      alt: "Email",
-      label: "Email Us",
-    },
-  ],
   services: [
     {
       icon: "/finance/icon-1.png",

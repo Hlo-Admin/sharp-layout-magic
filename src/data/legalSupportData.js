@@ -8,24 +8,6 @@ export const heroData = {
     "Expert assistance in legal documentation, dispute resolution, and compliance support for businesses & individuals in Dubai.",
   buttonText: "Get Legal Assistance",
   image: "/legal/legal-support-hero.jpg", // Update your banner image
-  socialIcons: [
-    {
-      icon: "/phone.png",
-      href: "tel:+971503578847",
-      label: "Let's Talk",
-    },
-    {
-      icon: "/whatsapp.png",
-      href: "https://wa.me/971503578847",
-      target: "_blank",
-      label: "WhatsApp",
-    },
-    {
-      icon: "/message.png",
-      href: "mailto:info@gokitepro.com",
-      label: "Email Us",
-    },
-  ],
 };
 
 // Section with cards — your services

@@ -8,16 +8,6 @@ export const heroData = {
     "VAT, corporate tax & FTA compliance services in Dubai — Register your business quickly and stay fully compliant with UAE tax regulations.",
   buttonText: "Get Tax Registration Support",
   image: "/services/banners/tax-registration.jpg",
-  socialIcons: [
-    { icon: "/phone.png", href: "tel:+971503578847", label: "Call Us" },
-    {
-      icon: "/whatsapp.png",
-      href: "https://wa.me/971503578847",
-      label: "WhatsApp",
-      target: "_blank",
-    },
-    { icon: "/message.png", href: "mailto:info@gokitepro.com", label: "Email Us" },
-  ],
 };
 
 export const serviceCardsData = {

@@ -22,7 +22,7 @@ const Hero = ({ data }) => {
       <Navbar />
 
       {/* Right-side icon bar */}
-      <div className="absolute z-30 right-0 top-[120px] flex flex-col items-end gap-4">
+      {/* <div className="absolute z-30 right-0 top-[120px] flex flex-col items-end gap-4">
         {contactIcons.map((icon, index) => (
           <div
             key={index}
@@ -49,7 +49,7 @@ const Hero = ({ data }) => {
             </a>
           </div>
         ))}
-      </div>
+      </div> */}
 
       {/* Hero content */}
       <div className="absolute z-10 top-[110px] left-8 flex flex-col items-start">

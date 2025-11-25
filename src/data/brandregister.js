@@ -7,28 +7,6 @@ export const heroData = {
   description: "Get your Brand Registered or Industry License Now made Easy",
   buttonText: "Book Consultation",
   image: "/brand/brand-hero.jpg",
-  socialIcons: [
-    {
-      icon: "/phone.png",
-      href: "tel:+971503578847",
-      alt: "Live Chat",
-      label: "Let's Talk",
-    },
-    {
-      icon: "/whatsapp.png",
-      href: "https://wa.me/971503578847",
-      alt: "WhatsApp",
-      label: "WhatsApp",
-      target: "_blank",
-      rel: "noopener noreferrer",
-    },
-    {
-      icon: "/message.png",
-      href: "mailto:info@gokitepro.com",
-      alt: "Email",
-      label: "Email Us",
-    },
-  ],
 };
 
 export const serviceCardsData = {

@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import FloatingSocialIcons from "@/components/landing/FloatingSocialIcons";
 
 interface Service {
   icon: string;
@@ -17,13 +16,6 @@ interface FinancialHeroProps {
     buttonText: string;
     bannerImage: string;
     services: Service[];
-    socialIcons?: Array<{
-      icon: string;
-      href: string;
-      alt: string;
-      target?: string;
-      rel?: string;
-    }>;
   };
 }
 
@@ -35,14 +27,9 @@ const FinancialHero = ({ data }: FinancialHeroProps) => {
     buttonText,
     bannerImage,
     services,
-    socialIcons,
   } = data;
   return (
     <section className="relative overflow-hidden bg-white">
-      {/* Floating Social Icons */}
-      {socialIcons && socialIcons.length > 0 && (
-        <FloatingSocialIcons icons={socialIcons} />
-      )}
       {/* Background Image Container - Only covers hero content and half of first row cards */}
       <div className="relative">
         {/* Background Image */}

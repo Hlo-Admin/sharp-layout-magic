@@ -8,28 +8,6 @@ export const heroData = {
     "SIRA, TDRA, Civil Defense, Dubai Municipality  approvals service Business / Legal Documentation , License & Business Legal Support",
   buttonText: "Let's simplify Government Paper work",
   image: "/document/document-hero.png",
-  socialIcons: [
-    {
-      icon: "/phone.png",
-      href: "tel:+971503578847",
-      alt: "Live Chat",
-      label: "Let's Talk",
-    },
-    {
-      icon: "/whatsapp.png",
-      href: "https://wa.me/971503578847",
-      alt: "WhatsApp",
-      label: "WhatsApp",
-      target: "_blank",
-      rel: "noopener noreferrer",
-    },
-    {
-      icon: "/message.png",
-      href: "mailto:info@gokitepro.com",
-      alt: "Email",
-      label: "Email Us",
-    },
-  ],
 };
 
 export const serviceCardsData = {

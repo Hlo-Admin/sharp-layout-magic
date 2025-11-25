@@ -8,28 +8,6 @@ export const heroData = {
     "Take the stress out of legal filings. Trust Go Kite Business Setup Services to handle your case registration in Dubai Courts professionally and efficiently. Contact us today for a consultation or to begin your case filing.",
   buttonText: "Let's simplify your Legal",
   image: "/legal/justice.png",
-  socialIcons: [
-    {
-      icon: "/phone.png",
-      href: "tel:+971503578847",
-      alt: "Live Chat",
-      label: "Let's Talk",
-    },
-    {
-      icon: "/whatsapp.png",
-      href: "https://wa.me/971503578847",
-      alt: "WhatsApp",
-      label: "WhatsApp",
-      target: "_blank",
-      rel: "noopener noreferrer",
-    },
-    {
-      icon: "/message.png",
-      href: "mailto:info@gokitepro.com",
-      alt: "Email",
-      label: "Email Us",
-    },
-  ],
   trustIndicator: {
     clients: "1,2k+ clients",
     rating: 5,

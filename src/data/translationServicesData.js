@@ -8,16 +8,6 @@ export const heroData = {
     "Certified legal, official, and general translation services in Dubai for business, personal, and government requirements. Fast, accurate & compliant translations by expert linguists.",
   buttonText: "Get Translation Support",
   image: "/services/banners/translation-services.jpg",
-  socialIcons: [
-    { icon: "/phone.png", href: "tel:+971503578847", label: "Call Us" },
-    {
-      icon: "/whatsapp.png",
-      href: "https://wa.me/971503578847",
-      target: "_blank",
-      label: "WhatsApp",
-    },
-    { icon: "/message.png", href: "mailto:info@gokitepro.com", label: "Email Us" },
-  ],
 };
 
 export const serviceCardsData = {

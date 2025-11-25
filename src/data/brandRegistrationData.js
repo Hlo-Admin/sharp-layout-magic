@@ -8,16 +8,6 @@ export const heroData = {
     "Comprehensive brand registration services in Dubai — logo registration, trade name protection, trademark filing & domain name security with full UAE legal compliance.",
   buttonText: "Secure Your Brand",
   image: "/services/banners/brand-registration.jpg",
-  socialIcons: [
-    { icon: "/phone.png", href: "tel:+971503578847", label: "Call Us" },
-    {
-      icon: "/whatsapp.png",
-      href: "https://wa.me/971503578847",
-      target: "_blank",
-      label: "WhatsApp",
-    },
-    { icon: "/message.png", href: "mailto:info@gokitepro.com", label: "Email" },
-  ],
 };
 
 // WHY BRAND REGISTRATION BENEFITS

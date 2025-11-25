@@ -4,28 +4,6 @@ const visaImmigrationData = {
     subtitle: "Dreams Made Possible",
     buttonText: "Get Started Today",
     backgroundImage: "/visa/banner.png",
-    socialIcons: [
-      {
-        icon: "/phone.png",
-        href: "tel:+971503578847",
-        alt: "Phone",
-        label: "Let's Talk",
-      },
-      {
-        icon: "/whatsapp.png",
-        href: "https://wa.me/971503578847",
-        alt: "WhatsApp",
-        label: "WhatsApp",
-        target: "_blank",
-        rel: "noopener noreferrer",
-      },
-      {
-        icon: "/message.png",
-        href: "mailto:info@gokitepro.com",
-        alt: "Email",
-        label: "Email Us",
-      },
-    ],
     visaCards: [
       {
         icon: "/visa/icon-1.png",

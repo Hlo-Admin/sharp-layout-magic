@@ -10,16 +10,6 @@ export const heroData = {
     "Certified attestation services in Dubai for personal, educational, and commercial documents. Fast processing, MOFA compliance, and secure handling for UAE and international use.",
   buttonText: "Get Document Attested",
   image: "/services/banners/attestation-services.jpg",
-  socialIcons: [
-    { icon: "/phone.png", href: "tel:+971503578847", label: "Call Us" },
-    {
-      icon: "/whatsapp.png",
-      href: "https://wa.me/971503578847",
-      target: "_blank",
-      label: "WhatsApp",
-    },
-    { icon: "/message.png", href: "mailto:info@gokitepro.com", label: "Email Us" },
-  ],
 };
 
 export const serviceCardsData = {

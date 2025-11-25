@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import BookingPopup from "@/components/common/Booking";
-import FloatingSocialIcons from "@/components/landing/FloatingSocialIcons";
 
 const ArrowRightIcon = ({ className }: { className?: string }) => (
   <svg
@@ -33,17 +32,8 @@ interface VisaHeroProps {
     buttonText: string;
     backgroundImage: string;
     visaCards: VisaCard[];
-    socialIcons: Array<{
-      icon: string;
-      href: string;
-      alt: string;
-      target?: string;
-      rel?: string;
-    }>;
   };
 }
-
-// Using shared FloatingSocialIcons for consistent design
 
 const VisaHero = ({ data }: VisaHeroProps) => {
   const {
@@ -51,16 +41,12 @@ const VisaHero = ({ data }: VisaHeroProps) => {
     subtitle,
     buttonText,
     visaCards,
-    socialIcons,
     backgroundImage,
   } = data;
   const [showBookingPopup, setShowBookingPopup] = useState(false);
 
   return (
     <section className="relative overflow-hidden bg-white min-h-screen">
-      {/* Floating Social Icons */}
-      <FloatingSocialIcons icons={socialIcons} />
-
       {/* Background Banner Container */}
       <div className="relative">
         {/* Background Image */}
