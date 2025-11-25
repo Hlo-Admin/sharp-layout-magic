@@ -51,27 +51,27 @@ export const WhySME = {
     {
       name: "Tarakhees Company Formation",
       description: "Get your UAE Business Registered in 24hrs",
-      href: "/tarakhees",
+      href: "/business-setup/tarakhees-company-formation-in-dubai",
     },
     {
       name: "Freezone Company Formation",
       description: "Get your UAE Business Registered in 24hrs",
-      href: "/freezone",
+      href: "/business-setup/freezone-company-formation-in-dubai",
     },
     {
       name: "SME Company Formation",
       description: "Get your UAE Business Registered in 24hrs",
-      href: "/smecompany",
+      href: "/business-setup/sme-company-formation-in-dubai/",
     },
     {
       name: "Offshore Company Formation",
       description: "Get your UAE Business Registered in 24hrs",
-      href: "/offshore",
+      href: "/business-setup/offshore-company-formation-in-dubai",
     },
     {
       name: "Mainland Business Setup",
       description: "Get your UAE Business Registered in 24hrs",
-      href: "/mainland",
+      href: "/business-setup/mainland-company-formation-in-dubai",
     },
   ],
 };

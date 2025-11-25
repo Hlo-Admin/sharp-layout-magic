@@ -15,27 +15,27 @@ const landingPageData = {
         "DOCUMENTATION",
         "LICENSE",
       ],
-      href: "/mainland",
+      href: "/business-setup/mainland-company-formation-in-dubai",
     },
     {
       title: "Freezone Company",
       description: "Logo, Tradename, Domain",
-      href: "/freezone",
+      href: "/business-setup/freezone-company-formation-in-dubai",
     },
     {
       title: "Offshore Company",
       description: "Logo, Tradename, Domain",
-      href: "/offshore",
+      href: "/business-setup/offshore-company-formation-in-dubai",
     },
     {
       title: "SME Company",
       description: "Logo, Tradename, Domain",
-      href: "/smecompany",
+      href: "/business-setup/sme-company-formation-in-dubai/",
     },
     {
       title: "Tarakhees",
       description: "Logo, Tradename, Domain",
-      href: "#tarakhees", // You can create a separate route for this if needed
+      href: "/business-setup/tarakhees-company-formation-in-dubai", // You can create a separate route for this if needed
     },
   ],
   socialIcons: [

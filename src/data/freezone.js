@@ -42,27 +42,27 @@ export const whatIsMainlandData = {
     {
       name: "Tarakhees Company Formation",
       description: "Fast business setup for industrial & commercial licensing",
-      href: "/tarakhees",
+      href: "/business-setup/tarakhees-company-formation-in-dubai",
     },
     {
       name: "Freezone Company Formation",
       description: "Get your UAE Business Registered in 24hrs",
-      href: "/freezone",
+      href: "/business-setup/freezone-company-formation-in-dubai",
     },
     {
       name: "SME Company Formation",
       description: "Affordable setup solutions for startups & SMEs",
-      href: "/smecompany",
+      href: "/business-setup/sme-company-formation-in-dubai/",
     },
     {
       name: "Offshore Company Formation",
       description: "Ideal for international expansion and asset protection",
-      href: "/offshore",
+      href: "/business-setup/offshore-company-formation-in-dubai",
     },
     {
       name: "Mainland Business Setup",
       description: "Operate anywhere within the UAE",
-      href: "/mainland",
+      href: "/business-setup/mainland-company-formation-in-dubai",
     },
   ],
 };

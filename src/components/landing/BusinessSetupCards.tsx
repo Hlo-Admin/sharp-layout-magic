@@ -19,7 +19,7 @@ const BusinessSetupCards = ({ options }: BusinessSetupCardsProps) => {
         {/* Mainland Business Setup - Left column, spans 2 rows */}
         <div className="row-span-2">
           <Link
-            to={options[0]?.href || "/mainland"}
+            to={options[0]?.href || "/business-setup/mainland-company-formation-in-dubai"}
             className="block bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 h-full border border-gray-100 flex flex-col"
           >
             <h3 className="text-xl font-bold text-black mb-4">
@@ -45,7 +45,7 @@ const BusinessSetupCards = ({ options }: BusinessSetupCardsProps) => {
           {/* Top row: Freezone Company and SME Company */}
           <div>
             <Link
-              to={options[1]?.href || "/freezone"}
+              to={options[1]?.href || "/business-setup/freezone-company-formation-in-dubai"}
               className="block bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 h-full border border-gray-100"
             >
               <h3 className="text-lg font-bold text-black mb-2">
@@ -61,7 +61,7 @@ const BusinessSetupCards = ({ options }: BusinessSetupCardsProps) => {
 
           <div>
             <Link
-              to={options[3]?.href || "/smecompany"}
+              to={options[3]?.href || "/business-setup/sme-company-formation-in-dubai/"}
               className="block bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 h-full border border-gray-100"
             >
               <h3 className="text-lg font-bold text-black mb-2">
@@ -78,7 +78,7 @@ const BusinessSetupCards = ({ options }: BusinessSetupCardsProps) => {
           {/* Bottom row: Offshore Company and Tarakhees */}
           <div>
             <Link
-              to={options[2]?.href || "/offshore"}
+              to={options[2]?.href || "/business-setup/offshore-company-formation-in-dubai"}
               className="block bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 h-full border border-gray-100"
             >
               <h3 className="text-lg font-bold text-black mb-2">
@@ -115,7 +115,7 @@ const BusinessSetupCards = ({ options }: BusinessSetupCardsProps) => {
         {/* Mainland Business Setup */}
         <div>
           <Link
-            to={options[0]?.href || "/mainland"}
+            to={options[0]?.href || "/business-setup/mainland-company-formation-in-dubai"}
             className="block bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100"
           >
             <h3 className="text-xl font-bold text-black mb-4">

@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import BlogContent from "@/components/blogcontent/BlogContent";
 import RecentBlogs from "@/components/blogcontent/RecentBlogs";
 import LandingNavigation from "@/components/landing/LandingNavigation";
+import Footer from "@/components/common/Footer";
 import { blogPosts } from "@/data/blog";
 
 const BlogPage: React.FC = () => {
@@ -214,7 +215,9 @@ const BlogPage: React.FC = () => {
         <LandingNavigation />
         <BlogContent blogData={blogPost} />
         <RecentBlogs />
+        
       </main>
+      <Footer />
     </>
   );
 };
