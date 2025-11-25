@@ -3,11 +3,15 @@ import PolicyAccordion from "@/components/policy/PolicyAccordion";
 import Sidebar from "@/components/policy/PolicySidebar";
 import LandingNavigation from "@/components/landing/LandingNavigation";
 import Footer from "@/components/common/Footer";
+import YellowTopNav from "@/components/common/YellowTopNav";
 
 const PolicyPage: React.FC = () => {
   return (
     <div className="pt-40 bg-gray-50">
-      <LandingNavigation />
+      <YellowTopNav />
+      <div className="relative pt-2">
+        <LandingNavigation />
+      </div>
       <div className="max-w-7xl mx-auto">
         <h1 className="text-6xl font-bold text-gray-900 mb-8">
           Our <br /> Company Policy’s

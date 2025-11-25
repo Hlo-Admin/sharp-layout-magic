@@ -1,5 +1,6 @@
 import Navigation from "@/components/common/Navigation";
 import Footer from "@/components/common/Footer";
+import YellowTopNav from "@/components/common/YellowTopNav";
 import TaxHero from "@/components/tax/TaxHero";
 import IndustriesSection from "@/components/tax/IndustriesSection";
 import BusinessTaxes from "@/components/tax/BusinessTaxes";
@@ -19,7 +20,10 @@ import {
 const Tax = () => {
   return (
     <div className="min-h-screen">
-      <Navigation />
+      <YellowTopNav />
+      <div className="relative">
+        <Navigation />
+      </div>
       <TaxHero data={heroData} />
       <IndustriesSection data={industriesSectionData} />
       <LegalComplaintService data={taxLegalServicesData} />

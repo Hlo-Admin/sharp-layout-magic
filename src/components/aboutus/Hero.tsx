@@ -1,11 +1,35 @@
 // src/components/Hero.tsx
-import Navbar from "@/components/common/Navigation";
+import NewNav from "@/components/aboutus/NewNav";
 
 const Hero = ({ data }) => {
   const { breadcrumbs, title, subtitle, contactIcons, image } = data;
 
   return (
-    <section className="relative h-[340px] mx-3 my-6 px-0 rounded-xl">
+    <section className="relative h-[420px] mx-3 my-6 px-0 rounded-xl">
+      {/* Top Yellow Bar */}
+      <div className="absolute top-0 left-0 right-0 bg-[#f7c332] py-1 sm:py-1.5 md:py-2 z-30 rounded-t-xl">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-2 text-[10px] xs:text-xs sm:text-sm md:text-base">
+          <div className="text-[#193954] font-medium text-center sm:text-left truncate max-w-full sm:max-w-none pl-2 sm:pl-3">
+            UAE 85549, United Arab Emirates
+          </div>
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 flex-wrap justify-center sm:justify-end pr-2 sm:pr-3 md:pr-4">
+            <a
+              href="tel:+971503578847"
+              className="text-[#193954] font-medium hover:underline whitespace-nowrap"
+            >
+              +971 50 357 8847
+            </a>
+            <span className="text-[#193954]">|</span>
+            <a
+              href="mailto:info@gokitepro.com"
+              className="text-[#193954] font-medium hover:underline truncate"
+            >
+              info@gokitepro.com
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Banner background */}
       <div
         className="absolute inset-0 bg-cover bg-center rounded-xl"
@@ -16,7 +40,9 @@ const Hero = ({ data }) => {
       />
 
       {/* Navbar */}
-      <Navbar />
+      <div className="relative z-40 pt-12 sm:pt-14 md:pt-16">
+        <NewNav />
+      </div>
 
       {/* Right-side icon bar */}
       {/* <div className="absolute z-30 right-0 top-[120px] flex flex-col items-end gap-4">

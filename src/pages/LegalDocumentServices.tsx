@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "@/components/common/Navigation";
 import Footer from "@/components/common/Footer";
+import YellowTopNav from "@/components/common/YellowTopNav";
 import FAQ from "@/components/services/FAQ";
 import {
   HeroSection,
@@ -15,8 +16,11 @@ import legalDocumentData from "@/data/legaldocument";
 const LegalDocumentServices = () => {
   return (
     <div className="min-h-screen bg-white">
+      <YellowTopNav />
       {/* Navigation */}
-      <Navigation />
+      <div className="relative">
+        <Navigation />
+      </div>
 
       {/* Hero Section */}
       <HeroSection data={legalDocumentData.heroData} />

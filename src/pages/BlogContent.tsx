@@ -5,6 +5,7 @@ import BlogContent from "@/components/blogcontent/BlogContent";
 import RecentBlogs from "@/components/blogcontent/RecentBlogs";
 import LandingNavigation from "@/components/landing/LandingNavigation";
 import Footer from "@/components/common/Footer";
+import YellowTopNav from "@/components/common/YellowTopNav";
 import { blogPosts } from "@/data/blog";
 
 const BlogPage: React.FC = () => {
@@ -31,12 +32,17 @@ const BlogPage: React.FC = () => {
             content="The requested blog post could not be found."
           />
         </Helmet>
-        <main className="max-w-7xl mx-auto px-4 py-10">
-          <LandingNavigation />
-          <div className="text-center py-20">
-            <h1 className="text-2xl font-bold">Blog post not found</h1>
+        <div className="min-h-screen">
+          <YellowTopNav />
+          <div className="relative pt-2">
+            <LandingNavigation />
           </div>
-        </main>
+          <main className="max-w-7xl mx-auto px-4 py-10">
+            <div className="text-center py-20">
+              <h1 className="text-2xl font-bold">Blog post not found</h1>
+            </div>
+          </main>
+        </div>
       </>
     );
   }
@@ -211,13 +217,17 @@ const BlogPage: React.FC = () => {
         )}
       </Helmet>
 
-      <main className="max-w-7xl mx-auto px-4 py-10">
-        <LandingNavigation />
-        <BlogContent blogData={blogPost} />
-        <RecentBlogs />
-        
-      </main>
-      <Footer />
+      <div className="min-h-screen">
+        <YellowTopNav />
+        <div className="relative pt-2">
+          <LandingNavigation />
+        </div>
+        <main className="max-w-7xl mx-auto px-4 py-10">
+          <BlogContent blogData={blogPost} />
+          <RecentBlogs />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 };

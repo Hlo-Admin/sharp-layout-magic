@@ -3,6 +3,7 @@ import LandingNavigation from "@/components/landing/LandingNavigation";
 import Footer from "@/components/common/Footer";
 import CaseStudies from "@/components/blog/CaseStudies";
 import FirstSection from "@/components/blog/FirstSection";
+import YellowTopNav from "@/components/common/YellowTopNav";
 
 const Index = () => {
   return (
@@ -44,7 +45,12 @@ const Index = () => {
       </Helmet>
 
       <div className="min-h-screen">
-        <LandingNavigation />
+        {/* Top Yellow Bar */}
+        <YellowTopNav />
+
+        <div className="relative pt-2">
+          <LandingNavigation />
+        </div>
         <FirstSection />
         <CaseStudies />
         <Footer />

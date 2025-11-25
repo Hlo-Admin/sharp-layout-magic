@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import YellowTopNav from "@/components/common/YellowTopNav";
 import Hero from "@/components/services/Hero";
 import Benefits from "@/components/services/Benefits";
 import Steps from "@/components/services/Steps";
@@ -25,6 +26,7 @@ const ComplaintFiling = () => {
       </Helmet>
 
       <div className="min-h-screen">
+        <YellowTopNav />
         <Hero data={complaintFilingData.heroData} />
         <Benefits data={complaintFilingData.benefitsData} />
         <Steps data={complaintFilingData.stepsData} />

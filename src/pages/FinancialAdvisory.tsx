@@ -1,5 +1,6 @@
 import Navigation from "@/components/common/Navigation";
 import Footer from "@/components/common/Footer";
+import YellowTopNav from "@/components/common/YellowTopNav";
 import FinancialHero from "@/components/financial/FinancialHero";
 import BusinessTaxes from "@/components/financial/BusinessTaxes";
 import ServicesGridTwo from "@/components/financial/ServicesGridTwo";
@@ -20,7 +21,10 @@ import {
 const FinancialAdvisory = () => {
   return (
     <div className="min-h-screen">
-      <Navigation />
+      <YellowTopNav />
+      <div className="relative">
+        <Navigation />
+      </div>
       <FinancialHero data={heroData} />
       <BusinessTaxes data={businessTaxesData} />
       <ServicesGridTwo data={servicesGridTwoData} />

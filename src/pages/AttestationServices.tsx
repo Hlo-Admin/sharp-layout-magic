@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/common/Navigation";
 import Footer from "@/components/common/Footer";
+import YellowTopNav from "@/components/common/YellowTopNav";
 import FAQ from "@/components/services/FAQService";
 import HeroSection from "@/components/brand/BrandHero";
 import ServiceCards from "@/components/brand/BrandService";
@@ -63,7 +64,10 @@ const AttestationServices = () => {
       </Helmet>
 
       <div className="min-h-screen bg-white">
-        <Navigation />
+        <YellowTopNav />
+        <div className="relative">
+          <Navigation />
+        </div>
         <HeroSection data={attestationData.heroData} />
         <ServiceCards data={attestationData.serviceCardsData} />
         <TrustedSection data={attestationData.trustedData} />

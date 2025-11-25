@@ -1,5 +1,6 @@
 import Navigation from "@/components/common/Navigation";
 import Footer from "@/components/common/Footer";
+import YellowTopNav from "@/components/common/YellowTopNav";
 import FinancialHero from "@/components/OfficeSpace/FinancialHero";
 import NameRegister from "@/components/OfficeSpace/NameRegister";
 import TrademarkBanner from "@/components/OfficeSpace/TrademarkBanner";
@@ -22,7 +23,10 @@ import {
 const FinancialAdvisory = () => {
   return (
     <div className="min-h-screen">
-      <Navigation />
+      <YellowTopNav />
+      <div className="relative">
+        <Navigation />
+      </div>
       <FinancialHero data={heroData} />
       <NameRegister />
       <TrademarkBanner data={trademarkBannerData} />

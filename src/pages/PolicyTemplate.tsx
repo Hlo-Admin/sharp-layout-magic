@@ -1,6 +1,7 @@
 import React from "react";
 import LandingNavigation from "@/components/landing/LandingNavigation";
 import Footer from "@/components/common/Footer";
+import YellowTopNav from "@/components/common/YellowTopNav";
 
 const policyData = {
   title: "Copyright Policy",
@@ -95,7 +96,10 @@ const policyData = {
 const CopyrightPolicy: React.FC = () => {
   return (
     <>
-    <LandingNavigation />
+    <YellowTopNav />
+    <div className="relative pt-2">
+      <LandingNavigation />
+    </div>
     <div className="bg-white text-gray-800 px-8 md:px-20 mx-auto py-12 pt-40">
       <h1 className="text-4xl font-bold mb-6">{policyData.title}</h1>
       <p className="text-sm text-gray-500 mb-2">Last Updated: {policyData.lastUpdated}</p>

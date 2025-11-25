@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/common/Navigation";
 import Footer from "@/components/common/Footer";
+import YellowTopNav from "@/components/common/YellowTopNav";
 import FAQ from "@/components/services/FAQService";
 import HeroSection from "@/components/brand/BrandHero";
 import ServiceCards from "@/components/brand/BrandService";
@@ -9,10 +10,8 @@ import SemicircleSection from "@/components/brand/SemicircleSection";
 import translationData from "@/data/translationServicesData";
 
 const TranslationServices = () => {
-  const currentUrl =
-    typeof window !== "undefined" ? window.location.href : "";
-  const baseUrl =
-    typeof window !== "undefined" ? window.location.origin : "";
+  const currentUrl = typeof window !== "undefined" ? window.location.href : "";
+  const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
   const imageUrl = `${baseUrl}${translationData.heroData.image}`;
 
   const faqSchema = {
@@ -61,7 +60,9 @@ const TranslationServices = () => {
   return (
     <>
       <Helmet>
-        <title>Translation Services in Dubai, UAE | Business & Legal Support</title>
+        <title>
+          Translation Services in Dubai, UAE | Business & Legal Support
+        </title>
         <meta
           name="description"
           content="Get professional translation services in Dubai for business, legal, and official documents. Fast, accurate, and certified translations in UAE."
@@ -78,9 +79,7 @@ const TranslationServices = () => {
         <meta property="og:image" content={imageUrl} />
 
         {/* Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
         </script>
@@ -90,7 +89,10 @@ const TranslationServices = () => {
       </Helmet>
 
       <div className="min-h-screen bg-white">
-        <Navigation />
+        <YellowTopNav />
+        <div className="relative">
+          <Navigation />
+        </div>
         <HeroSection data={translationData.heroData} />
         <ServiceCards data={translationData.serviceCardsData} />
         <TrustedSection data={translationData.trustedData} />

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import LandingNavigation from "@/components/landing/LandingNavigation";
 import Footer from "@/components/common/Footer";
+import YellowTopNav from "@/components/common/YellowTopNav";
 
 const contactData = {
   hero: {
@@ -159,7 +160,10 @@ const ContactUs: React.FC = () => {
 
   return (
     <>
-      <LandingNavigation />
+      <YellowTopNav />
+      <div className="relative">
+        <LandingNavigation />
+      </div>
       <div className="flex flex-col items-center w-full text-gray-800">
         {/* Hero / Form Section */}
         <section className="w-full bg-gray-100 py-20 px-6 md:px-8">
