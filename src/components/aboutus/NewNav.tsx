@@ -107,7 +107,10 @@ const NewNav = () => {
             </button>
             {isBusinessSetupDropdownOpen && (
               <BusinessSetupDropdown
-                onClose={() => setIsBusinessSetupDropdownOpen(false)}
+                onClose={() => {
+                  setIsBusinessSetupDropdownOpen(false);
+                  setIsMobileMenuOpen(false);
+                }}
               />
             )}
           </div>
@@ -125,7 +128,10 @@ const NewNav = () => {
             </button>
             {isServicesDropdownOpen && (
               <ServicesDropdown
-                onClose={() => setIsServicesDropdownOpen(false)}
+                onClose={() => {
+                  setIsServicesDropdownOpen(false);
+                  setIsMobileMenuOpen(false);
+                }}
               />
             )}
           </div>
@@ -243,7 +249,10 @@ const NewNav = () => {
               {isBusinessSetupDropdownOpen && (
                 <div className="mt-2">
                   <BusinessSetupDropdown
-                    onClose={() => setIsBusinessSetupDropdownOpen(false)}
+                    onClose={() => {
+                      setIsBusinessSetupDropdownOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
                   />
                 </div>
               )}
@@ -265,7 +274,10 @@ const NewNav = () => {
               {isServicesDropdownOpen && (
                 <div className="mt-2">
                   <ServicesDropdown
-                    onClose={() => setIsServicesDropdownOpen(false)}
+                    onClose={() => {
+                      setIsServicesDropdownOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
                   />
                 </div>
               )}
